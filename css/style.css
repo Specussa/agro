@@ -1,0 +1,148 @@
+:root {
+  --inc-step: 1;
+  --gray-border: #D3D3D3;
+  --dark-border: #424242;
+  --page-bg: #F8F8F8;
+  --page-text: #262626;
+  --purple: #644BB1;
+  --red: #A20109;
+  --error: #D91717;
+  --green: #0FE397;
+  --inter: 'Inter', sans-serif;
+  --space: 'Space', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--inter);
+  -webkit-tap-highlight-color: transparent;
+}
+
+*::-moz-selection {
+  background-color: var(--page-text);
+  color: var(--page-bg);
+}
+
+*::selection {
+  background-color: var(--page-text);
+  color: var(--page-bg);
+}
+
+*::marker {
+  font-size: 0;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  position: relative;
+  background: var(--page-bg);
+}
+
+.main {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: var(--page-text);
+  -webkit-box-shadow: 0 0 0px 1000px var(--page-bg) inset;
+  color: var(--page-text);
+  box-shadow: 0 0 0px 1000px var(--page-bg) inset;
+}
+
+a {
+  color: var(--page-text);
+  -webkit-transition: color 0.3s linear;
+  -moz-transition: color 0.3s linear;
+  -ms-transition: color 0.3s linear;
+  -o-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: var(--purple);
+  text-decoration: none;
+}
+
+h1, p {
+  margin: 0;
+}
+
+button, button:focus, button:hover, button:active {
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+svg path {
+  fill: inherit;
+  stroke: inherit;
+  stroke-width: inherit;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container { 
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 890px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: transparent;
+  -webkit-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+  -moz-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+  -ms-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+  -o-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+  transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+}
+
+.overlay.active {
+  background-color: var(--page-bg);
+  opacity: 0.95;
+  visibility: visible;
+}
+
+/* start buttons */
