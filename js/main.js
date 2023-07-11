@@ -19,11 +19,6 @@ document.querySelector('.header__burger').addEventListener('click', function() {
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
   }
-  if (burger_c.classList.contains("active")) {
-    bodyoverlay.classList.remove("active");
-    document.body.style.overflow = "visible";
-    document.body.style.height = "100%";
-  }
 })
 // end navbar
 
