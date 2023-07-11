@@ -259,9 +259,12 @@ body {
 }
 
 .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  min-height: 100%;
+  padding: 150px 0 0;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 input:-webkit-autofill,
@@ -282,17 +285,17 @@ select:-webkit-autofill:focus {
 
 a {
   color: var(--text);
-  -webkit-transition: color 0.3s linear;
-  -moz-transition: color 0.3s linear;
-  -ms-transition: color 0.3s linear;
-  -o-transition: color 0.3s linear;
-  transition: color 0.3s linear;
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
   cursor: pointer;
   text-decoration: none;
 }
 
 a:hover, a:active, a:focus {
-  color: var(--purple);
+  color: var(--blue);
   text-decoration: none;
 }
 
@@ -302,7 +305,7 @@ h1, p {
 
 button, button:focus, button:hover, button:active {
   outline: 0;
-  border: none;
+  border: 1px solid var(--bg);
   cursor: pointer;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -311,6 +314,24 @@ button, button:focus, button:hover, button:active {
   -ms-user-select: none;
   user-select: none;
   background-color: transparent;
+  -webkit-transition: background-color 0.2s linear, color 0.2s linear, border 0.2s linear;
+  -moz-transition: background-color 0.2s linear, color 0.2s linear, border 0.2s linear;
+  -ms-transition: background-color 0.2s linear, color 0.2s linear, border 0.2s linear;
+  -o-transition: background-color 0.2s linear, color 0.2s linear, border 0.2s linear;
+  transition: background-color 0.2s linear, color 0.2s linear, border 0.2s linear;
+}
+
+button:hover {
+  border: 1px solid var(--dblue);
+  color: var(--dblue);
+}
+
+button span, button:hover span {
+  -webkit-transition: background-color 0.2s linear, width 0.2s linear, height 0.2s linear;
+  -moz-transition: background-color 0.2s linear, width 0.2s linear, height 0.2s linear;
+  -ms-transition: background-color 0.2s linear, width 0.2s linear, height 0.2s linear;
+  -o-transition: background-color 0.2s linear, width 0.2s linear, height 0.2s linear;
+  transition: background-color 0.2s linear, width 0.2s linear, height 0.2s linear;
 }
 
 svg path {
@@ -330,8 +351,9 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  max-width: 1920px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 100px;
   position: relative;
 }
 
@@ -345,11 +367,11 @@ svg path {
   opacity: 0;
   visibility: hidden;
   background: transparent;
-  -webkit-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
-  -moz-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
-  -ms-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
-  -o-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
-  transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+  -webkit-transition: visibility 0.2s linear, opacity 0.2s linear, background-color 0.2s linear;
+  -moz-transition: visibility 0.2s linear, opacity 0.2s linear, background-color 0.2s linear;
+  -ms-transition: visibility 0.2s linear, opacity 0.2s linear, background-color 0.2s linear;
+  -o-transition: visibility 0.2s linear, opacity 0.2s linear, background-color 0.2s linear;
+  transition: visibility 0.2s linear, opacity 0.2s linear, background-color 0.2s linear;
 }
 
 .overlay.active {
@@ -424,7 +446,7 @@ html.has-scroll-dragging {
 }
 
 .c-scrollbar_thumb {
-  background-color: var(--purple);
+  background-color: var(--blue);
   cursor: -webkit-grab;
   cursor: grab;
   margin: 2px;
@@ -465,7 +487,7 @@ html.has-scroll-dragging {
   height: 50%;
   z-index: 1001;
   background-color: #fff;
-  transition: top 0.3s linear;
+  transition: top 0.2s linear;
 }
 
 .preloader__bottom {
@@ -475,7 +497,7 @@ html.has-scroll-dragging {
   height: 50%;
   z-index: 1001;
   background-color: #fff;
-  transition: top 0.3s linear;
+  transition: top 0.2s linear;
 }
 
 .dark .preloader__top, .dark .preloader__bottom {
@@ -501,11 +523,11 @@ html.has-scroll-dragging {
 
 .loaded_hiding .preloader__image {
   opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  -moz-transition: opacity 0.3s;
-  -ms-transition: opacity 0.3s;
-  -o-transition: opacity 0.3s;
-  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
 }
 
 @-webkit-keyframes preloader-rotate {
@@ -533,11 +555,11 @@ html.has-scroll-dragging {
 }
 
 .preloader__image circle {
-  -webkit-transition: -webkit-transform 0.3s linear, fill 0.3s ease-out;
-  -moz-transition: -moz-transform 0.3s linear, fill 0.3s ease-out;
-  -ms-transition: -ms-transform 0.3s linear, fill 0.3s ease-out;
-  -o-transition: -o-transform 0.3s linear, fill 0.3s ease-out;
-  transition: transform 0.3s linear, fill 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.2s linear, fill 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s linear, fill 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s linear, fill 0.2s ease-out;
+  -o-transition: -o-transform 0.2s linear, fill 0.2s ease-out;
+  transition: transform 0.2s linear, fill 0.2s ease-out;
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
@@ -547,7 +569,7 @@ html.has-scroll-dragging {
 }
 
 .preloader__image circle:nth-of-type(7) {
-  fill: var(--purple);
+  fill: var(--blue);
 }
 
 /* end preloader */
@@ -558,10 +580,14 @@ html.has-scroll-dragging {
   height: 150px;
   width: 100%;
   position: fixed;
-  border-bottom: 1px solid var(--gray-border);
   background: var(--bg);
   z-index: 100;
   overflow: hidden;
+}
+
+.header__container {
+  max-width: 100%;
+  padding: 0;
 }
 
 .header__flex {
@@ -709,11 +735,11 @@ html.has-scroll-dragging {
   -ms-transform: rotate(0);
   -o-transform: rotate(0);
   transform: rotate(0);
-  -webkit-transition: -webkit-transform 0.3s, fill 0.3s linear;
-  -moz-transition: -moz-transform 0.3s, fill 0.3s linear;
-  -ms-transition: -ms-transform 0.3s, fill 0.3s linear;
-  -o-transition: -o-transform 0.3s, fill 0.3s linear;
-  transition: transform 0.3s, fill 0.3s linear;
+  -webkit-transition: -webkit-transform 0.2s, fill 0.2s linear;
+  -moz-transition: -moz-transform 0.2s, fill 0.2s linear;
+  -ms-transition: -ms-transform 0.2s, fill 0.2s linear;
+  -o-transition: -o-transform 0.2s, fill 0.2s linear;
+  transition: transform 0.2s, fill 0.2s linear;
   -webkit-transition-delay: 0.20s, 0;
   -moz-transition-delay: 0.20s, 0;
   -ms-transform-delay: 0.20s, 0;
@@ -782,3 +808,202 @@ html.has-scroll-dragging {
 }
 
 /* end header */
+
+/* start footer */
+
+.footer {
+  background-color: var(--dblue)
+}
+
+.footer__container {
+  padding: 70px 100px 150px;
+}
+
+.footer__production {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.footer__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+}
+
+.footer__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.footer__contacts_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.footer__contacts_block span {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  color: var(--bg);
+}
+
+.footer__tel {
+  width: fit-content;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 103px;
+  color: var(--bg);
+}
+
+.footer__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: flex-end;
+}
+
+.footer__button {
+  width: 492px;
+  padding: 40px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--bg);
+  position: relative;
+}
+
+.footer__button:hover {
+  background-color: var(--bg);
+}
+
+.footer__button:hover span {
+  width: 25px;
+  height: 25px;
+  background-color: var(--dblue);
+}
+
+.footer__button span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--bg);
+}
+
+.footer__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 170px;
+}
+
+.footer__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer__link {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  color: var(--bg);
+}
+
+.footer__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer__social_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.footer__social_item {
+  width: 70px;
+  height: 70px;
+}
+
+.footer__social_item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70px;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  border: 0.86px solid var(--bg);
+}
+
+.footer__social_item:nth-child(1) svg {
+  width: 33.16px;
+  height: 33.49px;
+}
+
+.footer__social_item:nth-child(2) svg {
+  width: 40.47px;
+  height: 27.13px;
+}
+
+.footer__social_item:nth-child(3) svg {
+  width: 29.19px;
+  height: 29.19px;
+}
+
+.footer__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.footer__info_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__info_item p, .footer__info_item a {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 23px;
+  color: var(--bg);
+}
+
+.footer__info_item a:hover {
+  color: var(--blue);
+}
+
+/* end footer */
