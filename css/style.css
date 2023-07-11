@@ -146,3 +146,173 @@ svg path {
 }
 
 /* start buttons */
+
+
+/* start preloader */
+
+.preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.preloader__top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 1001;
+  background-color: #fff;
+  transition: top 0.3s linear;
+}
+
+.preloader__bottom {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 50%;
+  z-index: 1001;
+  background-color: #fff;
+  transition: top 0.3s linear;
+}
+
+.dark .preloader__top, .dark .preloader__bottom {
+  background-color: #000;
+}
+
+.preloader__image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -25px;
+  text-align: center;
+  -webkit-animation: preloader-rotate 2s infinite linear;
+  -moz-animation: preloader-rotate 2s infinite linear;
+  -ms-animation: preloader-rotate 2s infinite linear;
+  -o-animation: preloader-rotate 2s infinite linear;
+  animation: preloader-rotate 2s infinite linear;
+  z-index: 1002;
+}
+
+.loaded_hiding .preloader__image {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+@-webkit-keyframes preloader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.loaded .preloader {
+  display: none;
+}
+
+.preloader__image circle {
+  -webkit-transition: -webkit-transform 0.3s linear, fill 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s linear, fill 0.3s ease-out;
+  -ms-transition: -ms-transform 0.3s linear, fill 0.3s ease-out;
+  -o-transition: -o-transform 0.3s linear, fill 0.3s ease-out;
+  transition: transform 0.3s linear, fill 0.3s ease-out;
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+  fill: var(--page-text);
+}
+
+.preloader__image circle:nth-of-type(7) {
+  fill: var(--purple);
+}
+
+.preloader__image circle:nth-of-type(1) {
+  -webkit-animation: circle1 1s infinite linear;
+  -moz-animation: circle1 1s infinite linear;
+  -ms-animation: circle1 1s infinite linear;
+  -o-animation: circle1 1s infinite linear;
+  animation: circle1 1s infinite linear;
+}
+
+.preloader__image circle:nth-of-type(2) {
+  -webkit-animation: circle2 1s infinite linear;
+  -moz-animation: circle2 1s infinite linear;
+  -ms-animation: circle2 1s infinite linear;
+  -o-animation: circle2 1s infinite linear;
+  animation: circle2 1s infinite linear;
+}
+
+.preloader__image circle:nth-of-type(3) {
+  -webkit-animation: circle3 1s infinite linear;
+  -moz-animation: circle3 1s infinite linear;
+  -ms-animation: circle3 1s infinite linear;
+  -o-animation: circle3 1s infinite linear;
+  animation: circle3 1s infinite linear;
+}
+
+.preloader__image circle:nth-of-type(4) {
+  -webkit-animation: circle4 1s infinite linear;
+  -moz-animation: circle4 1s infinite linear;
+  -ms-animation: circle4 1s infinite linear;
+  -o-animation: circle4 1s infinite linear;
+  animation: circle4 1s infinite linear;
+}
+
+.preloader__image circle:nth-of-type(5) {
+  -webkit-animation: circle5 1s infinite linear;
+  -moz-animation: circle5 1s infinite linear;
+  -ms-animation: circle5 1s infinite linear;
+  -o-animation: circle5 1s infinite linear;
+  animation: circle5 1s infinite linear;
+}
+
+.preloader__image circle:nth-of-type(6) {
+  -webkit-animation: circle6 1s infinite linear;
+  -moz-animation: circle6 1s infinite linear;
+  -ms-animation: circle6 1s infinite linear;
+  -o-animation: circle6 1s infinite linear;
+  animation: circle6 1s infinite linear;
+}
+
+.preloader__image circle:nth-of-type(8) {
+  -webkit-animation: circle8 1s infinite linear;
+  -moz-animation: circle8 1s infinite linear;
+  -ms-animation: circle8 1s infinite linear;
+  -o-animation: circle8 1s infinite linear;
+  animation: circle8 1s infinite linear;
+}
+
+.preloader__image circle:nth-of-type(9) {
+  -webkit-animation: circle9 1s infinite linear;
+  -moz-animation: circle9 1s infinite linear;
+  -ms-animation: circle9 1s infinite linear;
+  -o-animation: circle9 1s infinite linear;
+  animation: circle9 1s infinite linear;
+}
+
+/* end preloader */
