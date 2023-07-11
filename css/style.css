@@ -351,9 +351,9 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 1920px;
+  /* max-width: 1920px; */
   margin: 0 auto;
-  padding: 0 100px;
+  /* padding: 0 100px; */
   position: relative;
 }
 
@@ -760,7 +760,7 @@ html.has-scroll-dragging {
   display: -ms-flexbox;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 16.67%;
   height: 80px;
   margin-right: -1px;
   background-color: var(--dblue);
