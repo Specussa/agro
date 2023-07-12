@@ -1215,6 +1215,9 @@ html.has-scroll-dragging {
   padding: 0 50px;
   align-items: center;
   justify-content: center;
+}
+
+.partners__item:not(:last-child) .partners__block {
   border-right: 1px solid var(--blue);
 }
 
