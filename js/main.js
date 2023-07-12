@@ -133,10 +133,10 @@ var interleaveOffset = 0.5;
     loop: true,
     speed: 1000,
     parallax: true,
-    // autoplay: {
-    //     delay: 6500,
-    //     disableOnInteraction: false,
-    // },
+    autoplay: {
+        delay: 6500,
+        disableOnInteraction: false,
+    },
     watchSlidesProgress: true,
     pagination: {
         el: '.swiper-pagination',
