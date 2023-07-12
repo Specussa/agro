@@ -123,3 +123,67 @@ year.insertAdjacentText('beforebegin', currentYear);
 year.remove();
 }
 // end year
+
+// start hero slider
+const heroslider = document.querySelectorAll('.hero');
+if(!heroslider){} else {
+var interleaveOffset = 0.5;
+  const sliderSelector = '.swiper-container',
+  options = {
+    loop: true,
+    speed: 1000,
+    parallax: true,
+    // autoplay: {
+    //     delay: 6500,
+    //     disableOnInteraction: false,
+    // },
+    watchSlidesProgress: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    on: {
+        progress: function() {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+                var slideProgress = swiper.slides[i].progress;
+                var innerOffset = swiper.width * interleaveOffset;
+                var innerTranslate = slideProgress * innerOffset;
+                swiper.slides[i].querySelector(".slide-inner").style.transform =
+                "translate3d(" + innerTranslate + "px, 0, 0)";
+            }      
+        },
+
+        touchStart: function() {
+          var swiper = this;
+          for (var i = 0; i < swiper.slides.length; i++) {
+            swiper.slides[i].style.transition = "";
+          }
+        },
+
+        setTransition: function(speed) {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+                swiper.slides[i].style.transition = speed + "ms";
+                swiper.slides[i].querySelector(".slide-inner").style.transition =
+                speed + "ms";
+            }
+        }
+    }
+  };
+  const mySwiper = new Swiper(sliderSelector, options);
+  mySwiper.init();
+  
+  [].forEach.call(document.querySelectorAll('.slide-bg-image'), (element) => {
+    if (element.getAttribute('data-background')) {
+      element.style.setProperty('background-image', 'url(' + element.getAttribute('data-background') + ')');
+    }
+  });
+}
+// end hero slider

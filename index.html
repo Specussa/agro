@@ -59,6 +59,15 @@
                   </svg>
                 </span>
                 <span>Техника</span>
+                <span>
+                  <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.300049 4.29367L4.18137 0.5L8.06268 4.29367L4.18137 8.08734L0.300049 4.29367Z" fill="white"/>
+                    <path d="M20.9374 4.29367L24.8187 0.5L28.7 4.29367L24.8187 8.08734L20.9374 4.29367Z" fill="white"/>
+                    <path d="M20.9374 23.7063L24.8187 19.9127L28.7 23.7063L24.8187 27.5L20.9374 23.7063Z" fill="white"/>
+                    <path d="M0.300049 23.7063L4.18137 19.9127L8.06268 23.7063L4.18137 27.5L0.300049 23.7063Z" fill="white"/>
+                    <path d="M8.78906 14.1216L14.1671 4.86503L19.5451 14.1216L14.1671 23.3782L8.78906 14.1216Z" fill="white"/>
+                    </svg>
+                </span>
               </a>
             </li>
             <li class="header__item">
@@ -117,7 +126,39 @@
   </header>
   <main class="main" data-scroll-speed="10" data-scroll-container="" id="top">
     <div class="main__section">
-      
+      <section class="hero">
+        <div class="container hero__container">
+          <div class="hero__slider swiper-container">
+            <ul class="hero__list swiper-wrapper">
+              <li class="hero__item swiper-slide">
+                <div class="hero__block slide-inner slide-bg-image" data-background="img/slide/slide_1.webp">
+                  <div class="hero__shadow">
+                    <h2 data-swiper-parallax="300" class="hero__head">От достигнутых целей к новым горизонтам</h2>
+                    <p data-swiper-parallax="400" class="hero__desc">id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc.</p>
+                    <div data-swiper-parallax="500" class="hero__buttons">
+                      <button class="button__default hero__button">Напиши нам<span></span></button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="hero__item swiper-slide">
+                <div class="hero__block slide-inner slide-bg-image" data-background="img/slide/slide_1.webp">
+                  <div class="hero__shadow">
+                    <h2 data-swiper-parallax="300" class="hero__head">От достигнутых целей к новым горизонтам</h2>
+                    <p data-swiper-parallax="400" class="hero__desc">id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc.</p>
+                    <div data-swiper-parallax="500" class="hero__buttons">
+                      <button class="button__default hero__button">Напиши нам<span></span></button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="swiper-pagination hero__pagination"></div>
+            <div class="swiper-button-next hero__next"></div>
+            <div class="swiper-button-prev hero__prev"></div>
+          </div>
+        </div>
+      </section>
     </div>
     <footer class="footer">
       <div class="container footer__container">
@@ -129,7 +170,7 @@
                 <a href="tel://88002002255" class="footer__tel">8 800 200 22 55</a>
               </div>
               <div class="footer__buttons">
-                <button class="footer__button">Напиши нам<span></span></button>
+                <button class="button__default footer__button">Напиши нам<span></span></button>
               </div>
             </div>
             <div class="footer__flex">
