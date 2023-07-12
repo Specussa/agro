@@ -445,6 +445,7 @@ html.has-scroll-dragging {
 }
 
 .c-scrollbar {
+  width: 11px;
   height: 100%;
   opacity: 0;
   position: absolute;
@@ -452,7 +453,7 @@ html.has-scroll-dragging {
   top: 0;
   transform-origin: center right;
   transition: transform .3s, opacity .3s;
-  width: 11px
+  z-index: 110;
 }
 
 .c-scrollbar:hover {
