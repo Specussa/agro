@@ -1020,19 +1020,28 @@ html.has-scroll-dragging {
   background-color: var(--blue);
 }
 
-.footer__social_item:nth-child(1) svg {
+.footer__social_vk a::after {
+  content: "";
+  display: inline-block;
   width: 33.16px;
   height: 33.49px;
+  background: url('../img/icon/vk.svg') center center no-repeat;
 }
 
-.footer__social_item:nth-child(2) svg {
+.footer__social_yt a::after {
+  content: "";
+  display: inline-block;
   width: 40.47px;
   height: 27.13px;
+  background: url('../img/icon/yt.svg') center center no-repeat;
 }
 
-.footer__social_item:nth-child(3) svg {
+.footer__social_tg a::after {
+  content: "";
+  display: inline-block;
   width: 29.19px;
   height: 29.19px;
+  background: url('../img/icon/tg.svg') center center no-repeat;
 }
 
 .footer__flex {
