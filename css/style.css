@@ -316,9 +316,6 @@ button, button:focus, button:hover, button:active {
 }
 
 svg path {
-  fill: inherit;
-  stroke: inherit;
-  stroke-width: inherit;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -664,22 +661,34 @@ html.has-scroll-dragging {
   font-weight: 500;
   line-height: 21px;
   border-bottom: 1px solid var(--text);
+  -webkit-transition: color 0.2s linear, border 0.2s linear;
+  -moz-transition: color 0.2s linear, border 0.2s linear;
+  -ms-transition: color 0.2s linear, border 0.2s linear;
+  -o-transition: color 0.2s linear, border 0.2s linear;
+  transition: color 0.2s linear, border 0.2s linear;
+}
+
+.header__region:hover span, .header__tel:hover span {
+  color: var(--blue);
+  border-bottom: 1px solid var(--blue);
 }
 
 .header__region::before {
   content: "";
   display: inline-block;
-  width: 22.53px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   background: url('../img/icon/map.svg') center center no-repeat;
+  background-size: 28px 28px;
 }
 
 .header__tel::before {
   content: "";
   display: inline-block;
   width: 20px;
-  height: 19px;
+  height: 20px;
   background: url('../img/icon/tel.svg') center center no-repeat;
+  background-size: 20px 20px;
 }
 
 .header__right {
@@ -848,6 +857,33 @@ html.has-scroll-dragging {
   height: 80px;
   align-items: center;
   justify-content: center;
+  -webkit-transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  -ms-transition: background-color 0.2s linear;
+  -o-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+.header__search:hover, .header__mail:hover {
+  background-color: var(--blue);
+}
+
+.header__search::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 26px;
+  background: url('../img/icon/search.svg') center center no-repeat;
+  background-size: 30px 26px;
+}
+
+.header__mail::before {
+  content: "";
+  display: inline-block;
+  width: 27px;
+  height: 20.3px;
+  background: url('../img/icon/mail.svg') center center no-repeat;
+  background-size: 27px 20.3px;
 }
 
 /* end header */
