@@ -154,11 +154,11 @@ if(!companyslider){} else {
     spaceBetween: 40,
     slidesPerView: 'auto',
     touchRatio: 0.2,
-    slideToClickedSlide: true,
+    slideToClickedSlide: false,
     loop: true,
     loopedSlides: 2,
     speed: 1000,
-    allowTouchMove: true,
+    allowTouchMove: false,
   });
 
   var galleryText = new Swiper('.company__texts', {
