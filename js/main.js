@@ -179,7 +179,7 @@ if(!companyslider){} else {
 
 // start search map
 function filterFunction() {
-  var input, filter, ul, li, a, i;
+  var input, filter, a, i;
   input = document.getElementById("map__input");
   filter = input.value.toUpperCase();
   div = document.getElementById("map__search");
@@ -197,7 +197,6 @@ function filterFunction() {
 
 // start map
 const map = document.querySelectorAll('.map');
-if(!map){} else {
   var myMap,ymaps;
   function init() {
     var winWidth = window.innerWidth;
@@ -393,5 +392,4 @@ if(!map){} else {
     });
   }
   if (ymaps != undefined) ymaps.ready(init);
-}
 // end map

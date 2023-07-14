@@ -307,7 +307,7 @@ h1, p {
 
 button, button:focus, button:hover, button:active {
   outline: 0;
-  border: 1px solid var(--bg);
+  border: none;
   cursor: pointer;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -370,12 +370,17 @@ svg path {
   font-weight: 400;
   line-height: 20px;
   color: var(--bg);
+  border: 1px solid var(--bg);
   position: relative;
   -webkit-transition: background-color 0.2s linear, color 0.2s linear;
   -moz-transition: background-color 0.2s linear, color 0.2s linear;
   -ms-transition: background-color 0.2s linear, color 0.2s linear;
   -o-transition: background-color 0.2s linear, color 0.2s linear;
   transition: background-color 0.2s linear, color 0.2s linear;
+}
+
+.button__default, .button__default:focus, .button__default:hover, .button__default:active {
+  border: 1px solid var(--bg);
 }
 
 .button__default span, .button__default:hover span {
@@ -1928,10 +1933,10 @@ html.has-scroll-dragging {
 .map__city {
   width: 400px;
   height: 810px;
-  position: absolute;
+  position: absolute !important;
   top: 25px;
   left: 100px;
-  overscroll-behavior: contain;
+  z-index: 1;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -1940,14 +1945,12 @@ html.has-scroll-dragging {
   user-select: none;
 }
 
-.map__city a {
+.map__search_city, .map__search_back, .map__search_back:focus, .map__search_back:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 90px;
+  width: 100%;
   padding: 20px 50px;
-  flex-direction: column;
-  justify-content: center;
   gap: 10px;
   font-size: 18px;
   font-weight: 500;
@@ -1961,11 +1964,25 @@ html.has-scroll-dragging {
   transition: background-color 0.2s linear;
 }
 
-.map__city a span {
+.map__search_city:hover, .map__search_back:hover {
+  color: var(--bg);
+  background-color: var(--blue);
+}
+
+.map__search_city {
+  height: 90px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.map__search_desc {
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
   color: var(--gray);
+}
+
+.map__search_desc, .map__search_back span {
   -webkit-transition: color 0.2s linear;
   -moz-transition: color 0.2s linear;
   -ms-transition: color 0.2s linear;
@@ -1973,17 +1990,38 @@ html.has-scroll-dragging {
   transition: color 0.2s linear;
 }
 
-.map__city a:hover span {
+.map__search_city:hover span, .map__search_back:hover span {
   color: var(--bg);
 }
 
-.map__city a:not(:last-child) {
+.map__search_city:not(:last-child) {
   margin: 0 0 5px;
 }
 
-.map__city a:hover {
-  color: var(--bg);
-  background-color: var(--blue);
+.map__search_back {
+  height: 70px;
+  margin: 0 0 5px;
+  align-items: center;
+}
+
+.map__search_back span {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  color: var(--gray);
+}
+
+.map__search_back svg rect {
+  fill: var(--gray);
+  -webkit-transition: fill 0.2s linear;
+  -moz-transition: fill 0.2s linear;
+  -ms-transition: fill 0.2s linear;
+  -o-transition: fill 0.2s linear;
+  transition: fill 0.2s linear;
+}
+
+.map__search_back:hover svg rect {
+  fill: var(--bg);
 }
 
 .map__point {
