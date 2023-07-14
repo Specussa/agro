@@ -96,7 +96,7 @@
   </header>
   <main class="main" data-scroll-speed="10" data-scroll-container="" id="top">
     <div class="main__section">
-      <section class="hero">
+      <section class="hero" data-scroll-section>
         <div class="container hero__container">
           <div class="hero__slider swiper-container">
             <ul class="hero__list swiper-wrapper">
@@ -140,7 +140,7 @@
           </div>
         </div>
       </section>
-      <section class="partners">
+      <section class="partners" data-scroll-section>
         <div class="container partners__container">
           <ul class="partners__list" data-scroll="" data-scroll-direction="horizontal" data-scroll-speed="3">
             <li class="partners__item">
@@ -178,7 +178,7 @@
           </ul>
         </div>
       </section>
-      <section class="events">
+      <section class="events" data-scroll-section>
         <div class="container events__container">
           <div class="events__block">
             <h3 class="events__head">Cобытия компании</h3>
@@ -332,7 +332,7 @@
           </ul>
         </div>
       </section>
-      <section class="company">
+      <section class="company" data-scroll-section>
         <div class="container company__container">
           <ul class="company__info_list">
             <li class="company__info_item">
@@ -406,7 +406,7 @@
           </div>
         </div>
       </section>
-      <section class="offer">
+      <section class="offer" data-scroll-section>
         <div class="container offer__container">
           <div class="events__block">
             <h3 class="events__head">Выгодные предложения</h3>
@@ -448,8 +448,36 @@
           </li>
         </ul>
       </section>
+      <section class="map" data-scroll-section>
+        <div class="container map__container">
+          <div class="map__block">
+            <div id="map__search" class="map__search">
+              <div class="map__search_block">
+                <label for="map__input" class="map__label"></label>
+                <input type="text" placeholder="Поиск" id="map__input" class="map__input" onkeyup="filterFunction()">
+              </div>
+              <div class="map__city" data-scrollbar>
+                <a href="#moscow" onclick="myMap.setCenter([55.88088924541,37.423524915344],14)">г. Москва<span>Россия, Московская обл., г. Химки, ул. Бабакина, д. 5-А, оф. 707</span></a>
+                <a href="#peterburg" onclick="myMap.setCenter([59.618243,30.172631],14)">г. Санкт-Петербург<span>Россия, Ленинградская обл., Гатчинский р-н, д. Малое Верево, ул. Кутышева, д. 5, стр. 5</span></a>
+                <a href="#vologda" onclick="myMap.setCenter([59.199017,39.8100982],14)">г. Вологда<span>Россия, г. Вологда, ул. Гагарина, д. 91, оф. 3</span></a>
+                <a href="#volgograd" onclick="myMap.setCenter([51.639685,39.324973],14)">г. Воронеж<span>Россия, Воронежская обл., Новоусманский р-н, п. Отрадное, ул. Автодорожная, д. 7</span></a>
+                <a href="#kursk" onclick="myMap.setCenter([51.627834,36.117242],14)">г. Курск<span>Россия, Курская область, Курский район, дер. Кукуевка, Промышленный пер., 4а</span></a>
+                <a href="#volgograd" onclick="myMap.setCenter([52.597220203418,39.458276316873],14)">г. Липецк<span>Россия, г. Липецк, ул. Ангарская, д. 26Д</span></a>
+                <a href="#orel" onclick="myMap.setCenter([52.923587,36.078570],14)">г. Орёл<span>Россия, г. Орёл, ул. Итальянская, д. 1 Г</span></a>
+                <a href="#pavlovsck" onclick="myMap.setCenter([50.452752,40.148549],14)">г. Павловск<span>Россия, Воронежская обл., г. Павловск, ул. Транспортная, д. 2</span></a>
+                <a href="#penza" onclick="myMap.setCenter([53.270195255583,45.024497906746],14)">г. Пенза<span>Россия, Пензенская обл., Бессоновский р-он, с. Ухтинка, ул. Ухтинка, д. 1Б</span></a>
+                <a href="#pskov" onclick="myMap.setCenter([56.9816779,29.9243012],14)">г. Псков<span>Россия, Псковская обл., Бежаницкий р-он, д. Красное Солнце, ул. Философовой, д. 13</span></a>
+                <a href="#ryazan" onclick="myMap.setCenter([54.647213,39.638701],14)">г. Рязань<span>Россия, г. Рязань, 184 км (Окружная дорога), стр. 8</span></a>
+                <a href="#tambov" onclick="myMap.setCenter([52.650429,41.407760],14)">г. Тамбов<span>Россия, Тамбовская обл., Тамбовский р-н, п. Строитель, Промышленная зона, стр. 1</span></a>
+                <a href="#yaroslavl" onclick="myMap.setCenter([57.6873825,39.8908799],14)">г. Ярославль<span>Россия, Ярославская обл., Ярославский р-он, п. Лесная поляна, д. 43, стр. 8</span></a>
+              </div>
+            </div>
+          </div>
+          <div id="map" class="map__yandex"></div>
+        </div>
+      </section>
     </div>
-    <footer class="footer">
+    <footer class="footer" data-scroll-section>
       <div class="container footer__container">
         <div class="footer__production">
           <div class="footer__block">
@@ -602,6 +630,7 @@
       </div>
     </div>
   </div>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
   <script src="js/swiper.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/scroll.js"></script>
@@ -620,8 +649,8 @@
       }, 0);
     }
     const scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth: true, getSpeed: true,getDirection: true});
-    const hn_scroll = document.querySelector('.header__nav_scroll');
-    Scrollbar.init(hn_scroll);
+    const map_scroll = document.querySelector('.map__city');
+    Scrollbar.init(map_scroll);
   </script>
 </body>
 </html>

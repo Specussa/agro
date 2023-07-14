@@ -221,6 +221,7 @@
   --text: #000;
   --blue: #006EB9;
   --dblue: #001523;
+  --gray: #9C9C9C;
   --font: 'TT Firs Neue', sans-serif;
 }
 
@@ -274,8 +275,10 @@ textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
+select:-webkit-autofill:focus,
+input, input:focus, input:active {
   border: none;
+  outline: none;
   -webkit-text-fill-color: var(--text);
   -webkit-box-shadow: 0 0 0px 1000px var(--bg) inset;
   color: var(--text);
@@ -1026,6 +1029,7 @@ html.has-scroll-dragging {
   width: 33.16px;
   height: 33.49px;
   background: url('../img/icon/vk.svg') center center no-repeat;
+  background-size: 33.16px 33.49px;
 }
 
 .footer__social_yt a::after {
@@ -1034,6 +1038,7 @@ html.has-scroll-dragging {
   width: 40.47px;
   height: 27.13px;
   background: url('../img/icon/yt.svg') center center no-repeat;
+  background-size: 40.47px 27.13px;
 }
 
 .footer__social_tg a::after {
@@ -1042,6 +1047,7 @@ html.has-scroll-dragging {
   width: 29.19px;
   height: 29.19px;
   background: url('../img/icon/tg.svg') center center no-repeat;
+  background-size: 29.19px 29.19px;
 }
 
 .footer__flex {
@@ -1859,3 +1865,232 @@ html.has-scroll-dragging {
 }
 
 /* end offer */
+
+/* start map */
+
+.map__container {
+  flex-direction: column;
+}
+
+.map__yandex {
+  width: 100%;
+  height: 860px;
+}
+
+.map__block {
+  position: relative;
+  display: inline-block;
+}
+
+.map__search {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.map__search_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 570px;
+  padding: 20px 100px 20px 50px;
+  gap: 20px;
+  position: absolute;
+  top: -50px;
+  right: 0;
+  z-index: 1;
+  background-color: var(--dblue);
+}
+
+.map__label {
+  display: inline-block;
+  width: 38px;
+  height: 39.27px;
+  flex: 0 0 auto;
+  background: url('../img/icon/map__search.svg') center center no-repeat;
+  background-size: 38px 39.27px;
+  cursor: pointer;
+}
+
+.map__input, .map__input:focus, .map__input:active {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  color: var(--bg);
+  background-color: var(--dblue);
+  -webkit-text-fill-color: var(--bg);
+  -webkit-box-shadow: 0 0 0px 1000px var(--dblue) inset;
+  border-bottom: 1px solid var(--bg);
+}
+
+.map__city {
+  width: 400px;
+  height: 810px;
+  position: absolute;
+  top: 25px;
+  left: 100px;
+  overscroll-behavior: contain;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.map__city a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90px;
+  padding: 20px 50px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  -ms-transition: background-color 0.2s linear;
+  -o-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+.map__city a span {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--gray);
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+.map__city a:hover span {
+  color: var(--bg);
+}
+
+.map__city a:not(:last-child) {
+  margin: 0 0 5px;
+}
+
+.map__city a:hover {
+  color: var(--bg);
+  background-color: var(--blue);
+}
+
+.map__point {
+  position: absolute;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  left: -10px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--blue);
+}
+
+.map__point_active {
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  left: -10px;
+}
+
+.map__point_block {
+  position: absolute;
+  min-width: 225px;
+  height: 30px;
+  left: 36px;
+  top: -5px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 14px;
+  background-color: var(--dblue);
+}
+
+.map__point_active .map__point_block {
+  min-width: 225px;
+  height: 30px;
+  left: 36px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.map__point_temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 30px;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.map__point_active .map__point_temp {
+  height: 30px;
+}
+
+.map__point_temp:before {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  border-right: 15px solid var(--dblue);
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.map__point_active .map__point_temp:before {
+  border-right: 15px solid var(--dblue);
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.map__point_icon {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 30px;
+  height: 30px;
+  background-color: var(--bg);
+}
+
+.map__point_active .map__point_icon {
+  width: 30px;
+  height: 30px;
+}
+
+.map__point_icon svg {
+  width: 18px;
+  height: 15px;
+  margin-top: -7.5px;
+  margin-left: -9px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.map__point_active .map__point_icon svg {
+  width: 18px;
+  height: 15px;
+  margin-top: -7.5px;
+  margin-left: -9px;
+}
+
+/* end map */
