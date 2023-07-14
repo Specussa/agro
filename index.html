@@ -648,9 +648,16 @@
         }, 0);
       }, 0);
     }
-    const scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth: true, getSpeed: true,getDirection: true});
+    let scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth: true, getSpeed: true, getDirection: true});
     const map_scroll = document.querySelector('.map__city');
     Scrollbar.init(map_scroll);
+    map_scroll.onmouseout = function(e) {
+      scroll.start();
+    }
+    map_scroll.onmouseover = function(e) {
+      scroll.stop();
+      scroll.scrollTo(scroll.scroll.instance.scroll.y, { duration: 1 });
+    };
   </script>
 </body>
 </html>
