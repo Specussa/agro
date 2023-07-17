@@ -757,6 +757,10 @@ html.has-scroll-dragging {
   gap: 13px;
 }
 
+.header__burger.active {
+  background-color: var(--blue);
+}
+
 .header__burger span {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -907,11 +911,11 @@ html.has-scroll-dragging {
 .header__nav {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 150px);
   padding: 80.34px 21.17px 30px 70px;
   flex-direction: column;
   position: fixed;
-  top: 0;
+  top: 150px;
   left: 0;
   right: 0;
   background: var(--bg);
@@ -939,6 +943,44 @@ html.has-scroll-dragging {
   -moz-box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
+}
+
+.header__nav_item {
+  width: fit-content;
+  max-width: 50%;
+}
+
+.header__nav_item:not(:last-child) {
+  margin: 0 0 40px;
+}
+
+.header__subnav_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 45%;
+  height: 100%;
+  flex-direction: column;
+  gap: 49px;
+  position: absolute;
+  top: 0;
+  left: 55%;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s linear, visibility 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s linear, visibility 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s linear, visibility 0.3s ease-in-out;
+  -o-transition: opacity 0.3s linear, visibility 0.3s ease-in-out;
+  transition: opacity 0.3s linear, visibility 0.3s ease-in-out;
+  visibility: hidden;
+  overflow: hidden;
+  counter-reset: n;
+  z-index: 0;
+}
+
+.header__nav_item.active .header__subnav_list {
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
 }
 
 /* end header__nav */
@@ -2153,65 +2195,72 @@ html.has-scroll-dragging {
 }
 
 .map__point {
+  width: 60px;
+  height: 60px;
   position: absolute;
-  width: 20px;
-  height: 20px;
-  top: -10px;
-  left: -10px;
-  border-radius: 50%;
+  top: -30px;
+  left: -30px;
+  border: 1px solid var(--blue);
   cursor: pointer;
-  background-color: var(--dblue);
-  -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
-  transition: background-color 0.2s linear;
+  background-color: var(--bg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .map__point.map__point_active {
-  width: 20px;
-  height: 20px;
-  top: -10px;
-  left: -10px;
   background-color: var(--blue);
+}
+
+.map__icon {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  z-index: 1;
+}
+
+.map__point_active .map__icon svg path {
+  fill: var(--bg);
 }
 
 .map__point_block {
   display: none;
   position: relative;
-  width: 0px;
-  height: 30px;
-  left: 36px;
-  top: -5px;
+  width: 225px;
+  height: 60px;
+  left: 35px;
+  top: -120px;
   color: #fff;
   font-size: 14px;
   line-height: 14px;
-  background-color: var(--blue);
+  background-color: var(--dblue);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .map__point_active .map__point_block {
   display: block;
-  width: 225px;
-  height: 30px;
-  left: 36px;
-  font-size: 14px;
-  line-height: 14px;
-  background-color: var(--blue);
 }
 
 .map__point_temp {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 30px;
+  height: 60px;
   padding: 0 10px;
   align-items: center;
   justify-content: center;
   position: relative;
-}
-
-.map__point_active .map__point_temp {
-  height: 30px;
 }
 
 .map__point_temp:before {
@@ -2228,43 +2277,6 @@ html.has-scroll-dragging {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-}
-
-.map__point_active .map__point_temp:before {
-  border-right: 15px solid var(--blue);
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-}
-
-.map__point_icon {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 30px;
-  height: 30px;
-  background-color: var(--bg);
-}
-
-.map__point_active .map__point_icon {
-  width: 30px;
-  height: 30px;
-}
-
-.map__point_icon svg {
-  width: 18px;
-  height: 15px;
-  margin-top: -7.5px;
-  margin-left: -9px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-}
-
-.map__point_active .map__point_icon svg {
-  width: 18px;
-  height: 15px;
-  margin-top: -7.5px;
-  margin-left: -9px;
 }
 
 .map__zoom {
