@@ -2077,13 +2077,39 @@ html.has-scroll-dragging {
 }
 
 .map__search_tel, .map__search_tel:hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 20px 20px 20px 50px;
+  align-items: center;
+  justify-content: space-between;
   font-size: 18px;
   font-weight: 500;
   line-height: 23px;
   color: var(--bg);
   background-color: var(--blue);
   border-top: 1px solid var(--bg);
+}
+
+.map__search_tel::after {
+  content: "";
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  padding: 14px;
+  border: 1px solid var(--bg);
+  background: url('../img/icon/phone.svg') center center no-repeat;
+  background-color: transparent;
+  background-size: 22px 22px;
+  -webkit-transition: background-color 0.1s linear;
+  -moz-transition: background-color 0.1s linear;
+  -ms-transition: background-color 0.1s linear;
+  -o-transition: background-color 0.1s linear;
+  transition: background-color 0.1s linear;
+}
+
+.map__search_tel:hover::after {
+  background-color: var(--dblue);
 }
 
 .map__search_mail {

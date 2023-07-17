@@ -236,70 +236,70 @@ function vologda() {
   };
 }
 function voronezh() {
-  if (maphead[0].classList.contains("active")) {
+  if (maphead[3].classList.contains("active")) {
     myMap.setCenter([51.639685,39.324973],12);
   } else {
     myMap.setCenter([55.253215,37.622504],6);
   };
 }
 function kursk() {
-  if (maphead[0].classList.contains("active")) {
+  if (maphead[4].classList.contains("active")) {
     myMap.setCenter([51.627834,36.117242],12);
   } else {
     myMap.setCenter([55.253215,37.622504],6);
   };
 }
 function lipetsk() {
-  if (maphead[0].classList.contains("active")) {
+  if (maphead[5].classList.contains("active")) {
     myMap.setCenter([52.597220203418,39.458276316873],12);
   } else {
     myMap.setCenter([55.253215,37.622504],6);
   };
 }
 function orel() {
-  if (maphead[0].classList.contains("active")) {
+  if (maphead[6].classList.contains("active")) {
     myMap.setCenter([52.923587,36.078570],12);
   } else {
     myMap.setCenter([55.253215,37.622504],6);
   };
 }
 function pavlovsck() {
-  if (maphead[0].classList.contains("active")) {
+  if (maphead[7].classList.contains("active")) {
     myMap.setCenter([50.452752,40.148549],12);
   } else {
     myMap.setCenter([55.253215,37.622504],6);
   };
 }
 function penza() {
-  if (maphead[0].classList.contains("active")) {
+  if (maphead[8].classList.contains("active")) {
     myMap.setCenter([53.270195255583,45.024497906746],12);
   } else {
     myMap.setCenter([55.253215,37.622504],6);
   };
 }
 function pskov() {
-  if (maphead[0].classList.contains("active")) {
+  if (maphead[9].classList.contains("active")) {
     myMap.setCenter([56.9816779,29.9243012],12);
   } else {
     myMap.setCenter([55.253215,37.622504],6);
   };
 }
 function ryazan() {
-  if (maphead[0].classList.contains("active")) {
+  if (maphead[10].classList.contains("active")) {
     myMap.setCenter([54.647213,39.638701],12);
   } else {
     myMap.setCenter([55.253215,37.622504],6);
   };
 }
 function tambov() {
-  if (maphead[0].classList.contains("active")) {
+  if (maphead[11].classList.contains("active")) {
     myMap.setCenter([52.650429,41.407760],12);
   } else {
     myMap.setCenter([55.253215,37.622504],6);
   };
 }
 function yaroslavl() {
-  if (maphead[0].classList.contains("active")) {
+  if (maphead[12].classList.contains("active")) {
     myMap.setCenter([57.6873825,39.8908799],12);
   } else {
     myMap.setCenter([55.253215,37.622504],6);
