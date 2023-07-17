@@ -176,7 +176,7 @@ if(!companyslider){} else {
 // map
 // start search map
 function filterFunction() {
-  var mapinput, filter, a, i;
+  var mapinput, filter, i;
   mapinput = document.getElementById("map__input");
   filter = mapinput.value.toUpperCase();
   mapsearch = document.getElementById("map__search");
@@ -208,7 +208,8 @@ document.querySelector('.map__search_back').addEventListener('click', (event) =>
   mapinfo.forEach(n => n.classList.remove('active'));
   mapinfo.forEach(n => n.style.maxHeight = null);
   mapmargin.forEach(n => n.style.margin = null);
-  mapback.classList.add('close')
+  mapback.classList.add('close');
+  myMap.setCenter([55.253215,37.622504],6);
 });
 // end search back
 
@@ -226,7 +227,7 @@ for (i = 0; i < acc.length; i++) {
     if (accordion.style.maxHeight) {
       accordion.style.maxHeight = null;
       mapmargin.forEach(n => n.style.margin = null);
-      mapback.classList.add('close')
+      mapback.classList.add('close');
       this.classList.remove("active");
       accordion.classList.remove("active");
       for (var b = 0; b < courseAccordionButton.length; b++) {
@@ -251,7 +252,7 @@ for (i = 0; i < acc.length; i++) {
       accordion.classList.remove("close");
       this.classList.remove("close");
       mapmargin.forEach(n => n.style.margin = 0);
-      mapback.classList.remove('close')
+      mapback.classList.remove('close');
     }
   };
 }
@@ -261,7 +262,6 @@ for (i = 0; i < acc.length; i++) {
 const map = document.querySelectorAll('.map');
   var myMap,ymaps;
   function init() {
-    var winWidth = window.innerWidth;
     myMap = document.getElementById("map");
     if (!myMap) return;
     myMap = new ymaps.Map(myMap, {
@@ -271,6 +271,7 @@ const map = document.querySelectorAll('.map');
     });
 
     myMap.controls.add("zoomControl", {});
+    // var winWidth = window.innerWidth;
     // if(winWidth <= 1024){
     //     myMap.behaviors.disable('drag');
     // }
