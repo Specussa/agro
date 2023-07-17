@@ -213,6 +213,100 @@ document.querySelector('.map__search_back').addEventListener('click', (event) =>
 });
 // end search back
 
+// start map accordion href
+function moscow() {
+  if (maphead[0].classList.contains("active")) {
+    myMap.setCenter([55.88088924541,37.423524915344],12);
+  } else {
+    myMap.setCenter([55.253215,37.622504],6);
+  };
+}
+function peterburg() {
+  if (maphead[1].classList.contains("active")) {
+    myMap.setCenter([59.618243,30.172631],12);
+  } else {
+    myMap.setCenter([55.253215,37.622504],6);
+  };
+}
+function vologda() {
+  if (maphead[2].classList.contains("active")) {
+    myMap.setCenter([59.199017,39.8100982],12);
+  } else {
+    myMap.setCenter([55.253215,37.622504],6);
+  };
+}
+function voronezh() {
+  if (maphead[0].classList.contains("active")) {
+    myMap.setCenter([51.639685,39.324973],12);
+  } else {
+    myMap.setCenter([55.253215,37.622504],6);
+  };
+}
+function kursk() {
+  if (maphead[0].classList.contains("active")) {
+    myMap.setCenter([51.627834,36.117242],12);
+  } else {
+    myMap.setCenter([55.253215,37.622504],6);
+  };
+}
+function lipetsk() {
+  if (maphead[0].classList.contains("active")) {
+    myMap.setCenter([52.597220203418,39.458276316873],12);
+  } else {
+    myMap.setCenter([55.253215,37.622504],6);
+  };
+}
+function orel() {
+  if (maphead[0].classList.contains("active")) {
+    myMap.setCenter([52.923587,36.078570],12);
+  } else {
+    myMap.setCenter([55.253215,37.622504],6);
+  };
+}
+function pavlovsck() {
+  if (maphead[0].classList.contains("active")) {
+    myMap.setCenter([50.452752,40.148549],12);
+  } else {
+    myMap.setCenter([55.253215,37.622504],6);
+  };
+}
+function penza() {
+  if (maphead[0].classList.contains("active")) {
+    myMap.setCenter([53.270195255583,45.024497906746],12);
+  } else {
+    myMap.setCenter([55.253215,37.622504],6);
+  };
+}
+function pskov() {
+  if (maphead[0].classList.contains("active")) {
+    myMap.setCenter([56.9816779,29.9243012],12);
+  } else {
+    myMap.setCenter([55.253215,37.622504],6);
+  };
+}
+function ryazan() {
+  if (maphead[0].classList.contains("active")) {
+    myMap.setCenter([54.647213,39.638701],12);
+  } else {
+    myMap.setCenter([55.253215,37.622504],6);
+  };
+}
+function tambov() {
+  if (maphead[0].classList.contains("active")) {
+    myMap.setCenter([52.650429,41.407760],12);
+  } else {
+    myMap.setCenter([55.253215,37.622504],6);
+  };
+}
+function yaroslavl() {
+  if (maphead[0].classList.contains("active")) {
+    myMap.setCenter([57.6873825,39.8908799],12);
+  } else {
+    myMap.setCenter([55.253215,37.622504],6);
+  };
+}
+// end map accordion href
+
 // start map accordion
 var acc = document.getElementsByClassName("map__search_head");
 var i;
@@ -450,8 +544,8 @@ const map = document.querySelectorAll('.map');
               thatCoordinates = e.get('coords');
             }
         });
-        let idmap = document.querySelectorAll('.map__search_city');
-        let thismapinfo = document.querySelector('.map__search_info');
+        var idmap = document.querySelectorAll('.map__search_city');
+        var thismapinfo = document.querySelector('.map__search_info');
         var mapmoscow = document.getElementById('mapmoscow');
         const maphead = document.querySelectorAll('.map__search_city .map__search_head');
         const mapinfo = document.querySelectorAll('.map__search_city .map__search_info');
@@ -489,6 +583,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = 0);
+          myMap.setCenter([59.618243,30.172631],12);
           mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[1].children;
@@ -506,6 +601,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = 0);
+          myMap.setCenter([59.199017,39.8100982],12);
           mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[2].children;
@@ -523,6 +619,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = 0);
+          myMap.setCenter([51.639685,39.324973],12);
           mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[3].children;
@@ -540,6 +637,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = 0);
+          myMap.setCenter([51.627834,36.117242],12);
           mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[4].children;
@@ -557,6 +655,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = 0);
+          myMap.setCenter([52.597220203418,39.458276316873],12);
           mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[5].children;
@@ -574,6 +673,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = 0);
+          myMap.setCenter([52.923587,36.078570],12);
           mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[6].children;
@@ -591,6 +691,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = 0);
+          myMap.setCenter([50.452752,40.148549],12);
           mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[7].children;
@@ -608,6 +709,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = 0);
+          myMap.setCenter([53.270195255583,45.024497906746],12);
           mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[8].children;
@@ -625,6 +727,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = 0);
+          myMap.setCenter([56.9816779,29.9243012],12);
           mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[9].children;
@@ -642,6 +745,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = 0);
+          myMap.setCenter([54.647213,39.638701],12);
           mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[10].children;
@@ -659,6 +763,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = 0);
+          myMap.setCenter([52.650429,41.407760],12);
           mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[11].children;
@@ -676,6 +781,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = 0);
+          myMap.setCenter([57.6873825,39.8908799],12);
           mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[12].children;
