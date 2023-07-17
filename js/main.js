@@ -463,6 +463,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = 0);
+          myMap.setCenter([55.88088924541,37.423524915344],12);
           mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[0].children;
@@ -478,6 +479,7 @@ const map = document.querySelectorAll('.map');
           mapinfo.forEach(n => n.style.maxHeight = null);
           mapmargin.forEach(n => n.style.margin = null);
           mapback.classList.add('close');
+          myMap.setCenter([55.253215,37.622504],6);
         };
         var mappeterburg = document.getElementById('mappeterburg');
         if (mappeterburg.classList.contains("map__point_active")) {
