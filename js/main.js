@@ -359,16 +359,35 @@ const map = document.querySelectorAll('.map');
     myMap = document.getElementById("map");
     if (!myMap) return;
     myMap = new ymaps.Map(myMap, {
-        center: [55.253215, 37.622504],
-        zoom: 6, 
-        controls: []
+      center: [55.253215, 37.622504],
+      zoom: 6, 
+      controls: []
+      },{
+      zoomControlPosition: { right: 0, top: 0 },
+      zoomControlSize: 'auto'
     });
 
-    myMap.controls.add("zoomControl", {});
-    // var winWidth = window.innerWidth;
-    // if(winWidth <= 1024){
-    //     myMap.behaviors.disable('drag');
-    // }
+    // myMap.controls.add("zoomControl", {});
+    var winWidth = window.innerWidth;
+    if(winWidth <= 1024){
+        myMap.behaviors.disable('drag');
+    }
+
+    const zoomInBtn = document.getElementById('zoom-in');
+    const zoomOutBtn = document.getElementById('zoom-out');
+
+    zoomInBtn.addEventListener('click', zoomIn);
+    zoomOutBtn.addEventListener('click', zoomOut);
+
+    function zoomIn() {
+      const currentZoom = myMap.getZoom();
+      myMap.setZoom(currentZoom + 1);
+    }
+  
+    function zoomOut() {
+      const currentZoom = myMap.getZoom();
+      myMap.setZoom(currentZoom - 1);
+    }
 
     var data = {
       'points': [{
