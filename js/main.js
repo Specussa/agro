@@ -568,7 +568,7 @@ const map = document.querySelectorAll('.map');
         iconShape: {   
             type: 'Rectangle',
             coordinates: [
-              [-12, -20], [12, 12]
+              [-12, -20], [30, 30]
             ]
         }
       }
