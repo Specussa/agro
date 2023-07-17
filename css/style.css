@@ -287,16 +287,16 @@ input, input:focus, input:active {
 
 a {
   color: var(--text);
-  -webkit-transition: color 0.2s linear;
-  -moz-transition: color 0.2s linear;
-  -ms-transition: color 0.2s linear;
-  -o-transition: color 0.2s linear;
-  transition: color 0.2s linear;
+  -webkit-transition: color 0.15s linear;
+  -moz-transition: color 0.15s linear;
+  -ms-transition: color 0.15s linear;
+  -o-transition: color 0.15s linear;
+  transition: color 0.15s linear;
   cursor: pointer;
   text-decoration: none;
 }
 
-a:hover, a:active, a:focus {
+a:hover {
   color: var(--blue);
   text-decoration: none;
 }
@@ -1932,7 +1932,7 @@ html.has-scroll-dragging {
 
 .map__city {
   width: 400px;
-  height: 810px;
+  max-height: 810px;
   position: absolute !important;
   top: 25px;
   left: 100px;
@@ -1945,12 +1945,11 @@ html.has-scroll-dragging {
   user-select: none;
 }
 
-.map__search_city, .map__search_back, .map__search_back:focus, .map__search_back:active {
+.map__search_head, .map__search_back, .map__search_back:focus, .map__search_back:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  padding: 20px 50px;
   gap: 10px;
   font-size: 18px;
   font-weight: 500;
@@ -1964,15 +1963,42 @@ html.has-scroll-dragging {
   transition: background-color 0.2s linear;
 }
 
-.map__search_city:hover, .map__search_back:hover {
+.map__search_city {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+}
+
+.map__search_city:not(:last-child) {
+  margin: 0 0 5px;
+}
+
+.map__search_head {
+  height: 90px;
+  padding: 20px 50px;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-transition: height 0.3s linear, padding 0.3s linear;
+  -moz-transition: height 0.3s linear, padding 0.3s linear;
+  -ms-transition: height 0.3s linear, padding 0.3s linear;
+  -o-transition: height 0.3s linear, padding 0.3s linear;
+  transition: height 0.3s linear, padding 0.3s linear;
+  overflow: hidden;
+}
+
+.map__search_head.close {
+  height: 0px;
+  padding: 0 50px;
+}
+
+.map__search_head:hover, .map__search_back:hover {
   color: var(--bg);
   background-color: var(--blue);
 }
 
-.map__search_city {
-  height: 90px;
-  flex-direction: column;
-  justify-content: center;
+.map__search_head:hover {
+  color: var(--bg);
 }
 
 .map__search_desc {
@@ -1990,16 +2016,13 @@ html.has-scroll-dragging {
   transition: color 0.2s linear;
 }
 
-.map__search_city:hover span, .map__search_back:hover span {
+.map__search_head:hover span, .map__search_back:hover span {
   color: var(--bg);
-}
-
-.map__search_city:not(:last-child) {
-  margin: 0 0 5px;
 }
 
 .map__search_back {
   height: 70px;
+  padding: 20px 50px;
   margin: 0 0 5px;
   align-items: center;
 }
@@ -2024,43 +2047,85 @@ html.has-scroll-dragging {
   fill: var(--bg);
 }
 
+.map__search_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 0px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bg);
+  -webkit-transition: max-height 0.4s linear, padding 0.1s linear;
+  -moz-transition: max-height 0.4s linear, padding 0.1s linear;
+  -ms-transition: max-height 0.4s linear, padding 0.1s linear;
+  -o-transition: max-height 0.4s linear, padding 0.1s linear;
+  transition: max-height 0.4s linear, padding 0.1s linear;
+  transition-delay: 0.3s, 0.3s;
+  overflow: hidden;
+}
+
+.map__search_tel, .map__search_tel:hover {
+  padding: 20px 20px 20px 50px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  color: var(--bg);
+  background-color: var(--blue);
+  border-top: 1px solid var(--bg);
+}
+
+.map__search_mail {
+  padding: 20px 20px 20px 50px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
 .map__point {
   position: absolute;
-  z-index: 1;
   width: 20px;
   height: 20px;
   top: -10px;
   left: -10px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: var(--blue);
+  background-color: var(--dblue);
+  -webkit-transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  -ms-transition: background-color 0.2s linear;
+  -o-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
 }
 
-.map__point_active {
+.map__point.map__point_active {
   width: 20px;
   height: 20px;
   top: -10px;
   left: -10px;
+  background-color: var(--blue);
 }
 
 .map__point_block {
-  position: absolute;
-  min-width: 225px;
+  display: none;
+  position: relative;
+  width: 0px;
   height: 30px;
   left: 36px;
   top: -5px;
   color: #fff;
   font-size: 14px;
   line-height: 14px;
-  background-color: var(--dblue);
+  background-color: var(--blue);
 }
 
 .map__point_active .map__point_block {
-  min-width: 225px;
+  display: block;
+  width: 225px;
   height: 30px;
   left: 36px;
   font-size: 14px;
   line-height: 14px;
+  background-color: var(--blue);
 }
 
 .map__point_temp {
@@ -2095,7 +2160,7 @@ html.has-scroll-dragging {
 }
 
 .map__point_active .map__point_temp:before {
-  border-right: 15px solid var(--dblue);
+  border-right: 15px solid var(--blue);
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
 }
