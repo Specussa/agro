@@ -2025,6 +2025,18 @@ html.has-scroll-dragging {
   padding: 20px 50px;
   margin: 0 0 5px;
   align-items: center;
+  -webkit-transition: height 0.3s linear, padding 0.3s linear, margin 0.3s linear;
+  -moz-transition: height 0.3s linear, padding 0.3s linear, margin 0.3s linear;
+  -ms-transition: height 0.3s linear, padding 0.3s linear, margin 0.3s linear;
+  -o-transition: height 0.3s linear, padding 0.3s linear, margin 0.3s linear;
+  transition: height 0.3s linear, padding 0.3s linear, margin 0.3s linear;
+  overflow: hidden;
+}
+
+.map__search_back.close {
+  height: 0px;
+  margin: 0;
+  padding: 0 50px;
 }
 
 .map__search_back span {

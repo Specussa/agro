@@ -186,7 +186,8 @@ function filterFunction() {
     document.querySelectorAll('.map__search_city .map__search_head').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.map__search_city .map__search_head').forEach(n => n.classList.remove('close'));
-    document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.style.maxHeight = null);
+    document.querySelectorAll('.map__city .map__search_city').forEach(n => n.style.maxHeight = null);
+    mapmargin.forEach(n => n.style.margin = null);
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       searchp[i].style.display = "";
     } else {
@@ -199,11 +200,15 @@ function filterFunction() {
 // start search back
 const maphead = document.querySelectorAll('.map__search_city .map__search_head');
 const mapinfo = document.querySelectorAll('.map__search_city .map__search_info');
+const mapmargin = document.querySelectorAll('.map__city .map__search_city');
+const mapback = document.querySelector('.map__search_back');
 document.querySelector('.map__search_back').addEventListener('click', (event) => {
   maphead.forEach(n => n.classList.remove('active'));
   maphead.forEach(n => n.classList.remove('close'));
   mapinfo.forEach(n => n.classList.remove('active'));
   mapinfo.forEach(n => n.style.maxHeight = null);
+  mapmargin.forEach(n => n.style.margin = null);
+  mapback.classList.add('close')
 });
 // end search back
 
@@ -220,6 +225,8 @@ for (i = 0; i < acc.length; i++) {
 
     if (accordion.style.maxHeight) {
       accordion.style.maxHeight = null;
+      mapmargin.forEach(n => n.style.margin = null);
+      mapback.classList.add('close')
       this.classList.remove("active");
       accordion.classList.remove("active");
       for (var b = 0; b < courseAccordionButton.length; b++) {
@@ -243,6 +250,8 @@ for (i = 0; i < acc.length; i++) {
       this.classList.add("active");
       accordion.classList.remove("close");
       this.classList.remove("close");
+      mapmargin.forEach(n => n.style.margin = 0);
+      mapback.classList.remove('close')
     }
   };
 }
@@ -452,6 +461,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.add('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = 0);
+          mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[0].children;
           for (var i = 0; i < idmapi.length; i++) {
@@ -464,6 +475,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.remove('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = null);
+          mapback.classList.add('close');
         };
         var mappeterburg = document.getElementById('mappeterburg');
         if (mappeterburg.classList.contains("map__point_active")) {
@@ -472,6 +485,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.add('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = 0);
+          mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[1].children;
           for (var i = 0; i < idmapi.length; i++) {
@@ -487,6 +502,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.add('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = 0);
+          mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[2].children;
           for (var i = 0; i < idmapi.length; i++) {
@@ -502,6 +519,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.add('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = 0);
+          mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[3].children;
           for (var i = 0; i < idmapi.length; i++) {
@@ -517,6 +536,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.add('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = 0);
+          mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[4].children;
           for (var i = 0; i < idmapi.length; i++) {
@@ -532,6 +553,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.add('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = 0);
+          mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[5].children;
           for (var i = 0; i < idmapi.length; i++) {
@@ -547,6 +570,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.add('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = 0);
+          mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[6].children;
           for (var i = 0; i < idmapi.length; i++) {
@@ -562,6 +587,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.add('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = 0);
+          mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[7].children;
           for (var i = 0; i < idmapi.length; i++) {
@@ -577,6 +604,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.add('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = 0);
+          mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[8].children;
           for (var i = 0; i < idmapi.length; i++) {
@@ -592,6 +621,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.add('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = 0);
+          mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[9].children;
           for (var i = 0; i < idmapi.length; i++) {
@@ -607,6 +638,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.add('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = 0);
+          mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[10].children;
           for (var i = 0; i < idmapi.length; i++) {
@@ -622,6 +655,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.add('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = 0);
+          mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[11].children;
           for (var i = 0; i < idmapi.length; i++) {
@@ -637,6 +672,8 @@ const map = document.querySelectorAll('.map');
           maphead.forEach(n => n.classList.add('close'));
           mapinfo.forEach(n => n.classList.remove('active'));
           mapinfo.forEach(n => n.style.maxHeight = null);
+          mapmargin.forEach(n => n.style.margin = 0);
+          mapback.classList.remove('close');
           idmap.forEach(n => n.style.display = "block");
           var idmapi = idmap[12].children;
           for (var i = 0; i < idmapi.length; i++) {
