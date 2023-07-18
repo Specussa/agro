@@ -278,11 +278,12 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus,
 input, input:focus, input:active {
   border: none;
+  border-bottom: 1px solid var(--bg);
   outline: none;
-  -webkit-text-fill-color: var(--text);
-  -webkit-box-shadow: 0 0 0px 1000px var(--bg) inset;
-  color: var(--text);
-  box-shadow: 0 0 0px 1000px var(--bg) inset;
+  -webkit-text-fill-color: var(--bg);
+  -webkit-box-shadow: 0 0 0px 1000px var(--dblue) inset;
+  box-shadow: 0 0 0px 1000px var(--dblue) inset;
+  color: var(--bg);
 }
 
 a {
@@ -899,7 +900,7 @@ html.has-scroll-dragging {
   display: flex;
   width: 100%;
   height: 50px;
-  padding: 30px;
+  padding: 30px 15px;
   align-items: center;
   justify-content: center;
   color: var(--bg);
@@ -975,7 +976,6 @@ html.has-scroll-dragging {
   display: -ms-flexbox;
   display: flex;
   align-items: center;
-  padding: 0 0 0 20px;
 }
 
 .header__search, .header__mail {
@@ -1002,9 +1002,6 @@ html.has-scroll-dragging {
   font-weight: 500;
   line-height: 20px;
   color: var(--bg);
-  -webkit-text-fill-color: var(--bg);
-  -webkit-box-shadow: 0 0 0px 1000pxpx transparent inset;
-  box-shadow: 0 0 0px 1000px transparent inset;
   border-bottom: 1px solid var(--bg);
   -webkit-transition: width 0.2s linear;
   -moz-transition: width 0.2s linear;
@@ -2074,6 +2071,7 @@ html.has-scroll-dragging {
   padding: 100px;
   align-items: center;
   justify-content: space-between;
+  gap: 40px;
   background-color: var(--dblue);
 }
 
@@ -2445,8 +2443,6 @@ html.has-scroll-dragging {
   line-height: 26px;
   color: var(--bg);
   background-color: var(--dblue);
-  -webkit-text-fill-color: var(--bg);
-  -webkit-box-shadow: 0 0 0px 1000px var(--dblue) inset;
   border-bottom: 1px solid var(--bg);
 }
 
@@ -2754,3 +2750,77 @@ html.has-scroll-dragging {
 }
 
 /* end map */
+
+/* start media 1830px */
+@media (max-width: 1830px) {
+  .header__right a {
+    padding: 0 30px;
+  }
+  .header__search_input.active {
+    width: 200px;
+  }
+}
+/* start media 1830px */
+
+/* start media 1700px */
+@media (max-width: 1700px) {
+  .header__left {
+    gap: 20px;
+  }
+  .header__bottom {
+    padding: 0 80px;
+  }
+  .header__logo {
+    margin: 0 0 0 80px;
+  }
+  .header__right {
+    padding-right: 80px;
+  }
+  .hero__shadow {
+    padding: 80px;
+  }
+  .events__block {
+    padding: 60px 80px;
+  }
+  .events__list {
+    padding: 60px 80px;
+  }
+  .events__item {
+    width: calc(33.333% - 26.666px);
+  }
+  .company__info_list {
+    padding: 60px 80px;
+  }
+  .company__flex {
+    padding: 60px 80px 0;
+  }
+  .company__desc {
+    font-size: 30px;
+    line-height: 39px;
+  }
+  .company__name {
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .company__texts {
+    width: calc(50% - 95px);
+    margin: 0 auto 0 80px;
+  }
+  .company__heading {
+    font-size: 60px;
+    line-height: 77px;
+  }
+  .company__description {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .company__thumbs {
+    width: calc(50% - 95px);
+    margin: 0 auto 0 80px;
+  }
+  .company__top {
+    width: calc(50% - 95px);
+    margin: 0 80px 0 auto;
+  }
+}
+/* start media 1700px */

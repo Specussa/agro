@@ -297,6 +297,17 @@ if(!companyslider){} else {
     loopedSlides: 2,
     speed: 1000,
     allowTouchMove: false,
+    breakpoints: {
+      768: {
+        spaceBetween: 20,
+      },
+      991: {
+        spaceBetween: 20,
+      },
+      1700: {
+        spaceBetween: 20,
+      }
+    }
   });
 
   var galleryText = new Swiper('.company__texts', {
