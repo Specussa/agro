@@ -46,18 +46,26 @@ document.querySelector('.header__city_button').addEventListener('click', functio
   burgercity.classList.remove("active");
   document.body.style.overflow = "visible";
   document.body.style.height = "100%";
-  bodyoverlaycity.style.zIndex = null;
 })
 // end header__region
 
 // кнопка overlay
+bodyoverlaycity.addEventListener('click', function() {
+  bodyoverlay.classList.remove("active");
+  menu.classList.remove("active");
+  burger.classList.remove("active");
+  document.body.style.overflow = "visible";
+  document.body.style.height = "100%";
+})
+// end overlay
+
+// кнопка overlay__city
 bodyoverlaycity.addEventListener('click', function() {
   bodyoverlaycity.classList.remove("active");
   menucity.classList.remove("active");
   burgercity.classList.remove("active");
   document.body.style.overflow = "visible";
   document.body.style.height = "100%";
-  bodyoverlaycity.style.zIndex = null;
 })
 // end overlay
 
@@ -66,6 +74,40 @@ document.querySelector('.header__search').addEventListener('click', () => {
   document.querySelector('.header__search_input').classList.toggle('active');
 });
 // end overlay
+
+// start menu
+var hblockacc = document.getElementsByClassName("header__button");
+for (i = 0; i < hblockacc.length; i++) {
+  hblockacc[i].onclick = function(e) {
+    var hblockaccordion = this.nextElementSibling;
+    var coursehblockAccordion = document.getElementsByClassName("header__block");
+    var coursehblockAccordionActive = document.getElementsByClassName("header__button active");
+
+    if (hblockaccordion.style.maxHeight) {
+      hblockaccordion.style.maxHeight = null;
+      mapmargin.forEach(n => n.style.margin = null);
+      this.classList.remove("active");
+      hblockaccordion.classList.remove("active");
+      // bodyoverlay.classList.remove("active");
+    } else {
+      for (var q = 0; q < coursehblockAccordionActive.length; q++) {
+        coursehblockAccordionActive[q].classList.remove("active");
+        coursehblockAccordion[q].classList.remove("active");
+      }
+      for (var p = 0; p < coursehblockAccordion.length; p++) {
+        this.classList.remove("active");
+        coursehblockAccordion[p].classList.remove("active");
+        coursehblockAccordion[p].style.maxHeight = null;
+      }
+      // bodyoverlay.classList.add("active");
+      hblockaccordion.style.maxHeight = (hblockaccordion.scrollHeight * 1) + "px";
+      hblockaccordion.classList.add("active");
+      this.classList.add("active");
+      mapmargin.forEach(n => n.style.margin = 0);
+    }
+  };
+}
+// end menu
 
 // start hover menu
 var hover = document.querySelector('.header__nav_list'),
@@ -383,8 +425,6 @@ function yaroslavl() {
 
 // start map accordion
 var acc = document.getElementsByClassName("map__search_head");
-var i;
-
 for (i = 0; i < acc.length; i++) {
   acc[i].onclick = function(e) {
     var accordion = this.nextElementSibling;
