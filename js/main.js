@@ -10,20 +10,18 @@ document.querySelector('.header__burger').addEventListener('click', function() {
     burger.classList.remove("active");
     document.body.style.overflow = "visible";
     document.body.style.height = "100%";
-    bodyoverlaycity.style.zIndex = null;
   } else {
     bodyoverlay.classList.add("active");
     menu.classList.add("active");
     burger.classList.add("active");
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
-    bodyoverlaycity.style.zIndex = "99";
   }
 })
 // end navbar
 
 // кнопка header__region
-const bodyoverlaycity = document.querySelector('.overlay');
+const bodyoverlaycity = document.querySelector('.overlay__city');
 const menucity = document.querySelector('.header__city');
 const burgercity = document.querySelector('.header__region');
 
@@ -34,14 +32,12 @@ burgercity.addEventListener('click', function() {
     burgercity.classList.remove("active");
     document.body.style.overflow = "visible";
     document.body.style.height = "100%";
-    bodyoverlaycity.style.zIndex = null;
   } else {
     bodyoverlaycity.classList.add("active");
     menucity.classList.add("active");
     burgercity.classList.add("active");
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
-    bodyoverlaycity.style.zIndex = "101";
   }
 })
 document.querySelector('.header__city_button').addEventListener('click', function() {
@@ -55,7 +51,7 @@ document.querySelector('.header__city_button').addEventListener('click', functio
 // end header__region
 
 // кнопка overlay
-bodyoverlay.addEventListener('click', function() {
+bodyoverlaycity.addEventListener('click', function() {
   bodyoverlaycity.classList.remove("active");
   menucity.classList.remove("active");
   burgercity.classList.remove("active");
