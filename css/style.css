@@ -2878,11 +2878,6 @@ html.has-scroll-dragging {
 
 /* start media 1440px */
 @media (max-width: 1440px) {
-  .header__right {
-    display: none;
-  }
-}
-.header__item:not(:first-child) {
-  display: none;
+
 }
 /* start media 1440px */
