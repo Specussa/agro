@@ -10,12 +10,14 @@ document.querySelector('.header__burger').addEventListener('click', function() {
     burger.classList.remove("active");
     document.body.style.overflow = "visible";
     document.body.style.height = "100%";
+    bodyoverlaycity.style.zIndex = null;
   } else {
     bodyoverlay.classList.add("active");
     menu.classList.add("active");
     burger.classList.add("active");
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
+    bodyoverlaycity.style.zIndex = "99";
   }
 })
 // end navbar
