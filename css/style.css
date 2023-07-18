@@ -1049,7 +1049,7 @@ html.has-scroll-dragging {
 }
 
 .header__link_top, .header__link_top:hover {
-  color: var(--text);
+  color: var(--gray);
   -webkit-transition: color 0.2s ease-in-out;
   -moz-transition: color 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out;
@@ -1057,8 +1057,8 @@ html.has-scroll-dragging {
   transition: color 0.2s ease-in-out;
 }
 
-.header__item_top:hover .header__link_top {
-  color: var(--blue);
+.header__item_top:hover .header__link_top, .header__link_top.active {
+  color: var(--text);
 }
 
 .header__link_top span {
@@ -1075,7 +1075,7 @@ html.has-scroll-dragging {
   transition: width 0.2s ease-in-out;
 }
 
-.header__item_top:hover .header__link_top span {
+.header__item_top:hover .header__link_top span, .header__link_top.active span {
   width: 100%;
 }
 
