@@ -2752,12 +2752,29 @@ html.has-scroll-dragging {
   margin: 0 0 20px;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--bg);
-  background-color: var(--blue);
+  background-color: var(--bg);
+  -webkit-transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  -ms-transition: background-color 0.2s linear;
+  -o-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+.map__zoom_plus svg path, .map__zoom_minus svg path {
+  fill: var(--blue);
+  -webkit-transition: fill 0.2s linear;
+  -moz-transition: fill 0.2s linear;
+  -ms-transition: fill 0.2s linear;
+  -o-transition: fill 0.2s linear;
+  transition: fill 0.2s linear;
 }
 
 .map__zoom_plus:hover, .map__zoom_minus:hover {
-  background-color: var(--dblue);
+  background-color: var(--blue);
+}
+
+.map__zoom_plus:hover svg path, .map__zoom_minus:hover svg path {
+  fill: var(--bg);
 }
 
 /* end map */
