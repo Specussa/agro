@@ -900,7 +900,7 @@ html.has-scroll-dragging {
   transition: background-color 0.2s linear;
 }
 
-.header__search_input {
+.header__search_input, .header__search_input:active, .header__search_input:focus {
   width: 0px;
   height: 30px;
   background: transparent;
