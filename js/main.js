@@ -10,12 +10,16 @@ document.querySelector('.header__burger').addEventListener('click', function() {
     burger.classList.remove("active");
     document.body.style.overflow = "visible";
     document.body.style.height = "100%";
+    document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
   } else {
     bodyoverlay.classList.add("active");
     menu.classList.add("active");
     burger.classList.add("active");
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
+    document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
   }
 })
 // end navbar
@@ -50,10 +54,12 @@ document.querySelector('.header__city_button').addEventListener('click', functio
 // end header__region
 
 // кнопка overlay
-bodyoverlaycity.addEventListener('click', function() {
+bodyoverlay.addEventListener('click', function() {
   bodyoverlay.classList.remove("active");
   menu.classList.remove("active");
   burger.classList.remove("active");
+  document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
+  document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
   document.body.style.overflow = "visible";
   document.body.style.height = "100%";
 })
@@ -88,7 +94,7 @@ for (i = 0; i < hblockacc.length; i++) {
       mapmargin.forEach(n => n.style.margin = null);
       this.classList.remove("active");
       hblockaccordion.classList.remove("active");
-      // bodyoverlay.classList.remove("active");
+      bodyoverlay.classList.remove("active");
     } else {
       for (var q = 0; q < coursehblockAccordionActive.length; q++) {
         coursehblockAccordionActive[q].classList.remove("active");
@@ -99,7 +105,10 @@ for (i = 0; i < hblockacc.length; i++) {
         coursehblockAccordion[p].classList.remove("active");
         coursehblockAccordion[p].style.maxHeight = null;
       }
-      // bodyoverlay.classList.add("active");
+      bodyoverlay.classList.remove("active");
+      menu.classList.remove("active");
+      burger.classList.remove("active");
+      bodyoverlay.classList.add("active");
       hblockaccordion.style.maxHeight = (hblockaccordion.scrollHeight * 1) + "px";
       hblockaccordion.classList.add("active");
       this.classList.add("active");
