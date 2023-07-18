@@ -290,7 +290,7 @@ if(!companyslider){} else {
   var galleryThumbs = new Swiper('.company__thumbs', {
     loop: false,
     spaceBetween: 40,
-    slidesPerView: 'auto',
+    slidesPerView: '2',
     touchRatio: 0.2,
     slideToClickedSlide: false,
     loop: true,
