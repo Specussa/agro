@@ -10,6 +10,7 @@ document.querySelector('.header__burger').addEventListener('click', function() {
     burger.classList.remove("active");
     document.body.style.overflow = "visible";
     document.body.style.height = "100%";
+    document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
   } else {
@@ -18,6 +19,7 @@ document.querySelector('.header__burger').addEventListener('click', function() {
     burger.classList.add("active");
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
+    document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
   }
@@ -58,6 +60,7 @@ bodyoverlay.addEventListener('click', function() {
   bodyoverlay.classList.remove("active");
   menu.classList.remove("active");
   burger.classList.remove("active");
+  document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
   document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
   document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
   document.body.style.overflow = "visible";
@@ -116,6 +119,20 @@ for (i = 0; i < hblockacc.length; i++) {
     }
   };
 }
+// удаляем блоки если в нем нет текста
+window.addEventListener('DOMContentLoaded', function() {
+   [].forEach.call( document.querySelectorAll('.header__block'), function(el) {
+        if ('' == +el.textContent) {
+          el.style.display = 'none';
+          el.previousElementSibling.style.display = 'none';
+          el.previousElementSibling.remove(el);
+          el.parentNode.removeChild(el);
+        } else {
+          el.previousElementSibling.previousElementSibling.style.display = 'none';
+          el.previousElementSibling.previousElementSibling.remove(el);
+        }
+   });
+});
 // end menu
 
 // start hover menu

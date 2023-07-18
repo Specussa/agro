@@ -773,6 +773,7 @@ html.has-scroll-dragging {
   align-items: center;
   justify-content: center;
   gap: 13px;
+  border-left: 1px solid var(--blue);
 }
 
 .header__burger.active {
@@ -866,11 +867,11 @@ html.has-scroll-dragging {
 }
 
 .header__block {
-  width: 300%;
+  width: calc(300% - 4px);
   max-height: 0px;
   position: absolute;
   top: 100%;
-  left: -100%;
+  left: calc(-100% + 2px);
   z-index: 0;
   opacity: 0;
   overflow: hidden;
@@ -892,7 +893,7 @@ html.has-scroll-dragging {
   transition: max-height 0.5s linear, opacity 0s linear;
 }
 
-.header__button {
+.header__button, .header__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -904,6 +905,25 @@ html.has-scroll-dragging {
   color: var(--bg);
   border-left: 1px solid var(--blue);
   border-right: 1px solid var(--blue);
+}
+
+.header__button::after {
+  content: "";
+  display: inline-flex;
+  width: 9px;
+  height: 10px;
+  margin: 0 0 0 10px;
+  background: url('../img/icon/dot.svg') center center no-repeat;
+  background-size: 9px 10px;
+}
+
+.header__button.active {
+  height: 80px;
+  background-color: var(--blue);
+}
+
+.header__link:hover {
+  color: var(--bg);
 }
 
 .header__block_list {
