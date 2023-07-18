@@ -44,6 +44,13 @@ hover.addEventListener('mouseout', function(e) {
 })
 // start dark mode
 
+// start счетчик для всех листов
+const hlisttop = document.querySelectorAll('.header__list_top'); 
+[...hlisttop].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+const hlistbottom = document.querySelectorAll('.header__list_bottom'); 
+[...hlistbottom].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+// end счетчик для всех листов
+
 // start year
 const year = document.querySelector('.footer__year');
 if(!year){} else {
