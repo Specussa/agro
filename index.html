@@ -750,6 +750,35 @@
       </div>
     </div>
   </div>
+  <div class="header__city">
+    <div class="header__city_scroll" data-scrollbar>
+      <div class="container header__nav_container">
+        <div class="header__city_block">
+          <button class="header__city_button">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.979649 2.3934L2.39386 0.979184L13.0005 11.5858L23.6071 0.979184L25.0213 2.3934L14.4147 13L25.0213 23.6066L23.6071 25.0208L13.0005 14.4142L2.39386 25.0208L0.979649 23.6066L11.5863 13L0.979649 2.3934Z" fill="#AFAFAF"/>
+            </svg>
+          </button>
+          <p class="header__city_head">Выбирите город</p>
+          <ul class="header__city_list">
+            <li class="header__city_item"><a href="#" class="header__city_link">г. Москва<span>Россия, Московская обл., г. Химки, ул. Бабакина, д. 5-А, оф. 707</span></a></li>
+            <li class="header__city_item"><a href="#" class="header__city_link">г. Санкт-Петербург<span>Россия, Ленинградская обл., Гатчинский р-н, д. Малое Верево, ул. Кутышева, д. 5, стр. 5</span></a></li>
+            <li class="header__city_item"><a href="#" class="header__city_link">г. Вологда<span>Россия, г. Вологда, ул. Гагарина, д. 91, оф. 3</span></a></li>
+            <li class="header__city_item"><a href="#" class="header__city_link">г. Воронеж<span>Россия, Воронежская обл., Новоусманский р-н, п. Отрадное, ул. Автодорожная, д. 7</span></a></li>
+            <li class="header__city_item"><a href="#" class="header__city_link">г. Курск<span>Россия, Курская область, Курский район, дер. Кукуевка, Промышленный пер., 4а</span></a></li>
+            <li class="header__city_item"><a href="#" class="header__city_link">г. Липецк<span>Россия, г. Липецк, ул. Ангарская, д. 26Д</span></a></li>
+            <li class="header__city_item"><a href="#" class="header__city_link">г. Орёл<span>Россия, г. Орёл, ул. Итальянская, д. 1 Г</span></a></li>
+            <li class="header__city_item"><a href="#" class="header__city_link">г. Павловск<span>Россия, Воронежская обл., г. Павловск, ул. Транспортная, д. 2</span></a></li>
+            <li class="header__city_item"><a href="#" class="header__city_link">г. Пенза<span>Россия, Пензенская обл., Бессоновский р-он, с. Ухтинка, ул. Ухтинка, д. 1Б</span></a></li>
+            <li class="header__city_item"><a href="#" class="header__city_link">г. Псков<span>Россия, Псковская обл., Бежаницкий р-он, д. Красное Солнце, ул. Философовой, д. 13</span></a></li>
+            <li class="header__city_item"><a href="#" class="header__city_link">г. Рязань<span>Россия, г. Рязань, 184 км (Окружная дорога), стр. 8</span></a></li>
+            <li class="header__city_item"><a href="#" class="header__city_link">г. Тамбов<span>Россия, Тамбовская обл., Тамбовский р-н, п. Строитель, Промышленная зона, стр. 1</span></a></li>
+            <li class="header__city_item"><a href="#" class="header__city_link">г. Ярославль<span>Россия, Ярославская обл., Ярославский р-он, п. Лесная поляна, д. 43, стр. 8</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
   <script src="js/swiper.min.js"></script>
   <script src="js/main.js"></script>
@@ -771,8 +800,10 @@
     let scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth: true, getSpeed: true, getDirection: true});
     const map_scroll = document.querySelector('.map__city');
     const headernav_scroll = document.querySelector('.header__nav_scroll');
+    const headercity_scroll = document.querySelector('.header__city_scroll');
     Scrollbar.init(map_scroll);
     Scrollbar.init(headernav_scroll);
+    Scrollbar.init(headercity_scroll);
     map_scroll.onmouseover = function(e) {scroll.stop();};
     map_scroll.onmouseout = function(e) {scroll.start();}
   </script>

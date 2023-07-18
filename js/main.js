@@ -1,10 +1,8 @@
 // start navbar
+// кнопка header__burger
 const bodyoverlay = document.querySelector('.overlay');
 const menu = document.querySelector('.header__nav');
 const burger = document.querySelector('.header__burger');
-const burgernav = document.querySelector('.header__nav_burger');
-
-// кнопка header__burger
 document.querySelector('.header__burger').addEventListener('click', function() {
   if (burger.classList.contains("active")) {
     bodyoverlay.classList.remove("active");
@@ -21,6 +19,49 @@ document.querySelector('.header__burger').addEventListener('click', function() {
   }
 })
 // end navbar
+
+// кнопка header__region
+const bodyoverlaycity = document.querySelector('.overlay');
+const menucity = document.querySelector('.header__city');
+const burgercity = document.querySelector('.header__region');
+
+burgercity.addEventListener('click', function() {
+  if (burgercity.classList.contains("active")) {
+    bodyoverlaycity.classList.remove("active");
+    menucity.classList.remove("active");
+    burgercity.classList.remove("active");
+    document.body.style.overflow = "visible";
+    document.body.style.height = "100%";
+    bodyoverlaycity.style.zIndex = null;
+  } else {
+    bodyoverlaycity.classList.add("active");
+    menucity.classList.add("active");
+    burgercity.classList.add("active");
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+    bodyoverlaycity.style.zIndex = "101";
+  }
+})
+document.querySelector('.header__city_button').addEventListener('click', function() {
+  bodyoverlaycity.classList.remove("active");
+  menucity.classList.remove("active");
+  burgercity.classList.remove("active");
+  document.body.style.overflow = "visible";
+  document.body.style.height = "100%";
+  bodyoverlaycity.style.zIndex = null;
+})
+// end header__region
+
+// кнопка overlay
+bodyoverlay.addEventListener('click', function() {
+  bodyoverlaycity.classList.remove("active");
+  menucity.classList.remove("active");
+  burgercity.classList.remove("active");
+  document.body.style.overflow = "visible";
+  document.body.style.height = "100%";
+  bodyoverlaycity.style.zIndex = null;
+})
+// end overlay
 
 // start hover menu
 var hover = document.querySelector('.header__nav_list'),
