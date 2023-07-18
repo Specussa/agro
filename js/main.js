@@ -61,6 +61,12 @@ bodyoverlaycity.addEventListener('click', function() {
 })
 // end overlay
 
+// кнопка header__search
+document.querySelector('.header__search').addEventListener('click', () => {
+  document.querySelector('.header__search_input').classList.toggle('active');
+});
+// end overlay
+
 // start hover menu
 var hover = document.querySelector('.header__nav_list'),
 elemHover = false;

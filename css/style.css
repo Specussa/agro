@@ -900,6 +900,29 @@ html.has-scroll-dragging {
   transition: background-color 0.2s linear;
 }
 
+.header__search_input {
+  width: 0px;
+  height: 30px;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--bg);
+  -webkit-text-fill-color: var(--bg);
+  -webkit-box-shadow: 0 0 0px 1000pxpx transparent inset;
+  box-shadow: 0 0 0px 1000px transparent inset;
+  border-bottom: 1px solid var(--bg);
+  -webkit-transition: width 0.2s linear;
+  -moz-transition: width 0.2s linear;
+  -ms-transition: width 0.2s linear;
+  -o-transition: width 0.2s linear;
+  transition: width 0.2s linear;
+}
+
+.header__search_input.active {
+  width: 300px;
+}
+
 .header__search:hover, .header__mail:hover {
   background-color: var(--blue);
 }
