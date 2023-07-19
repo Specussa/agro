@@ -3,13 +3,15 @@
 const bodyoverlay = document.querySelector('.overlay');
 const menu = document.querySelector('.header__nav');
 const burger = document.querySelector('.header__burger');
-document.querySelector('.header__burger').addEventListener('click', function() {
+const menuindex = document.querySelector("header");
+burger.addEventListener('click', function() {
   if (burger.classList.contains("active")) {
     bodyoverlay.classList.remove("active");
     menu.classList.remove("active");
     burger.classList.remove("active");
     document.body.style.overflow = "visible";
     document.body.style.height = "100%";
+    menuindex.style.zIndex = null;
     document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
@@ -19,6 +21,41 @@ document.querySelector('.header__burger').addEventListener('click', function() {
     burger.classList.add("active");
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
+    menuindex.style.zIndex = "102";
+    document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
+  }
+})
+// end navbar
+
+// кнопка header__burger_mobile
+const burgermobile = document.querySelector('.header__burger_mobile');
+const headerlist = document.querySelector('.header__list');
+const headerbuttons = document.querySelector('.header__buttons');
+const headercontacts = document.querySelector('.header__contacts');
+burgermobile.addEventListener('click', function() {
+  if (burgermobile.classList.contains("active")) {
+    bodyoverlay.classList.remove("active");
+    burgermobile.classList.remove("active");
+    headerlist.classList.remove("active");
+    headerbuttons.classList.remove("active");
+    headercontacts.classList.remove("active");
+    document.body.style.overflow = "visible";
+    document.body.style.height = "100%";
+    menuindex.style.zIndex = null;
+    document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
+  } else {
+    bodyoverlay.classList.add("active");
+    burgermobile.classList.add("active");
+    headerlist.classList.add("active");
+    headerbuttons.classList.add("active");
+    headercontacts.classList.add("active");
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+    menuindex.style.zIndex = "102";
     document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
@@ -38,12 +75,14 @@ burgercity.addEventListener('click', function() {
     burgercity.classList.remove("active");
     document.body.style.overflow = "visible";
     document.body.style.height = "100%";
+    menuindex.style.zIndex = null;
   } else {
     bodyoverlaycity.classList.add("active");
     menucity.classList.add("active");
     burgercity.classList.add("active");
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
+    menuindex.style.zIndex = "102";
   }
 })
 document.querySelector('.header__city_button').addEventListener('click', function() {
@@ -52,6 +91,7 @@ document.querySelector('.header__city_button').addEventListener('click', functio
   burgercity.classList.remove("active");
   document.body.style.overflow = "visible";
   document.body.style.height = "100%";
+  menuindex.style.zIndex = null;
 })
 // end header__region
 
@@ -60,11 +100,16 @@ bodyoverlay.addEventListener('click', function() {
   bodyoverlay.classList.remove("active");
   menu.classList.remove("active");
   burger.classList.remove("active");
+  burgermobile.classList.remove("active");
+  headerlist.classList.remove("active");
+  headerbuttons.classList.remove("active");
+  headercontacts.classList.remove("active");
   document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
   document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
   document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
   document.body.style.overflow = "visible";
   document.body.style.height = "100%";
+  menuindex.style.zIndex = null;
 })
 // end overlay
 
@@ -75,6 +120,7 @@ bodyoverlaycity.addEventListener('click', function() {
   burgercity.classList.remove("active");
   document.body.style.overflow = "visible";
   document.body.style.height = "100%";
+  menuindex.style.zIndex = null;
 })
 // end overlay
 
@@ -151,8 +197,6 @@ hover.addEventListener('mouseover', function(e) {
 })
 hover.addEventListener('mouseout', function(e) {
   if(!elemHover) return
-  var target = e.target.closest('.header__nav_item')
-  
   elemHover = null;
 })
 // start dark mode
