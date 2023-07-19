@@ -34,6 +34,7 @@ const burgermobile = document.querySelector('.header__burger_mobile');
 const headerlist = document.querySelector('.header__list');
 const headerbuttons = document.querySelector('.header__buttons');
 const headercontacts = document.querySelector('.header__contacts');
+const headerscroll = document.querySelector('.header__list_scroll');
 burgermobile.addEventListener('click', function() {
   if (burgermobile.classList.contains("active")) {
     bodyoverlay.classList.remove("active");
@@ -41,6 +42,7 @@ burgermobile.addEventListener('click', function() {
     headerlist.classList.remove("active");
     headerbuttons.classList.remove("active");
     headercontacts.classList.remove("active");
+    headerscroll.classList.remove("active");
     document.body.style.overflow = "visible";
     document.body.style.height = "100%";
     menuindex.style.zIndex = null;
@@ -53,6 +55,7 @@ burgermobile.addEventListener('click', function() {
     headerlist.classList.add("active");
     headerbuttons.classList.add("active");
     headercontacts.classList.add("active");
+    headerscroll.classList.add("active");
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
     menuindex.style.zIndex = "102";
@@ -104,6 +107,7 @@ bodyoverlay.addEventListener('click', function() {
   headerlist.classList.remove("active");
   headerbuttons.classList.remove("active");
   headercontacts.classList.remove("active");
+  headerscroll.classList.remove("active");
   document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
   document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
   document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
