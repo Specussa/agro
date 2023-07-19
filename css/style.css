@@ -3441,7 +3441,7 @@ html.has-scroll-dragging {
     padding: 40px;
   }
   .hero__head {
-    max-width: 510px;
+    max-width: 100%;
     font-size: 60px;
     line-height: 77px;
   }
@@ -3605,7 +3605,9 @@ html.has-scroll-dragging {
   }
   .map__search_block {
     width: 50%;
+    min-width: 50%;
     top: -80px;
+    padding: 20px 40px 20px 50px;
   }
   .map__city {
     width: 50%;
