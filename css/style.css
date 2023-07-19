@@ -3452,7 +3452,7 @@ html.has-scroll-dragging {
   }
   .hero .swiper-container-horizontal > .swiper-pagination-bullets, .hero .swiper-pagination-custom, .hero .swiper-pagination-fraction {
     right: auto;
-    left: 49ox;
+    left: 49px;
     bottom: 80px;
   }
   .hero__prev, .hero__next {
@@ -3592,10 +3592,16 @@ html.has-scroll-dragging {
     line-height: 26px;
   }
   .offer__top {
-    padding: 0 0 20PX;
+    padding: 0 0 20px;
   }
   .offer__bottom {
     padding: 20px 0;
+  }
+  .offer__item:hover .offer__top {
+    padding: 0 20px 20px;
+  }
+  .offer__item:hover .offer__bottom {
+    padding: 20px;
   }
   .map__search_block {
     width: 50%;
