@@ -741,6 +741,7 @@ html.has-scroll-dragging {
   display: flex;
   height: 100%;
   padding: 0 45.5px;
+  flex: 0 0 auto;
   align-items: center;
   font-size: 16px;
   font-weight: 500;
@@ -905,6 +906,7 @@ html.has-scroll-dragging {
   width: 100%;
   height: 50px;
   padding: 30px 15px;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -1437,7 +1439,7 @@ html.has-scroll-dragging {
 }
 
 .footer__container {
-  padding: 70px 100px 150px;
+  padding: 70px 100px;
 }
 
 .footer__production {
@@ -1454,7 +1456,7 @@ html.has-scroll-dragging {
   display: -ms-flexbox;
   display: flex;
   flex-direction: column;
-  gap: 150px;
+  gap: 100px;
 }
 
 .footer__contacts {
@@ -2346,6 +2348,7 @@ html.has-scroll-dragging {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 400px;
 }
 
 .offer__middle img {
@@ -2792,7 +2795,19 @@ html.has-scroll-dragging {
 
 /* start media 1700px */
 @media (max-width: 1700px) {
+  .header {
+    height: 120px;
+  }
+  .header__button.active, .header__burger.active, .header__bottom, .header__top {
+    height: 60px;
+  }
+  .header__nav {
+    top: 120px;
+  }
   .header__left {
+    width: 100%;
+    margin-right: 20px;
+    justify-content: space-between;
     gap: 20px;
   }
   .header__bottom {
@@ -2806,8 +2821,27 @@ html.has-scroll-dragging {
   .header__right {
     padding-right: 80px;
   }
+  .header__item {
+    height: 60px;
+  }
+  .header__item_bottom {
+    width: calc(50% - 10px);
+  }
+  .header__search, .header__mail {
+    width: 60px;
+    height: 60px;
+  }
+  .main {
+    padding: 120px 0 0;
+  }
   .hero__shadow {
     padding: 80px;
+  }
+  .hero__container {
+    height: 645px;
+  }
+  .partners__item a {
+    padding: 20px 0;
   }
   .events__block {
     padding: 60px 80px;
@@ -2820,6 +2854,9 @@ html.has-scroll-dragging {
   }
   .events__item:nth-last-child(1),  .events__item:nth-last-child(2) {
     display: none;
+  }
+  .company__slider {
+    height: 450px;
   }
   .company__info_list {
     padding: 60px 80px;
@@ -2837,6 +2874,7 @@ html.has-scroll-dragging {
   }
   .company__texts {
     width: calc(50% - 95px);
+    height: calc(100% - 260px);
     margin: 0 auto 0 80px;
   }
   .company__heading {
@@ -2849,6 +2887,7 @@ html.has-scroll-dragging {
   }
   .company__thumbs {
     width: calc(50% - 95px);
+    height: 240px;
     margin: 0 auto 0 80px;
   }
   .company__top {
@@ -2858,17 +2897,24 @@ html.has-scroll-dragging {
   .offer__list {
     padding: 60px 80px 80px;
   }
+  .offer__middle {
+    height: 300px;
+  }
   .map__search_block {
     padding: 20px 80px 20px 50px;
   }
   .map__city {
+    max-height: 550px;
     left: 80px;
   }
   .map__zoom {
     right: 80px;
   }
+  .map__yandex {
+    height: 600px;
+  }
   .footer__container {
-    padding: 60px 80px 60px;
+    padding: 60px 80px;
   }
   .footer__tel {
     font-size: 60px;
@@ -2877,6 +2923,9 @@ html.has-scroll-dragging {
   .footer__logo {
     width: 222px;
     height: 65px;
+  }
+  .footer__block {
+    gap: 60px;
   }
   .footer__link {
     font-size: 16px;
