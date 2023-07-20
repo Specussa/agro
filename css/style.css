@@ -3784,5 +3784,8 @@ html.has-scroll-dragging {
     height: calc(100vh - 70px);
     min-height: 700px;
   }
+  .hero__prev, .hero__next {
+    display: none;
+  }
 }
 /* start media 800px */
