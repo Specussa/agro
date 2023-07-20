@@ -1,3 +1,17 @@
+// start scroll
+const scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth: true, getSpeed: true, getDirection: true});
+const map_scroll = document.querySelector('.map__city');
+const headernav_scroll = document.querySelector('.header__nav_scroll');
+const headercity_scroll = document.querySelector('.header__city_scroll');
+const headerlist_scroll = document.querySelector('.header__list_scroll');
+Scrollbar.init(map_scroll);
+Scrollbar.init(headernav_scroll);
+Scrollbar.init(headercity_scroll);
+Scrollbar.init(headerlist_scroll);
+map_scroll.onmouseover = function(e) {scroll.stop();};
+map_scroll.onmouseout = function(e) {scroll.start();}
+// end scroll
+
 // start navbar
 // кнопка header__burger
 const bodyoverlay = document.querySelector('.overlay');
@@ -370,6 +384,7 @@ if(!companyslider){} else {
 
 // map
 // start search map
+const mapcity = document.querySelector('.map__city');
 function filterFunction() {
   var mapinput, filter, i;
   mapinput = document.getElementById("map__input");
@@ -379,9 +394,12 @@ function filterFunction() {
   for (i = 0; i < searchp.length; i++) {
     txtValue = searchp[i].textContent || searchp[i].innerText;
     document.querySelectorAll('.map__search_city .map__search_head').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.map__search_city .map__search_head').forEach(n => n.classList.remove('close'));
-    document.querySelectorAll('.map__city .map__search_city').forEach(n => n.style.maxHeight = null);
+    document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.style.maxHeight = null);
+    document.querySelectorAll('.map__city .scroll-contents').forEach(n => n.classList.add('scroll-content'));
+    document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('scroll-contents'));
+    mapcity.style.overflow = "hidden";
     mapmargin.forEach(n => n.style.margin = null);
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       searchp[i].style.display = "";
@@ -404,6 +422,9 @@ document.querySelector('.map__search_back').addEventListener('click', (event) =>
   mapinfo.forEach(n => n.style.maxHeight = null);
   mapmargin.forEach(n => n.style.margin = null);
   mapback.classList.add('close');
+  mapcity.style.overflow = "hidden";
+  document.querySelectorAll('.map__city .scroll-contents').forEach(n => n.classList.add('scroll-content'));
+  document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('scroll-contents'));
   myMap.setCenter([55.253215,37.622504],6);
 });
 // end search back
@@ -517,6 +538,9 @@ for (i = 0; i < acc.length; i++) {
       mapback.classList.add('close');
       this.classList.remove("active");
       accordion.classList.remove("active");
+      mapcity.style.overflow = "hidden";
+      document.querySelectorAll('.map__city .scroll-contents').forEach(n => n.classList.add('scroll-content'));
+      document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('scroll-contents'));
       for (var b = 0; b < courseAccordionButton.length; b++) {
         courseAccordionButton[b].classList.remove("close");
       }
@@ -540,6 +564,9 @@ for (i = 0; i < acc.length; i++) {
       this.classList.remove("close");
       mapmargin.forEach(n => n.style.margin = 0);
       mapback.classList.remove('close');
+      mapcity.style.overflow = "visible";
+      document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.add('scroll-contents'));
+      document.querySelectorAll('.map__city .scroll-contents').forEach(n => n.classList.remove('scroll-content'));
     }
   };
 }

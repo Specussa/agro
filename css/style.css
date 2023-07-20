@@ -2710,10 +2710,6 @@ html.has-scroll-dragging {
   background-color: var(--blue);
 }
 
-.map__search_head:hover {
-  color: var(--bg);
-}
-
 .map__search_desc {
   font-size: 14px;
   font-weight: 500;
@@ -2731,6 +2727,7 @@ html.has-scroll-dragging {
 
 .map__search_head:hover span, .map__search_back:hover span {
   color: var(--bg);
+  background-color: var(--blue);
 }
 
 .map__search_back {
@@ -2838,7 +2835,7 @@ html.has-scroll-dragging {
   position: absolute;
   top: -30px;
   left: -30px;
-  border: 1px solid rgb(0, 110, 185, 0.8);
+  border: 1px solid rgb(0, 110, 185, 0.6);
   cursor: pointer;
   background-color: rgb(255, 255, 255, 0.8);
   -webkit-transform: rotate(45deg);
@@ -2849,7 +2846,7 @@ html.has-scroll-dragging {
 }
 
 .map__point.map__point_active {
-  background-color: rgb(0, 110, 185, 0.8);
+  background-color: rgb(0, 110, 185, 0.6);
 }
 
 .map__icon {
@@ -3642,6 +3639,58 @@ html.has-scroll-dragging {
   .map__zoom_plus svg, .map__zoom_minus svg {
     width: 13px;
     height: 13px;
+  }
+  .map__search_back {
+    display: none;
+  }
+  .map__search_head:hover, .map__search_back:hover, .map__search_head:hover span, .map__search_back:hover span {
+    color: var(--text);
+    background-color: var(--bg);
+  }
+  .map__search_info {
+    position: absolute;
+    left: 0;
+    bottom: -600px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .map__search_tel, .map__search_tel:hover {
+    padding: 5px 90px 5px 50px;
+    color: var(--blue);
+    background-color: var(--bg);
+  }
+  .map__search_tel:first-child, .map__search_tel:hover:first-child {
+    padding: 10px 90px 5px 50px;
+  }
+  .map__search_tel:nth-last-child(2), .map__search_tel:hover:nth-last-child(2) {
+    padding: 5px 90px 10px 50px;
+  }
+  .map__search_mail {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    font-size: 0px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .map__search_mail::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url('../img/icon/mail_blue.svg') center center no-repeat;
+    background-size: 27px 20px;
+    border: 1px solid var(--blue);
+  }
+  .map__search_tel::after {
+    display: none;
   }
   .footer__container {
     padding: 40px;

@@ -876,11 +876,6 @@
       </div>
     </div>
   </div>
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-  <script src="js/swiper.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/scroll.js"></script>
-  <script src="js/scrollbar.js"></script>
   <script>
     window.onload = function () {
       window.setTimeout(function () {
@@ -894,17 +889,11 @@
         }, 0);
       }, 0);
     }
-    let scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth: true, getSpeed: true, getDirection: true});
-    const map_scroll = document.querySelector('.map__city');
-    const headernav_scroll = document.querySelector('.header__nav_scroll');
-    const headercity_scroll = document.querySelector('.header__city_scroll');
-    const headerlist_scroll = document.querySelector('.header__list_scroll');
-    Scrollbar.init(map_scroll);
-    Scrollbar.init(headernav_scroll);
-    Scrollbar.init(headercity_scroll);
-    Scrollbar.init(headerlist_scroll);
-    map_scroll.onmouseover = function(e) {scroll.stop();};
-    map_scroll.onmouseout = function(e) {scroll.start();}
   </script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/scrollbar.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
