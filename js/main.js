@@ -342,6 +342,10 @@ if(!companyslider){} else {
     loopedSlides: 2,
     speed: 1000,
     allowTouchMove: false,
+    autoplay: {
+      delay: 500,
+      disableOnInteraction: false,
+    },
     breakpoints: {
       1700: {
         spaceBetween: 20,
@@ -363,6 +367,39 @@ if(!companyslider){} else {
   galleryThumbs.controller.control = galleryTop && galleryText;
   galleryText.controller.control = galleryTop && galleryThumbs;
 }
+// end company slider
+
+// start company slider
+var offerslider = new Swiper('.offer__slider', {
+  loop: false,
+  spaceBetween: 50,
+  slidesPerView: '2',
+  touchRatio: 0.2,
+  loop: false,
+  loopedSlides: 1,
+  speed: 1000,
+  slideToClickedSlide: false,
+  allowTouchMove: false,
+  pagination: {
+    el: '.offer__pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    800: {
+      slidesPerView: '1',
+      spaceBetween: 20,
+      allowTouchMove: true,
+      slideToClickedSlide: true,
+      setings: {
+        loop: true,
+        loopedSlides: 2,
+      },
+    },
+    1199: {
+      spaceBetween: 40,
+    }
+  },
+});
 // end company slider
 
 // map
