@@ -3968,12 +3968,26 @@ html.has-scroll-dragging {
     height: 330px;
   }
   .company__heading {
+    max-width: 100%;
     font-size: 30px;
     line-height: 39px;
   }
   .company__description {
+    max-width: 100%;
     font-size: 12px;
     line-height: 15px;
+  }
+  .company__texts {
+    margin: 130px 0 0;
+  }
+  .company__prev {
+    right: auto;
+    left: calc(50% - 140px);
+    bottom: 125px;
+  }
+  .company__next {
+    right: calc(50% - 140px);
+    bottom: 125px;
   }
   .map__container {
     padding: 230px 0 0;
