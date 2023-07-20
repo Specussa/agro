@@ -204,7 +204,7 @@
       </div>
     </div>
   </header>
-  <main class="main" data-scroll-speed="10" data-scroll-container="" id="top">
+  <main class="main" data-scroll-speed="10" data-scroll-container id="top">
     <div class="main__section">
       <section class="hero" data-scroll-section>
         <div class="container hero__container">
@@ -902,7 +902,29 @@
       }, 0);
     }
     // start scroll
-    const scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth: true, getSpeed: true, getDirection: true});
+    const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    inertia: 0.8,
+    smooth: true,
+    getDirection: true,
+    mobile: {
+      breakpoint: 0,
+      smooth: false,
+      getDirection: true,
+    },
+    tablet: {
+      breakpoint: 0,
+      smooth: false,
+      getDirection: true,
+    },
+  });
+  let portrait = window.matchMedia("(orientation: portrait)");
+
+    portrait.addEventListener("change", function(e) {
+      //alert("screen change");
+      scroll.update();
+      location.reload();
+    })
     const map_scroll = document.querySelector('.map__city');
     const headernav_scroll = document.querySelector('.header__nav_scroll');
     const headercity_scroll = document.querySelector('.header__city_scroll');
