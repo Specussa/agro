@@ -247,10 +247,6 @@
   font-size: 0;
 }
 
-html.has-scroll-smooth {
-  overflow: hidden;
-}
-
 ::-webkit-scrollbar {
   display: none;
   width: 0px;
@@ -263,15 +259,26 @@ html.has-scroll-smooth {
   background: var(--blue);
 }
 
+html body.loaded {
+  height: 100%;
+  position: relative;
+  background: var(--bg);
+  overflow: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 html {
   height: 100%;
   overflow: hidden;
 }
 
-body {
+body, .has-scroll-smooth body, .has-scroll-smooth body.loaded {
   height: 100%;
   position: relative;
   background: var(--bg);
+  overflow: hidden;
+  scroll-behavior: auto;
 }
 
 .main {
@@ -3771,10 +3778,6 @@ svg path {
 
 /* start media 800px */
 @media (max-width: 800px) {
-  html {
-    overflow: visible;
-    overflow-x: hidden;
-  }
   .button__default {
     width: 100%;
     padding: 25px;
