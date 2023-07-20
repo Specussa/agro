@@ -2678,7 +2678,7 @@ html.has-scroll-dragging {
 
 .map__city {
   width: 400px;
-  max-height: 810px;
+  height: 810px;
   position: absolute !important;
   top: 25px;
   left: 100px;
@@ -3154,7 +3154,7 @@ html.has-scroll-dragging {
     padding: 20px 80px 20px 50px;
   }
   .map__city {
-    max-height: 550px;
+    height: 550px;
     left: 80px;
   }
   .map__zoom {
@@ -4094,7 +4094,8 @@ html.has-scroll-dragging {
   }
   .map__city {
     width: 100%;
-    max-height: 630px;
+    height: 630px;
+    max-height: 80vh;
     top: 100px;
   }
   .map__search_head {
