@@ -286,12 +286,13 @@ if(!companyslider){} else {
   var interleaveOffset = 0.5;
   var galleryTop = new Swiper('.company__top', {
     slidesPerView: 1,
-    loop: false,
     speed: 1000,
     loop: true,
     loopedSlides: 2,
     parallax: true,
     watchSlidesProgress: true,
+    slideToClickedSlide: true,
+    allowTouchMove: true,
     navigation: {
       nextEl: '.company__next',
       prevEl: '.company__prev',
@@ -333,19 +334,15 @@ if(!companyslider){} else {
   });
 
   var galleryThumbs = new Swiper('.company__thumbs', {
-    loop: false,
+    loop: true,
     spaceBetween: 40,
     slidesPerView: '2',
     touchRatio: 0.2,
-    slideToClickedSlide: false,
     loop: true,
     loopedSlides: 2,
     speed: 1000,
+    slideToClickedSlide: false,
     allowTouchMove: false,
-    autoplay: {
-      delay: 500,
-      disableOnInteraction: false,
-    },
     breakpoints: {
       1700: {
         spaceBetween: 20,
@@ -354,14 +351,15 @@ if(!companyslider){} else {
   });
 
   var galleryText = new Swiper('.company__texts', {
-    loop: false,
+    loop: true,
     spaceBetween: 40,
     slidesPerView: '1',
     touchRatio: 0.2,
     loop: true,
     loopedSlides: 2,
-    speed: 1000,
+    slideToClickedSlide: false,
     allowTouchMove: false,
+    speed: 1000,
   });
   galleryTop.controller.control = galleryThumbs && galleryText;
   galleryThumbs.controller.control = galleryTop && galleryText;
