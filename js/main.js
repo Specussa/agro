@@ -1,17 +1,3 @@
-// start scroll
-const scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth: true, getSpeed: true, getDirection: true});
-const map_scroll = document.querySelector('.map__city');
-const headernav_scroll = document.querySelector('.header__nav_scroll');
-const headercity_scroll = document.querySelector('.header__city_scroll');
-const headerlist_scroll = document.querySelector('.header__list_scroll');
-Scrollbar.init(map_scroll);
-Scrollbar.init(headernav_scroll);
-Scrollbar.init(headercity_scroll);
-Scrollbar.init(headerlist_scroll);
-map_scroll.onmouseover = function(e) {scroll.stop();};
-map_scroll.onmouseout = function(e) {scroll.start();}
-// end scroll
-
 // start navbar
 // кнопка header__burger
 const bodyoverlay = document.querySelector('.overlay');
@@ -397,8 +383,7 @@ function filterFunction() {
     document.querySelectorAll('.map__search_city .map__search_head').forEach(n => n.classList.remove('close'));
     document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.style.maxHeight = null);
-    document.querySelectorAll('.map__city .scroll-contents').forEach(n => n.classList.add('scroll-content'));
-    document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('scroll-contents'));
+    document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('active'));
     map_scroll.onmouseover = function(e) {scroll.stop();};
     mapcity.style.overflow = "hidden";
     mapmargin.forEach(n => n.style.margin = null);
@@ -424,8 +409,7 @@ document.querySelector('.map__search_back').addEventListener('click', (event) =>
   mapmargin.forEach(n => n.style.margin = null);
   mapback.classList.add('close');
   mapcity.style.overflow = "hidden";
-  document.querySelectorAll('.map__city .scroll-contents').forEach(n => n.classList.add('scroll-content'));
-  document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('scroll-contents'));
+  document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('active'));
   map_scroll.onmouseover = function(e) {scroll.stop();};
   myMap.setCenter([55.253215,37.622504],6);
 });
@@ -541,8 +525,7 @@ for (i = 0; i < acc.length; i++) {
       this.classList.remove("active");
       accordion.classList.remove("active");
       mapcity.style.overflow = "hidden";
-      document.querySelectorAll('.map__city .scroll-contents').forEach(n => n.classList.add('scroll-content'));
-      document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('scroll-contents'));
+      document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('active'));
       map_scroll.onmouseover = function(e) {scroll.stop();};
       for (var b = 0; b < courseAccordionButton.length; b++) {
         courseAccordionButton[b].classList.remove("close");
@@ -568,8 +551,7 @@ for (i = 0; i < acc.length; i++) {
       mapmargin.forEach(n => n.style.margin = 0);
       mapback.classList.remove('close');
       mapcity.style.overflow = "visible";
-      document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.add('scroll-contents'));
-      document.querySelectorAll('.map__city .scroll-contents').forEach(n => n.classList.remove('scroll-content'));
+      document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.add('active'));
       map_scroll.onmouseover = function(e) {scroll.start();};
     }
   };
