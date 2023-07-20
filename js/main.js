@@ -269,8 +269,8 @@ if(!heroslider){} else {
       }
     }
   };
-  const mySwiper = new Swiper(sliderSelector, options);
-  mySwiper.init();
+  const heroSwiper = new Swiper(sliderSelector, options);
+  heroSwiper.init();
   
   [].forEach.call(document.querySelectorAll('.hero__block'), (element) => {
     if (element.getAttribute('data-background')) {
@@ -285,9 +285,9 @@ const companyslider = document.querySelectorAll('.company__slider');
 if(!companyslider){} else {
   var interleaveOffset = 0.5;
   var galleryTop = new Swiper('.company__top', {
+    slidesPerView: 1,
     loop: false,
     speed: 1000,
-    slidesPerView: '1',
     loop: true,
     loopedSlides: 2,
     parallax: true,
@@ -295,6 +295,10 @@ if(!companyslider){} else {
     navigation: {
       nextEl: '.company__next',
       prevEl: '.company__prev',
+    },
+    pagination: {
+      el: '.company__counter',
+      type: 'fraction',
     },
     on: {
       progress: function() {

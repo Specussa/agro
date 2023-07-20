@@ -2519,6 +2519,10 @@ html.has-scroll-dragging {
   background-color: var(--bg);
 }
 
+.company__counter {
+  display: none;
+}
+
 /* end company */
 
 /* start offer */
@@ -3578,7 +3582,7 @@ html.has-scroll-dragging {
     height: 480px
   }
   .company__prev, .company__next {
-    bottom: 60px;
+    bottom: 80px;
     border: 1px solid var(--blue);
     background-color: var(--bg);
   }
@@ -3586,7 +3590,7 @@ html.has-scroll-dragging {
     right: 40px;
   }
   .company__prev {
-    right: 130px;
+    right: 180px;
   }
   .company__prev svg path, .company__next svg path {
     fill: var(--blue);
@@ -3603,12 +3607,33 @@ html.has-scroll-dragging {
     line-height: 52px;
   }
   .company__description {
-    max-width: calc(100% - 220px);
     font-size: 18px;
     line-height: 23px;
   }
   .company__texts .swiper-slide {
-    gap: 20px;
+    gap: 40px;
+  }
+  .company__counter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 70px;
+    width: 70px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: auto;
+    right: 110px;
+    bottom: 80px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    color: var(--blue);
+    background-color: var(--bg);
+  }
+  .company__prev, .company__next {
+    width: 70px;
+    height: 70px;
   }
   .offer__list {
     padding: 40px;
@@ -3981,16 +4006,27 @@ html.has-scroll-dragging {
     line-height: 15px;
   }
   .company__texts {
-    margin: 130px 0 0;
+    margin: 110px 0 0;
   }
   .company__prev {
     right: auto;
-    left: calc(50% - 140px);
+    left: calc(50% - 110px);
     bottom: 125px;
   }
   .company__next {
-    right: calc(50% - 140px);
+    right: calc(50% - 110px);
     bottom: 125px;
+  }
+  .company__counter {
+    width: 80px;
+    bottom: 125px;
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
   }
   .map__container {
     padding: 230px 0 0;
