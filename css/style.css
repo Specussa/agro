@@ -1616,6 +1616,10 @@ html.has-scroll-dragging {
   fill: var(--text);
 }
 
+.header__contacts_right {
+  display: none;
+}
+
 /* end header__city */
 
 /* start footer */
