@@ -3979,8 +3979,12 @@ html.has-scroll-dragging {
     padding: 230px 0 0;
   }
   .map__search_block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     width: 100%;
     height: 100px;
+    align-items: center;
   }
   .map__city {
     width: 100%;
