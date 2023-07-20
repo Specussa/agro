@@ -399,6 +399,7 @@ function filterFunction() {
     document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.style.maxHeight = null);
     document.querySelectorAll('.map__city .scroll-contents').forEach(n => n.classList.add('scroll-content'));
     document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('scroll-contents'));
+    map_scroll.onmouseover = function(e) {scroll.stop();};
     mapcity.style.overflow = "hidden";
     mapmargin.forEach(n => n.style.margin = null);
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -425,6 +426,7 @@ document.querySelector('.map__search_back').addEventListener('click', (event) =>
   mapcity.style.overflow = "hidden";
   document.querySelectorAll('.map__city .scroll-contents').forEach(n => n.classList.add('scroll-content'));
   document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('scroll-contents'));
+  map_scroll.onmouseover = function(e) {scroll.stop();};
   myMap.setCenter([55.253215,37.622504],6);
 });
 // end search back
@@ -541,6 +543,7 @@ for (i = 0; i < acc.length; i++) {
       mapcity.style.overflow = "hidden";
       document.querySelectorAll('.map__city .scroll-contents').forEach(n => n.classList.add('scroll-content'));
       document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('scroll-contents'));
+      map_scroll.onmouseover = function(e) {scroll.stop();};
       for (var b = 0; b < courseAccordionButton.length; b++) {
         courseAccordionButton[b].classList.remove("close");
       }
@@ -567,6 +570,7 @@ for (i = 0; i < acc.length; i++) {
       mapcity.style.overflow = "visible";
       document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.add('scroll-contents'));
       document.querySelectorAll('.map__city .scroll-contents').forEach(n => n.classList.remove('scroll-content'));
+      map_scroll.onmouseover = function(e) {scroll.start();};
     }
   };
 }

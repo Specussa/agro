@@ -377,6 +377,10 @@ svg path {
   transition-delay: 0s, 0s, 0s, 0s;
 }
 
+.scroll-contents {
+  transform: translate3d(0px, 0px, 0px) !important;
+}
+
 /* start buttons */
 
 .button__default {
@@ -3648,6 +3652,7 @@ html.has-scroll-dragging {
     background-color: var(--bg);
   }
   .map__search_info {
+    min-height: 80px;
     position: absolute;
     left: 0;
     bottom: -600px;
