@@ -139,6 +139,7 @@ for (i = 0; i < hblockacc.length; i++) {
       this.classList.remove("active");
       hblockaccordion.classList.remove("active");
       bodyoverlay.classList.remove("active");
+      document.querySelectorAll('.header__list_scroll .scroll-content').forEach(n => n.classList.remove('active'));
     } else {
       for (var q = 0; q < coursehblockAccordionActive.length; q++) {
         coursehblockAccordionActive[q].classList.remove("active");
@@ -157,6 +158,7 @@ for (i = 0; i < hblockacc.length; i++) {
       hblockaccordion.classList.add("active");
       this.classList.add("active");
       mapmargin.forEach(n => n.style.margin = 0);
+      document.querySelectorAll('.header__list_scroll .scroll-content').forEach(n => n.classList.add('active'));
     }
   };
 }
