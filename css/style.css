@@ -3215,7 +3215,7 @@ svg path {
   }
   .header__buttons {
     width: calc(100% - 140px);
-    height: 80px;
+    height: 0px;
     padding: 0 0 0 20px;
     position: absolute;
     top: 0;
@@ -3232,8 +3232,10 @@ svg path {
     -ms-transition: -ms-transform 0.5s linear;
     -o-transition: -o-transform 0.5s linear;
     transition: transform 0.5s linear;
+    overflow: hidden;
   }
   .header__buttons.active {
+    height: 80px;
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
     -ms-transform: translateY(0%);
@@ -3252,7 +3254,7 @@ svg path {
   }
   .header__list_scroll {
     width: 100%;
-    min-height: calc(100vh - 160px);
+    height: 0px;
     position: absolute !important;
     top: 0;
     left: 0;
@@ -3263,20 +3265,36 @@ svg path {
     -ms-transform: translateY(-100%);
     -o-transform: translateY(-100%);
     transform: translateY(-100%);
-    -webkit-transition: -webkit-transform 0.5s linear, top 0.5s linear;
-    -moz-transition: -moz-transform 0.5s linear, top 0.5s linear;
-    -ms-transition: -ms-transform 0.5s linear, top 0.5s linear;
-    -o-transition: -o-transform 0.5s linear, top 0.5s linear;
-    transition: transform 0.5s linear, top 0.5s linear;
+    -webkit-transition: -webkit-transform 0.5s linear, top 0.5s linear, height 0s linear;
+    -moz-transition: -moz-transform 0.5s linear, top 0.5s linear, height 0s linear;
+    -ms-transition: -ms-transform 0.5s linear, top 0.5s linear, height 0s linear;
+    -o-transition: -o-transform 0.5s linear, top 0.5s linear, height 0s linear;
+    transition: transform 0.5s linear, top 0.5s linear, height 0s linear;
     background-color: var(--bg);
+    -webkit-transition-delay: 0s, 0s, 0.5s;
+    -moz-transition-delay: 0s, 0s, 0.5s;
+    -ms-transition-delay: 0s, 0s, 0.5s;
+    -o-transition-delay: 0s, 0s, 0.5s;
+    transition-delay: 0s, 0s, 0.5s;
   }
   .header__list_scroll.active {
+    height: calc(100vh - 160px);
     top: 80px;
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
     -ms-transform: translateY(0%);
     -o-transform: translateY(0%);
     transform: translateY(0%);
+    -webkit-transition: -webkit-transform 0.5s linear, top 0.5s linear, height 0s linear;
+    -moz-transition: -moz-transform 0.5s linear, top 0.5s linear, height 0s linear;
+    -ms-transition: -ms-transform 0.5s linear, top 0.5s linear, height 0s linear;
+    -o-transition: -o-transform 0.5s linear, top 0.5s linear, height 0s linear;
+    transition: transform 0.5s linear, top 0.5s linear, height 0s linear;
+    -webkit-transition-delay: 0s, 0s, 0s;
+    -moz-transition-delay: 0s, 0s, 0s;
+    -ms-transition-delay: 0s, 0s, 0s;
+    -o-transition-delay: 0s, 0s, 0s;
+    transition-delay: 0s, 0s, 0s;
   }
   .header__block {
     position: relative;
@@ -3388,7 +3406,7 @@ svg path {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    height: 80px;
+    height: 0px;
     padding: 0 1px 0 40px;
     align-items: center;
     justify-content: space-between;
@@ -3407,8 +3425,10 @@ svg path {
     -ms-transition: -ms-transform 0.5s linear;
     -o-transition: -o-transform 0.5s linear;
     transition: transform 0.5s linear;
+    overflow: hidden;
   }
   .header__contacts.active {
+    height: 80px;
     -webkit-transform: translateY(calc(100vh - 80px));
     -moz-transform: translateY(calc(100vh - 80px));
     -ms-transform: translateY(calc(100vh - 80px));
