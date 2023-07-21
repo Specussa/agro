@@ -897,22 +897,23 @@ svg path {
   z-index: 0;
   opacity: 0;
   overflow: hidden;
-  background-color: var(--bg);
-  -webkit-transition: max-height 0.5s linear, opacity 0.5s linear;
-  -moz-transition: max-height 0.5s linear, opacity 0.5s linear;
-  -ms-transition: max-height 0.5s linear, opacity 0.5s linear;
-  -o-transition: max-height 0.5s linear, opacity 0.5s linear;
-  transition: max-height 0.5s linear, opacity 0.5s linear;
+  background-color: var(--blue);
+  -webkit-transition: max-height 0.5s linear, opacity 0.5s linear, background-color 0.5s linear;
+  -moz-transition: max-height 0.5s linear, opacity 0.5s linear, background-color 0.5s linear;
+  -ms-transition: max-height 0.5s linear, opacity 0.5s linear, background-color 0.5s linear;
+  -o-transition: max-height 0.5s linear, opacity 0.5s linear, background-color 0.5s linear;
+  transition: max-height 0.5s linear, opacity 0.5s linear, background-color 0.5s linear;
 }
 
 .header__block.active {
   z-index: 1;
   opacity: 1;
-  -webkit-transition: max-height 0.5s linear, opacity 0s linear;
-  -moz-transition: max-height 0.5s linear, opacity 0s linear;
-  -ms-transition: max-height 0.5s linear, opacity 0s linear;
-  -o-transition: max-height 0.5s linear, opacity 0s linear;
-  transition: max-height 0.5s linear, opacity 0s linear;
+  background-color: var(--bg);
+  -webkit-transition: max-height 0.5s linear, opacity 0s linear, background-color 0.5s linear;
+  -moz-transition: max-height 0.5s linear, opacity 0s linear, background-color 0.5s linear;
+  -ms-transition: max-height 0.5s linear, opacity 0s linear, background-color 0.5s linear;
+  -o-transition: max-height 0.5s linear, opacity 0s linear, background-color 0.5s linear;
+  transition: max-height 0.5s linear, opacity 0s linear, background-color 0.5s linear;
 }
 
 .header__button, .header__link {
@@ -3845,19 +3846,9 @@ svg path {
   .header__button, .header__button.active {
     height: 50px;
   }
-  .header__button:hover {
-    color: var(--text);
-    background-color: var(--bg);
-  }
   .header__button.active {
     color: var(--bg);
     background-color: var(--blue);
-  }
-  .header__item:hover {
-    background-color: var(--bg);
-  }
-  .header__button:hover::after, .header__button:hover::before {
-    background-color: var(--text);
   }
   .header__button.active::after, .header__button.active::before {
     background-color: var(--bg);
@@ -4108,7 +4099,8 @@ svg path {
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
     transform: translateY(0);
-  }.footer__container {
+  }
+  .footer__container {
     padding: 30px 20px;
   }
   .footer__contacts {
@@ -4145,6 +4137,12 @@ svg path {
   .footer__info_item p, .footer__info_item a {
     font-size: 14px;
     line-height: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .company__info_item {
+    flex-direction: column;
+    text-align: center;
   }
 }
 /* start media 800px */

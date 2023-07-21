@@ -352,6 +352,11 @@ if(!companyslider){} else {
     slideToClickedSlide: false,
     allowTouchMove: false,
     speed: 1000,
+    breakpoints: {
+      800: {
+        spaceBetween: 20,
+      }
+    }
   });
   galleryTop.controller.control = galleryThumbs && galleryText;
   galleryThumbs.controller.control = galleryTop && galleryText;
