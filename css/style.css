@@ -3815,6 +3815,8 @@ svg path {
     overflow: hidden;
   }
   .map__search_tel, .map__search_tel:hover {
+    justify-content: flex-start;
+    gap: 10px;
     padding: 5px 90px 5px 50px;
     color: var(--blue);
     background-color: var(--bg);
@@ -3851,6 +3853,20 @@ svg path {
   }
   .map__search_tel::after {
     display: none;
+  }
+  .map__search_tel::before {
+    content: "";
+    display: inline-flex;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    background: url('../img/icon/phone_blue.svg') center center no-repeat;
+    background-size: 15px 15px;
+  }
+  .map__search_tel span {
+    width: calc(100% - 70px);
+    text-align: center;
+    border-bottom: 1px solid var(--blue);
   }
   .map__container {
     padding: 80px 0 0;
