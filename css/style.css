@@ -2722,12 +2722,13 @@ svg path {
   padding: 20px 50px;
   flex-direction: column;
   justify-content: center;
-  -webkit-transition: height 0.3s linear, padding 0.3s linear;
-  -moz-transition: height 0.3s linear, padding 0.3s linear;
-  -ms-transition: height 0.3s linear, padding 0.3s linear;
-  -o-transition: height 0.3s linear, padding 0.3s linear;
-  transition: height 0.3s linear, padding 0.3s linear;
+  -webkit-transition: height 0.3s linear, padding 0.3s linear, background-color 0.2s linear;
+  -moz-transition: height 0.3s linear, padding 0.3s linear, background-color 0.2s linear;
+  -ms-transition: height 0.3s linear, padding 0.3s linear, background-color 0.2s linear;
+  -o-transition: height 0.3s linear, padding 0.3s linear, background-color 0.2s linear;
+  transition: height 0.3s linear, padding 0.3s linear, background-color 0.2s linear;
   overflow: hidden;
+  position: relative;
 }
 
 .map__search_head.close {
@@ -2738,6 +2739,11 @@ svg path {
 .map__search_head:hover, .map__search_back:hover {
   color: var(--bg);
   background-color: var(--blue);
+}
+
+.map__search_head.active:hover, .map__search_back.active:hover {
+  color: var(--text);
+  background-color: var(--bg);
 }
 
 .map__search_desc {
@@ -2757,7 +2763,10 @@ svg path {
 
 .map__search_head:hover span, .map__search_back:hover span {
   color: var(--bg);
-  background-color: var(--blue);
+}
+
+.map__search_head.active:hover span, .map__search_back.active:hover span {
+  color: var(--gray);
 }
 
 .map__search_back {
@@ -3541,6 +3550,25 @@ svg path {
   }
   .header__logo {
     margin: 0 0 0 40px;
+  }
+  .map__search_head::after {
+    content: "";
+    width: 24px;
+    height: 11px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: url('../img/icon/arrow.svg') center center no-repeat;
+    background-size: 24px 11px;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    -ms-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+  }
+  .map__search_head.active::after {
+    opacity: 1;
   }
   .hero__shadow {
     padding: 40px 40px 180px;
