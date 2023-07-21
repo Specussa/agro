@@ -3864,7 +3864,7 @@ svg path {
     background-size: 15px 15px;
   }
   .map__search_tel span {
-    width: calc(100% - 70px);
+    width: 100%;
     text-align: center;
     border-bottom: 1px solid var(--blue);
   }
