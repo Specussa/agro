@@ -78,7 +78,6 @@ burgercity.addEventListener('click', function() {
     bodyoverlaycity.classList.add("active");
     menucity.classList.add("active");
     burgercity.classList.add("active");
-    document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
     menuindex.style.zIndex = "102";
   }
