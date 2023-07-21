@@ -273,6 +273,80 @@ if(!heroslider){} else {
 }
 // end hero slider
 
+// start hero slider
+const partnerslisttop = document.querySelectorAll('.partners__list_top');
+if(!partnerslisttop){} else {
+  var partnerstop = new Swiper('.partners__list_top', {  
+    loop: true,
+    loopedSlides: 0,
+    spaceBetween: 0,
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+    slideToClickedSlide: false,
+    allowTouchMove: false,
+    autoplay : true,
+    speed: 3000,
+    autoplay: {
+      delay: 0,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
+    },
+    on: {
+      init() {
+        this.el.addEventListener('mouseenter', () => {
+          partnerstop.params.speed = 0;
+          partnersbottom.params.speed = 0;
+          partnerstop.autoplay.stop();
+          partnersbottom.autoplay.stop();
+        });
+        this.el.addEventListener('mouseleave', () => {
+          partnerstop.params.speed = 3000;
+          partnersbottom.params.speed = 3000;
+          partnerstop.autoplay.start();
+          partnersbottom.autoplay.start();
+        });
+      }
+    },
+  });
+}
+
+const partnerslistbottom = document.querySelectorAll('.partners__list_bottom');
+if(!partnerslistbottom){} else {
+  var partnersbottom = new Swiper('.partners__list_bottom', {
+    loop: true,
+    loopedSlides: 0,
+    spaceBetween: 0,
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+    slideToClickedSlide: false,
+    allowTouchMove: false,
+    speed: '3000',
+    autoplay: {
+      delay: 0,
+      reverseDirection: true,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
+    },
+    on: {
+      init() {
+        this.el.addEventListener('mouseenter', () => {
+          partnerstop.params.speed = 0;
+          partnersbottom.params.speed = 0;
+          partnerstop.autoplay.stop();
+          partnersbottom.autoplay.stop();
+        });
+        this.el.addEventListener('mouseleave', () => {
+          partnerstop.params.speed = 3000;
+          partnersbottom.params.speed = 3000;
+          partnerstop.autoplay.start();
+          partnersbottom.autoplay.start();
+        });
+      }
+    },
+  });
+}
+// end company slider
+
 // start company slider
 const companyslider = document.querySelectorAll('.company__slider');
 if(!companyslider){} else {
@@ -414,6 +488,7 @@ function filterFunction() {
     document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.style.maxHeight = null);
     document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.map__container .map__city').forEach(n => n.classList.remove('active'));
     map_scroll.onmouseover = function(e) {scroll.stop();};
     mapcity.style.overflow = "hidden";
     mapmargin.forEach(n => n.style.margin = null);
@@ -440,6 +515,7 @@ document.querySelector('.map__search_back').addEventListener('click', (event) =>
   mapback.classList.add('close');
   mapcity.style.overflow = "hidden";
   document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('active'));
+  document.querySelectorAll('.map__container .map__city').forEach(n => n.classList.remove('active'));
   map_scroll.onmouseover = function(e) {scroll.stop();};
   myMap.setCenter([55.253215,37.622504],6);
 });
@@ -556,6 +632,7 @@ for (i = 0; i < acc.length; i++) {
       accordion.classList.remove("active");
       mapcity.style.overflow = "hidden";
       document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('active'));
+      document.querySelectorAll('.map__container .map__city').forEach(n => n.classList.remove('active'));
       map_scroll.onmouseover = function(e) {scroll.stop();};
       for (var b = 0; b < courseAccordionButton.length; b++) {
         courseAccordionButton[b].classList.remove("close");
@@ -582,6 +659,7 @@ for (i = 0; i < acc.length; i++) {
       mapback.classList.remove('close');
       mapcity.style.overflow = "visible";
       document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.add('active'));
+      document.querySelectorAll('.map__container .map__city').forEach(n => n.classList.add('active'));
       map_scroll.onmouseover = function(e) {scroll.start();};
     }
   };
