@@ -853,7 +853,7 @@ svg path {
 .header__list_scroll {
   width: 100%;
   height: 100%;
-  overflow-x: scroll;
+  overflow-y: scroll;
 }
 
 .header__list_block {
@@ -3439,7 +3439,7 @@ svg path {
     display: flex;
     width: 100%;
     height: 0px;
-    padding: 0 1px 0 40px;
+    padding: 0 0 0 40px;
     align-items: center;
     justify-content: space-between;
     position: absolute;
@@ -3859,6 +3859,7 @@ svg path {
   }
   .header__contacts {
     height: 70px;
+    padding: 0 0 0 20px;
     -webkit-transform: translateY(calc(-70px));
     -moz-transform: translateY(calc(-70px));
     -ms-transform: translateY(calc(-70px));
