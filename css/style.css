@@ -3874,6 +3874,7 @@ svg path {
     padding: 30px 20px 110px;
   }
   .hero .swiper-container-horizontal > .swiper-pagination-bullets, .hero .swiper-pagination-custom, .hero .swiper-pagination-fraction {
+    width: calc(100% - 40px);
     left: 50%;
     bottom: 70px;
     -webkit-transform: translateX(-50%);
@@ -4061,6 +4062,16 @@ svg path {
   .offer__desc {
     font-size: 12px;
     line-height: 15px;
+  }
+  .offer__item:hover .offer__top {
+    padding: 0 0 20px;
+    color: var(--text);
+    background-color: var(--bg);
+  }
+  .offer__item:hover .offer__bottom {
+    padding: 20px 0;
+    color: var(--text);
+    background-color: var(--bg);
   }
   .map__container {
     padding: 230px 0 0;
