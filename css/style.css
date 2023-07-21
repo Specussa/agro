@@ -3206,6 +3206,8 @@ svg path {
     margin-right: 0;
     justify-content: flex-start;
     gap: 100px;
+    background-color: var(--bg);
+    z-index: 1;
   }
   .header__burger_mobile, .header__burger_mobile:hover {
     display: block;
