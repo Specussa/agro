@@ -4275,4 +4275,16 @@ svg path {
     text-align: center;
   }
 }
+@media (max-width: 400px) {
+  .footer__tel {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+@media (max-width: 320px) {
+  .footer__tel {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
 /* start media 800px */
