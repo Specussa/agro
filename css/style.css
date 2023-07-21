@@ -3289,6 +3289,7 @@ svg path {
   }
   .header__list_scroll.active {
     height: calc(100vh - 160px);
+    max-height: calc(100vh - 160px);
     top: 80px;
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
@@ -3830,7 +3831,7 @@ svg path {
     font-size: 14px;
     line-height: 20px;
   }
-  .header, .header__top, .header__buttons, .header__contacts {
+  .header, .header__top, .header__contacts {
     height: 70px;
   }
   .header__tel {
@@ -3838,9 +3839,16 @@ svg path {
   }
   .header__list_scroll.active {
     height: calc(100vh - 140px);
+    max-height: calc(100vh - 140px);
+    top: 70px;
   }
-  .header__contacts {
-    bottom: -70px;
+  .header__contacts.active {
+    height: 70px;
+    -webkit-transform: translateY(calc(100vh - 70px));
+    -moz-transform: translateY(calc(100vh - 70px));
+    -ms-transform: translateY(calc(100vh - 70px));
+    -o-transform: translateY(calc(100vh - 70px));
+    transform: translateY(calc(100vh - 70px));
   }
   .hero__head {
     font-size: 34px;
@@ -3876,6 +3884,9 @@ svg path {
   .header__buttons {
     width: calc(100% - 70px);
     padding: 0;
+  }
+  .header__buttons.active {
+    height: 70px;
   }
   .header__burger_mobile, .header__burger_mobile:hover {
     width: 70px;
