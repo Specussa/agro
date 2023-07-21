@@ -3819,7 +3819,7 @@ svg path {
     line-height: 13px;
   }
   .header__city_block {
-    padding: 50px 30px 30px;
+    padding: 50px 20px 30px;
   }
   .header__city_button {
     top: 10px;
@@ -3840,7 +3840,7 @@ svg path {
     right: 15px;
   }
   .header__block_list {
-    padding: 15px 30px;
+    padding: 15px 20px;
   }
   .header__button, .header__button.active {
     height: 50px;
@@ -3879,6 +3879,9 @@ svg path {
   .hero__prev, .hero__next {
     display: none;
   }
+  .hero__shadow {
+    padding: 30px 20px 110px;
+  }
   .hero .swiper-container-horizontal > .swiper-pagination-bullets, .hero .swiper-pagination-custom, .hero .swiper-pagination-fraction {
     left: 50%;
     bottom: 70px;
@@ -3904,7 +3907,7 @@ svg path {
     margin: 0 15px;
   }
   .partners__block {
-    padding: 0 30px;
+    padding: 0 20px;
   }
   .partners__item img {
     width: 100%;
@@ -3920,17 +3923,17 @@ svg path {
   }
   .events__desc.mobile {
     display: block;
-    padding: 0 30px 50px;
+    padding: 0 20px 50px;
     color: var(--text);
   }
   .events__desc::after {
     background-color: var(--gray);
   }
   .events__block {
-    padding: 50px 30px 30px;
+    padding: 50px 20px 30px;
   }
   .events__list {
-    padding: 30px;
+    padding: 30px 20px;
     gap: 20px;
   }
   .events__item {
@@ -3940,7 +3943,7 @@ svg path {
     display: none;
   }
   .company__info_list {
-    padding: 50px 30px;
+    padding: 50px 20px;
     align-items: flex-start;
     flex-direction: column;
   }
@@ -3951,7 +3954,7 @@ svg path {
     justify-content: space-between;
   }
   .company__flex {
-    padding: 50px 30px 0;
+    padding: 50px 20px 0;
   }
   .company__info_number {
     font-size: 80px;
@@ -3992,7 +3995,7 @@ svg path {
     margin: 55px 0 0;
   }
   .company__slider {
-    margin: 40px auto 160px;
+    margin: 40px 0 160px;
   }
   .company__prev {
     right: auto;
@@ -4007,9 +4010,10 @@ svg path {
     background-color: var(--bg);
   }
   .company__slider {
-    padding: 0 30px;
+    padding: 0;
   }
   .company__texts .swiper-slide {
+    padding: 0 20px;
     gap: 20px;
   }
   .company__counter {
@@ -4024,7 +4028,7 @@ svg path {
     transform: translateX(-50%);
   }
   .offer__slider_container {
-    padding: 30px 30px 100px;
+    padding: 30px 20px 100px;
   }
   .offer__pagination {
     display: block;
@@ -4076,7 +4080,7 @@ svg path {
     display: flex;
     width: 100%;
     height: 100px;
-    padding: 30px;
+    padding: 30px 20px;
     align-items: center;
   }
   .map__city {
@@ -4087,7 +4091,7 @@ svg path {
   }
   .map__search_head {
     height: 130px;
-    padding: 30px;
+    padding: 30px 20px;
   }
   .map__yandex {
     height: 500px;
@@ -4104,6 +4108,8 @@ svg path {
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
     transform: translateY(0);
+  }.footer__container {
+    padding: 30px 20px;
   }
   .footer__contacts {
     flex-direction: column;
