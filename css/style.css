@@ -3286,7 +3286,7 @@ svg path {
   .header__list_block {
     width: 100%;
     height: 0px;
-    position: absolute !important;
+    position: fixed !important;
     top: 0;
     left: 0;
     z-index: 0;
@@ -3309,8 +3309,8 @@ svg path {
     transition-delay: 0s, 0s, 0.5s;
   }
   .header__list_block.active {
-    height: calc(100vh - 160px);
-    max-height: calc(100vh - 160px);
+    height: calc(100% - 160px);
+    max-height: calc(100% - 160px);
     top: 160px;
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
@@ -3853,8 +3853,8 @@ svg path {
     display: none;
   }
   .header__list_block.active {
-    height: calc(100vh - 140px);
-    max-height: calc(100vh - 140px);
+    height: calc(100% - 140px);
+    max-height: calc(100% - 140px);
     top: 140px;
   }
   .header__contacts {
