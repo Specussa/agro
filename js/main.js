@@ -32,7 +32,7 @@ const burgermobile = document.querySelector('.header__burger_mobile');
 const headerlist = document.querySelector('.header__list');
 const headerbuttons = document.querySelector('.header__buttons');
 const headercontacts = document.querySelector('.header__contacts');
-const headerscroll = document.querySelector('.header__list_scroll');
+const headerscroll = document.querySelector('.header__list_block');
 burgermobile.addEventListener('click', function() {
   if (burgermobile.classList.contains("active")) {
     bodyoverlay.classList.remove("active");
