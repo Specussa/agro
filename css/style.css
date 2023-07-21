@@ -3311,7 +3311,7 @@ svg path {
   .header__list_block.active {
     height: calc(100% - 160px);
     max-height: calc(100% - 160px);
-    top: 160px;
+    top: 80px;
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
     -ms-transform: translateY(0%);
@@ -3447,11 +3447,11 @@ svg path {
     bottom: 0;
     z-index: 100;
     background-color: var(--dblue);
-    -webkit-transform: translateY(calc(-80px));
-    -moz-transform: translateY(calc(-80px));
-    -ms-transform: translateY(calc(-80px));
-    -o-transform: translateY(calc(-80px));
-    transform: translateY(calc(-80px));
+    -webkit-transform: translateY(calc(100vh));
+    -moz-transform: translateY(calc(100vh));
+    -ms-transform: translateY(calc(100vh));
+    -o-transform: translateY(calc(100vh));
+    transform: translateY(calc(100vh));
     -webkit-transition: -webkit-transform 0.5s linear, height 0s linear;
     -moz-transition: -moz-transform 0.5s linear, height 0s linear;
     -ms-transition: -ms-transform 0.5s linear, height 0s linear;
@@ -3466,11 +3466,11 @@ svg path {
   }
   .header__contacts.active {
     height: 80px;
-    -webkit-transform: translateY(80px);
-    -moz-transform: translateY(80px);
-    -ms-transform: translateY(80px);
-    -o-transform: translateY(80px);
-    transform: translateY(80px);
+    -webkit-transform: translateY(calc(100vh - 80px));
+    -moz-transform: translateY(calc(100vh - 80px));
+    -ms-transform: translateY(calc(100vh - 80px));
+    -o-transform: translateY(calc(100vh - 80px));
+    transform: translateY(calc(100vh - 80px));
     -webkit-transition-delay: 0s, 0s;
     -moz-transition-delay: 0s, 0s;
     -ms-transition-delay: 0s, 0s;
@@ -3855,24 +3855,24 @@ svg path {
   .header__list_block.active {
     height: calc(100% - 140px);
     max-height: calc(100% - 140px);
-    top: 140px;
+    top: 70px;
   }
   .header__contacts {
     height: 70px;
     padding: 0 0 0 20px;
-    -webkit-transform: translateY(calc(-70px));
-    -moz-transform: translateY(calc(-70px));
-    -ms-transform: translateY(calc(-70px));
-    -o-transform: translateY(calc(-70px));
-    transform: translateY(calc(-70px));
+    -webkit-transform: translateY(100vh);
+    -moz-transform: translateY(100vh);
+    -ms-transform: translateY(100vh);
+    -o-transform: translateY(100vh);
+    transform: translateY(100vh);
   }
   .header__contacts.active {
     height: 70px;
-    -webkit-transform: translateY(calc(70px));
-    -moz-transform: translateY(calc(70px));
-    -ms-transform: translateY(calc(70px));
-    -o-transform: translateY(calc(70px));
-    transform: translateY(calc(70px));
+    -webkit-transform: translateY(calc(100vh - 70px));
+    -moz-transform: translateY(calc(100vh - 70px));
+    -ms-transform: translateY(calc(100vh - 70px));
+    -o-transform: translateY(calc(100vh - 70px));
+    transform: translateY(calc(100vh - 70px));
   }
   .hero__head {
     font-size: 34px;
