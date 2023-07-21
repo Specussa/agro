@@ -3821,12 +3821,6 @@ svg path {
     color: var(--blue);
     background-color: var(--bg);
   }
-  .map__search_tel:first-child, .map__search_tel:hover:first-child {
-    padding: 10px 90px 5px 50px;
-  }
-  .map__search_tel:nth-last-child(2), .map__search_tel:hover:nth-last-child(2) {
-    padding: 5px 90px 10px 50px;
-  }
   .map__search_mail {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4265,14 +4259,8 @@ svg path {
     -o-transform: translateY(0);
     transform: translateY(0);
   }
-  .map__search_tel:first-child, .map__search_tel:hover:first-child {
-    padding: 10px 90px 5px 20px;
-  }
   .map__search_tel, .map__search_tel:hover {
     padding: 5px 90px 5px 20px;
-  }
-  .map__search_tel:nth-last-child(2), .map__search_tel:hover:nth-last-child(2) {
-    padding: 5px 90px 10px 20px;
   }
   .footer__container {
     padding: 30px 20px;
