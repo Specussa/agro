@@ -2456,6 +2456,9 @@ svg path {
 }
 
 .company__name {
+  position: absolute;
+  top: -50px;
+  left: 100px;
   font-size: 24px;
   font-weight: 500;
   line-height: 31px;
@@ -3093,6 +3096,7 @@ svg path {
     line-height: 39px;
   }
   .company__name {
+    left: 80px;
     font-size: 24px;
     line-height: 31px;
   }
@@ -3579,10 +3583,13 @@ svg path {
     fill: var(--blue);
   }
   .company__name {
-    display: none;
+    top: 505px;
+    left: 40px;
+    font-size: 12px;
+    line-height: 15px;
   }
   .company__texts {
-    margin: 40px 0 0;
+    margin: 60px 0 0;
   }
   .company__heading {
     max-width: calc(100% - 220px);
@@ -3982,6 +3989,10 @@ svg path {
     max-width: 100%;
     font-size: 12px;
     line-height: 15px;
+  }
+  .company__name {
+    top: 350px;
+    left: 20px;
   }
   .company__texts {
     margin: 55px 0 0;
