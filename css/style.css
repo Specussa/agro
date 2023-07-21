@@ -2655,7 +2655,8 @@ svg path {
 
 .map__city {
   width: 400px;
-  height: 810px;
+  height: fit-content;
+  max-height: 810px;
   position: absolute !important;
   top: 25px;
   left: 100px;
@@ -2783,17 +2784,26 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-height: 0px;
   max-height: 0px;
   flex-direction: column;
   justify-content: center;
   background-color: var(--bg);
-  -webkit-transition: max-height 0.4s linear, padding 0.1s linear;
-  -moz-transition: max-height 0.4s linear, padding 0.1s linear;
-  -ms-transition: max-height 0.4s linear, padding 0.1s linear;
-  -o-transition: max-height 0.4s linear, padding 0.1s linear;
-  transition: max-height 0.4s linear, padding 0.1s linear;
-  transition-delay: 0.3s, 0.3s;
+  -webkit-transition: max-height 0.4s linear, min-height 0.4s linear;
+  -moz-transition: max-height 0.4s linear, min-height 0.4s linear;
+  -ms-transition: max-height 0.4s linear, min-height 0.4s linear;
+  -o-transition: max-height 0.4s linear, min-height 0.4s linear;
+  transition: max-height 0.4s linear, min-height 0.4s linear;
   overflow: hidden;
+  -webkit-transition-delay: 0.4s, 0.4s;
+  -moz-transition-delay: 0.4s, 0.4s;
+  -ms-transition-delay: 0.4s, 0.4s;
+  -o-transition-delay: 0.4s, 0.4s;
+  transition-delay: 0.4s, 0.4s;
+}
+
+.map__search_info.active {
+  min-height: 80px;
 }
 
 .map__search_tel, .map__search_tel:hover {
@@ -3132,7 +3142,7 @@ svg path {
     padding: 20px 80px 20px 50px;
   }
   .map__city {
-    height: 550px;
+    max-height: 550px;
     left: 80px;
   }
   .map__zoom {
@@ -3751,9 +3761,6 @@ svg path {
     width: 100%;
     overflow: hidden;
   }
-  .map__search_info.active {
-    min-height: 80px;
-  }
   .map__search_tel, .map__search_tel:hover {
     padding: 5px 90px 5px 50px;
     color: var(--blue);
@@ -4151,13 +4158,15 @@ svg path {
   }
   .map__city {
     width: 100%;
-    height: 630px;
-    max-height: 80vh;
+    max-height: 630px;
     top: 100px;
   }
   .map__search_head {
     height: 130px;
     padding: 30px 20px;
+  }
+  .map__search_head.close {
+    padding: 0 20px;
   }
   .map__yandex {
     height: 500px;
