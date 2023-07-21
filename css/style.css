@@ -248,14 +248,12 @@
 }
 
 ::-webkit-scrollbar {
-  display: none;
-  width: 0px;
-  background: transparent;
+  width: 8px;
+  background: var(--dblue);
 }
 
 ::-webkit-scrollbar-thumb {
-  display: none;
-  width: 0px;
+  width: 8px;
   background: var(--blue);
 }
 
@@ -386,7 +384,7 @@ svg path {
 }
 
 .overlay__city {
-  z-index: 101;
+  z-index: 103;
 }
 
 .overlay.active, .overlay__city.active {
@@ -1456,7 +1454,7 @@ svg path {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 102;
+  z-index: 104;
   background: var(--bg);
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
@@ -3975,6 +3973,7 @@ svg path {
   }
   .company__buttons {
     max-width: 100%;
+    margin: 0;
   }
   .company__top .swiper-slide {
     height: 330px;
@@ -3990,20 +3989,32 @@ svg path {
     line-height: 15px;
   }
   .company__texts {
-    margin: 110px 0 0;
+    margin: 55px 0 0;
+  }
+  .company__slider {
+    margin: 40px auto 160px;
   }
   .company__prev {
     right: auto;
     left: calc(50% - 110px);
-    bottom: 125px;
+    bottom: -110px;
   }
   .company__next {
     right: calc(50% - 110px);
-    bottom: 125px;
+    bottom: -110px;
+  }
+  .company__prev:hover, .company__next:hover {
+    background-color: var(--bg);
+  }
+  .company__slider {
+    padding: 0 30px;
+  }
+  .company__texts .swiper-slide {
+    gap: 20px;
   }
   .company__counter {
     width: 80px;
-    bottom: 125px;
+    bottom: -110px;
     left: 50%;
     right: auto;
     -webkit-transform: translateX(-50%);
@@ -4065,6 +4076,7 @@ svg path {
     display: flex;
     width: 100%;
     height: 100px;
+    padding: 30px;
     align-items: center;
   }
   .map__city {
@@ -4075,6 +4087,7 @@ svg path {
   }
   .map__search_head {
     height: 130px;
+    padding: 30px;
   }
   .map__yandex {
     height: 500px;

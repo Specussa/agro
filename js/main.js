@@ -9,8 +9,7 @@ burger.addEventListener('click', function() {
     bodyoverlay.classList.remove("active");
     menu.classList.remove("active");
     burger.classList.remove("active");
-    document.body.style.overflow = "visible";
-    document.body.style.height = "100%";
+    document.body.style.height = null;
     menuindex.style.zIndex = null;
     document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
@@ -19,7 +18,6 @@ burger.addEventListener('click', function() {
     bodyoverlay.classList.add("active");
     menu.classList.add("active");
     burger.classList.add("active");
-    document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
     menuindex.style.zIndex = "102";
     document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
@@ -43,8 +41,7 @@ burgermobile.addEventListener('click', function() {
     headerbuttons.classList.remove("active");
     headercontacts.classList.remove("active");
     headerscroll.classList.remove("active");
-    document.body.style.overflow = "visible";
-    document.body.style.height = "100%";
+    document.body.style.height = null;
     menuindex.style.zIndex = null;
     document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
@@ -56,7 +53,6 @@ burgermobile.addEventListener('click', function() {
     headerbuttons.classList.add("active");
     headercontacts.classList.add("active");
     headerscroll.classList.add("active");
-    document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
     menuindex.style.zIndex = "102";
     document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
@@ -76,8 +72,7 @@ burgercity.addEventListener('click', function() {
     bodyoverlaycity.classList.remove("active");
     menucity.classList.remove("active");
     burgercity.classList.remove("active");
-    document.body.style.overflow = "visible";
-    document.body.style.height = "100%";
+    document.body.style.height = null;
     menuindex.style.zIndex = null;
   } else {
     bodyoverlaycity.classList.add("active");
@@ -92,8 +87,7 @@ document.querySelector('.header__city_button').addEventListener('click', functio
   bodyoverlaycity.classList.remove("active");
   menucity.classList.remove("active");
   burgercity.classList.remove("active");
-  document.body.style.overflow = "visible";
-  document.body.style.height = "100%";
+  document.body.style.height = null;
   menuindex.style.zIndex = null;
 })
 // end header__region
@@ -111,8 +105,7 @@ bodyoverlay.addEventListener('click', function() {
   document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
   document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
   document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
-  document.body.style.overflow = "visible";
-  document.body.style.height = "100%";
+  document.body.style.height = null;
   menuindex.style.zIndex = null;
 })
 // end overlay
@@ -122,8 +115,7 @@ bodyoverlaycity.addEventListener('click', function() {
   bodyoverlaycity.classList.remove("active");
   menucity.classList.remove("active");
   burgercity.classList.remove("active");
-  document.body.style.overflow = "visible";
-  document.body.style.height = "100%";
+  document.body.style.height = null;
   menuindex.style.zIndex = null;
 })
 // end overlay
