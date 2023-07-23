@@ -1,3 +1,24 @@
+// start scroll
+const map_scroll = document.querySelector('.map__city');
+const headernav_scroll = document.querySelector('.header__nav_scroll');
+const headercity_scroll = document.querySelector('.header__city_scroll');
+const headerlist_scroll = document.querySelector('.header__list_scroll');
+if(!map_scroll){} else {
+  Scrollbar.init(map_scroll);
+  map_scroll.addEventListener("touchstart", function (e) {scroll.stop()});
+  map_scroll.addEventListener("touchmove", function (e) {scroll.stop()});
+  map_scroll.addEventListener("touched", function (e) {scroll.stop()});
+  document.body.addEventListener("touchstart", function (e) {scroll.start()});
+  document.body.addEventListener("touchmove", function (e) {scroll.start()});
+  document.body.addEventListener("touched", function (e) {scroll.start()});
+  map_scroll.onmouseover = function(e) {scroll.stop();};
+  map_scroll.onmouseout = function(e) {scroll.start();};
+}
+if(!headernav_scroll){} else {Scrollbar.init(headernav_scroll);}
+if(!headercity_scroll){} else {Scrollbar.init(headercity_scroll);}
+if(!headerlist_scroll){} else {Scrollbar.init(headerlist_scroll);}
+// end scroll
+
 // start navbar
 // кнопка header__burger
 const bodyoverlay = document.querySelector('.overlay');
@@ -345,6 +366,7 @@ if(!partnerslistbottom){} else {
     },
   });
 }
+
 // end company slider
 
 // start company slider
