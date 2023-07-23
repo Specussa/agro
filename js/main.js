@@ -156,7 +156,6 @@ for (i = 0; i < hblockacc.length; i++) {
 
     if (hblockaccordion.style.maxHeight) {
       hblockaccordion.style.maxHeight = null;
-      mapmargin.forEach(n => n.style.margin = null);
       this.classList.remove("active");
       hblockaccordion.classList.remove("active");
       bodyoverlay.classList.remove("active");
@@ -179,7 +178,6 @@ for (i = 0; i < hblockacc.length; i++) {
       hblockaccordion.style.maxHeight = (hblockaccordion.scrollHeight * 1) + "px";
       hblockaccordion.classList.add("active");
       this.classList.add("active");
-      mapmargin.forEach(n => n.style.margin = 0);
       document.querySelectorAll('.header__list_scroll .scroll-content').forEach(n => n.classList.add('active'));
       if (document.documentElement.clientWidth > 1200) {document.querySelectorAll('.header__list_scroll .scroll-content').forEach(n => n.style.transform = null);}
     }
@@ -226,6 +224,8 @@ const hlisttop = document.querySelectorAll('.header__list_top');
 [...hlisttop].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
 const hlistbottom = document.querySelectorAll('.header__list_bottom'); 
 [...hlistbottom].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+const tractorfl = document.querySelectorAll('.tractor__filter_sublist'); 
+[...tractorfl].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
 // end счетчик для всех листов
 
 // start year
@@ -1145,3 +1145,39 @@ const map = document.querySelectorAll('.map');
   if (ymaps != undefined) ymaps.ready(init);
 // end yandex map
 // map
+
+// start accordion tractor__filter
+var tractorfilter = document.getElementsByClassName("tractor__filter_button");
+for (i = 0; i < tractorfilter.length; i++) {
+  tractorfilter[i].onclick = function(e) {
+    var tractorfilterordion = this.nextElementSibling;
+    var coursetractorfilterordion = document.getElementsByClassName("tractor__filter_sublist");
+    var coursetractorfilterordionActive = document.getElementsByClassName("tractor__filter_button active");
+
+    if (tractorfilterordion.style.maxHeight) {
+      tractorfilterordion.style.maxHeight = null;
+      this.classList.remove("active");
+      tractorfilterordion.classList.remove("active");
+    } else {
+      for (var q = 0; q < coursetractorfilterordionActive.length; q++) {
+        coursetractorfilterordionActive[q].classList.remove("active");
+        coursetractorfilterordion[q].classList.remove("active");
+      }
+      for (var p = 0; p < coursetractorfilterordion.length; p++) {
+        this.classList.remove("active");
+        coursetractorfilterordion[p].classList.remove("active");
+        coursetractorfilterordion[p].style.maxHeight = null;
+      }
+      tractorfilterordion.style.maxHeight = (tractorfilterordion.scrollHeight * 2) + "px";
+      tractorfilterordion.classList.add("active");
+      this.classList.add("active");
+    }
+  };
+}
+var tractorfi = document.getElementsByClassName("tractor__filter_subitem");
+for (i = 0; i < tractorfi.length; i++) {
+  tractorfi[i].onclick = function(e) {
+    this.classList.toggle("active");
+  };
+}
+// end accordion tractor__filter
