@@ -3186,8 +3186,9 @@ svg path {
 
 /* start tractor */
 
-.tractor_container {
-  padding: 80px 100px;
+.tractor__container {
+  padding: 60px 100px 100px;
+  flex-direction: column;
 }
 
 .tractor__list {
@@ -3311,6 +3312,82 @@ svg path {
 .tractor__link:hover .tractor__hover {
   bottom: 0%;
   background-color: var(--dblue);
+}
+
+.tractor__filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 0 60px;
+  flex-wrap: wrap;
+  gap: 10px 50px;
+}
+
+.tractor__filter_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tractor__filter_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  color: var(--gray);
+}
+
+.tractor__filter_button span {
+  display: inline-flex;
+}
+
+.tractor__filter_button span svg {
+  width: 15px;
+  height: 7px;
+}
+
+.tractor__filter_button span svg path {
+  stroke: var(--gray);
+}
+
+.tractor__filter_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1210px;
+  height: fit-content;
+  max-height: 0;
+  padding: 0 100px;
+  flex-wrap: wrap;
+  gap: 5px 40px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: var(--page-bg);
+  -webkit-transition: max-height 0.3s linear, padding 0.3s linear, border-bottom 0.3s linear;
+  -moz-transition: max-height 0.3s linear, padding 0.3s linear, border-bottom 0.3s linear;
+  -ms-transition: max-height 0.3s linear, padding 0.3s linear, border-bottom 0.3s linear;
+  -o-transition: max-height 0.3s linear, padding 0.3s linear, border-bottom 0.3s linear;
+  transition: max-height 0.3s linear, padding 0.3s linear, border-bottom 0.3s linear;
+  border-bottom: 0px solid var(--gray-border);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.tractor__filter_block.active .tractor__filter_list {
+  max-height: 1000px;
+  padding: 20px;
+  border-bottom: 1px solid var(--gray-border);
+  z-index: 11;
 }
 
 /* end tractor */
@@ -3524,7 +3601,7 @@ svg path {
 }
 /* start media 1230px */
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1201px) {
   .header__list_scroll .scroll-content.active {
     transform: translate3d(0px, 0px, 0px) !important;
   }

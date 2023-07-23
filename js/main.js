@@ -161,6 +161,7 @@ for (i = 0; i < hblockacc.length; i++) {
       hblockaccordion.classList.remove("active");
       bodyoverlay.classList.remove("active");
       document.querySelectorAll('.header__list_scroll .scroll-content').forEach(n => n.classList.remove('active'));
+      if (document.documentElement.clientWidth > 1200) {document.querySelectorAll('.header__list_scroll .scroll-content').forEach(n => n.style.transform = null);}
     } else {
       for (var q = 0; q < coursehblockAccordionActive.length; q++) {
         coursehblockAccordionActive[q].classList.remove("active");
@@ -180,6 +181,7 @@ for (i = 0; i < hblockacc.length; i++) {
       this.classList.add("active");
       mapmargin.forEach(n => n.style.margin = 0);
       document.querySelectorAll('.header__list_scroll .scroll-content').forEach(n => n.classList.add('active'));
+      if (document.documentElement.clientWidth > 1200) {document.querySelectorAll('.header__list_scroll .scroll-content').forEach(n => n.style.transform = null);}
     }
   };
 }
