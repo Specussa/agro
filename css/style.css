@@ -3248,7 +3248,12 @@ svg path {
 }
 
 .tractor__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 10px 50px;
+  flex-direction: column;
+  gap: 16px;
   position: absolute;
   width: 100%;
   top: calc(100% - 90px);
@@ -3270,7 +3275,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 16px 10px 16px 0;
+  padding: 16px 10px 0 0;
   justify-content: space-between;
   flex-wrap: nowrap;
   gap: 20px;
