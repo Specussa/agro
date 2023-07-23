@@ -492,6 +492,56 @@ var offerslider = new Swiper('.offer__slider', {
 });
 // end company slider
 
+// start product slider
+const productslider = document.querySelector('.product__slider');
+if(!productslider){} else {
+  var interleaveOffset = 0.5;
+  var productsliders = new Swiper('.product__slider', {
+    slidesPerView: 1,
+    speed: 1000,
+    loop: true,
+    loopedSlides: 2,
+    parallax: true,
+    watchSlidesProgress: true,
+    slideToClickedSlide: true,
+    allowTouchMove: true,
+    navigation: {
+      nextEl: '.product__slider_next',
+      prevEl: '.product__slider_prev',
+    },
+    on: {
+      progress: function() {
+        var swiper = this;
+        for (var i = 0; i < swiper.slides.length; i++) {
+          var slideProgress = swiper.slides[i].progress;
+          var innerOffset = swiper.width * interleaveOffset;
+          var innerTranslate = slideProgress * innerOffset;
+          swiper.slides[i].querySelector(".product__slider_block").style.transform = "translate3d(" + innerTranslate + "px, 0, 0)";
+        }      
+      },
+      touchStart: function() {
+        var swiper = this;
+        for (var i = 0; i < swiper.slides.length; i++) {
+          swiper.slides[i].style.transition = "";
+        }
+      },
+      setTransition: function(speed) {
+        var swiper = this;
+        for (var i = 0; i < swiper.slides.length; i++) {
+          swiper.slides[i].style.transition = speed + "ms";
+          swiper.slides[i].querySelector(".product__slider_block").style.transition = speed + "ms";
+        }
+      }
+    }
+  });
+  [].forEach.call(document.querySelectorAll('.product__slider_block'), (element) => {
+    if (element.getAttribute('data-background')) {
+      element.style.setProperty('background-image', 'url(' + element.getAttribute('data-background') + ')');
+    }
+  });
+}
+// end product slider
+
 // map
 // start search map
 const mapcity = document.querySelector('.map__city');
