@@ -236,11 +236,10 @@ year.remove();
 // end year
 
 // start hero slider
-const heroslider = document.querySelectorAll('.hero');
-if(!heroslider){} else {
+const hero = document.querySelectorAll('.hero');
+if(!hero){} else {
   var interleaveOffset = 0.5;
-  const sliderSelector = '.hero__slider',
-  options = {
+  var heroslider = new Swiper('.hero__slider', { 
     loop: true,
     loopedSlides: 2,
     speed: 1000,
@@ -282,10 +281,7 @@ if(!heroslider){} else {
         }
       }
     }
-  };
-  const heroSwiper = new Swiper(sliderSelector, options);
-  heroSwiper.init();
-  
+  });
   [].forEach.call(document.querySelectorAll('.hero__block'), (element) => {
     if (element.getAttribute('data-background')) {
       element.style.setProperty('background-image', 'url(' + element.getAttribute('data-background') + ')');
@@ -370,7 +366,7 @@ if(!partnerslistbottom){} else {
 // end company slider
 
 // start company slider
-const companyslider = document.querySelectorAll('.company__slider');
+const companyslider = document.querySelector('.company__slider');
 if(!companyslider){} else {
   var interleaveOffset = 0.5;
   var galleryTop = new Swiper('.company__top', {
@@ -528,19 +524,21 @@ const maphead = document.querySelectorAll('.map__search_city .map__search_head')
 const mapinfo = document.querySelectorAll('.map__search_city .map__search_info');
 const mapmargin = document.querySelectorAll('.map__city .map__search_city');
 const mapback = document.querySelector('.map__search_back');
-document.querySelector('.map__search_back').addEventListener('click', (event) => {
-  maphead.forEach(n => n.classList.remove('active'));
-  maphead.forEach(n => n.classList.remove('close'));
-  mapinfo.forEach(n => n.classList.remove('active'));
-  mapinfo.forEach(n => n.style.maxHeight = null);
-  mapmargin.forEach(n => n.style.margin = null);
-  mapback.classList.add('close');
-  mapcity.style.overflow = "hidden";
-  document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('active'));
-  document.querySelectorAll('.map__container .map__city').forEach(n => n.classList.remove('active'));
-  map_scroll.onmouseover = function(e) {scroll.stop();};
-  myMap.setCenter([55.253215,37.622504],6);
-});
+if(!companyslider){} else {
+  mapback.addEventListener('click', (event) => {
+    maphead.forEach(n => n.classList.remove('active'));
+    maphead.forEach(n => n.classList.remove('close'));
+    mapinfo.forEach(n => n.classList.remove('active'));
+    mapinfo.forEach(n => n.style.maxHeight = null);
+    mapmargin.forEach(n => n.style.margin = null);
+    mapback.classList.add('close');
+    mapcity.style.overflow = "hidden";
+    document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.map__container .map__city').forEach(n => n.classList.remove('active'));
+    map_scroll.onmouseover = function(e) {scroll.stop();};
+    myMap.setCenter([55.253215,37.622504],6);
+  });
+}
 // end search back
 
 // start map accordion href
