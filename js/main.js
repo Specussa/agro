@@ -327,80 +327,72 @@ if(!hero){} else {
 }
 // end hero slider
 
-// start hero slider
+// start partners slider
 const partnerslisttop = document.querySelector('.partners__list_top');
+var transformValue;
 if(!partnerslisttop){} else {
-  var partnerstop = new Swiper('.partners__list_top', {  
+  var partnerstop = new Swiper('.partners__list_top', {
     loop: true,
-    loopedSlides: 0,
-    spaceBetween: 0,
-    slidesPerView: 'auto',
+    loopedSlides: 5,
+    slidesPerView: 5,
     slidesPerGroup: 1,
-    slideToClickedSlide: false,
-    allowTouchMove: false,
     autoplay : true,
     speed: 3000,
     autoplay: {
-      delay: 0,
+      delay: 1,
       pauseOnMouseEnter: true,
       disableOnInteraction: false,
-    },
-    on: {
-      init() {
-        this.el.addEventListener('mouseenter', () => {
-          partnerstop.params.speed = 0;
-          partnersbottom.params.speed = 0;
-          partnerstop.autoplay.stop();
-          partnersbottom.autoplay.stop();
-        });
-        this.el.addEventListener('mouseleave', () => {
-          partnerstop.params.speed = 3000;
-          partnersbottom.params.speed = 3000;
-          partnerstop.autoplay.start();
-          partnersbottom.autoplay.start();
-        });
-      }
     },
   });
 }
 
+var transformValue;
 const partnerslistbottom = document.querySelector('.partners__list_bottom');
 if(!partnerslistbottom){} else {
   var partnersbottom = new Swiper('.partners__list_bottom', {
     loop: true,
-    loopedSlides: 0,
-    spaceBetween: 0,
-    slidesPerView: 'auto',
+    loopedSlides: 5,
+    slidesPerView: 5,
     slidesPerGroup: 1,
-    slideToClickedSlide: false,
-    allowTouchMove: false,
-    speed: '3000',
+    speed: 3000,
     autoplay: {
-      delay: 0,
+      delay: 1,
       reverseDirection: true,
       pauseOnMouseEnter: true,
       disableOnInteraction: false,
-    },
-    on: {
-      init() {
-        this.el.addEventListener('mouseenter', () => {
-          partnerstop.params.speed = 0;
-          partnersbottom.params.speed = 0;
-          partnerstop.autoplay.stop();
-          partnersbottom.autoplay.stop();
-        });
-        this.el.addEventListener('mouseleave', () => {
-          partnerstop.params.speed = 3000;
-          partnersbottom.params.speed = 3000;
-          partnerstop.autoplay.start();
-          partnersbottom.autoplay.start();
-        });
-      }
-    },
+    }
   });
 }
 
-// end company slider
+var ptl = document.querySelector('.partners__list_top .partners__list');
+partnerstop.el.addEventListener('mouseenter', () => {
+  partnerstop.autoplay.stop();
+  transformValue = ptl.style.transform;
+  partnerstop.params.speed = 3000;
+  ptl.style.transform = "translate3d(" + partnerstop.getTranslate() + "px, 0px, 0px)";
+});
+partnerstop.el.addEventListener('mouseleave', () => {
+  ptl.style.transform = transformValue;
+  partnerstop.params.speed = 3000;
+  ptl.style.transitionDuration = "3000ms";
+  partnerstop.autoplay.start();
+});
+
+var pbl = document.querySelector('.partners__list_bottom .partners__list');
+partnersbottom.el.addEventListener('mouseenter', () => {
+  partnersbottom.autoplay.stop();
+  transformValue = pbl.style.transform;
+  partnersbottom.params.speed = 3000;
+  pbl.style.transform = "translate3d(" + partnersbottom.getTranslate() + "px, 0px, 0px)";
+});
+partnersbottom.el.addEventListener('mouseleave', () => {
+  pbl.style.transform = transformValue;
+  pbl.style.transitionDuration = "3000ms";
+  partnersbottom.params.speed = 3000;
+  partnersbottom.params.reverseDirection = true;
+  partnersbottom.autoplay.start();
+});
+// end partners slider
 
 // start company slider
 const companyslider = document.querySelector('.company__slider');
