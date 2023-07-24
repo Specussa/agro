@@ -114,33 +114,35 @@ document.querySelector('.header__city_button').addEventListener('click', functio
 })
 // end header__region
 
-// кнопка header__region
-const inforeading = document.querySelector('.info__read');
-const infobutton = document.querySelector('.info__button');
-
-infobutton.addEventListener('click', function() {
-  if (infobutton.classList.contains("active")) {
+// кнопка info__button
+const infobuttons = document.querySelector('.info__button');
+if(!infobuttons){} else {
+  const inforeading = document.querySelector('.info__read');
+  const infobutton = document.querySelector('.info__button');
+  infobutton.addEventListener('click', function() {
+    if (infobutton.classList.contains("active")) {
+      bodyoverlaycity.classList.remove("active");
+      inforeading.classList.remove("active");
+      infobutton.classList.remove("active");
+      document.body.style.height = null;
+      menuindex.style.zIndex = null;
+    } else {
+      bodyoverlaycity.classList.add("active");
+      inforeading.classList.add("active");
+      infobutton.classList.add("active");
+      document.body.style.height = "100vh";
+      menuindex.style.zIndex = "102";
+    }
+  })
+  document.querySelector('.info__read_button').addEventListener('click', function() {
     bodyoverlaycity.classList.remove("active");
     inforeading.classList.remove("active");
     infobutton.classList.remove("active");
     document.body.style.height = null;
     menuindex.style.zIndex = null;
-  } else {
-    bodyoverlaycity.classList.add("active");
-    inforeading.classList.add("active");
-    infobutton.classList.add("active");
-    document.body.style.height = "100vh";
-    menuindex.style.zIndex = "102";
-  }
-})
-document.querySelector('.info__read_button').addEventListener('click', function() {
-  bodyoverlaycity.classList.remove("active");
-  inforeading.classList.remove("active");
-  infobutton.classList.remove("active");
-  document.body.style.height = null;
-  menuindex.style.zIndex = null;
-})
-// end header__region
+  })
+}
+// end info__button
 
 // кнопка overlay
 bodyoverlay.addEventListener('click', function() {
@@ -271,7 +273,7 @@ year.remove();
 // end year
 
 // start hero slider
-const hero = document.querySelectorAll('.hero');
+const hero = document.querySelector('.hero');
 if(!hero){} else {
   var interleaveOffset = 0.5;
   var heroslider = new Swiper('.hero__slider', { 
@@ -326,7 +328,7 @@ if(!hero){} else {
 // end hero slider
 
 // start hero slider
-const partnerslisttop = document.querySelectorAll('.partners__list_top');
+const partnerslisttop = document.querySelector('.partners__list_top');
 if(!partnerslisttop){} else {
   var partnerstop = new Swiper('.partners__list_top', {  
     loop: true,
@@ -362,7 +364,7 @@ if(!partnerslisttop){} else {
   });
 }
 
-const partnerslistbottom = document.querySelectorAll('.partners__list_bottom');
+const partnerslistbottom = document.querySelector('.partners__list_bottom');
 if(!partnerslistbottom){} else {
   var partnersbottom = new Swiper('.partners__list_bottom', {
     loop: true,
