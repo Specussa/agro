@@ -331,66 +331,64 @@ if(!hero){} else {
 
 // start partners slider
 const partnerslisttop = document.querySelector('.partners__list_top');
-var transformValue;
 if(!partnerslisttop){} else {
+  var transformValue;
   var partnerstop = new Swiper('.partners__list_top', {
     loop: true,
-    loopedSlides: 5,
+    loopedSlides: 6,
     slidesPerView: 5,
-    slidesPerGroup: 1,
     autoplay : true,
     speed: 4000,
+    slideToClickedSlide: false,
+    allowTouchMove: false,
     autoplay: {
       delay: 1,
+      disableOnInteraction: true, 
+      reverseDirection:false,
+      waitForTransition:false,
       pauseOnMouseEnter: true,
-      disableOnInteraction: false,
+      allowTouchMove: true,
     },
   });
   var ptl = document.querySelector('.partners__list_top .partners__list');
   partnerstop.el.addEventListener('mouseenter', () => {
     partnerstop.autoplay.stop();
     transformValue = ptl.style.transform;
-    ptl.style.transitionDuration = "0ms";
-    partnerstop.params.speed = 4000;
     ptl.style.transform = "translate3d(" + partnerstop.getTranslate() + "px, 0px, 0px)";
   });
   partnerstop.el.addEventListener('mouseleave', () => {
     ptl.style.transform = transformValue;
-    ptl.style.transitionDuration = "4000ms";
-    partnerstop.params.speed = 4000;
     partnerstop.autoplay.start();
   });
 }
 
-var transformValue;
 const partnerslistbottom = document.querySelector('.partners__list_bottom');
 if(!partnerslistbottom){} else {
+  var transformValue;
   var partnersbottom = new Swiper('.partners__list_bottom', {
     loop: true,
-    loopedSlides: 5,
+    loopedSlides: 6,
     slidesPerView: 5,
-    slidesPerGroup: 1,
     speed: 4000,
+    slideToClickedSlide: false,
+    allowTouchMove: false,
     autoplay: {
       delay: 1,
-      reverseDirection: true,
+      disableOnInteraction: true,
+      reverseDirection:true,
+      waitForTransition:false,
       pauseOnMouseEnter: true,
-      disableOnInteraction: false,
+      allowTouchMove: true,
     }
   });
   var pbl = document.querySelector('.partners__list_bottom .partners__list');
   partnersbottom.el.addEventListener('mouseenter', () => {
     partnersbottom.autoplay.stop();
     transformValue = pbl.style.transform;
-    ptl.style.transitionDuration = "0ms";
-    partnersbottom.params.speed = 4000;
     pbl.style.transform = "translate3d(" + partnersbottom.getTranslate() + "px, 0px, 0px)";
   });
   partnersbottom.el.addEventListener('mouseleave', () => {
     pbl.style.transform = transformValue;
-    pbl.style.transitionDuration = "4000ms";
-    partnersbottom.params.speed = 4000;
-    partnersbottom.params.reverseDirection = true;
     partnersbottom.autoplay.start();
   });
 }
