@@ -3,6 +3,7 @@ const map_scroll = document.querySelector('.map__city');
 const headernav_scroll = document.querySelector('.header__nav_scroll');
 const headercity_scroll = document.querySelector('.header__city_scroll');
 const headerlist_scroll = document.querySelector('.header__list_scroll');
+const inforead_scroll = document.querySelector('.info__read_scroll');
 if(!map_scroll){} else {
   Scrollbar.init(map_scroll);
   map_scroll.addEventListener("touchstart", function (e) {scroll.stop()});
@@ -17,6 +18,7 @@ if(!map_scroll){} else {
 if(!headernav_scroll){} else {Scrollbar.init(headernav_scroll);}
 if(!headercity_scroll){} else {Scrollbar.init(headercity_scroll);}
 if(!headerlist_scroll){} else {Scrollbar.init(headerlist_scroll);}
+if(!inforead_scroll){} else {Scrollbar.init(inforead_scroll);}
 // end scroll
 
 // start navbar
@@ -112,6 +114,34 @@ document.querySelector('.header__city_button').addEventListener('click', functio
 })
 // end header__region
 
+// кнопка header__region
+const inforeading = document.querySelector('.info__read');
+const infobutton = document.querySelector('.info__button');
+
+infobutton.addEventListener('click', function() {
+  if (infobutton.classList.contains("active")) {
+    bodyoverlaycity.classList.remove("active");
+    inforeading.classList.remove("active");
+    infobutton.classList.remove("active");
+    document.body.style.height = null;
+    menuindex.style.zIndex = null;
+  } else {
+    bodyoverlaycity.classList.add("active");
+    inforeading.classList.add("active");
+    infobutton.classList.add("active");
+    document.body.style.height = "100vh";
+    menuindex.style.zIndex = "102";
+  }
+})
+document.querySelector('.info__read_button').addEventListener('click', function() {
+  bodyoverlaycity.classList.remove("active");
+  inforeading.classList.remove("active");
+  infobutton.classList.remove("active");
+  document.body.style.height = null;
+  menuindex.style.zIndex = null;
+})
+// end header__region
+
 // кнопка overlay
 bodyoverlay.addEventListener('click', function() {
   bodyoverlay.classList.remove("active");
@@ -135,6 +165,9 @@ bodyoverlaycity.addEventListener('click', function() {
   bodyoverlaycity.classList.remove("active");
   menucity.classList.remove("active");
   burgercity.classList.remove("active");
+  bodyoverlaycity.classList.remove("active");
+  inforeading.classList.remove("active");
+  infobutton.classList.remove("active");
   document.body.style.height = null;
   menuindex.style.zIndex = null;
 })
