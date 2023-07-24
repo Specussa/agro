@@ -423,7 +423,7 @@ if(!companyslider){} else {
   var galleryThumbs = new Swiper('.company__thumbs', {
     loop: true,
     spaceBetween: 40,
-    slidesPerView: '2',
+    slidesPerView: 2,
     touchRatio: 0.2,
     loop: true,
     loopedSlides: 2,
@@ -440,9 +440,8 @@ if(!companyslider){} else {
   var galleryText = new Swiper('.company__texts', {
     loop: true,
     spaceBetween: 40,
-    slidesPerView: '1',
+    slidesPerView: 1,
     touchRatio: 0.2,
-    loop: true,
     loopedSlides: 2,
     slideToClickedSlide: false,
     allowTouchMove: false,
@@ -463,9 +462,8 @@ if(!companyslider){} else {
 var offerslider = new Swiper('.offer__slider', {
   loop: false,
   spaceBetween: 50,
-  slidesPerView: '2',
+  slidesPerView: 2,
   touchRatio: 0.2,
-  loop: false,
   loopedSlides: 1,
   speed: 1000,
   slideToClickedSlide: false,
@@ -476,7 +474,7 @@ var offerslider = new Swiper('.offer__slider', {
   },
   breakpoints: {
     800: {
-      slidesPerView: '1',
+      slidesPerView: 1,
       spaceBetween: 20,
       allowTouchMove: true,
       slideToClickedSlide: true,
@@ -541,6 +539,68 @@ if(!productslider){} else {
   });
 }
 // end product slider
+
+// start company slider
+const infosliders = document.querySelector('.info__sliders');
+if(!infosliders){} else {
+  var interleaveOffset = 0.5;
+  var infoSlider = new Swiper('.info__slider', {
+    slidesPerView: 1,
+    speed: 1000,
+    loop: true,
+    loopedSlides: 3,
+    parallax: true,
+    watchSlidesProgress: true,
+    slideToClickedSlide: true,
+    allowTouchMove: true,
+    on: {
+      progress: function() {
+        var swiper = this;
+        for (var i = 0; i < swiper.slides.length; i++) {
+          var slideProgress = swiper.slides[i].progress;
+          var innerOffset = swiper.width * interleaveOffset;
+          var innerTranslate = slideProgress * innerOffset;
+          swiper.slides[i].querySelector(".info__slider_block").style.transform = "translate3d(" + innerTranslate + "px, 0, 0)";
+        }      
+      },
+      touchStart: function() {
+        var swiper = this;
+        for (var i = 0; i < swiper.slides.length; i++) {
+          swiper.slides[i].style.transition = "";
+        }
+      },
+      setTransition: function(speed) {
+        var swiper = this;
+        for (var i = 0; i < swiper.slides.length; i++) {
+          swiper.slides[i].style.transition = speed + "ms";
+          swiper.slides[i].querySelector(".info__slider_block").style.transition = speed + "ms";
+        }
+      }
+    }
+  });
+  
+  [].forEach.call(document.querySelectorAll('.info__slider_block'), (element) => {
+    if (element.getAttribute('data-background')) {
+      element.style.setProperty('background-image', 'url(' + element.getAttribute('data-background') + ')');
+    }
+  });
+
+  var infoThumbs = new Swiper('.info__thumbs', {
+    loop: true,
+    loopedSlides: 3,
+    slidesPerView: 3,
+    touchRatio: 0.1,
+    spaceBetween: 40,
+    speed: 1000,
+    parallax: true,
+    watchSlidesProgress: true,
+    slideToClickedSlide: true,
+    allowTouchMove: true,
+  });
+  infoSlider.controller.control = infoThumbs;
+  infoThumbs.controller.control = infoSlider;
+}
+// end company slider
 
 // map
 // start search map
