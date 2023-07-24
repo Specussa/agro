@@ -333,63 +333,80 @@ if(!hero){} else {
 const partnerslisttop = document.querySelector('.partners__list_top');
 if(!partnerslisttop){} else {
   var transformValue;
-  var partnerstop = new Swiper('.partners__list_top', {
-    loop: true,
-    loopedSlides: 6,
-    slidesPerView: 5,
-    autoplay : true,
-    speed: 4000,
-    slideToClickedSlide: false,
-    allowTouchMove: false,
-    autoplay: {
-      delay: 1,
-      disableOnInteraction: true, 
-      reverseDirection:false,
-      waitForTransition:false,
-      pauseOnMouseEnter: true,
-      allowTouchMove: true,
-    },
-  });
   var ptl = document.querySelector('.partners__list_top .partners__list');
-  partnerstop.el.addEventListener('mouseenter', () => {
-    partnerstop.autoplay.stop();
-    transformValue = ptl.style.transform;
-    ptl.style.transform = "translate3d(" + partnerstop.getTranslate() + "px, 0px, 0px)";
-  });
-  partnerstop.el.addEventListener('mouseleave', () => {
-    ptl.style.transform = transformValue;
-    partnerstop.autoplay.start();
+  var partnerstop = new Swiper('.partners__list_top', {
+    slidesPerView: 'auto',
+    loop: true,
+    speed: 5000,
+    slidesPerView: '5',
+    autoplay: {
+      enabled: true,
+      delay: 1,
+    },
+    on: {
+      slideChangeTransitionStart: function() {
+        ptl.style.transitionDuration = "4000ms";
+        this.params.speed = 4000;
+        this.autoplay.start();
+      },
+      init: function() {
+        partnerslisttop.addEventListener('mouseenter', () => {
+          this.autoplay.stop();
+          transformValue = ptl.style.transform;
+          ptl.style.transitionDuration = "0ms";
+          this.params.speed = 0;
+          ptl.style.transform = "translate3d(" + this.getTranslate() + "px, 0px, 0px)";
+        });
+        partnerslisttop.addEventListener('mouseleave', () => {
+          ptl.style.transitionDuration = "1000ms";
+          this.params.speed = 1000;
+          ptl.style.transform = transformValue;
+          this.autoplay.start();
+        });
+      }
+    }
   });
 }
 
 const partnerslistbottom = document.querySelector('.partners__list_bottom');
 if(!partnerslistbottom){} else {
   var transformValue;
+  var pbl = document.querySelector('.partners__list_bottom .partners__list');
   var partnersbottom = new Swiper('.partners__list_bottom', {
     loop: true,
-    loopedSlides: 6,
-    slidesPerView: 5,
-    speed: 4000,
-    slideToClickedSlide: false,
-    allowTouchMove: false,
+    speed: 5000,
+    slidesPerView: '5',
+    reverseDirection: "back",
     autoplay: {
+      enabled: true,
       delay: 1,
-      disableOnInteraction: true,
-      reverseDirection:true,
-      waitForTransition:false,
-      pauseOnMouseEnter: true,
-      allowTouchMove: true,
+    },
+    on: {
+      slideChangeTransitionStart: function() {
+        pbl.style.transitionDuration = "4000ms";
+        this.params.speed = 4000;
+        this.params.reverseDirection = true;
+        this.autoplay.start();
+      },
+      init: function() {
+        partnerslistbottom.addEventListener('mouseenter', () => {
+          this.autoplay.stop();
+          transformValue = pbl.style.transform;
+          pbl.style.transitionDuration = "0ms";
+          this.params.speed = 0;
+          this.params.reverseDirection = true;
+          pbl.style.transform = "translate3d(" + this.getTranslate() + "px, 0px, 0px)";
+        });
+        partnerslistbottom.addEventListener('mouseleave', () => {
+          pbl.style.transitionDuration = "1000ms";
+          this.params.speed = 1000;
+          pbl.style.transform = transformValue;
+          this.params.reverseDirection = true;
+          this.autoplay.start();
+          this.update();
+        });
+      }
     }
-  });
-  var pbl = document.querySelector('.partners__list_bottom .partners__list');
-  partnersbottom.el.addEventListener('mouseenter', () => {
-    partnersbottom.autoplay.stop();
-    transformValue = pbl.style.transform;
-    pbl.style.transform = "translate3d(" + partnersbottom.getTranslate() + "px, 0px, 0px)";
-  });
-  partnersbottom.el.addEventListener('mouseleave', () => {
-    pbl.style.transform = transformValue;
-    partnersbottom.autoplay.start();
   });
 }
 // end partners slider
