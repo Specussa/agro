@@ -277,15 +277,17 @@ const hero = document.querySelector('.hero');
 if(!hero){} else {
   var interleaveOffset = 0.5;
   var heroslider = new Swiper('.hero__slider', { 
-    loop: true,
-    loopedSlides: 2,
+    loop: false,
     speed: 1000,
     parallax: true,
+    slideToClickedSlide: false,
     autoplay: {
       delay: 6500,
+      pauseOnMouseEnter: true,
+      allowTouchMove: true,
       disableOnInteraction: false,
     },
-    watchSlidesProgress: true,
+    watchSlidesProgress: false,
     pagination: {
       el: '.hero__pagination',
       clickable: true,

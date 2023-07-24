@@ -1858,6 +1858,16 @@ svg path {
   top: 0;
   z-index: 1;
   background: linear-gradient(88.74deg, rgba(0, 0, 0, 0.6) 29.81%, rgba(0, 0, 0, 0) 100.94%);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  -ms-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+
+.swiper-slide-active .hero__shadow {
+  opacity: 1;
 }
 
 .hero__prev, .hero__next {
