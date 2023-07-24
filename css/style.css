@@ -1367,7 +1367,7 @@ svg path {
   transition: color 0.2s ease-in-out;
 }
 
-.header__item_top:hover .header__link_top, .header__item_top.active .header__link_top {
+.header__item_top:hover .header__link_top, .header__item_top.selected .header__link_top {
   color: var(--text);
 }
 
@@ -1385,7 +1385,7 @@ svg path {
   transition: width 0.2s ease-in-out;
 }
 
-.header__item_top:hover .header__link_top span, .header__item_top.active .header__link_top span {
+.header__item_top:hover .header__link_top span, .header__item_top.selected .header__link_top span {
   width: 100%;
 }
 

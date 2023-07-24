@@ -1328,7 +1328,7 @@ for (i = 0; i < tractorfi.length; i++) {
 var headeritemtop = document.getElementsByClassName("header__item_top");
 for (i = 0; i < headeritemtop.length; i++) {
   headeritemtop[i].onclick = function(e) {
-    this.classList.toggle("active");
+    this.classList.toggle("selected");
   };
 }
 // end accordion tractor__filter
