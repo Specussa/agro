@@ -2044,6 +2044,12 @@ svg path {
   filter: grayscale(1) brightness(100);
 }
 
+.partners__divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--blue);
+}
+
 /* end partners */
 
 /* start events */
@@ -3276,6 +3282,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   padding: 16px 10px 0 0;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
   gap: 20px;
@@ -3416,6 +3423,7 @@ svg path {
   border-bottom: 0px solid var(--blue);
   z-index: 10;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .tractor__filter_sublist.active {
@@ -4020,6 +4028,47 @@ svg path {
   }
   .map__yandex {
     height: 600px;
+  }
+  .breadcrumbs__head {
+    font-size: 60px;
+    line-height: 65px;
+  }
+  .breadcrumbs__flex {
+    padding: 80px;
+  }
+  .tractor__name {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .tractor__head {
+    font-size: 30px;
+    line-height: 39px;
+  }
+  .tractor__info p {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .tractor__info span {
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .tractor__container {
+    padding: 60px 80px 100px;
+  }
+  .tractor__list {
+    gap: 40px;
+  }
+  .tractor__link {
+    padding: 30px 30px 90px;
+  }
+  .tractor__info {
+    padding: 10px 30px;
+  }
+  .tractor__item {
+    width: calc(50% - 20px);
+  }
+  .tractor__link:hover .tractor__info {
+    top: calc(100% - 220px);
   }
   .footer__container {
     padding: 60px 80px;
@@ -4705,8 +4754,56 @@ svg path {
   .map__container {
     padding: 80px 0 0;
   }
+  .breadcrumbs__flex {
+    padding: 60px 40px;
+    gap: 60px;
+  }
+  .tractor__container {
+    padding: 60px 40px 80px;
+  }
+  .tractor__list {
+    gap: 20px;
+  }
+  .tractor__item {
+    width: calc(50% - 10px);
+  }
   .footer__container {
     padding: 40px;
+  }
+  .tractor__link {
+    padding: 20px 20px 90px;
+  }
+  .tractor__info {
+    padding: 10px 20px;
+    top: calc(100% - 55px);
+    gap: 5px;
+  }
+  .tractor__link:hover .tractor__info {
+    top: calc(100% - 140px);
+  }
+  .tractor__info p:first-child {
+    padding: 0;
+  }
+  .tractor__filter_info {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .tractor__info p {
+    padding: 10px 0 0;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .tractor__info span {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .tractor__name {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .tractor__head {
+    font-size: 26px;
+    line-height: 34px;
   }
   .footer__contacts_block span {
     font-size: 14px;
@@ -5090,6 +5187,54 @@ svg path {
   .map__search_tel, .map__search_tel:hover {
     padding: 5px 90px 5px 20px;
   }
+  .breadcrumbs__flex {
+    padding: 40px 20px 20px;
+    gap: 40px;
+  }
+  .breadcrumbs__link {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .breadcrumbs__head {
+    font-size: 60px;
+    line-height: 65px;
+  }
+  .tractor__container {
+    padding: 20px 20px 60px;
+  }
+  .tractor__filter_list {
+    gap: 10px 30px;
+  }
+  .tractor__name {
+    font-size: 10px;
+    line-height: 13px;
+  }
+  .tractor__head {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .tractor__info p, .tractor__info span {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .tractor__link:hover .tractor__info, .tractor__info {
+    top: calc(100% - 100px);
+  }
+  .tractor__filter_info {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .tractor__filter_button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .tractor__filter {
+    padding: 0 0 40px;
+  }
+  .tractor__filter_sublist {
+    top: calc(100% - 20px);
+    gap: 5px 20px;
+  }
   .footer__container {
     padding: 30px 20px;
   }
@@ -5127,6 +5272,32 @@ svg path {
   .footer__info_item p, .footer__info_item a {
     font-size: 14px;
     line-height: 18px;
+  }
+}
+@media (max-width: 580px) {
+  .breadcrumbs__link {
+    font-size: 10px;
+    line-height: 13px;
+  }
+  .breadcrumbs__head {
+    font-size: 34px;
+    line-height: 37px;
+  }
+  .tractor__filter {
+    padding: 0 0 20px;
+  }
+  .tractor__filter_info {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .tractor__list {
+    flex-direction: column;
+  }
+  .tractor__item {
+    width: 100%;
+  }
+  .tractor__mobile {
+    display: none;
   }
 }
 @media (max-width: 480px) {

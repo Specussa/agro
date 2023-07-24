@@ -337,12 +337,26 @@ if(!partnerslisttop){} else {
     slidesPerView: 5,
     slidesPerGroup: 1,
     autoplay : true,
-    speed: 3000,
+    speed: 4000,
     autoplay: {
       delay: 1,
       pauseOnMouseEnter: true,
       disableOnInteraction: false,
     },
+  });
+  var ptl = document.querySelector('.partners__list_top .partners__list');
+  partnerstop.el.addEventListener('mouseenter', () => {
+    partnerstop.autoplay.stop();
+    transformValue = ptl.style.transform;
+    ptl.style.transitionDuration = "0ms";
+    partnerstop.params.speed = 4000;
+    ptl.style.transform = "translate3d(" + partnerstop.getTranslate() + "px, 0px, 0px)";
+  });
+  partnerstop.el.addEventListener('mouseleave', () => {
+    ptl.style.transform = transformValue;
+    ptl.style.transitionDuration = "4000ms";
+    partnerstop.params.speed = 4000;
+    partnerstop.autoplay.start();
   });
 }
 
@@ -354,7 +368,7 @@ if(!partnerslistbottom){} else {
     loopedSlides: 5,
     slidesPerView: 5,
     slidesPerGroup: 1,
-    speed: 3000,
+    speed: 4000,
     autoplay: {
       delay: 1,
       reverseDirection: true,
@@ -362,36 +376,22 @@ if(!partnerslistbottom){} else {
       disableOnInteraction: false,
     }
   });
+  var pbl = document.querySelector('.partners__list_bottom .partners__list');
+  partnersbottom.el.addEventListener('mouseenter', () => {
+    partnersbottom.autoplay.stop();
+    transformValue = pbl.style.transform;
+    ptl.style.transitionDuration = "0ms";
+    partnersbottom.params.speed = 4000;
+    pbl.style.transform = "translate3d(" + partnersbottom.getTranslate() + "px, 0px, 0px)";
+  });
+  partnersbottom.el.addEventListener('mouseleave', () => {
+    pbl.style.transform = transformValue;
+    pbl.style.transitionDuration = "4000ms";
+    partnersbottom.params.speed = 4000;
+    partnersbottom.params.reverseDirection = true;
+    partnersbottom.autoplay.start();
+  });
 }
-
-var ptl = document.querySelector('.partners__list_top .partners__list');
-partnerstop.el.addEventListener('mouseenter', () => {
-  partnerstop.autoplay.stop();
-  transformValue = ptl.style.transform;
-  partnerstop.params.speed = 3000;
-  ptl.style.transform = "translate3d(" + partnerstop.getTranslate() + "px, 0px, 0px)";
-});
-partnerstop.el.addEventListener('mouseleave', () => {
-  ptl.style.transform = transformValue;
-  partnerstop.params.speed = 3000;
-  ptl.style.transitionDuration = "3000ms";
-  partnerstop.autoplay.start();
-});
-
-var pbl = document.querySelector('.partners__list_bottom .partners__list');
-partnersbottom.el.addEventListener('mouseenter', () => {
-  partnersbottom.autoplay.stop();
-  transformValue = pbl.style.transform;
-  partnersbottom.params.speed = 3000;
-  pbl.style.transform = "translate3d(" + partnersbottom.getTranslate() + "px, 0px, 0px)";
-});
-partnersbottom.el.addEventListener('mouseleave', () => {
-  pbl.style.transform = transformValue;
-  pbl.style.transitionDuration = "3000ms";
-  partnersbottom.params.speed = 3000;
-  partnersbottom.params.reverseDirection = true;
-  partnersbottom.autoplay.start();
-});
 // end partners slider
 
 // start company slider
