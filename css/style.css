@@ -4080,6 +4080,12 @@ svg path {
   .tractor__link:hover .tractor__info {
     top: calc(100% - 220px);
   }
+  .technique__item {
+    width: calc(33.333% - 27px);
+  }
+  .technique__container {
+    padding: 70px 80px 80px;
+  }
   .footer__container {
     padding: 60px 80px;
   }
@@ -4815,6 +4821,19 @@ svg path {
     font-size: 26px;
     line-height: 34px;
   }
+  .technique__list {
+    gap: 20px;
+  }
+  .technique__item {
+    width: calc(50% - 10px);
+  }
+  .technique__container {
+    padding: 40px 40px 60px;
+  }
+  .technique__head {
+    font-size: 17px;
+    line-height: 18px;
+  }
   .footer__contacts_block span {
     font-size: 14px;
     line-height: 18px;
@@ -5244,6 +5263,9 @@ svg path {
   .tractor__filter_sublist {
     top: calc(100% - 20px);
     gap: 5px 20px;
+  }
+  .technique__item {
+    width: 100%;
   }
   .footer__container {
     padding: 30px 20px;
