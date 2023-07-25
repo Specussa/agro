@@ -3918,6 +3918,16 @@ svg path {
   font-weight: 500;
   line-height: 26px;
   color: var(--text);
+  background-color: var(--back);
+  -webkit-transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  -ms-transition: background-color 0.2s linear;
+  -o-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+.info__blocks_item:hover {
+  background-color: var(--bg);
 }
 
 .info__blocks_item span {
