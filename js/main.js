@@ -29,9 +29,11 @@ const appHeight = () => {doc.style.setProperty('--height', `${window.innerHeight
 window.addEventListener('resize', appHeight)
 appHeight()
 var oldWidth = window.innerWidth;
+var oldHeight = window.innerHeight;
 window.onresize = function () {
   var newWidth = window.innerWidth;
   if (newWidth != oldWidth) {
+    document.querySelectorAll('.propelled__list .propelled__item').forEach(n => n.style.width = null);
     const appHeight = () => {doc.style.setProperty('--height', `${window.innerHeight}px`)}
     window.addEventListener('resize', appHeight)
     appHeight()
@@ -358,7 +360,7 @@ if(!partnerslisttop){} else {
   var ptl = document.querySelector('.partners__list_top .partners__list');
   var partnerstop = new Swiper('.partners__list_top', {
     loop: true,
-    speed: 5000,
+    speed: 4000,
     slidesPerView: '5',
     slideToClickedSlide: false,
     allowTouchMove: false,
@@ -409,7 +411,7 @@ if(!partnerslistbottom){} else {
   var pbl = document.querySelector('.partners__list_bottom .partners__list');
   var partnersbottom = new Swiper('.partners__list_bottom', {
     loop: true,
-    speed: 5000,
+    speed: 4000,
     slidesPerView: '5',
     slideToClickedSlide: false,
     allowTouchMove: false,
@@ -631,7 +633,7 @@ if(!productslider){} else {
 }
 // end product slider
 
-// start company slider
+// start info slider
 const infosliders = document.querySelector('.info__sliders');
 if(!infosliders){} else {
   var interleaveOffset = 0.5;
@@ -691,7 +693,73 @@ if(!infosliders){} else {
   infoSlider.controller.control = infoThumbs;
   infoThumbs.controller.control = infoSlider;
 }
-// end company slider
+// end info slider
+
+// start propelled slider
+const propelledblock = document.querySelector('.propelled__flex');
+if(!propelledblock){} else {
+  var transformValue;
+  var ptl = document.querySelector('.propelled__flex .propelled__list');
+  var propelled = new Swiper('.propelled__flex', {
+    observer: true,
+    observeParents: true,
+    loop: true,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    loop: false,
+    speed: 3000,
+    slidesPerView: '5',
+    spaceBetween: '0',
+    slideToClickedSlide: false,
+    allowTouchMove: false,
+    autoplay: {
+      enabled: true,
+      delay: 1,
+      pauseOnMouseEnter: true,
+    },
+    breakpoints: {
+      800: {
+        slidesPerView: 'auto',
+        spaceBetween: '25',
+        allowTouchMove: true,
+        speed: 500,
+        autoplay: {
+          enabled: false,
+          pauseOnMouseEnter: false,
+        },
+      },
+      1700: {
+        spaceBetween: '0',
+        slidesPerView: '4',
+      }
+    },
+    on: {
+      init: function() {
+        if (oldWidth > 800) {
+          propelledblock.addEventListener('mouseenter', () => {
+            transformValue = ptl.style.transform;
+            ptl.style.transitionDuration = "0ms";
+            this.params.speed = 0;
+            ptl.style.transform = "translate3d(" + this.getTranslate() + "px, 0px, 0px)";
+          });
+          propelledblock.addEventListener('mouseleave', () => {
+            ptl.style.transitionDuration = "1000ms";
+            this.params.speed = 1000;
+            ptl.style.transform = transformValue;
+          });
+        }
+      }
+    },
+  });
+  var headeritemtop = document.getElementsByClassName("propelled__item");
+  for (i = 0; i < headeritemtop.length; i++) {
+    headeritemtop[i].onclick = function(e) {
+      this.classList.toggle("selected");
+    };
+  }
+}
+// end propelled slider
 
 // map
 // start search map
