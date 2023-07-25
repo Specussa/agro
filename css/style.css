@@ -2592,6 +2592,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
 }
 
 .offer__top {
@@ -3885,6 +3886,10 @@ svg path {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.propelled__padding_block {
+  background-color: var(--blue)
 }
 
 .propelled__flex .swiper-wrapper {

@@ -710,8 +710,8 @@ if(!propelledblock){} else {
     speed: 3000,
     slidesPerView: '5',
     spaceBetween: '0',
-    slideToClickedSlide: false,
-    allowTouchMove: false,
+    slideToClickedSlide: true,
+    allowTouchMove: true,
     autoplay: {
       enabled: true,
       delay: 1,
@@ -725,29 +725,11 @@ if(!propelledblock){} else {
         speed: 500,
         autoplay: {
           enabled: false,
-          pauseOnMouseEnter: false,
         },
       },
       1700: {
         spaceBetween: '0',
         slidesPerView: '4',
-      }
-    },
-    on: {
-      init: function() {
-        if (oldWidth > 800) {
-          propelledblock.addEventListener('mouseenter', () => {
-            transformValue = pfl.style.transform;
-            pfl.style.transitionDuration = "0ms";
-            this.params.speed = 0;
-            pfl.style.transform = "translate3d(" + this.getTranslate() + "px, 0px, 0px)";
-          });
-          propelledblock.addEventListener('mouseleave', () => {
-            pfl.style.transitionDuration = "1000ms";
-            this.params.speed = 1000;
-            pfl.style.transform = transformValue;
-          });
-        }
       }
     },
   });
@@ -757,22 +739,6 @@ if(!propelledblock){} else {
       this.classList.toggle("selected");
     };
   }
-  window.onresize = function () {
-    var newWidth = window.innerWidth;
-    if (newWidth <= 800) {
-      transformValue = pfl.style.transform;
-      pfl.style.transitionDuration = "0ms";
-      propelled.params.speed = 0;
-      propelled.autoplay.stop();
-      document.querySelectorAll('.propelled__list .propelled__item').forEach(n => n.style.width = null);
-    }
-    if (newWidth > 800) {
-      pfl.style.transitionDuration = "3000ms";
-      propelled.params.speed = 3000;
-      pfl.style.transform = transformValue;
-      propelled.autoplay.start();
-    }
-  };
 }
 // end propelled slider
 
