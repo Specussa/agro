@@ -94,7 +94,7 @@ burgermobile.addEventListener('click', function() {
     document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
   }
 })
-// end navbar
+// end header__burger_mobile
 
 // кнопка header__region
 const bodyoverlaycity = document.querySelector('.overlay__city');
@@ -127,9 +127,9 @@ document.querySelector('.header__city_button').addEventListener('click', functio
 
 // кнопка info__button
 const infobuttons = document.querySelector('.info__button');
+const inforeading = document.querySelector('.info__read');
+const infobutton = document.querySelector('.info__button');
 if(!infobuttons){} else {
-  const inforeading = document.querySelector('.info__read');
-  const infobutton = document.querySelector('.info__button');
   infobutton.addEventListener('click', function() {
     if (infobutton.classList.contains("active")) {
       bodyoverlaycity.classList.remove("active");
@@ -165,6 +165,9 @@ bodyoverlay.addEventListener('click', function() {
   headerbuttons.classList.remove("active");
   headercontacts.classList.remove("active");
   headerscroll.classList.remove("active");
+  bodyoverlaycity.classList.remove("active");
+  inforeading.classList.remove("active");
+  infobutton.classList.remove("active");
   document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
   document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
   document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
@@ -190,7 +193,7 @@ bodyoverlaycity.addEventListener('click', function() {
 document.querySelector('.header__search').addEventListener('click', () => {
   document.querySelector('.header__search_input').classList.toggle('active');
 });
-// end overlay
+// end header__search
 
 // start menu
 var hblockacc = document.getElementsByClassName("header__button");
@@ -243,7 +246,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
    });
 });
-// end menu
+// end
 
 // start hover menu
 var hover = document.querySelector('.header__nav_list'),
@@ -263,7 +266,7 @@ hover.addEventListener('mouseout', function(e) {
   if(!elemHover) return
   elemHover = null;
 })
-// start dark mode
+// end hover menu
 
 // start счетчик для всех листов
 const hlisttop = document.querySelectorAll('.header__list_top'); 
@@ -272,7 +275,7 @@ const hlistbottom = document.querySelectorAll('.header__list_bottom');
 [...hlistbottom].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
 const tractorfl = document.querySelectorAll('.tractor__filter_sublist'); 
 [...tractorfl].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
-// end счетчик для всех листов
+// end
 
 // start year
 const year = document.querySelector('.footer__year');
@@ -422,7 +425,6 @@ if(!partnerslistbottom){} else {
       slideChangeTransitionStart: function() {
         pbl.style.transitionDuration = "4000ms";
         this.params.speed = 4000;
-        this.params.reverseDirection = true;
         this.autoplay.start();
       },
       init: function() {

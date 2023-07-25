@@ -531,7 +531,7 @@
       }, 0);
     }
     // start scroll
-    const scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),inertia:0.8,smooth:true,getDirection:true,mobile:{breakpoint:0,smooth:false,getDirection:true,},tablet:{breakpoint:0,smooth:false,getDirection:true}});
+  const scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),inertia: 0.8,smooth: true,getDirection: true,mobile: {breakpoint: 0,smooth: true,getDirection: true,},tablet: {breakpoint: 0,smooth: true,getDirection: true,},smartphone: {breakpoint: 0,smooth: true,getDirection: true,}});
     window.onresize = function(event) {scroll.update();};
   </script>
 </body>
