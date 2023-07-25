@@ -205,6 +205,7 @@ document.querySelector('.header__search').addEventListener('click', () => {
 
 // start menu
 var hblockacc = document.getElementsByClassName("header__button");
+const hlscroll = document.querySelectorAll('.header__list_scroll .scroll-content');
 for (i = 0; i < hblockacc.length; i++) {
   hblockacc[i].onclick = function(e) {
     var hblockaccordion = this.nextElementSibling;
@@ -216,8 +217,8 @@ for (i = 0; i < hblockacc.length; i++) {
       this.classList.remove("active");
       hblockaccordion.classList.remove("active");
       bodyoverlay.classList.remove("active");
-      document.querySelectorAll('.header__list_scroll .scroll-content').forEach(n => n.classList.remove('active'));
-      if (document.documentElement.clientWidth > 1200) {document.querySelectorAll('.header__list_scroll .scroll-content').forEach(n => n.style.transform = null);}
+      hlscroll.forEach(n => n.classList.remove('active'));
+      if (document.documentElement.clientWidth > 1200) {hlscroll.forEach(n => n.style.transform = null);}
     } else {
       for (var q = 0; q < coursehblockAccordionActive.length; q++) {
         coursehblockAccordionActive[q].classList.remove("active");
@@ -235,8 +236,8 @@ for (i = 0; i < hblockacc.length; i++) {
       hblockaccordion.style.maxHeight = (hblockaccordion.scrollHeight * 1) + "px";
       hblockaccordion.classList.add("active");
       this.classList.add("active");
-      document.querySelectorAll('.header__list_scroll .scroll-content').forEach(n => n.classList.add('active'));
-      if (document.documentElement.clientWidth > 1200) {document.querySelectorAll('.header__list_scroll .scroll-content').forEach(n => n.style.transform = null);}
+      hlscroll.forEach(n => n.classList.add('active'));
+      if (document.documentElement.clientWidth > 1200) {hlscroll.forEach(n => n.style.transform = null);}
     }
   };
 }
@@ -735,6 +736,8 @@ if(!propelledblock){} else {
 // map
 // start search map
 const mapcity = document.querySelector('.map__city');
+const mapсmapcity = document.querySelectorAll('.map__container .map__city');
+const mapscroll = document.querySelectorAll('.map__city .scroll-content');
 function filterFunction() {
   var mapinput, filter, i;
   mapinput = document.getElementById("map__input");
@@ -747,8 +750,8 @@ function filterFunction() {
     document.querySelectorAll('.map__search_city .map__search_head').forEach(n => n.classList.remove('close'));
     document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.classList.remove('active'));
     document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.style.maxHeight = null);
-    document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.map__container .map__city').forEach(n => n.classList.remove('active'));
+    mapscroll.forEach(n => n.classList.remove('active'));
+    mapсmapcity.forEach(n => n.classList.remove('active'));
     map_scroll.onmouseover = function(e) {scroll.stop();};
     mapcity.style.overflow = "hidden";
     mapmargin.forEach(n => n.style.margin = null);
@@ -775,8 +778,8 @@ if(!companyslider){} else {
     mapmargin.forEach(n => n.style.margin = null);
     mapback.classList.add('close');
     mapcity.style.overflow = "hidden";
-    document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.map__container .map__city').forEach(n => n.classList.remove('active'));
+    mapscroll.forEach(n => n.classList.remove('active'));
+    mapсmapcity.forEach(n => n.classList.remove('active'));
     map_scroll.onmouseover = function(e) {scroll.stop();};
     myMap.setCenter([55.253215,37.622504],6);
   });
@@ -787,8 +790,10 @@ if(!companyslider){} else {
 function moscow() {
   if (maphead[0].classList.contains("active")) {
     myMap.setCenter([55.88088924541,37.423524915344],12);
+    // document.querySelector('#mapmoscow').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
+    // document.querySelector('#mapmoscow').classList.remove("map__point_active");
   };
 }
 function peterburg() {
@@ -893,8 +898,8 @@ for (i = 0; i < acc.length; i++) {
       this.classList.remove("active");
       accordion.classList.remove("active");
       mapcity.style.overflow = "hidden";
-      document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.remove('active'));
-      document.querySelectorAll('.map__container .map__city').forEach(n => n.classList.remove('active'));
+      mapscroll.forEach(n => n.classList.remove('active'));
+      mapсmapcity.forEach(n => n.classList.remove('active'));
       map_scroll.onmouseover = function(e) {scroll.stop();};
       for (var b = 0; b < courseAccordionButton.length; b++) {
         courseAccordionButton[b].classList.remove("close");
@@ -920,8 +925,8 @@ for (i = 0; i < acc.length; i++) {
       mapmargin.forEach(n => n.style.margin = 0);
       mapback.classList.remove('close');
       mapcity.style.overflow = "visible";
-      document.querySelectorAll('.map__city .scroll-content').forEach(n => n.classList.add('active'));
-      document.querySelectorAll('.map__container .map__city').forEach(n => n.classList.add('active'));
+      mapscroll.forEach(n => n.classList.add('active'));
+      mapсmapcity.forEach(n => n.classList.add('active'));
       map_scroll.onmouseover = function(e) {scroll.start();};
     }
   };
@@ -1139,6 +1144,10 @@ const map = document.querySelectorAll('.map');
       const mapinfo = document.querySelectorAll('.map__search_city .map__search_info');
       
       if (mapmoscow.classList.contains("map__point_active")) {
+        document.querySelectorAll('.map .map__city').forEach(n => n.classList.add('active'));
+        mapscroll.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.style.overflow = null);
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         maphead.forEach(n => n.classList.add('close'));
@@ -1147,7 +1156,7 @@ const map = document.querySelectorAll('.map');
         mapmargin.forEach(n => n.style.margin = 0);
         myMap.setCenter([55.88088924541,37.423524915344],12);
         mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = "block");
+        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[0].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1155,16 +1164,23 @@ const map = document.querySelectorAll('.map');
           idmapi[1].style.maxHeight = (thismapinfo.scrollHeight * 2) + "px";
         }
       } else {
+        mapсmapcity.forEach(n => n.classList.remove('active'));
+        mapсmapcity.forEach(n => n.style.overflow = 'hidden');
+        mapscroll.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         mapinfo.forEach(n => n.classList.remove('active'));
         mapinfo.forEach(n => n.style.maxHeight = null);
         mapmargin.forEach(n => n.style.margin = null);
         mapback.classList.add('close');
+        mapсmapcity.forEach(n => n.classList.remove('active'));
         myMap.setCenter([55.253215,37.622504],6);
       };
       var mappeterburg = document.getElementById('mappeterburg');
       if (mappeterburg.classList.contains("map__point_active")) {
+        mapscroll.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.style.overflow = null);
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         maphead.forEach(n => n.classList.add('close'));
@@ -1173,7 +1189,7 @@ const map = document.querySelectorAll('.map');
         mapmargin.forEach(n => n.style.margin = 0);
         myMap.setCenter([59.618243,30.172631],12);
         mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = "block");
+        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[1].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1183,6 +1199,9 @@ const map = document.querySelectorAll('.map');
       } else {};
       var mapvologda = document.getElementById('mapvologda');
       if (mapvologda.classList.contains("map__point_active")) {
+        mapscroll.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.style.overflow = null);
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         maphead.forEach(n => n.classList.add('close'));
@@ -1191,7 +1210,7 @@ const map = document.querySelectorAll('.map');
         mapmargin.forEach(n => n.style.margin = 0);
         myMap.setCenter([59.199017,39.8100982],12);
         mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = "block");
+        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[2].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1201,6 +1220,9 @@ const map = document.querySelectorAll('.map');
       } else {};
       var mapvoronezh = document.getElementById('mapvoronezh');
       if (mapvoronezh.classList.contains("map__point_active")) {
+        mapscroll.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.style.overflow = null);
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         maphead.forEach(n => n.classList.add('close'));
@@ -1209,7 +1231,7 @@ const map = document.querySelectorAll('.map');
         mapmargin.forEach(n => n.style.margin = 0);
         myMap.setCenter([51.639685,39.324973],12);
         mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = "block");
+        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[3].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1219,6 +1241,9 @@ const map = document.querySelectorAll('.map');
       } else {};
       var mapkursk = document.getElementById('mapkursk');
       if (mapkursk.classList.contains("map__point_active")) {
+        mapscroll.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.style.overflow = null);
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         maphead.forEach(n => n.classList.add('close'));
@@ -1227,7 +1252,7 @@ const map = document.querySelectorAll('.map');
         mapmargin.forEach(n => n.style.margin = 0);
         myMap.setCenter([51.627834,36.117242],12);
         mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = "block");
+        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[4].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1237,6 +1262,9 @@ const map = document.querySelectorAll('.map');
       } else {};
       var maplipetsk = document.getElementById('maplipetsk');
       if (maplipetsk.classList.contains("map__point_active")) {
+        mapscroll.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.style.overflow = null);
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         maphead.forEach(n => n.classList.add('close'));
@@ -1245,7 +1273,7 @@ const map = document.querySelectorAll('.map');
         mapmargin.forEach(n => n.style.margin = 0);
         myMap.setCenter([52.597220203418,39.458276316873],12);
         mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = "block");
+        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[5].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1255,6 +1283,9 @@ const map = document.querySelectorAll('.map');
       } else {};
       var maporel = document.getElementById('maporel');
       if (maporel.classList.contains("map__point_active")) {
+        mapscroll.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.style.overflow = null);
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         maphead.forEach(n => n.classList.add('close'));
@@ -1263,7 +1294,7 @@ const map = document.querySelectorAll('.map');
         mapmargin.forEach(n => n.style.margin = 0);
         myMap.setCenter([52.923587,36.078570],12);
         mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = "block");
+        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[6].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1273,6 +1304,9 @@ const map = document.querySelectorAll('.map');
       } else {};
       var mappavlovsck = document.getElementById('mappavlovsck');
       if (mappavlovsck.classList.contains("map__point_active")) {
+        mapscroll.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.style.overflow = null);
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         maphead.forEach(n => n.classList.add('close'));
@@ -1281,7 +1315,7 @@ const map = document.querySelectorAll('.map');
         mapmargin.forEach(n => n.style.margin = 0);
         myMap.setCenter([50.452752,40.148549],12);
         mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = "block");
+        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[7].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1291,6 +1325,9 @@ const map = document.querySelectorAll('.map');
       } else {};
       var mappenza = document.getElementById('mappenza');
       if (mappenza.classList.contains("map__point_active")) {
+        mapscroll.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.style.overflow = null);
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         maphead.forEach(n => n.classList.add('close'));
@@ -1299,7 +1336,7 @@ const map = document.querySelectorAll('.map');
         mapmargin.forEach(n => n.style.margin = 0);
         myMap.setCenter([53.270195255583,45.024497906746],12);
         mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = "block");
+        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[8].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1309,6 +1346,9 @@ const map = document.querySelectorAll('.map');
       } else {};
       var mappskov = document.getElementById('mappskov');
       if (mappskov.classList.contains("map__point_active")) {
+        mapscroll.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.style.overflow = null);
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         maphead.forEach(n => n.classList.add('close'));
@@ -1317,7 +1357,7 @@ const map = document.querySelectorAll('.map');
         mapmargin.forEach(n => n.style.margin = 0);
         myMap.setCenter([56.9816779,29.9243012],12);
         mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = "block");
+        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[9].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1327,6 +1367,9 @@ const map = document.querySelectorAll('.map');
       } else {};
       var mapryazan = document.getElementById('mapryazan');
       if (mapryazan.classList.contains("map__point_active")) {
+        mapscroll.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.style.overflow = null);
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         maphead.forEach(n => n.classList.add('close'));
@@ -1335,7 +1378,7 @@ const map = document.querySelectorAll('.map');
         mapmargin.forEach(n => n.style.margin = 0);
         myMap.setCenter([54.647213,39.638701],12);
         mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = "block");
+        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[10].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1345,6 +1388,9 @@ const map = document.querySelectorAll('.map');
       } else {};
       var maptambov = document.getElementById('maptambov');
       if (maptambov.classList.contains("map__point_active")) {
+        mapscroll.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.style.overflow = null);
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         maphead.forEach(n => n.classList.add('close'));
@@ -1353,7 +1399,7 @@ const map = document.querySelectorAll('.map');
         mapmargin.forEach(n => n.style.margin = 0);
         myMap.setCenter([52.650429,41.407760],12);
         mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = "block");
+        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[11].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1363,6 +1409,9 @@ const map = document.querySelectorAll('.map');
       } else {};
       var mapyaroslavl = document.getElementById('mapyaroslavl');
       if (mapyaroslavl.classList.contains("map__point_active")) {
+        mapscroll.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.classList.add('active'));
+        mapсmapcity.forEach(n => n.style.overflow = null);
         maphead.forEach(n => n.classList.remove('active'));
         maphead.forEach(n => n.classList.remove('close'));
         maphead.forEach(n => n.classList.add('close'));
@@ -1371,7 +1420,7 @@ const map = document.querySelectorAll('.map');
         mapmargin.forEach(n => n.style.margin = 0);
         myMap.setCenter([57.6873825,39.8908799],12);
         mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = "block");
+        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[12].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
