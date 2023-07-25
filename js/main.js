@@ -36,7 +36,6 @@ window.onresize = function () {
     const appHeight = () => {doc.style.setProperty('--height', `${window.innerHeight}px`)}
     window.addEventListener('resize', appHeight)
     appHeight()
-    scroll.update();
   }
 };
 // end height
@@ -1429,37 +1428,57 @@ for (i = 0; i < headeritemtop.length; i++) {
 var infodesc = document.getElementsByClassName("info__button_description");
 var infochar = document.getElementsByClassName("info__button_characteristics");
 var infocert = document.getElementsByClassName("info__button_certification");
-for (i = 0; i < infodesc.length; i++) {
-  infodesc[i].onclick = function(e) {
-    document.querySelectorAll('.info__buttons_block .info__button_block').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.info__container .info__blocks').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.info__container .info__blocks').forEach(n => n.style.maxHeight = null);
-    document.querySelectorAll('.info__container .info__description').forEach(n => n.classList.add('active'));
-    document.querySelectorAll('.info__container .info__description').forEach(n => n.style.maxHeight = (document.querySelector('.info__description').scrollHeight * 1) + "px");
-    this.classList.add("active");
-    scroll.update();
-  };
-}
-for (i = 0; i < infochar.length; i++) {
-  infochar[i].onclick = function(e) {
-    document.querySelectorAll('.info__buttons_block .info__button_block').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.info__container .info__blocks').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.info__container .info__blocks').forEach(n => n.style.maxHeight = null);
-    document.querySelectorAll('.info__container .info__characteristics').forEach(n => n.classList.add('active'));
-    document.querySelectorAll('.info__container .info__characteristics').forEach(n => n.style.maxHeight = (document.querySelector('.info__characteristics').scrollHeight * 1) + "px");
-    this.classList.add("active");
-    scroll.update();
-  };
-}
-for (i = 0; i < infocert.length; i++) {
-  infocert[i].onclick = function(e) {
-    document.querySelectorAll('.info__buttons_block .info__button_block').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.info__container .info__blocks').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.info__container .info__blocks').forEach(n => n.style.maxHeight = null);
-    document.querySelectorAll('.info__container .info__certification').forEach(n => n.classList.add('active'));
-    document.querySelectorAll('.info__container .info__certification').forEach(n => n.style.maxHeight = (document.querySelector('.info__certification').scrollHeight * 1) + "px");
-    this.classList.add("active");
-    scroll.update();
+const ibb = document.querySelectorAll('.info__buttons_block .info__button_block');
+const ib = document.querySelectorAll('.info__container .info__blocks');
+const idesc = document.querySelectorAll('.info__container .info__description');
+const ichar = document.querySelectorAll('.info__container .info__characteristics');
+const icert = document.querySelectorAll('.info__container .info__certification');
+var infoblock = document.querySelector(".info__blocks");
+if(!infoblock){} else {
+  for (i = 0; i < infodesc.length; i++) {
+    infodesc[i].onclick = function(e) {
+      ibb.forEach(n => n.classList.remove('active'));
+      ib.forEach(n => n.classList.remove('active'));
+      ib.forEach(n => n.style.maxHeight = null);
+      idesc.forEach(n => n.classList.add('active'));
+      idesc.forEach(n => n.style.maxHeight = (document.querySelector('.info__description').scrollHeight * 1) + "px");
+      this.classList.add("active");
+      scroll.update();
+    };
+  }
+  for (i = 0; i < infochar.length; i++) {
+    infochar[i].onclick = function(e) {
+      ibb.forEach(n => n.classList.remove('active'));
+      ib.forEach(n => n.classList.remove('active'));
+      ib.forEach(n => n.style.maxHeight = null);
+      ichar.forEach(n => n.classList.add('active'));
+      ichar.forEach(n => n.style.maxHeight = (document.querySelector('.info__characteristics').scrollHeight * 1) + "px");
+      this.classList.add("active");
+      scroll.update();
+    };
+  }
+  for (i = 0; i < infocert.length; i++) {
+    infocert[i].onclick = function(e) {
+      ibb.forEach(n => n.classList.remove('active'));
+      ib.forEach(n => n.classList.remove('active'));
+      ib.forEach(n => n.style.maxHeight = null);
+      icert.forEach(n => n.classList.add('active'));
+      icert.forEach(n => n.style.maxHeight = (document.querySelector('.info__certification').scrollHeight * 1) + "px");
+      this.classList.add("active");
+      scroll.update();
+    };
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.info__container .info__description.active').forEach(n => n.style.maxHeight = (document.querySelector('.info__description').scrollHeight * 1) + "px");
+  });
+  window.onresize = function () {
+    var newWidth = window.innerWidth;
+    if (newWidth != oldWidth) {
+      ib.forEach(n => n.style.maxHeight = null);
+      document.querySelectorAll('.info__container .info__description.active').forEach(n => n.style.maxHeight = (document.querySelector('.info__description').scrollHeight * 1) + "px");
+      document.querySelectorAll('.info__container .info__characteristics.active').forEach(n => n.style.maxHeight = (document.querySelector('.info__characteristics').scrollHeight * 1) + "px");
+      document.querySelectorAll('.info__container .info__certification.active').forEach(n => n.style.maxHeight = (document.querySelector('.info__certification').scrollHeight * 1) + "px");
+    }
   };
 }
 // end accordion tractor__filter
