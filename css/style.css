@@ -4369,7 +4369,7 @@ svg path {
   }
   .hero__container {
     height: calc(100vh - 80px);
-    min-height: 800px;
+    min-height: 460px;
   }
   .header__search:hover, .header__mail:hover {
     background-color: var(--dblue);
@@ -4972,14 +4972,14 @@ svg path {
     line-height: 17px;
   }
   .header__logo {
-    margin: 0 0 0 30px;
+    margin: 0 0 0 20px;
   }
   .main {
     padding: 70px 0 0;
   }
   .hero__container {
     height: calc(100vh - 70px);
-    min-height: 700px;
+    min-height: 530px;
   }
   .hero__prev, .hero__next {
     display: none;
