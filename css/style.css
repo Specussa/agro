@@ -5301,6 +5301,8 @@ svg path {
   }
   .partners__list_top, .partners__list_bottom, .partners__list, .partners__item, .partners__item a, .partners__block {
     height: 90px;
+    padding: 0;
+    margin: 0;
   }
   .partners__item img {
     padding: 10px 0;
