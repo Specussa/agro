@@ -3874,6 +3874,26 @@ svg path {
   background-color: var(--bg);
 }
 
+.info__blocks {
+  height: 100%;
+  max-height: 0px;
+  -webkit-transition: max-height 0.3s linear;
+  -moz-transition: max-height 0.3s linear;
+  -ms-transition: max-height 0.3s linear;
+  -o-transition: max-height 0.3s linear;
+  transition: max-height 0.3s linear;
+  overflow: hidden;
+}
+
+.info__blocks.active {
+  max-height: 2000px;
+  -webkit-transition-delay: 0.3s;
+  -moz-transition-delay: 0.3s;
+  -ms-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
 /* end info */
 
 /* start propelled */
@@ -3886,6 +3906,12 @@ svg path {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.propelled__padding {
+  display: flex;
+  width: 100%;
+  position: relative;
 }
 
 .propelled__padding_block {

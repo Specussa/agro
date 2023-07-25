@@ -411,7 +411,7 @@ if(!partnerslistbottom){} else {
   var partnersbottom = new Swiper('.partners__list_bottom', {
     loop: true,
     speed: 4000,
-    slidesPerView: '5',
+    slidesPerView: 5,
     slideToClickedSlide: false,
     allowTouchMove: false,
     autoplay: {
@@ -421,13 +421,13 @@ if(!partnerslistbottom){} else {
     },
     breakpoints: {
       580: {
-        slidesPerView: '2',
+        slidesPerView: 2,
       },
       800: {
-        slidesPerView: '3',
+        slidesPerView: 3,
       },
       1700: {
-        slidesPerView: '4',
+        slidesPerView: 4,
       }
     },
     on: {
@@ -697,19 +697,11 @@ if(!infosliders){} else {
 // start propelled slider
 const propelledblock = document.querySelector('.propelled__flex');
 if(!propelledblock){} else {
-  var transformValue;
-  var pfl = document.querySelector('.propelled__flex .propelled__list');
   var propelled = new Swiper('.propelled__flex', {
-    observer: true,
-    observeParents: true,
-    loop: true,
-    freeMode: true,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
     loop: false,
-    speed: 3000,
-    slidesPerView: '5',
-    spaceBetween: '0',
+    slidesPerView: 5,
+    spaceBetween: 0,
+    speed: 1000,
     slideToClickedSlide: true,
     allowTouchMove: true,
     autoplay: {
@@ -720,22 +712,21 @@ if(!propelledblock){} else {
     breakpoints: {
       800: {
         slidesPerView: 'auto',
-        spaceBetween: '25',
-        allowTouchMove: true,
+        spaceBetween: 25,
         speed: 500,
         autoplay: {
           enabled: false,
         },
       },
       1700: {
-        spaceBetween: '0',
-        slidesPerView: '4',
+        spaceBetween: 9,
+        slidesPerView: 4 ,
       }
     },
   });
-  var headeritemtop = document.getElementsByClassName("propelled__item");
-  for (i = 0; i < headeritemtop.length; i++) {
-    headeritemtop[i].onclick = function(e) {
+  var propelleditem = document.getElementsByClassName("propelled__item");
+  for (i = 0; i < propelleditem.length; i++) {
+    propelleditem[i].onclick = function(e) {
       this.classList.toggle("selected");
     };
   }
@@ -1433,6 +1424,42 @@ var headeritemtop = document.getElementsByClassName("header__item_top");
 for (i = 0; i < headeritemtop.length; i++) {
   headeritemtop[i].onclick = function(e) {
     this.classList.toggle("selected");
+  };
+}
+var infodesc = document.getElementsByClassName("info__button_description");
+var infochar = document.getElementsByClassName("info__button_characteristics");
+var infocert = document.getElementsByClassName("info__button_certification");
+for (i = 0; i < infodesc.length; i++) {
+  infodesc[i].onclick = function(e) {
+    document.querySelectorAll('.info__buttons_block .info__button_block').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.info__container .info__blocks').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.info__container .info__blocks').forEach(n => n.style.maxHeight = null);
+    document.querySelectorAll('.info__container .info__description').forEach(n => n.classList.add('active'));
+    document.querySelectorAll('.info__container .info__description').forEach(n => n.style.maxHeight = (document.querySelector('.info__description').scrollHeight * 1) + "px");
+    this.classList.add("active");
+    scroll.update();
+  };
+}
+for (i = 0; i < infochar.length; i++) {
+  infochar[i].onclick = function(e) {
+    document.querySelectorAll('.info__buttons_block .info__button_block').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.info__container .info__blocks').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.info__container .info__blocks').forEach(n => n.style.maxHeight = null);
+    document.querySelectorAll('.info__container .info__characteristics').forEach(n => n.classList.add('active'));
+    document.querySelectorAll('.info__container .info__characteristics').forEach(n => n.style.maxHeight = (document.querySelector('.info__characteristics').scrollHeight * 1) + "px");
+    this.classList.add("active");
+    scroll.update();
+  };
+}
+for (i = 0; i < infocert.length; i++) {
+  infocert[i].onclick = function(e) {
+    document.querySelectorAll('.info__buttons_block .info__button_block').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.info__container .info__blocks').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.info__container .info__blocks').forEach(n => n.style.maxHeight = null);
+    document.querySelectorAll('.info__container .info__certification').forEach(n => n.classList.add('active'));
+    document.querySelectorAll('.info__container .info__certification').forEach(n => n.style.maxHeight = (document.querySelector('.info__certification').scrollHeight * 1) + "px");
+    this.classList.add("active");
+    scroll.update();
   };
 }
 // end accordion tractor__filter
