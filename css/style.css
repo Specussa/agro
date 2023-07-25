@@ -1999,11 +1999,6 @@ svg path {
   transition-timing-function: linear !important;
 }
 
-.partners__list_top, .partners__list_bottom, .partners__list, .partners__item {
-  margin: 0;
-  padding: 0;
-}
-
 .partners__list_bottom, .partners__list_bottom .partners__item {
   -webkit-transform: rotate(-180deg);
   -moz-transform: rotate(-180deg);
@@ -5304,7 +5299,7 @@ svg path {
   .partners__container {
     height: 183px;
   }
-  .partners__list_top, .partners__list_bottom, .partners__list, .partners__item {
+  .partners__list_top, .partners__list_bottom, .partners__list, .partners__item, .partners__item a {
     height: 90px;
   }
   .partners__item img {
@@ -5377,7 +5372,7 @@ svg path {
   .partners__container {
     height: 123px;
   }
-  .partners__list_top, .partners__list_bottom, .partners__list, .partners__item {
+  .partners__list_top, .partners__list_bottom, .partners__list, .partners__item, .partners__item a {
     height: 60px;
   }
 }
