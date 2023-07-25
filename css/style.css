@@ -1998,6 +1998,7 @@ svg path {
   display: flex;
   width: 100vw;
   height: 130px;
+  align-items: center;
 }
 
 .partners__item {
