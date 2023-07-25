@@ -25,6 +25,9 @@ if(!inforead_scroll){} else {Scrollbar.init(inforead_scroll);}
 
 // start height
 const doc = document.documentElement
+const appHeight = () => {doc.style.setProperty('--height', `${window.innerHeight}px`)}
+window.addEventListener('resize', appHeight)
+appHeight()
 var oldWidth = window.innerWidth;
 window.onresize = function () {
   var newWidth = window.innerWidth;
