@@ -790,10 +790,10 @@ if(!companyslider){} else {
 function moscow() {
   if (maphead[0].classList.contains("active")) {
     myMap.setCenter([55.88088924541,37.423524915344],12);
-    // document.querySelector('#mapmoscow').classList.add("map__point_active");
+    document.querySelector('#mapmoscow').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
-    // document.querySelector('#mapmoscow').classList.remove("map__point_active");
+    document.querySelector('#mapmoscow').classList.remove("map__point_active");
   };
 }
 function peterburg() {
