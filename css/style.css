@@ -1982,6 +1982,7 @@ svg path {
 .partners__container {
   height: 263px;
   flex-direction: column;
+  gap: 0;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -1996,6 +1997,11 @@ svg path {
   -ms-transition-timing-function: linear !important;
   -o-transition-timing-function: linear !important;
   transition-timing-function: linear !important;
+}
+
+.partners__list_top, .partners__list_bottom, .partners__list, .partners__item {
+  margin: 0;
+  padding: 0;
 }
 
 .partners__list_bottom, .partners__list_bottom .partners__item {
