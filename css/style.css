@@ -5243,6 +5243,7 @@ svg path {
   }
   .map__search_head.active {
     height: 130px;
+    padding: 30px 50px 30px 20px;
   }
   .map__search_head.close {
     padding: 0 20px;
