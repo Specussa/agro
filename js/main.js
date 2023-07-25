@@ -5,15 +5,17 @@ const headercity_scroll = document.querySelector('.header__city_scroll');
 const headerlist_scroll = document.querySelector('.header__list_scroll');
 const inforead_scroll = document.querySelector('.info__read_scroll');
 if(!map_scroll){} else {
+  if (map_scroll.classList.contains("active")) {} else {
+    map_scroll.addEventListener("touchstart", function (e) {scroll.stop()});
+    map_scroll.addEventListener("touchmove", function (e) {scroll.stop()});
+    map_scroll.addEventListener("touched", function (e) {scroll.stop()});
+    document.body.addEventListener("touchstart", function (e) {scroll.start()});
+    document.body.addEventListener("touchmove", function (e) {scroll.start()});
+    document.body.addEventListener("touched", function (e) {scroll.start()});
+    map_scroll.onmouseover = function(e) {scroll.stop();};
+    map_scroll.onmouseout = function(e) {scroll.start();};
+  }
   Scrollbar.init(map_scroll);
-  map_scroll.addEventListener("touchstart", function (e) {scroll.stop()});
-  map_scroll.addEventListener("touchmove", function (e) {scroll.stop()});
-  map_scroll.addEventListener("touched", function (e) {scroll.stop()});
-  document.body.addEventListener("touchstart", function (e) {scroll.start()});
-  document.body.addEventListener("touchmove", function (e) {scroll.start()});
-  document.body.addEventListener("touched", function (e) {scroll.start()});
-  map_scroll.onmouseover = function(e) {scroll.stop();};
-  map_scroll.onmouseout = function(e) {scroll.start();};
 }
 if(!headernav_scroll){} else {Scrollbar.init(headernav_scroll);}
 if(!headercity_scroll){} else {Scrollbar.init(headercity_scroll);}
@@ -883,11 +885,11 @@ const map = document.querySelectorAll('.map');
       zoomControlSize: 'auto'
     });
 
-    // myMap.controls.add("zoomControl", {});
-    // var winWidth = window.innerWidth;
-    // if(winWidth <= 1024){
-    //     myMap.behaviors.disable('drag');
-    // }
+    myMap.controls.add("zoomControl", {});
+    var winWidth = window.innerWidth;
+    if(winWidth <= 1200){
+        myMap.behaviors.disable('drag');
+    }
 
     const zoomInBtn = document.getElementById('zoom-in');
     const zoomOutBtn = document.getElementById('zoom-out');
