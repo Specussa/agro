@@ -33,7 +33,6 @@ var oldHeight = window.innerHeight;
 window.onresize = function () {
   var newWidth = window.innerWidth;
   if (newWidth != oldWidth) {
-    document.querySelectorAll('.propelled__list .propelled__item').forEach(n => n.style.width = null);
     const appHeight = () => {doc.style.setProperty('--height', `${window.innerHeight}px`)}
     window.addEventListener('resize', appHeight)
     appHeight()
@@ -699,7 +698,7 @@ if(!infosliders){} else {
 const propelledblock = document.querySelector('.propelled__flex');
 if(!propelledblock){} else {
   var transformValue;
-  var ptl = document.querySelector('.propelled__flex .propelled__list');
+  var pfl = document.querySelector('.propelled__flex .propelled__list');
   var propelled = new Swiper('.propelled__flex', {
     observer: true,
     observeParents: true,
@@ -738,15 +737,15 @@ if(!propelledblock){} else {
       init: function() {
         if (oldWidth > 800) {
           propelledblock.addEventListener('mouseenter', () => {
-            transformValue = ptl.style.transform;
-            ptl.style.transitionDuration = "0ms";
+            transformValue = pfl.style.transform;
+            pfl.style.transitionDuration = "0ms";
             this.params.speed = 0;
-            ptl.style.transform = "translate3d(" + this.getTranslate() + "px, 0px, 0px)";
+            pfl.style.transform = "translate3d(" + this.getTranslate() + "px, 0px, 0px)";
           });
           propelledblock.addEventListener('mouseleave', () => {
-            ptl.style.transitionDuration = "1000ms";
+            pfl.style.transitionDuration = "1000ms";
             this.params.speed = 1000;
-            ptl.style.transform = transformValue;
+            pfl.style.transform = transformValue;
           });
         }
       }
@@ -758,6 +757,22 @@ if(!propelledblock){} else {
       this.classList.toggle("selected");
     };
   }
+  window.onresize = function () {
+    var newWidth = window.innerWidth;
+    if (newWidth <= 800) {
+      transformValue = pfl.style.transform;
+      pfl.style.transitionDuration = "0ms";
+      propelled.params.speed = 0;
+      propelled.autoplay.stop();
+      document.querySelectorAll('.propelled__list .propelled__item').forEach(n => n.style.width = null);
+    }
+    if (newWidth > 800) {
+      pfl.style.transitionDuration = "3000ms";
+      propelled.params.speed = 3000;
+      pfl.style.transform = transformValue;
+      propelled.autoplay.start();
+    }
+  };
 }
 // end propelled slider
 
