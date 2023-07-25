@@ -6,6 +6,7 @@ const headerlist_scroll = document.querySelector('.header__list_scroll');
 const inforead_scroll = document.querySelector('.info__read_scroll');
 if(!map_scroll){} else {
   if (map_scroll.classList.contains("active")) {} else {
+    Scrollbar.init(map_scroll);
     map_scroll.addEventListener("touchstart", function (e) {scroll.stop()});
     map_scroll.addEventListener("touchmove", function (e) {scroll.stop()});
     map_scroll.addEventListener("touched", function (e) {scroll.stop()});
@@ -15,13 +16,21 @@ if(!map_scroll){} else {
     map_scroll.onmouseover = function(e) {scroll.stop();};
     map_scroll.onmouseout = function(e) {scroll.start();};
   }
-  Scrollbar.init(map_scroll);
 }
 if(!headernav_scroll){} else {Scrollbar.init(headernav_scroll);}
 if(!headercity_scroll){} else {Scrollbar.init(headercity_scroll);}
 if(!headerlist_scroll){} else {Scrollbar.init(headerlist_scroll);}
 if(!inforead_scroll){} else {Scrollbar.init(inforead_scroll);}
 // end scroll
+
+// start height
+const appHeight = () => {
+  const doc = document.documentElement
+  doc.style.setProperty('--height', `${window.innerHeight}px`)
+}
+window.addEventListener('resize', appHeight)
+appHeight()
+// end height
 
 // start navbar
 // кнопка header__burger
@@ -885,7 +894,6 @@ const map = document.querySelectorAll('.map');
       zoomControlSize: 'auto'
     });
 
-    myMap.controls.add("zoomControl", {});
     var winWidth = window.innerWidth;
     if(winWidth <= 1200){
         myMap.behaviors.disable('drag');
