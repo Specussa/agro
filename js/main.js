@@ -24,12 +24,23 @@ if(!inforead_scroll){} else {Scrollbar.init(inforead_scroll);}
 // end scroll
 
 // start height
+const doc = document.documentElement
 const appHeight = () => {
-  const doc = document.documentElement
   doc.style.setProperty('--height', `${window.innerHeight}px`)
 }
 window.addEventListener('resize', appHeight)
 appHeight()
+var oldWidth = window.innerWidth;
+window.onresize = function () {
+    var newWidth = window.innerWidth;
+    if (newWidth != oldWidth) {
+      const appHeight = () => {
+        doc.style.setProperty('--height', `${window.innerHeight}px`)
+      }
+      window.addEventListener('resize', appHeight)
+      appHeight()
+    }
+};
 // end height
 
 // start navbar
