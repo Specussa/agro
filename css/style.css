@@ -5383,7 +5383,6 @@ svg path {
 }
 @media (max-width: 480px) {
   .company__info_item {
-    flex-direction: column;
     text-align: center;
   }
 }
@@ -5394,6 +5393,9 @@ svg path {
   }
 }
 @media (max-width: 320px) {
+  .company__info_item {
+    flex-direction: column;
+  }
   .footer__tel {
     font-size: 22px;
     line-height: 30px;
