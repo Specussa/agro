@@ -2015,7 +2015,6 @@ svg path {
 }
 
 .partners__item {
-  width: 380px;
   height: 130px;
 }
 
@@ -2052,7 +2051,6 @@ svg path {
   width: 100%;
   height: 100%;
   padding: 0 50px;
-  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
 }
@@ -4466,6 +4464,9 @@ svg path {
   }
   .header__city {
     width: 100%;
+  }
+  .header__city::before, .info__read::before {
+    background-color: var(--bg);
   }
   .header__city_head {
     font-size: 40px;
