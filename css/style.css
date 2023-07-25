@@ -4494,11 +4494,16 @@ svg path {
     width: 24px;
     height: 11px;
     position: absolute;
-    top: 15px;
+    top: 50%;
     right: 15px;
     background: url('../img/icon/arrow.svg') center center no-repeat;
     background-size: 24px 11px;
     opacity: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
     -webkit-transition: opacity 0.2s linear;
     -moz-transition: opacity 0.2s linear;
     -ms-transition: opacity 0.2s linear;
@@ -5230,11 +5235,14 @@ svg path {
     overflow: hidden;
   }
   .active .map__search_desc {
-    height: 100%;
+    height: auto;
   }
   .map__search_head {
-    height: 130px;
+    height: 62px;
     padding: 30px 20px;
+  }
+  .map__search_head.active {
+    height: 130px;
   }
   .map__search_head.close {
     padding: 0 20px;
