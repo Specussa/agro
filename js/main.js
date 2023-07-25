@@ -335,13 +335,26 @@ if(!partnerslisttop){} else {
   var transformValue;
   var ptl = document.querySelector('.partners__list_top .partners__list');
   var partnerstop = new Swiper('.partners__list_top', {
-    slidesPerView: 'auto',
     loop: true,
     speed: 5000,
     slidesPerView: '5',
+    slideToClickedSlide: false,
+    allowTouchMove: false,
     autoplay: {
       enabled: true,
       delay: 1,
+      pauseOnMouseEnter: true,
+    },
+    breakpoints: {
+      580: {
+        slidesPerView: '2',
+      },
+      800: {
+        slidesPerView: '3',
+      },
+      1700: {
+        slidesPerView: '4',
+      }
     },
     on: {
       slideChangeTransitionStart: function() {
@@ -376,10 +389,23 @@ if(!partnerslistbottom){} else {
     loop: true,
     speed: 5000,
     slidesPerView: '5',
-    reverseDirection: "back",
+    slideToClickedSlide: false,
+    allowTouchMove: false,
     autoplay: {
       enabled: true,
       delay: 1,
+      pauseOnMouseEnter: true,
+    },
+    breakpoints: {
+      580: {
+        slidesPerView: '2',
+      },
+      800: {
+        slidesPerView: '3',
+      },
+      1700: {
+        slidesPerView: '4',
+      }
     },
     on: {
       slideChangeTransitionStart: function() {

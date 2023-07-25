@@ -1984,6 +1984,14 @@ svg path {
   transition-timing-function: linear !important;
 }
 
+.partners__list_bottom, .partners__list_bottom .partners__item {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
 .partners__list {
   display: -webkit-box;
   display: -ms-flexbox;
