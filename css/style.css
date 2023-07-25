@@ -260,7 +260,7 @@
 }
 
 html body.loaded {
-  height: 100%;
+  height: 100vh;
   position: relative;
   background: var(--bg);
   overflow: scroll;
@@ -1819,6 +1819,12 @@ svg path {
 .hero__container {
   height: 850px;
   position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .hero__item {
@@ -1975,6 +1981,12 @@ svg path {
 
 .partners__container {
   flex-direction: column;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .partners__list_top .swiper-wrapper, .partners__list_bottom .swiper-wrapper {
@@ -4777,6 +4789,7 @@ svg path {
     background-size: 15px 15px;
   }
   .map__search_tel span {
+    color: var(--text);
     border-bottom: 1px solid var(--blue);
   }
   .map__container {
@@ -5280,7 +5293,7 @@ svg path {
   .technique__item {
     width: 100%;
   }
-  .partners__list, .partners__item {
+  .partners__list_top, .partners__list_bottom, .partners__list, .partners__item {
     height: 90px;
   }
   .footer__container {
@@ -5347,7 +5360,7 @@ svg path {
   .tractor__mobile {
     display: none;
   }
-  .partners__list, .partners__item {
+  .partners__list_top, .partners__list_bottom, .partners__list, .partners__item {
     height: 60px;
   }
 }

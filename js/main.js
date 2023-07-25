@@ -354,7 +354,7 @@ if(!partnerslisttop){} else {
     autoplay: {
       enabled: true,
       delay: 1,
-      pauseOnMouseEnter: true,
+      pauseOnMouseEnter: false,
     },
     breakpoints: {
       580: {
@@ -405,7 +405,7 @@ if(!partnerslistbottom){} else {
     autoplay: {
       enabled: true,
       delay: 1,
-      pauseOnMouseEnter: true,
+      pauseOnMouseEnter: false,
     },
     breakpoints: {
       580: {
