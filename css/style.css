@@ -5299,7 +5299,7 @@ svg path {
   .partners__container {
     height: 183px;
   }
-  .partners__list_top, .partners__list_bottom, .partners__list, .partners__item, .partners__item a {
+  .partners__list_top, .partners__list_bottom, .partners__list, .partners__item, .partners__item a, .partners__block {
     height: 90px;
   }
   .partners__item img {
@@ -5372,7 +5372,7 @@ svg path {
   .partners__container {
     height: 123px;
   }
-  .partners__list_top, .partners__list_bottom, .partners__list, .partners__item, .partners__item a {
+  .partners__list_top, .partners__list_bottom, .partners__list, .partners__item, .partners__item a, .partners__block {
     height: 60px;
   }
 }
