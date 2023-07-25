@@ -1997,6 +1997,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: 100vw;
+  height: 130px;
 }
 
 .partners__item {
@@ -5275,6 +5276,9 @@ svg path {
   .technique__item {
     width: 100%;
   }
+  .partners__list, .partners__item {
+    height: 90px;
+  }
   .footer__container {
     padding: 30px 20px;
   }
@@ -5338,6 +5342,9 @@ svg path {
   }
   .tractor__mobile {
     display: none;
+  }
+  .partners__list, .partners__item {
+    height: 60px;
   }
 }
 @media (max-width: 480px) {
