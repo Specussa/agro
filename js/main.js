@@ -4,6 +4,7 @@ const headernav_scroll = document.querySelector('.header__nav_scroll');
 const headercity_scroll = document.querySelector('.header__city_scroll');
 const headerlist_scroll = document.querySelector('.header__list_scroll');
 const inforead_scroll = document.querySelector('.info__read_scroll');
+var headersubnav_scroll = document.getElementsByClassName("header__subnav_scroll");
 if(!map_scroll){} else {
   if (map_scroll.classList.contains("active")) {} else {
     Scrollbar.init(map_scroll);
@@ -21,6 +22,9 @@ if(!headernav_scroll){} else {Scrollbar.init(headernav_scroll);}
 if(!headercity_scroll){} else {Scrollbar.init(headercity_scroll);}
 if(!headerlist_scroll){} else {Scrollbar.init(headerlist_scroll);}
 if(!inforead_scroll){} else {Scrollbar.init(inforead_scroll);}
+for (i = 0; i < headersubnav_scroll.length; i++) {
+  Scrollbar.init(headersubnav_scroll[i]);
+}
 // end scroll
 
 // start height
@@ -757,7 +761,6 @@ var offerslider = new Swiper('.info__buttons_slider', {
   breakpoints: {
     1200: {
       allowTouchMove: true,
-      slideToClickedSlide: true,
     },
   },
 });

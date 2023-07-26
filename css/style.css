@@ -1287,14 +1287,8 @@ svg path {
 }
 
 .header__subnav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   width: calc(100% - 520px);
   height: 100%;
-  padding: 15px 100px;
-  flex-direction: column;
-  gap: 60px;
   position: absolute;
   top: 0;
   left: 520px;
@@ -1308,6 +1302,16 @@ svg path {
   overflow: hidden;
   counter-reset: n;
   z-index: 0;
+}
+
+.header__subnav_scroll .scroll-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(var(--height) - 150px);
+  margin: 15px 100px;
+  flex-direction: column;
+  gap: 60px;
 }
 
 .header__nav_item.active .header__subnav {
@@ -3868,12 +3872,13 @@ svg path {
 }
 
 .info__buttons_slider {
+  width: 100%;
   margin: 0 !important;
 }
 
 .info__button_block {
-  min-width: 325px;
-  max-width: 50%;
+  width: 100%;
+  max-width: 325px;
   padding: 60px;
   color: var(--gray);
   background-color: var(--dblue);
@@ -4439,8 +4444,10 @@ svg path {
   .header__nav_list {
     padding: 80px 0 80px 80px;
   }
-  .header__subnav {
-    padding: 15px 60px;
+  .header__subnav_scroll .scroll-content {
+    height: calc(var(--height) - 140px);
+    margin: 15px 60px;
+    gap: 30px;
   }
   .header__city_block, .info__read_block {
     padding: 80px;
@@ -4448,9 +4455,6 @@ svg path {
   .header__city_button {
     top: 20px;
     right: 20px;
-  }
-  .header__subnav {
-    gap: 30px;
   }
   .main {
     padding: 120px 0 0;
@@ -5493,7 +5497,7 @@ svg path {
     padding: 0 40px;
   }
   .info__button_block {
-    min-width: 270px;
+    max-width: 270px;
     padding: 45px;
     font-size: 17px;
     line-height: 21px;
@@ -6077,7 +6081,7 @@ svg path {
     line-height: 21px;
   }
   .info__button_block {
-    min-width: 230px;
+    max-width: 230px;
     padding: 35px;
   }
   .info__buttons_block {
