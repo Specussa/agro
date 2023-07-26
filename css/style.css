@@ -224,6 +224,7 @@
   --dblue: #001523;
   --gray: #9C9C9C;
   --back: #F2F7FB;
+  --error: #D91717;
   --font: 'TT Firs Neue', sans-serif;
 }
 
@@ -291,15 +292,13 @@ body, .has-scroll-smooth body, .has-scroll-smooth body.loaded {
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
-select:-webkit-autofill:focus,
-input, input:focus, input:active {
+input {
+  font-family: var(--font);
   border: none;
   border-bottom: 1px solid var(--bg);
   outline: none;
@@ -4136,6 +4135,247 @@ svg path {
 
 /* end propelled */
 
+/* start section_form */
+
+.form {
+  width: 100%;
+  height: 100%;
+	padding: 80px 100px;
+  background-color: var(--blue);
+}
+
+.form__width {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 550px;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.form__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-height: 740px;
+}
+
+.form__item {
+  width: 50%;
+}
+
+.form__item_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form__controls {
+  width: 100%;
+}
+
+.form__control {
+  margin: 0 0 13px;
+  padding: 0 0 17px;
+	position: relative;
+  overflow: hidden;
+}
+
+.form__control small {
+  height: 12px;
+  margin: 5px 0 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+	color: var(--bg);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  -moz-transition: -moz-transform 0.3s linear;
+  -ms-transition: -ms-transform 0.3s linear;
+  -o-transition: -o-transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+
+.form__control.error small {
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+.form__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 0;
+  justify-content: center;
+  background-color: var(--bg);
+  position: relative;
+  cursor: pointer;
+}
+
+.form__button span {
+  background-color: var(--dblue);
+}
+
+.form__button:hover {
+  color: var(--bg);
+  background-color: var(--dblue);
+}
+
+.form__button:hover span {
+  background-color: var(--bg);
+}
+
+.form__button input {
+  width: 100%;
+  padding: 40px;
+  border: none;
+  outline: none;
+  color: var(--text);
+  -webkit-text-fill-color: var(--text);
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  box-shadow: 0 0 0px 1000px transparent inset;
+  background: transparent;
+  cursor: pointer;
+}
+
+.form__button:hover input {
+  color: var(--bg);
+  -webkit-text-fill-color: var(--bg);
+}
+
+.form__policy {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--bg);
+}
+
+.form__policy a {
+  color: var(--bg);
+  text-decoration: underline;
+}
+
+.form__policy a:hover {
+  color: var(--dblue);
+  text-decoration: underline;
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding: 10px 0;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.form__control input:-webkit-autofill,
+.form__control input:-webkit-autofill:hover,
+.form__control textarea:-webkit-autofill,
+.form__control textarea:-webkit-autofill:hover,
+.form__control select:-webkit-autofill,
+.form__control select:-webkit-autofill:hover,
+.form__control input, .form__control {
+  width: 100%;
+  border: none;
+  outline: none;
+  -webkit-text-fill-color: var(--bg);
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  box-shadow: 0 0 0px 1000px transparent inset;
+  color: var(--bg);
+  background: transparent;
+}
+
+.form__input::placeholder {
+  color: var(--back);
+}
+
+.form__bar, .form__border {
+  display: block;
+  position: relative;
+  bottom: 0;
+}
+
+.form__bar {
+  z-index: 1;
+}
+
+.form__border {
+  z-index: 0;
+}
+
+.form__bar::before, .form__bar::after, .form__border::before, .form__border::after {
+  content: '';
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+  -ms-transition: width 0.3s ease;
+  -o-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+}
+
+.form__bar::before, .form__bar::after {
+  width: 0;
+  background-color: var(--dblue);
+}
+
+.form__border::before, .form__border::after {
+  width: 50%;
+  background-color: var(--back);
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  -webkit-transition-delay: 0.3s;
+  -moz-transition-delay: 0.3s;
+  -ms-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.form__control.error .form__border::before, .form__control.error .form__border::after {
+  background-color: var(--error);
+}
+
+.form__bar::before, .form__border::before {
+  left: 50%;
+}
+
+.form__bar:after, .form__border::after {
+  right: 50%;
+}
+
+.form__input:focus ~ .form__bar::before, .form__input:focus ~ .form__bar::after {
+  width: 50%;
+}
+
+.form__head {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31px;
+  color: var(--back);
+}
+
+/* end section_form */
+
 /* start media 1830px */
 @media (max-width: 1830px) {
   .header__right a {
@@ -4465,7 +4705,7 @@ svg path {
 
 /* start media 1200px */
 @media (max-width: 1200px) {
-  .button__default {
+  .button__default, .form__button input {
     padding: 30px;
     font-size: 15px;
     line-height: 16px;
@@ -5291,7 +5531,7 @@ svg path {
 
 /* start media 800px */
 @media (max-width: 800px) {
-  .button__default {
+  .button__default, .form__button input {
     width: 100%;
     padding: 25px;
     font-size: 14px;
@@ -5586,7 +5826,7 @@ svg path {
     margin: 0 15px;
     border-radius: 0;
     border: 1px solid var(--dblue);
-    background-color: transparent;
+    background-color: var(--bg);
     -webkit-transition: background-color 0.2s linear;
     -moz-transition: background-color 0.2s linear;
     -ms-transition: background-color 0.2s linear;
@@ -5781,6 +6021,7 @@ svg path {
   }
   .product__slider_info {
     width: calc(100% - 40px);
+    max-width: 250px;
     top: 20px;
     left: 20px;
   }

@@ -1561,3 +1561,45 @@ if(!infoblock){} else {
   };
 }
 // end accordion tractor__filter
+
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const phone = document.getElementById('phone');
+const region = document.getElementById('region');
+// start validate section_form
+if(!form){} else {
+  form.addEventListener('submit', e => {
+  e.preventDefault();
+  
+  checkInputs();
+  });
+  function checkInputs() {
+  // trim to remove the whitespaces
+  const usernameValue = username.value.trim();
+  const phoneValue = phone.value.trim();
+  const regionValue = region.value.trim();
+  
+  if(usernameValue === '') {
+      setErrorFor(username, 'Введите Ваше имя'); } else { setSuccessFor(username);
+  }
+  if(phoneValue === '') {
+      setErrorFor(phone, 'Введите корректный телефон'); } else { setSuccessFor(phone);
+  }
+  if(regionValue === '') {
+      setErrorFor(region, 'Введите регион'); } else { setSuccessFor(region);
+    }
+  }
+  
+  function setErrorFor(input, message) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+    formControl.className = 'form__control error';
+    small.innerText = message;
+  }
+  
+  function setSuccessFor(input) {
+    const formControl = input.parentElement;
+    formControl.className = 'form__control success';
+  }
+  }
+// end validate section_form
