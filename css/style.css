@@ -579,7 +579,7 @@ svg path {
   }
 }
 
-.loaded .preloader {
+.loaded .preloader, .loaded .preloader__image {
   display: none;
 }
 
@@ -3894,7 +3894,7 @@ svg path {
 
 .info__button_block.active, .info__button_block:hover {
   color: var(--text);
-  background-color: var(--bg);
+  background-color: var(--back);
 }
 
 .info__padding {

@@ -27,6 +27,31 @@ for (i = 0; i < headersubnav_scroll.length; i++) {
 }
 // end scroll
 
+// start анимация перехода если есть класс link
+let link = document.querySelectorAll(".link");
+for (let i = 0; i < link.length; i++) {
+  link[i].onclick = function(e) {
+    let href = this.href;
+    document.querySelector('.preloader').style.display = "block";
+    window.setTimeout(function () {
+      document.querySelector('.preloader__top').style.top = null;
+      document.querySelector('.preloader__bottom').style.top = null;
+    }, 0);
+    setTimeout(function() {
+      window.setTimeout(function () {
+        document.querySelector('.preloader').style.display = null;
+      }, 400);
+      window.setTimeout(function () {
+        document.querySelector('.preloader__top').style.top = "-50%";
+        document.querySelector('.preloader__bottom').style.top = "100%";
+      }, 100);
+      window.location = href;
+    }, 300);
+    e.preventDefault();
+  }
+}
+// end
+
 // start height
 const doc = document.documentElement
 const appHeight = () => {doc.style.setProperty('--height', `${window.innerHeight}px`)}
