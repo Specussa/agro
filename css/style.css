@@ -6028,6 +6028,9 @@ svg path {
   .propelled__filter_container {
     padding: 40px 20px;
   }
+  .propelled__padding_block {
+    background-color: var(--bg)
+  }
   .product__block {
     min-height: auto;
     flex-direction: column-reverse;

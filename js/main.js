@@ -757,8 +757,8 @@ if(!propelledblock){} else {
         },
       },
       1700: {
-        spaceBetween: 9,
-        slidesPerView: 4 ,
+        spaceBetween: 0,
+        slidesPerView: 4,
       }
     },
   });
