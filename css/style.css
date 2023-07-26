@@ -3872,7 +3872,7 @@ svg path {
 }
 
 .info__button_block {
-  width: 325px;
+  min-width: 325px;
   max-width: 50%;
   padding: 60px;
   color: var(--gray);
@@ -4310,7 +4310,10 @@ svg path {
 }
 
 .form__bar, .form__border {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex: 0 0 auto;
   position: relative;
   bottom: 0;
 }
@@ -5490,7 +5493,7 @@ svg path {
     padding: 0 40px;
   }
   .info__button_block {
-    width: 270px;
+    min-width: 270px;
     padding: 45px;
     font-size: 17px;
     line-height: 21px;
@@ -6074,7 +6077,7 @@ svg path {
     line-height: 21px;
   }
   .info__button_block {
-    width: 230px;
+    min-width: 230px;
     padding: 35px;
   }
   .info__buttons_block {
