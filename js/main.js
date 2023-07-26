@@ -756,6 +756,7 @@ if(!propelledblock){} else {
           enabled: false,
         },
         autoplay: false,
+        allowTouchMove: false,
       },
       1700: {
         spaceBetween: 0,
