@@ -550,7 +550,7 @@ if(!companyslider){} else {
 }
 // end company slider
 
-// start company slider
+// start offer slider
 var offerslider = new Swiper('.offer__slider', {
   loop: false,
   spaceBetween: 50,
@@ -580,7 +580,7 @@ var offerslider = new Swiper('.offer__slider', {
     }
   },
 });
-// end company slider
+// end offer slider
 
 // start product slider
 const productslider = document.querySelector('.product__slider');
@@ -598,6 +598,10 @@ if(!productslider){} else {
     navigation: {
       nextEl: '.product__slider_next',
       prevEl: '.product__slider_prev',
+    },
+    pagination: {
+      el: '.product__pagination',
+      clickable: true,
     },
     on: {
       progress: function() {
@@ -682,12 +686,17 @@ if(!infosliders){} else {
     loopedSlides: 3,
     slidesPerView: 3,
     touchRatio: 0.1,
-    spaceBetween: 40,
+    spaceBetween: 20,
     speed: 1000,
     parallax: true,
     watchSlidesProgress: true,
     slideToClickedSlide: true,
     allowTouchMove: true,
+    breakpoints: {
+      580: {
+        spaceBetween: 10,
+      },
+    },
   });
   infoSlider.controller.control = infoThumbs;
   infoThumbs.controller.control = infoSlider;
@@ -732,6 +741,27 @@ if(!propelledblock){} else {
   }
 }
 // end propelled slider
+
+// start info__buttons slider
+var offerslider = new Swiper('.info__buttons_slider', {
+  loop: false,
+  spaceBetween: 0,
+  slidesPerView: 'auto',
+  speed: 1000,
+  slideToClickedSlide: false,
+  allowTouchMove: false,
+  pagination: {
+    el: '.offer__pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    1200: {
+      allowTouchMove: true,
+      slideToClickedSlide: true,
+    },
+  },
+});
+// end info__buttons slider
 
 // map
 // start search map

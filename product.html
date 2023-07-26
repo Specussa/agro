@@ -208,6 +208,27 @@
   </header>
   <main class="main" data-scroll-speed="10" data-scroll-container id="top">
     <div class="main__section">
+      <section class="breadcrumbs breadcrumbs__mobile" data-scroll-section>
+        <div class="container breadcrumbs__container">
+          <div class="breadcrumbs__flex">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item">
+                <a href="index.html" class="breadcrumbs__link">Главная</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link">Техника</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link">Самоходная техника</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link">Тракторы</a>
+              </li>
+            </ul>
+            <h1 class="breadcrumbs__head">DF2004 2568</h1>
+          </div>
+        </div>
+      </section>
       <section class="product" data-scroll-section>
         <div class="container product__container">
           <div class="product__block">
@@ -263,6 +284,7 @@
                     <path d="M0.870321 10.8654C0.365042 10.3602 0.365042 9.54095 0.870321 9.03567L9.10431 0.801688C9.60958 0.29641 10.4288 0.29641 10.9341 0.801688C11.4394 1.30697 11.4394 2.12618 10.9341 2.63146L3.61498 9.95056L10.9341 17.2697C11.4394 17.7749 11.4394 18.5942 10.9341 19.0994C10.4288 19.6047 9.60958 19.6047 9.10431 19.0994L0.870321 10.8654ZM18.2139 11.2444H1.78521V8.65672H18.2139V11.2444Z" fill="#006EB9"/>
                   </svg>
                 </div>
+                <div class="swiper-pagination product__pagination"></div>
                 <ul class="product__slider_info">
                   <li>31 л/мин<span>Максимальный гидропоток</span></li>
                   <li>92 л.с.<span>Мощность</span></li>
@@ -276,9 +298,13 @@
       <section class="info" data-scroll-section>
         <div class="container info__container">
           <div class="info__buttons_block">
-            <button class="info__button_block info__button_description active">Описание</button>
-            <button class="info__button_block info__button_characteristics">Характеристики</button>
-            <button class="info__button_block info__button_certification">Сертификация</button>
+            <div class="info__buttons_slider swiper-container">
+              <div class="info__buttons_flex swiper-wrapper">
+                <button class="info__button_block info__button_description swiper-slide active">Описание</button>
+                <button class="info__button_block info__button_characteristics swiper-slide">Характеристики</button>
+                <button class="info__button_block info__button_certification swiper-slide">Сертификация</button>
+              </div>
+            </div>
           </div>
           <div class="info__padding">
             <div class="info__blocks info__description active">
