@@ -1696,6 +1696,29 @@ if(!spareparts){} else {
           window.location = href;
         }, 500);
         e.preventDefault();
+        // аккордион
+        var accordion = this.nextElementSibling;
+        var courseqAccordion = document.getElementsByClassName("spareparts__info");
+        var courseqAccordionActive = document.getElementsByClassName("spareparts__head active");
+    
+        if (accordion.style.maxHeight) {
+          accordion.style.maxHeight = null;
+          this.classList.remove("active");
+          accordion.classList.remove("active");
+        } else {
+          for (var q = 0; q < courseqAccordionActive.length; q++) {
+            courseqAccordionActive[q].classList.remove("active");
+            courseqAccordion[q].classList.remove("active");
+          }
+          for (var p = 0; p < courseqAccordion.length; p++) {
+            this.classList.remove("active");
+            courseqAccordion[p].classList.remove("active");
+            courseqAccordion[p].style.maxHeight = null;
+          }
+          accordion.style.maxHeight = (accordion.scrollHeight * 1) + "px";
+          accordion.classList.add("active");
+          this.classList.add("active");
+        }
       }
     }
   } else {
@@ -1710,48 +1733,72 @@ if(!spareparts){} else {
         sparepartsright.innerHTML = sparepartshead[i].nextElementSibling.nextElementSibling.innerHTML;
         // делаем клик чтобы активировать функцию
         sparepartsright.childNodes[1].children[0].children[0].click();
+        // аккордион
+        var accordion = this.nextElementSibling;
+        var courseqAccordion = document.getElementsByClassName("spareparts__info");
+        var courseqAccordionActive = document.getElementsByClassName("spareparts__head active");
+    
+        if (accordion.style.maxHeight) {
+          accordion.style.maxHeight = null;
+          this.classList.remove("active");
+          accordion.classList.remove("active");
+          sparepartsright.innerHTML = '';
+        } else {
+          for (var q = 0; q < courseqAccordionActive.length; q++) {
+            courseqAccordionActive[q].classList.remove("active");
+            courseqAccordion[q].classList.remove("active");
+          }
+          for (var p = 0; p < courseqAccordion.length; p++) {
+            this.classList.remove("active");
+            courseqAccordion[p].classList.remove("active");
+            courseqAccordion[p].style.maxHeight = null;
+          }
+          accordion.style.maxHeight = (accordion.scrollHeight * 1) + "px";
+          accordion.classList.add("active");
+          this.classList.add("active");
+        }
       }
     }
   }
-  window.onresize = function () {
-    if(oldWidth <= 1200){
-      for (let i = 0; i < sparepartshead.length; i++) {
-        sparepartshead[i].onclick = function(e) {
-          let href = this.href;
-          document.querySelector('.preloader').style.display = "block";
-          window.setTimeout(function () {
-            document.querySelector('.preloader__top').style.top = null;
-            document.querySelector('.preloader__bottom').style.top = null;
-          }, 0);
-          setTimeout(function() {
-            window.setTimeout(function () {
-              document.querySelector('.preloader').style.display = null;
-            }, 400);
-            window.setTimeout(function () {
-              document.querySelector('.preloader__top').style.top = "-50%";
-              document.querySelector('.preloader__bottom').style.top = "100%";
-            }, 100);
-            window.location = href;
-          }, 500);
-          e.preventDefault();
-        }
-      }
-    } else {
-      for (let i = 0; i < sparepartshead.length; i++) {
-        sparepartshead[i].onclick = function(e) {
-          e.preventDefault();
-          // если больше 1 то скрываем первый блок
-          if(this.nextElementSibling.nextElementSibling.childNodes[1].children.length > 1){
-            this.nextElementSibling.nextElementSibling.childNodes[1].children[0].style.display = 'none';
-          }
-          // дублируем в правый блок
-          sparepartsright.innerHTML = sparepartshead[i].nextElementSibling.nextElementSibling.innerHTML;
-          // делаем клик чтобы активировать функцию
-          sparepartsright.childNodes[1].children[0].children[0].click();
-        }
-      }
-    }
-  };
+  // window.onresize = function () {
+  //   if(oldWidth <= 1200){
+  //     for (let i = 0; i < sparepartshead.length; i++) {
+  //       sparepartshead[i].onclick = function(e) {
+  //         let href = this.href;
+  //         document.querySelector('.preloader').style.display = "block";
+  //         window.setTimeout(function () {
+  //           document.querySelector('.preloader__top').style.top = null;
+  //           document.querySelector('.preloader__bottom').style.top = null;
+  //         }, 0);
+  //         setTimeout(function() {
+  //           window.setTimeout(function () {
+  //             document.querySelector('.preloader').style.display = null;
+  //           }, 400);
+  //           window.setTimeout(function () {
+  //             document.querySelector('.preloader__top').style.top = "-50%";
+  //             document.querySelector('.preloader__bottom').style.top = "100%";
+  //           }, 100);
+  //           window.location = href;
+  //         }, 500);
+  //         e.preventDefault();
+  //       }
+  //     }
+  //   } else {
+  //     for (let i = 0; i < sparepartshead.length; i++) {
+  //       sparepartshead[i].onclick = function(e) {
+  //         e.preventDefault();
+  //         // если больше 1 то скрываем первый блок
+  //         if(this.nextElementSibling.nextElementSibling.childNodes[1].children.length > 1){
+  //           this.nextElementSibling.nextElementSibling.childNodes[1].children[0].style.display = 'none';
+  //         }
+  //         // дублируем в правый блок
+  //         sparepartsright.innerHTML = sparepartshead[i].nextElementSibling.nextElementSibling.innerHTML;
+  //         // делаем клик чтобы активировать функцию
+  //         sparepartsright.childNodes[1].children[0].children[0].click();
+  //       }
+  //     }
+  //   }
+  // };
 }
 function linkFunction(href) {
   let slink = document.querySelectorAll(".spareparts__subitem .link");
@@ -1776,53 +1823,4 @@ function linkFunction(href) {
       }
     }
   }
-// аккордеон
-// var mapsh = document.getElementsByClassName("map__search_head");
-// for (i = 0; i < mapsh.length; i++) {
-//   mapsh[i].onclick = function(e) {
-//     var accordion = this.nextElementSibling;
-//     var courseAccordion = document.getElementsByClassName("map__search_info");
-//     var courseAccordionButton = document.getElementsByClassName("map__search_head");
-//     var courseAccordionActive = document.getElementsByClassName("map__search_head active");
-
-//     if (accordion.style.maxHeight) {
-//       accordion.style.maxHeight = null;
-//       mapmargin.forEach(n => n.style.margin = null);
-//       mapback.classList.add('close');
-//       this.classList.remove("active");
-//       accordion.classList.remove("active");
-//       mapcity.style.overflow = "hidden";
-//       mapscroll.forEach(n => n.classList.remove('active'));
-//       mapсmapcity.forEach(n => n.classList.remove('active'));
-//       map_scroll.onmouseover = function(e) {scroll.stop();};
-//       for (var b = 0; b < courseAccordionButton.length; b++) {
-//         courseAccordionButton[b].classList.remove("close");
-//       }
-//     } else {
-//       for (var q = 0; q < courseAccordionActive.length; q++) {
-//         courseAccordionActive[q].classList.remove("active");
-//         courseAccordion[q].classList.remove("active");
-//       }
-//       for (var b = 0; b < courseAccordionButton.length; b++) {
-//         courseAccordionButton[b].classList.add("close");
-//       }
-//       for (var p = 0; p < courseAccordion.length; p++) {
-//         this.classList.remove("active");
-//         courseAccordion[p].classList.remove("active");
-//         courseAccordion[p].style.maxHeight = null;
-//       }
-//       accordion.style.maxHeight = (accordion.scrollHeight * 2) + "px";
-//       accordion.classList.add("active");
-//       this.classList.add("active");
-//       accordion.classList.remove("close");
-//       this.classList.remove("close");
-//       mapmargin.forEach(n => n.style.margin = 0);
-//       mapback.classList.remove('close');
-//       mapcity.style.overflow = "visible";
-//       mapscroll.forEach(n => n.classList.add('active'));
-//       mapсmapcity.forEach(n => n.classList.add('active'));
-//       map_scroll.onmouseover = function(e) {scroll.start();};
-//     }
-//   };
-// }
 // end search spareparts
