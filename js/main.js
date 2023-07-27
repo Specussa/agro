@@ -1675,7 +1675,7 @@ if(!spareparts){} else {
   });
   // end
   let sparepartshead = document.querySelectorAll(".spareparts__head");
-  let sparepartsright = document.querySelector(".spareparts__right");
+  let sparepartsupload = document.querySelector(".spareparts__upload");
   if(oldWidth <= 1200){
     for (let i = 0; i < sparepartshead.length; i++) {
       sparepartshead[i].onclick = function(e) {
@@ -1730,9 +1730,9 @@ if(!spareparts){} else {
           this.nextElementSibling.nextElementSibling.childNodes[1].children[0].style.display = 'none';
         }
         // дублируем в правый блок
-        sparepartsright.innerHTML = sparepartshead[i].nextElementSibling.nextElementSibling.innerHTML;
+        sparepartsupload.innerHTML = sparepartshead[i].nextElementSibling.nextElementSibling.innerHTML;
         // делаем клик чтобы активировать функцию
-        sparepartsright.childNodes[1].children[0].children[0].click();
+        sparepartsupload.childNodes[1].children[0].children[0].click();
         // аккордион
         var accordion = this.nextElementSibling;
         var courseqAccordion = document.getElementsByClassName("spareparts__info");
@@ -1742,7 +1742,7 @@ if(!spareparts){} else {
           accordion.style.maxHeight = null;
           this.classList.remove("active");
           accordion.classList.remove("active");
-          sparepartsright.innerHTML = '';
+          sparepartsupload.innerHTML = '';
         } else {
           for (var q = 0; q < courseqAccordionActive.length; q++) {
             courseqAccordionActive[q].classList.remove("active");
@@ -1792,9 +1792,9 @@ if(!spareparts){} else {
   //           this.nextElementSibling.nextElementSibling.childNodes[1].children[0].style.display = 'none';
   //         }
   //         // дублируем в правый блок
-  //         sparepartsright.innerHTML = sparepartshead[i].nextElementSibling.nextElementSibling.innerHTML;
+  //         sparepartsupload.innerHTML = sparepartshead[i].nextElementSibling.nextElementSibling.innerHTML;
   //         // делаем клик чтобы активировать функцию
-  //         sparepartsright.childNodes[1].children[0].children[0].click();
+  //         sparepartsupload.childNodes[1].children[0].children[0].click();
   //       }
   //     }
   //   }

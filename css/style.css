@@ -4678,6 +4678,21 @@ svg path {
   line-height: 20px;
 }
 
+.spareparts_head {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 52px;
+  color: var(--bg);
+}
+
+.spareparts_name {
+  margin: 20px 0 50px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--bg);
+}
+
 /* end spareparts */
 
 /* start media 1830px */
