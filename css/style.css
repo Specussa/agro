@@ -3974,12 +3974,6 @@ svg path {
   user-select: none;
 }
 
-.propelled__padding {
-  display: flex;
-  width: 100%;
-  position: relative;
-}
-
 .propelled__padding_block {
   background-color: var(--blue)
 }
@@ -4131,7 +4125,7 @@ svg path {
 }
 
 .propelled__filter_link span {
-  margin: 0 0 0 20px;
+  margin: 0 0 0 10px;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -5545,6 +5539,17 @@ svg path {
     font-size: 10px;
     line-height: 13px;
   }
+  .propelled__filter_item {
+    width: calc(50% - 10px);
+  }
+  .propelled__filter_link {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .propelled__filter_link span {
+    font-size: 14px;
+    line-height: 18px;
+  }
   .footer__contacts_block span {
     font-size: 14px;
     line-height: 18px;
@@ -6139,6 +6144,9 @@ svg path {
   }
   .form {
     padding: 40px 20px;
+  }
+  .propelled__filter_item {
+    width: 100%;
   }
   .footer__container {
     padding: 30px 20px;

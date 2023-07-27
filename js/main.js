@@ -46,7 +46,7 @@ for (let i = 0; i < link.length; i++) {
         document.querySelector('.preloader__bottom').style.top = "100%";
       }, 100);
       window.location = href;
-    }, 300);
+    }, 500);
     e.preventDefault();
   }
 }
@@ -739,7 +739,7 @@ if(!propelledblock){} else {
     loop: false,
     slidesPerView: 5,
     spaceBetween: 0,
-    speed: 1000,
+    speed: 2500,
     slideToClickedSlide: true,
     allowTouchMove: true,
     autoplay: {
@@ -754,6 +754,7 @@ if(!propelledblock){} else {
         speed: 500,
         autoplay: {
           enabled: false,
+          pauseOnMouseEnter: false,
         },
         autoplay: false,
       },
