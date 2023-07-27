@@ -1,4 +1,5 @@
 // start scroll
+var oldWidth = window.innerWidth;
 const map_scroll = document.querySelector('.map__city');
 const headernav_scroll = document.querySelector('.header__nav_scroll');
 const headercity_scroll = document.querySelector('.header__city_scroll');
@@ -20,11 +21,19 @@ if(!map_scroll){} else {
   }
 }
 if(!sparepartslist_scroll){} else {
-  if (sparepartslist_scroll.classList.contains("active")) {} else {
-    Scrollbar.init(sparepartslist_scroll);
-    sparepartslist_scroll.onmouseover = function(e) {scroll.stop();};
-    sparepartslist_scroll.onmouseout = function(e) {scroll.start();};
-  }
+  if(oldWidth > 800){
+    if (sparepartslist_scroll.classList.contains("active")) {} else {
+      Scrollbar.init(sparepartslist_scroll);
+      sparepartslist_scroll.addEventListener("touchstart", function (e) {scroll.stop()});
+      sparepartslist_scroll.addEventListener("touchmove", function (e) {scroll.stop()});
+      sparepartslist_scroll.addEventListener("touched", function (e) {scroll.stop()});
+      document.body.addEventListener("touchstart", function (e) {scroll.start()});
+      document.body.addEventListener("touchmove", function (e) {scroll.start()});
+      document.body.addEventListener("touched", function (e) {scroll.start()});
+      sparepartslist_scroll.onmouseover = function(e) {scroll.stop();};
+      sparepartslist_scroll.onmouseout = function(e) {scroll.start();};
+    }
+  } else {}
 }
 if(!headernav_scroll){} else {Scrollbar.init(headernav_scroll);}
 if(!headercity_scroll){} else {Scrollbar.init(headercity_scroll);}
@@ -68,7 +77,6 @@ const docheight = document.documentElement
 const appHeight = () => {docheight.style.setProperty('--height', `${window.innerHeight}px`)}
 window.addEventListener('resize', appHeight)
 appHeight()
-var oldWidth = window.innerWidth;
 window.onresize = function () {
   var newWidth = window.innerWidth;
   if (newWidth != oldWidth) {
@@ -1676,25 +1684,27 @@ if(!spareparts){} else {
   // end
   let sparepartshead = document.querySelectorAll(".spareparts__head");
   let sparepartsupload = document.querySelector(".spareparts__upload");
-  if(oldWidth <= 1200){
+  if(oldWidth <= 800){
     for (let i = 0; i < sparepartshead.length; i++) {
       sparepartshead[i].onclick = function(e) {
-        let href = this.href;
-        document.querySelector('.preloader').style.display = "block";
-        window.setTimeout(function () {
-          document.querySelector('.preloader__top').style.top = null;
-          document.querySelector('.preloader__bottom').style.top = null;
-        }, 0);
-        setTimeout(function() {
+        if (this.classList.contains("close")) {
+          let href = this.href;
+          document.querySelector('.preloader').style.display = "block";
           window.setTimeout(function () {
-            document.querySelector('.preloader').style.display = null;
-          }, 400);
-          window.setTimeout(function () {
-            document.querySelector('.preloader__top').style.top = "-50%";
-            document.querySelector('.preloader__bottom').style.top = "100%";
-          }, 100);
-          window.location = href;
-        }, 500);
+            document.querySelector('.preloader__top').style.top = null;
+            document.querySelector('.preloader__bottom').style.top = null;
+          }, 0);
+          setTimeout(function() {
+            window.setTimeout(function () {
+              document.querySelector('.preloader').style.display = null;
+            }, 400);
+            window.setTimeout(function () {
+              document.querySelector('.preloader__top').style.top = "-50%";
+              document.querySelector('.preloader__bottom').style.top = "100%";
+            }, 100);
+            window.location = href;
+          }, 500);
+        } else {}
         e.preventDefault();
         // аккордион
         var accordion = this.nextElementSibling;
@@ -1759,49 +1769,9 @@ if(!spareparts){} else {
         }
       }
     }
-  }
-  // window.onresize = function () {
-  //   if(oldWidth <= 1200){
-  //     for (let i = 0; i < sparepartshead.length; i++) {
-  //       sparepartshead[i].onclick = function(e) {
-  //         let href = this.href;
-  //         document.querySelector('.preloader').style.display = "block";
-  //         window.setTimeout(function () {
-  //           document.querySelector('.preloader__top').style.top = null;
-  //           document.querySelector('.preloader__bottom').style.top = null;
-  //         }, 0);
-  //         setTimeout(function() {
-  //           window.setTimeout(function () {
-  //             document.querySelector('.preloader').style.display = null;
-  //           }, 400);
-  //           window.setTimeout(function () {
-  //             document.querySelector('.preloader__top').style.top = "-50%";
-  //             document.querySelector('.preloader__bottom').style.top = "100%";
-  //           }, 100);
-  //           window.location = href;
-  //         }, 500);
-  //         e.preventDefault();
-  //       }
-  //     }
-  //   } else {
-  //     for (let i = 0; i < sparepartshead.length; i++) {
-  //       sparepartshead[i].onclick = function(e) {
-  //         e.preventDefault();
-  //         // если больше 1 то скрываем первый блок
-  //         if(this.nextElementSibling.nextElementSibling.childNodes[1].children.length > 1){
-  //           this.nextElementSibling.nextElementSibling.childNodes[1].children[0].style.display = 'none';
-  //         }
-  //         // дублируем в правый блок
-  //         sparepartsupload.innerHTML = sparepartshead[i].nextElementSibling.nextElementSibling.innerHTML;
-  //         // делаем клик чтобы активировать функцию
-  //         sparepartsupload.childNodes[1].children[0].children[0].click();
-  //       }
-  //     }
-  //   }
-  // };
-}
-function linkFunction(href) {
-  let slink = document.querySelectorAll(".spareparts__subitem .link");
+  };
+  function linkFunction(href) {
+    let slink = document.querySelectorAll(".spareparts__subitem .link");
     for (let i = 0; i < slink.length; i++) {
       slink[i].onclick = function(e) {
         document.querySelector('.preloader').style.display = "block";
@@ -1823,4 +1793,5 @@ function linkFunction(href) {
       }
     }
   }
+}
 // end search spareparts
