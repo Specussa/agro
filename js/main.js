@@ -749,7 +749,7 @@ if(!propelledblock){} else {
     },
     breakpoints: {
       800: {
-        slidesPerView: 'auto',
+        slidesPerView: 1.5,
         spaceBetween: 25,
         speed: 500,
         autoplay: {
