@@ -414,8 +414,13 @@ svg path {
 /* start buttons */
 
 .button__default {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 492px;
   padding: 40px;
+  align-items: center;
+  justify-content: center;
   font-size: 20px;
   font-weight: 400;
   line-height: 20px;
@@ -966,7 +971,8 @@ svg path {
   position: relative;
 }
 
-.header__button:hover, .header__link:hover {
+.header__item:hover .header__button, .header__item:hover .header__link {
+  height: 100%;
   color: var(--bg);
 }
 
@@ -997,6 +1003,8 @@ svg path {
   padding: 40px;
   flex-wrap: wrap;
   gap: 20px;
+  border: 1px solid var(--blue);
+  border-top: none;
 }
 
 .header__block_item {
@@ -5000,6 +5008,47 @@ svg path {
 
 /* end agriculture */
 
+/* start agroinfo */
+
+.agroinfo__background {
+  width: 100%;
+  min-height: calc(var(--height) - 150px);
+}
+
+.agroinfo__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 750px;
+  height: 100%;
+  padding: 50px 100px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  background: rgba(0, 21, 35, 0.6);
+}
+
+.agroinfo__head {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 52px;
+  color: var(--bg);
+}
+
+.agroinfo__desc {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--bg);
+}
+
+.agroinfo__button {
+  width: 100%;
+}
+
+/* end agroinfo */
+
 /* start media 1830px */
 @media (max-width: 1830px) {
   .header__right a {
@@ -5392,6 +5441,18 @@ svg path {
     width: 230px;
     height: 80px;
   }
+  .agroinfo__block {
+    max-width: 580px;
+    padding: 50px 80px;
+  }
+  .agroinfo__head {
+    font-size: 32px;
+    line-height: 41px;
+  }
+  .agroinfo__desc {
+    font-size: 16px;
+    line-height: 21px;
+  }
   .footer__container {
     padding: 60px 80px;
   }
@@ -5672,6 +5733,9 @@ svg path {
   .header__city_button, .info__read_button {
     top: 20px;
     right: 20px;
+  }
+  .header__block_list {
+    border: none;
   }
   .main {
     padding: 80px 0 0;
@@ -6344,6 +6408,18 @@ svg path {
   .agriculture__absolute img {
     width: 190px;
     height: 65px;
+  }
+  .agroinfo__block {
+    max-width: 480px;
+    padding: 50px 40px;
+  }
+  .agroinfo__head {
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .agroinfo__desc {
+    font-size: 14px;
+    line-height: 18px;
   }
   .footer__contacts_block span {
     font-size: 14px;
@@ -7067,6 +7143,18 @@ svg path {
     width: 275px;
     height: 95px;
   }
+  .agroinfo__block {
+    max-width: 480px;
+    padding: 40px 20px;
+  }
+  .agroinfo__head {
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .agroinfo__desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
   .footer__container {
     padding: 30px 20px;
   }
@@ -7221,6 +7309,9 @@ svg path {
   .agriculture__desc {
     font-size: 12px;
     line-height: 15px;
+  }
+  .agroinfo__block {
+    max-width: 100%;
   }
 }
 /* end media 580px */

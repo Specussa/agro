@@ -287,7 +287,6 @@ for (i = 0; i < hblockacc.length; i++) {
       hblockaccordion.style.maxHeight = null;
       this.classList.remove("active");
       hblockaccordion.classList.remove("active");
-      bodyoverlay.classList.remove("active");
       hlscroll.forEach(n => n.classList.remove('active'));
       if (document.documentElement.clientWidth > 1200) {hlscroll.forEach(n => n.style.transform = null);}
     } else {
@@ -300,10 +299,29 @@ for (i = 0; i < hblockacc.length; i++) {
         coursehblockAccordion[p].classList.remove("active");
         coursehblockAccordion[p].style.maxHeight = null;
       }
+      scroll.on('scroll', function() {
+        bodyoverlay.classList.remove("active");
+        menu.classList.remove("active");
+        burger.classList.remove("active");
+        burgermobile.classList.remove("active");
+        headerlist.classList.remove("active");
+        headerbuttons.classList.remove("active");
+        headercontacts.classList.remove("active");
+        headerscroll.classList.remove("active");
+        bodyoverlaycity.classList.remove("active");
+        if(!inforeading){} else {inforeading.classList.remove("active");}
+        if(!infobutton){} else {infobutton.classList.remove("active");}
+        document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
+        document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
+        document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
+        document.body.style.height = null;
+        menuindex.style.zIndex = null;
+      });
       bodyoverlay.classList.remove("active");
+      document.body.style.height = null;
+      menuindex.style.zIndex = null;
       menu.classList.remove("active");
       burger.classList.remove("active");
-      bodyoverlay.classList.add("active");
       hblockaccordion.style.maxHeight = (hblockaccordion.scrollHeight * 1) + "px";
       hblockaccordion.classList.add("active");
       this.classList.add("active");
@@ -326,7 +344,7 @@ window.addEventListener('DOMContentLoaded', function() {
       }
    });
 });
-// end
+// end menu
 
 // start hover menu
 var hover = document.querySelector('.header__nav_list'),
