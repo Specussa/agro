@@ -4438,6 +4438,10 @@ svg path {
   color: var(--dblue);
 }
 
+.spareparts__block .breadcrumbs__link:hover {
+  color: var(--blue);
+}
+
 .spareparts__block .breadcrumbs__item:not(:last-child):after {
   background: url('../img/icon/dot_blue.svg') center center no-repeat;
 }
