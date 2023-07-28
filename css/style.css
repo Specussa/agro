@@ -4706,6 +4706,195 @@ svg path {
 
 /* end spareparts */
 
+/* start detail */
+
+.detail__container {
+  flex-direction: column;
+}
+
+.detail__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 50px 100px;
+  gap: 50px;
+}
+
+.detail__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  width: calc(70% - 50px);
+}
+
+.detail__right {
+  width: 30%;
+}
+
+.detail__head {
+  margin: 0 0 10px;
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 87px;
+  color: var(--text);
+}
+
+.detail__desc {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--text);
+}
+
+.detail__image {
+  height: 100%;
+  width: 100%;
+  margin: 25px 0 0;
+}
+
+.detail__image img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.detail__list, .detail__list .scroll-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 900px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail__list {
+  counter-reset: count;
+}
+
+.detail__item, .detail__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px 20px;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 10px;
+  background-color: var(--back);
+}
+
+.detail__link_mobile {
+  display: none;
+}
+
+.detail__item {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.detail__item {
+  min-height: 50px;
+  color: var(--text);
+}
+
+.detail__item::before {
+  content: counter(count) '.';
+  counter-increment: count;
+ }
+
+.detail__link {
+  min-height: 70px;
+  margin: 0 0 20px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  -webkit-transition: background-color 0.2s linear, color 0.2s linear;
+  -moz-transition: background-color 0.2s linear, color 0.2s linear;
+  -ms-transition: background-color 0.2s linear, color 0.2s linear;
+  -o-transition: background-color 0.2s linear, color 0.2s linear;
+  transition: background-color 0.2s linear, color 0.2s linear;
+  color: var(--gray);
+}
+
+.detail__link:hover {
+  color: var(--bg);
+  background-color: var(--blue);
+}
+
+.detail__link svg rect {
+  fill: var(--gray);
+  -webkit-transition: fill 0.2s linear;
+  -moz-transition: fill 0.2s linear;
+  -ms-transition: fill 0.2s linear;
+  -o-transition: fill 0.2s linear;
+  transition: fill 0.2s linear;
+}
+
+.detail__link:hover svg rect {
+  fill: var(--bg);
+}
+
+.detail__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 80px 100px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  background-color: var(--dblue);
+}
+
+.detail__info {
+  width: calc(70% - 50px);
+  max-width: 1000px;
+}
+
+.detail__description {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31px;
+  color: var(--bg);
+}
+
+.detail__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+}
+
+.detail__button {
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.detail__button:first-child {
+  color: var(--dblue);
+  background-color: var(--bg);
+}
+
+.detail__button:first-child span {
+  background-color: var(--dblue);
+}
+
+.detail__button:first-child:hover, .detail__button:last-child:hover {
+  color: var(--bg);
+  background-color: var(--blue);
+}
+
+.detail__button:first-child:hover span {
+  background-color: var(--bg);
+}
+
+.detail__button:last-child:hover span {
+  background-color: var(--dblue);
+}
+
+/* end detail */
+
 /* start media 1830px */
 @media (max-width: 1830px) {
   .header__right a {
@@ -4713,6 +4902,9 @@ svg path {
   }
   .header__search_input.active {
     width: 200px;
+  }
+  .detail__image img {
+    width: 100%;
   }
 }
 /* start media 1830px */
@@ -5063,6 +5255,27 @@ svg path {
     height: 20px;
     font-size: 12px;
     line-height: 12px;
+  }
+  .detail__flex, .detail__block {
+    padding: 50px 80px;
+  }
+  .detail__list, .detail__list .scroll-content {
+    height: 600px;
+  }
+  .detail__link {
+    min-height: 60px;
+  }
+  .detail__head {
+    font-size: 60px;
+    line-height: 65px;
+  }
+  .detail__item {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .detail__description {
+    font-size: 20px;
+    line-height: 26px;
   }
   .footer__container {
     padding: 60px 80px;
@@ -5958,6 +6171,42 @@ svg path {
   .spareparts__right {
     padding: 40px;
   }
+  .detail__container {
+    border-top: 1px solid var(--dblue);
+  }
+  .detail__flex {
+    padding: 40px;
+    gap: 50px;
+  }
+  .detail__block {
+    padding: 60px 40px;
+    gap: 50px;
+  }
+  .detail__left, .detail__info {
+    width: calc(60% - 40px);
+  }
+  .detail__right, .detail__buttons {
+    width: 40%;
+  }
+  .detail__head {
+    font-size: 50px;
+    line-height: 55px;
+  }
+  .detail__desc {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .detail__item {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .detail__description {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .detail__link {
+    margin: 0 0 20px;
+  }
   .footer__contacts_block span {
     font-size: 14px;
     line-height: 18px;
@@ -6614,6 +6863,46 @@ svg path {
   .spareparts__search_block {
     margin: 0 0 40px;
   }
+  .detail__flex {
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .detail__block {
+    padding: 40px 20px;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .detail__left, .detail__right, .detail__info, .detail__buttons {
+    width: 100%;
+  }
+  .detail__list, .detail__list .scroll-content {
+    height: 100%;
+  }
+  .detail__head {
+    font-size: 50px;
+    line-height: 55px;
+  }
+  .detail__desc {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .detail__item {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .detail__description {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .detail__link {
+    display: none;
+  }
+  .detail__link_mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .footer__container {
     padding: 30px 20px;
   }
@@ -6743,6 +7032,23 @@ svg path {
   .spareparts__desc {
     font-size: 10px;
     line-height: 12px;
+  }
+  .detail__head {
+    font-size: 30px;
+    line-height: 33px;
+  }
+  .detail__desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .detail__item {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .detail__link {
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 18px;
   }
 }
 /* end media 580px */

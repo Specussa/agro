@@ -1,11 +1,20 @@
-// start scroll
+// start reload
 var oldWidth = window.innerWidth;
+window.addEventListener("resize", function() {
+  if (window.innerWidth <= 800) {
+    location.reload();
+  }
+});
+// start reload
+
+// start scroll
 const map_scroll = document.querySelector('.map__city');
 const headernav_scroll = document.querySelector('.header__nav_scroll');
 const headercity_scroll = document.querySelector('.header__city_scroll');
 const headerlist_scroll = document.querySelector('.header__list_scroll');
 const inforead_scroll = document.querySelector('.info__read_scroll');
 const sparepartslist_scroll = document.querySelector(".spareparts__list");
+const detaillist_scroll = document.querySelector(".detail__list");
 var headersubnav_scroll = document.getElementsByClassName("header__subnav_scroll");
 if(!map_scroll){} else {
   if (map_scroll.classList.contains("active")) {} else {
@@ -21,7 +30,7 @@ if(!map_scroll){} else {
   }
 }
 if(!sparepartslist_scroll){} else {
-  if(oldWidth > 800){
+  if(window.innerWidth > 800){
     if (sparepartslist_scroll.classList.contains("active")) {} else {
       Scrollbar.init(sparepartslist_scroll);
       sparepartslist_scroll.addEventListener("touchstart", function (e) {scroll.stop()});
@@ -32,6 +41,21 @@ if(!sparepartslist_scroll){} else {
       document.body.addEventListener("touched", function (e) {scroll.start()});
       sparepartslist_scroll.onmouseover = function(e) {scroll.stop();};
       sparepartslist_scroll.onmouseout = function(e) {scroll.start();};
+    }
+  } else {}
+}
+if(!detaillist_scroll){} else {
+  if(window.innerWidth > 800){
+    if (detaillist_scroll.classList.contains("active")) {} else {
+      Scrollbar.init(detaillist_scroll);
+      detaillist_scroll.addEventListener("touchstart", function (e) {scroll.stop()});
+      detaillist_scroll.addEventListener("touchmove", function (e) {scroll.stop()});
+      detaillist_scroll.addEventListener("touched", function (e) {scroll.stop()});
+      document.body.addEventListener("touchstart", function (e) {scroll.start()});
+      document.body.addEventListener("touchmove", function (e) {scroll.start()});
+      document.body.addEventListener("touched", function (e) {scroll.start()});
+      detaillist_scroll.onmouseover = function(e) {scroll.stop();};
+      detaillist_scroll.onmouseout = function(e) {scroll.start();};
     }
   } else {}
 }
@@ -1729,7 +1753,7 @@ if(!spareparts){} else {
   // end
   let sparepartshead = document.querySelectorAll(".spareparts__head");
   let sparepartsupload = document.querySelector(".spareparts__upload");
-  if(oldWidth <= 800){
+  if(window.innerWidth <= 800){
     for (let i = 0; i < sparepartshead.length; i++) {
       sparepartshead[i].onclick = function(e) {
         if (this.classList.contains("close")) {
