@@ -83,13 +83,13 @@ if(!links){} else {
       setTimeout(function() {
         window.setTimeout(function () {
           document.querySelector('.preloader').style.display = null;
-        }, 400);
+        }, 4400);
         window.setTimeout(function () {
           document.querySelector('.preloader__top').style.top = "-50%";
           document.querySelector('.preloader__bottom').style.top = "100%";
-        }, 100);
+        }, 4000);
         window.location = href;
-      }, 4000);
+      }, 500);
       e.preventDefault();
     }
   }
