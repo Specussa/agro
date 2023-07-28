@@ -1321,8 +1321,17 @@ if(!maps){} else {
         mapback.classList.add('close');
         mapсmapcity.forEach(n => n.classList.remove('active'));
         myMap.setCenter([55.253215,37.622504],6);
-        mapback.click();
-        delmappoint();
+        if (map_scroll.classList.contains("active")) {} else {
+          Scrollbar.init(map_scroll);
+          map_scroll.addEventListener("touchstart", function (e) {scroll.stop()});
+          map_scroll.addEventListener("touchmove", function (e) {scroll.stop()});
+          map_scroll.addEventListener("touched", function (e) {scroll.stop()});
+          document.body.addEventListener("touchstart", function (e) {scroll.start()});
+          document.body.addEventListener("touchmove", function (e) {scroll.start()});
+          document.body.addEventListener("touched", function (e) {scroll.start()});
+          map_scroll.onmouseover = function(e) {scroll.stop();};
+          map_scroll.onmouseout = function(e) {scroll.start();};
+        }
       };
       var mappeterburg = document.getElementById('mappeterburg');
       if (mappeterburg.classList.contains("map__point_active")) {
