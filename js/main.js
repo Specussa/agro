@@ -816,6 +816,10 @@ var offerslider = new Swiper('.info__buttons_slider', {
 const mapcity = document.querySelector('.map__city');
 const mapсmapcity = document.querySelectorAll('.map__container .map__city');
 const mapscroll = document.querySelectorAll('.map__city .scroll-content');
+const maphead = document.querySelectorAll('.map__search_city .map__search_head');
+const mapinfo = document.querySelectorAll('.map__search_city .map__search_info');
+const mapmargin = document.querySelectorAll('.map__city .map__search_city');
+const mapback = document.querySelector('.map__search_back');
 function filterFunction() {
   var mapinput, filter, i;
   mapinput = document.getElementById("map__input");
@@ -824,10 +828,10 @@ function filterFunction() {
   searchp = mapsearch.getElementsByTagName("p");
   for (i = 0; i < searchp.length; i++) {
     txtValue = searchp[i].textContent || searchp[i].innerText;
-    document.querySelectorAll('.map__search_city .map__search_head').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.map__search_city .map__search_head').forEach(n => n.classList.remove('close'));
-    document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.map__search_city .map__search_info').forEach(n => n.style.maxHeight = null);
+    maphead.forEach(n => n.classList.remove('active'));
+    maphead.forEach(n => n.classList.remove('close'));
+    mapinfo.forEach(n => n.classList.remove('active'));
+    mapinfo.forEach(n => n.style.maxHeight = null);
     mapscroll.forEach(n => n.classList.remove('active'));
     mapсmapcity.forEach(n => n.classList.remove('active'));
     map_scroll.onmouseover = function(e) {scroll.stop();};
@@ -842,11 +846,25 @@ function filterFunction() {
 }
 // end search map
 
+// start del active points
+function delmappoint() {
+  document.querySelector('#mapmoscow').classList.remove("map__point_active");
+  document.querySelector('#mappeterburg').classList.remove("map__point_active");
+  document.querySelector('#mapvologda').classList.remove("map__point_active");
+  document.querySelector('#mapvoronezh').classList.remove("map__point_active");
+  document.querySelector('#mapkursk').classList.remove("map__point_active");
+  document.querySelector('#maplipetsk').classList.remove("map__point_active");
+  document.querySelector('#maporel').classList.remove("map__point_active");
+  document.querySelector('#mappavlovsck').classList.remove("map__point_active");
+  document.querySelector('#mappenza').classList.remove("map__point_active");
+  document.querySelector('#mappskov').classList.remove("map__point_active");
+  document.querySelector('#mapryazan').classList.remove("map__point_active");
+  document.querySelector('#maptambov').classList.remove("map__point_active");
+  document.querySelector('#mapyaroslavl').classList.remove("map__point_active");
+}
+// end
+
 // start search back
-const maphead = document.querySelectorAll('.map__search_city .map__search_head');
-const mapinfo = document.querySelectorAll('.map__search_city .map__search_info');
-const mapmargin = document.querySelectorAll('.map__city .map__search_city');
-const mapback = document.querySelector('.map__search_back');
 if(!companyslider){} else {
   mapback.addEventListener('click', (event) => {
     maphead.forEach(n => n.classList.remove('active'));
@@ -860,6 +878,7 @@ if(!companyslider){} else {
     mapсmapcity.forEach(n => n.classList.remove('active'));
     map_scroll.onmouseover = function(e) {scroll.stop();};
     myMap.setCenter([55.253215,37.622504],6);
+    delmappoint();
   });
 }
 // end search back
@@ -871,91 +890,115 @@ function moscow() {
     document.querySelector('#mapmoscow').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
-    document.querySelector('#mapmoscow').classList.remove("map__point_active");
+    delmappoint();
   };
 }
 function peterburg() {
   if (maphead[1].classList.contains("active")) {
     myMap.setCenter([59.618243,30.172631],12);
+    document.querySelector('#mappeterburg').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
+    delmappoint();
   };
 }
 function vologda() {
   if (maphead[2].classList.contains("active")) {
     myMap.setCenter([59.199017,39.8100982],12);
+    document.querySelector('#mapvologda').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
+    delmappoint();
   };
 }
 function voronezh() {
   if (maphead[3].classList.contains("active")) {
     myMap.setCenter([51.639685,39.324973],12);
+    document.querySelector('#mapvoronezh').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
+    delmappoint();
   };
 }
 function kursk() {
   if (maphead[4].classList.contains("active")) {
     myMap.setCenter([51.627834,36.117242],12);
+    document.querySelector('#mapkursk').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
+    delmappoint();
   };
 }
 function lipetsk() {
   if (maphead[5].classList.contains("active")) {
     myMap.setCenter([52.597220203418,39.458276316873],12);
+    document.querySelector('#maplipetsk').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
+    delmappoint();
   };
 }
 function orel() {
   if (maphead[6].classList.contains("active")) {
     myMap.setCenter([52.923587,36.078570],12);
+    document.querySelector('#maporel').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
+    delmappoint();
   };
 }
 function pavlovsck() {
   if (maphead[7].classList.contains("active")) {
     myMap.setCenter([50.452752,40.148549],12);
+    document.querySelector('#mappavlovsck').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
+    delmappoint();
   };
 }
 function penza() {
   if (maphead[8].classList.contains("active")) {
     myMap.setCenter([53.270195255583,45.024497906746],12);
+    document.querySelector('#mappenza').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
+    delmappoint();
   };
 }
 function pskov() {
   if (maphead[9].classList.contains("active")) {
     myMap.setCenter([56.9816779,29.9243012],12);
+    document.querySelector('#mappskov').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
+    delmappoint();
   };
 }
 function ryazan() {
   if (maphead[10].classList.contains("active")) {
     myMap.setCenter([54.647213,39.638701],12);
+    document.querySelector('#mapryazan').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
+    delmappoint();
   };
 }
 function tambov() {
   if (maphead[11].classList.contains("active")) {
     myMap.setCenter([52.650429,41.407760],12);
+    document.querySelector('#maptambov').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
+    delmappoint();
   };
 }
 function yaroslavl() {
   if (maphead[12].classList.contains("active")) {
     myMap.setCenter([57.6873825,39.8908799],12);
+    document.querySelector('#mapyaroslavl').classList.add("map__point_active");
   } else {
     myMap.setCenter([55.253215,37.622504],6);
+    delmappoint();
   };
 }
 // end map accordion href
@@ -1254,6 +1297,8 @@ if(!maps){} else {
         mapback.classList.add('close');
         mapсmapcity.forEach(n => n.classList.remove('active'));
         myMap.setCenter([55.253215,37.622504],6);
+        mapback.click();
+        delmappoint();
       };
       var mappeterburg = document.getElementById('mappeterburg');
       if (mappeterburg.classList.contains("map__point_active")) {
