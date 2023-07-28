@@ -89,7 +89,7 @@ if(!links){} else {
           document.querySelector('.preloader__bottom').style.top = "100%";
         }, 100);
         window.location = href;
-      }, 500);
+      }, 4000);
       e.preventDefault();
     }
   }
