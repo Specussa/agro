@@ -859,17 +859,12 @@ if(!aboutussliders){} else {
   var aboutusThumbs = new Swiper('.aboutus__brand_thumbs', {
     loop: true,
     loopedSlides: 5,
-    slidesPerView: 5,
+    slidesPerView: 'auto',
     touchRatio: 0.1,
     spaceBetween: 0,
     speed: 1000,
     slideToClickedSlide: true,
     allowTouchMove: true,
-    breakpoints: {
-      580: {
-        spaceBetween: 10,
-      },
-    },
   });
 
   var infoSlider = new Swiper('.aboutus__brand_slider', {
@@ -904,8 +899,8 @@ if(!aboutusteamsliders){} else {
     slideToClickedSlide: true,
     allowTouchMove: true,
     breakpoints: {
-      580: {
-        spaceBetween: 10,
+      800: {
+        spaceBetween: 20,
       },
     },
   });

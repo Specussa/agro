@@ -5275,7 +5275,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: 20px 100px;
 }
 
 .aboutus__brand_thumbs {
@@ -5287,7 +5287,6 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: 100vw;
-  height: 130px;
   align-items: center;
 }
 
@@ -5302,8 +5301,8 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  height: 100%;
+  width: 380px;
+  height: 130px;
   padding: 0 50px;
   align-items: center;
   justify-content: center;
@@ -5610,6 +5609,12 @@ svg path {
     width: calc(50% - 90px);
     margin: 0 80px 0 auto;
   }
+  .company__prev {
+    right: 200px;
+  }
+  .company__next {
+    right: 100px;
+  }
   .offer__slider_container {
     padding: 60px 80px 80px;
   }
@@ -5872,6 +5877,24 @@ svg path {
   .agroinfo__background {
     min-height: calc(var(--height) - 120px);
   }
+  .agroinfo__head {
+    max-width: 660px;
+    font-size: 30px;
+    line-height: 39px;
+  }
+  .agroinfo__desc {
+    max-width: 630px;
+  }
+  .aboutus__dev_description, .aboutus__brand_desc {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .aboutus__dev_container, .aboutus__brand_padding, .aboutus__team_padding {
+    padding: 80px;
+  }
+  .aboutus__brand_block, .aboutus__branches_container {
+    padding: 60px 80px;
+  }
   .footer__container {
     padding: 60px 80px;
   }
@@ -5897,12 +5920,6 @@ svg path {
   .footer__contacts_block span {
     font-size: 20px;
     line-height: 26px;
-  }
-  .company__prev {
-    right: 200px;
-  }
-  .company__next {
-    right: 100px;
   }
 }
 /* end media 1700px */
@@ -6843,6 +6860,40 @@ svg path {
   .agroinfo__background {
     min-height: calc(var(--height) - 80px);
   }
+  .aboutus__dev_desc {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .aboutus__dev_container, .aboutus__brand_padding, .aboutus__team_padding {
+    padding: 40px;
+  }
+  .aboutus__brand_block, .aboutus__branches_container {
+    padding: 50px 40px;
+  }
+  .aboutus__dev_flex {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .aboutus__dev_item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .aboutus__dev_list, .aboutus__dev_info {
+    width: 100%;
+  }
+  .aboutus__dev_list {
+    flex-direction: row;
+  }
+  .aboutus__team_item {
+    width: 350px;
+  }
+  .aboutus__team_image {
+    height: 350px;
+  }
+  .aboutus__brand_item {
+    width: 265px;
+    height: 90px;
+  }
   .footer__contacts_block span {
     font-size: 14px;
     line-height: 18px;
@@ -7580,6 +7631,38 @@ svg path {
   .agroinfo__background {
     min-height: calc(var(--height) - 70px);
   }
+  .aboutus__brand_padding, .aboutus__team_padding {
+    padding: 20px;
+  }
+  .aboutus__dev_container, .aboutus__brand_block, .aboutus__branches_container {
+    padding: 40px 20px;
+  }
+  .aboutus__dev_head {
+    font-size: 60px;
+    line-height: 77px;
+  }
+  .aboutus__dev_desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .aboutus__brand_desc {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .aboutus__team_item {
+    width: 330px;
+  }
+  .aboutus__team_image {
+    height: 330px;
+  }
+  .aboutus__branches_head {
+    font-size: 40px;
+    line-height: 44px;
+  }
+  .aboutus__brand_item {
+    width: 180px;
+    height: 60px;
+  }
   .footer__container {
     padding: 30px 20px;
   }
@@ -7737,6 +7820,75 @@ svg path {
   }
   .agroinfo__block {
     max-width: 100%;
+  }
+  .aboutus__link {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .agroinfo__head {
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .agroinfo__desc {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .aboutus__dev_list {
+    flex-direction: column;
+  }
+  .aboutus__dev_item {
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .aboutus__dev_head {
+    font-size: 80px;
+    line-height: 103px;
+  }
+  .aboutus__dev_heading {
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .aboutus__dev_description {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .aboutus__dev_flex {
+    gap: 40px;
+  }
+  .aboutus__dev_info {
+    gap: 20px;
+  }
+  .aboutus__brand_flex {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .aboutus__brand_image {
+    width: auto;
+  }
+  .aboutus__brand_info {
+    width: 100%;
+    gap: 20px;
+  }
+  .aboutus__brand_image img {
+    height: 90px;
+    max-height: 90px;
+  }
+  .aboutus__team_title {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .aboutus__team_tel {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .aboutus__branches_head {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .aboutus__branches_desc {
+    font-size: 12px;
+    line-height: 15px;
   }
 }
 /* end media 580px */
