@@ -520,7 +520,7 @@
   <script src="js/scroll.js"></script>
   <script src="js/scrollbar.js"></script>
   <script>
-    // window.onload = function () {
+    window.onload = function () {
       window.setTimeout(function () {
         document.body.classList.add('loaded_hiding');
         document.querySelector('.preloader__top').style.top = "-50%";
@@ -531,7 +531,7 @@
           document.body.classList.remove('loaded_hiding');
         }, 300);
       }, 300);
-    // }
+    }
     scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),inertia: 0.8,smooth: true,getDirection: true,mobile: {breakpoint: 0,smooth: true,getDirection: true,},tablet: {breakpoint: 0,smooth: true,getDirection: true,},smartphone: {breakpoint: 0,smooth: true,getDirection: true,}})
     new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
   </script>
