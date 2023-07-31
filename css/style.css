@@ -5591,6 +5591,10 @@ svg path {
     top: 20px;
     right: 20px;
   }
+  .header__city_button, .info__read_button {
+    top: 20px;
+    right: 20px;
+  }
   .main {
     padding: 120px 0 0;
   }
