@@ -853,6 +853,65 @@ var offerslider = new Swiper('.info__buttons_slider', {
 });
 // end info__buttons slider
 
+// start aboutus slider
+const aboutussliders = document.querySelector('.aboutus__brand_sliders');
+if(!aboutussliders){} else {
+  var aboutusThumbs = new Swiper('.aboutus__brand_thumbs', {
+    loop: true,
+    loopedSlides: 5,
+    slidesPerView: 5,
+    touchRatio: 0.1,
+    spaceBetween: 0,
+    speed: 1000,
+    slideToClickedSlide: true,
+    allowTouchMove: true,
+    breakpoints: {
+      580: {
+        spaceBetween: 10,
+      },
+    },
+  });
+
+  var infoSlider = new Swiper('.aboutus__brand_slider', {
+    loop: true,
+    loopedSlides: 5,
+    slidesPerView: 1,
+    touchRatio: 0.1,
+    spaceBetween: 40,
+    speed: 1000,
+    slideToClickedSlide: true,
+    allowTouchMove: true,
+    breakpoints: {
+      580: {
+        spaceBetween: 10,
+      },
+    },
+  });
+  aboutusThumbs.controller.control = infoSlider;
+  infoSlider.controller.control = aboutusThumbs;
+}
+// end aboutus slider
+
+// start aboutus slider
+const aboutusteamsliders = document.querySelector('.aboutus__team');
+if(!aboutusteamsliders){} else {
+  var aboutusThumbs = new Swiper('.aboutus__team_slider', {
+    loop: false,
+    slidesPerView: 'auto',
+    touchRatio: 0.1,
+    spaceBetween: 40,
+    speed: 1000,
+    slideToClickedSlide: true,
+    allowTouchMove: true,
+    breakpoints: {
+      580: {
+        spaceBetween: 10,
+      },
+    },
+  });
+}
+// end aboutus slider
+
 // map
 // start search map
 const mapcity = document.querySelector('.map__city');
@@ -907,7 +966,7 @@ function delmappoint() {
 // end
 
 // start search back
-if(!companyslider){} else {
+if(!mapback){} else {
   mapback.addEventListener('click', (event) => {
     maphead.forEach(n => n.classList.remove('active'));
     maphead.forEach(n => n.classList.remove('close'));

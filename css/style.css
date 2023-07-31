@@ -5057,6 +5057,414 @@ svg path {
 
 /* end agroinfo */
 
+/* start aboutus */
+
+.aboutus__block {
+  max-width: 100% !important;
+  justify-content: space-between;
+  background: linear-gradient(88.74deg, rgba(0, 0, 0, 0.6) 29.81%, rgba(0, 0, 0, 0) 100.94%);
+}
+
+.aboutus__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aboutus__block .agroinfo__head {
+  max-width: 880px;
+}
+
+.aboutus__block .agroinfo__desc {
+  max-width: 660px;
+}
+
+.aboutus__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.aboutus__link {
+  padding: 10px;
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--gray);
+}
+
+.aboutus__link:hover, .aboutus__link.active {
+  color: var(--bg);
+}
+
+.aboutus__link span {
+  width: 0px;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--bg);
+  -webkit-transition: width 0.2s ease-in-out;
+  -moz-transition: width 0.2s ease-in-out;
+  -ms-transition: width 0.2s ease-in-out;
+  -o-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+}
+
+.aboutus__link:hover span, .aboutus__link.active span {
+  width: 100%;
+}
+
+.aboutus__dev_container {
+  padding: 80px 100px;
+}
+
+.aboutus__dev_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.aboutus__dev_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(40% - 10px);
+  flex-direction: column;
+  gap: 40px;
+}
+
+.aboutus__dev_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.aboutus__dev_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(60% - 10px);
+  height: 100%;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.aboutus__dev_head {
+  flex: 0 0 auto;
+  font-size: 100px;
+  font-weight: 600;
+  line-height: 129px;
+  color: var(--dblue);
+}
+
+.aboutus__dev_desc {
+  max-width: 240px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--dblue);
+}
+
+.aboutus__dev_heading {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 39px;
+  color: var(--text);
+}
+
+.aboutus__dev_description {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--text);
+}
+
+/* end aboutus */
+
+.aboutus__branches_container {
+  width: 100%;
+  padding: 70px 100px;
+  background-color: var(--dblue);
+}
+
+.aboutus__branches_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.aboutus__branches_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.aboutus__branches_head {
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 87px;
+  color: var(--bg);
+}
+
+.aboutus__branches_desc {
+  max-width: calc(60% - 10px);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 39px;
+  color: var(--bg);
+}
+
+.aboutus__brand_container {
+  flex-direction: column;
+}
+
+.aboutus__brand_block {
+  padding: 70px 100px;
+  background-color: var(--dblue);
+}
+
+.aboutus__brand_padding {
+  padding: 80px 100px;
+}
+
+.aboutus__brand_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.aboutus__brand_image {
+  width: calc(40% - 10px);
+}
+
+.aboutus__brand_image img {
+  width: 100%;
+  max-width: 460px;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+.aboutus__brand_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(60% - 10px);
+  flex-direction: column;
+  gap: 40px;
+}
+
+.aboutus__brand_contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.aboutus__brand_thumbs {
+  background-color: var(--dblue);
+}
+
+.aboutus__brand_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 130px;
+  align-items: center;
+}
+
+.aboutus__brand_item img {
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+  object-fit: contain;
+}
+
+.aboutus__brand_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0 50px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dblue);
+  -webkit-transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  -ms-transition: background-color 0.2s linear;
+  -o-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+  border: 1px solid var(--gray);
+  border-right: none;
+  border-bottom: none;
+}
+
+.aboutus__brand_item.swiper-slide-active {
+  background-color: var(--bg);
+}
+
+.aboutus__brand_item img {
+  -webkit-filter: grayscale(1) brightness(100);
+  -moz-filter: grayscale(1) brightness(100);
+  -ms-filter: grayscale(1) brightness(100);
+  -o-filter: grayscale(1) brightness(100);
+  filter: grayscale(1) brightness(100);
+  -webkit-transition: -webkit-filter 0.1s linear;
+  -moz-transition: -moz-filter 0.1s linear;
+  -ms-transition: -ms-filter 0.1s linear;
+  -o-transition: -o-filter 0.1s linear;
+  transition: filter 0.1s linear;
+}
+
+.aboutus__brand_item.swiper-slide-active img {
+  -webkit-filter: grayscale(0) brightness(1);
+  -moz-filter: grayscale(0) brightness(1);
+  -ms-filter: grayscale(0) brightness(1);
+  -o-filter: grayscale(0) brightness(1);
+  filter: grayscale(0) brightness(1);
+}
+
+.aboutus__brand_tel, .aboutus__brand_mail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.aboutus__brand_tel span, .aboutus__brand_mail span {
+  padding: 6px 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  border-bottom: 1px solid var(--text);
+  -webkit-transition: border-bottom 0.2s linear;
+  -moz-transition: border-bottom 0.2s linear;
+  -ms-transition: border-bottom 0.2s linear;
+  -o-transition: border-bottom 0.2s linear;
+  transition: border-bottom 0.2s linear;
+}
+
+.aboutus__brand_tel:hover span, .aboutus__brand_mail:hover span {
+  border-bottom: 1px solid var(--blue);
+}
+
+.aboutus__brand_tel svg {
+  width: 20px;
+  height: 20px;
+}
+
+.aboutus__brand_mail svg {
+  width: 27px;
+  height: 20px;
+}
+
+.aboutus__brand_tel svg path, .aboutus__brand_mail svg path {
+  fill: var(--text);
+  -webkit-transition: fill 0.2s linear;
+  -moz-transition: fill 0.2s linear;
+  -ms-transition: fill 0.2s linear;
+  -o-transition: fill 0.2s linear;
+  transition: fill 0.2s linear;
+}
+
+.aboutus__brand_tel:hover svg path, .aboutus__brand_mail:hover svg path {
+  fill: var(--blue);
+}
+
+.aboutus__brand_head {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 39px;
+  color: var(--text);
+}
+
+.aboutus__brand_desc {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--text);
+}
+
+.aboutus__team_block {
+  width: 100%;
+}
+
+.aboutus__team_item {
+  width: 400px;
+  height: auto;
+}
+
+.aboutus__team_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.aboutus__team_top, .aboutus__team_bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aboutus__team_image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.aboutus__team_name {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 39px;
+  color: var(--text);
+}
+
+.aboutus__team_title {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--text);
+}
+
+.aboutus__team_tel {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--text);
+}
+
+.aboutus__team_padding {
+  padding: 80px 100px;
+}
+
+/* end aboutus */
+
 /* start media 1830px */
 @media (max-width: 1830px) {
   .header__right a {
@@ -5460,6 +5868,9 @@ svg path {
   .agroinfo__desc {
     font-size: 16px;
     line-height: 21px;
+  }
+  .agroinfo__background {
+    min-height: calc(var(--height) - 120px);
   }
   .footer__container {
     padding: 60px 80px;
@@ -6429,6 +6840,9 @@ svg path {
     font-size: 14px;
     line-height: 18px;
   }
+  .agroinfo__background {
+    min-height: calc(var(--height) - 80px);
+  }
   .footer__contacts_block span {
     font-size: 14px;
     line-height: 18px;
@@ -7162,6 +7576,9 @@ svg path {
   .agroinfo__desc {
     font-size: 14px;
     line-height: 18px;
+  }
+  .agroinfo__background {
+    min-height: calc(var(--height) - 70px);
   }
   .footer__container {
     padding: 30px 20px;
