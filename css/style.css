@@ -5478,7 +5478,8 @@ svg path {
 
 .videoreview__button {
   width: 100%;
-  height: 900px;
+  height: 700px;
+  position: relative;
 }
 
 .videoreview__block img {
@@ -5516,6 +5517,13 @@ svg path {
   -ms-transform: translateX(3px);
   -o-transform: translateX(3px);
   transform: translateX(3px);
+}
+
+.videoreview__desc {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--text);
 }
 
 /* end videoreview */
@@ -5954,6 +5962,10 @@ svg path {
   }
   .aboutus__brand_block, .aboutus__branches_container {
     padding: 60px 80px;
+  }
+  .videoreview__block {
+    padding: 50px 80px;
+    gap: 50px;
   }
   .footer__container {
     padding: 60px 80px;
@@ -6954,6 +6966,13 @@ svg path {
     width: 265px;
     height: 90px;
   }
+  .videoreview__block {
+    padding: 40px;
+    gap: 40px;
+  }
+  .videoreview__button {
+    height: 600px;
+  }
   .footer__contacts_block span {
     font-size: 14px;
     line-height: 18px;
@@ -7723,6 +7742,19 @@ svg path {
     width: 180px;
     height: 60px;
   }
+  .videoreview__block {
+    padding: 20px;
+    gap: 20px;
+  }
+  .videoreview__button {
+    width: calc(100% + 40px);
+    height: 380px;
+    margin: 0 -20px;
+  }
+  .videoreview__desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
   .footer__container {
     padding: 30px 20px;
   }
@@ -7947,6 +7979,10 @@ svg path {
     line-height: 26px;
   }
   .aboutus__branches_desc {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .videoreview__desc {
     font-size: 12px;
     line-height: 15px;
   }
