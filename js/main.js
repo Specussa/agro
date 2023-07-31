@@ -224,7 +224,10 @@ if(!infobuttons){} else {
       menuindex.style.zIndex = "102";
     }
   })
-  document.querySelector('.info__read_button').addEventListener('click', function() {
+}
+const inforeadbutton = document.querySelector('.info__read_button');
+if(!inforeadbutton){} else {
+  inforeadbutton.addEventListener('click', function() {
     bodyoverlaycity.classList.remove("active");
     inforeading.classList.remove("active");
     infobutton.classList.remove("active");
@@ -1945,3 +1948,13 @@ if(!spareparts){} else {
   }
 }
 // end search spareparts
+
+// start video overlay
+function revealVideo(div,video_id) {
+  bodyoverlaycity.classList.add("active");
+  inforeading.classList.add("active");
+  infobutton.classList.add("active");
+  document.body.style.height = "100vh";
+  menuindex.style.zIndex = "102";
+}
+// end video overlay
