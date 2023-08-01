@@ -5504,11 +5504,11 @@ svg path {
   border: 3px solid var(--bg);
   border-radius: 50%;
   background-color: var(--dblue);
-  -webkit-transform: translate(-50%, -50%), scale(1);
-  -moz-transform: translate(-50%, -50%), scale(1);
-  -ms-transform: translate(-50%, -50%), scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  -moz-transform: translate(-50%, -50%) scale(1);
+  -ms-transform: translate(-50%, -50%) scale(1);
   -o-transform: translate(-50%, -50%), scale(1);
-  transform: translate(-50%, -50%), scale(1);
+  transform: translate(-50%, -50%) scale(1);
   -webkit-transition: -webkit-transform 0.2s linear;
   -moz-transition: -moz-transform 0.2s linear;
   -ms-transition: -ms-transform 0.2s linear;
@@ -5517,11 +5517,11 @@ svg path {
 }
 
 .videoreview__vid:hover .videoreview__block_icon {
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
-  transform: scale(1.5);
+  -webkit-transform: translate(-50%, -50%) scale(1.5);
+  -moz-transform: translate(-50%, -50%) scale(1.5);
+  -ms-transform: translate(-50%, -50%) scale(1.5);
+  -o-transform: translate(-50%, -50%), scale(1.5);
+  transform: translate(-50%, -50%) scale(1.5);
 }
 
 .videoreview__block_icon svg {
