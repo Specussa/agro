@@ -5552,10 +5552,56 @@ svg path {
 
 .videoreview__vid, .videoreview__vid iframe {
   width: 100%;
-  height: 700px;
+  height: 800px;
 }
 
 /* end videoreview */
+
+/* start promotion */
+
+.promotion__container {
+  padding: 80px 100px;
+}
+
+.promotion__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.promotion__image {
+  width: 100%;
+  height: 800px;
+}
+
+.promotion__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promotion__info, .promotion__info ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 50px;
+}
+
+.promotion__info li {
+  width: calc(50% - 25px);
+}
+
+.promotion__info, .promotion__info ul, .promotion__info li {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--text);
+}
+
+/* end promotion */
 
 /* start media 1830px */
 @media (max-width: 1830px) {
@@ -5995,6 +6041,18 @@ svg path {
   .videoreview__block {
     padding: 50px 80px;
     gap: 50px;
+  }
+  .videoreview__vid, .videoreview__vid iframe {
+    height: 600px;
+  }
+  .promotion__container {
+    padding: 50px 80px;
+  }
+  .promotion__image {
+    height: 600px;
+  }
+  .promotion__info, .promotion__info ul {
+    gap: 40px;
   }
   .footer__container {
     padding: 60px 80px;
@@ -7000,7 +7058,17 @@ svg path {
     gap: 40px;
   }
   .videoreview__vid, .videoreview__vid iframe {
-    height: 600px;
+    height: 500px;
+  }
+  .promotion__container {
+    padding: 40px;
+  }
+  .promotion__info, .promotion__info ul, .promotion__info li {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .promotion__image {
+    height: 500px;
   }
   .footer__contacts_block span {
     font-size: 14px;
@@ -7782,6 +7850,22 @@ svg path {
     font-size: 14px;
     line-height: 18px;
   }
+  .promotion__container {
+    padding: 30px 20px;
+  }
+  .promotion__block {
+    gap: 20px;
+  }
+  .promotion__info, .promotion__info ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .promotion__info li {
+    width: 100%;
+  }
+  .promotion__image {
+    height: 380px;
+  }
   .footer__container {
     padding: 30px 20px;
   }
@@ -8010,6 +8094,16 @@ svg path {
     line-height: 15px;
   }
   .videoreview__desc {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .videoreview__vid, .videoreview__vid iframe {
+    height: 200px;
+  }
+  .promotion__image {
+    height: 200px;
+  }
+  .promotion__info, .promotion__info ul, .promotion__info li {
     font-size: 12px;
     line-height: 15px;
   }
