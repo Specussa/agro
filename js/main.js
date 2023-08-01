@@ -1,7 +1,7 @@
 // start reload
 var oldWidth = window.innerWidth;
 window.addEventListener("resize", function() {
-  if (window.innerWidth <= 801) {
+  if (window.innerWidth == 800) {
     location.reload();
   }
 });
