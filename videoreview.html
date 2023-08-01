@@ -227,7 +227,7 @@
       <section class="videoreview" data-scroll-section>
         <div class="container info__container">
           <div class="videoreview__block">
-            <button class="videoreview__button info__button">
+            <button class="videoreview__vid" vid="OXcz9BUvPpU" onclick="video_load(this)">
               <img src="img/review/videoreview_1.webp" alt="">
               <span class="videoreview__block_icon">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
@@ -468,24 +468,6 @@
       </div>
     </div>
   </div>
-  <div class="info__read">
-    <div class="info__read_scroll" data-scrollbar>
-      <div class="container header__nav_container">
-        <div class="info__read_block">
-          <button class="info__read_button">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.979649 2.3934L2.39386 0.979184L13.0005 11.5858L23.6071 0.979184L25.0213 2.3934L14.4147 13L25.0213 23.6066L23.6071 25.0208L13.0005 14.4142L2.39386 25.0208L0.979649 23.6066L11.5863 13L0.979649 2.3934Z" fill="#AFAFAF"/>
-            </svg>
-          </button>
-          <div class="info__read_desc">
-            <div class="videoreview__modal">
-              <iframe id="stopvideo" width="100%" height="600" src="https://www.youtube.com/embed/OXcz9BUvPpU?showinfo=0" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="header__city">
     <div class="header__city_scroll" data-scrollbar>
       <div class="container header__nav_container">
@@ -520,7 +502,7 @@
   <script src="js/scroll.js"></script>
   <script src="js/scrollbar.js"></script>
   <script>
-    window.onload = function () {
+    // window.onload = function () {
       window.setTimeout(function () {
         document.body.classList.add('loaded_hiding');
         document.querySelector('.preloader__top').style.top = "-50%";
@@ -531,7 +513,7 @@
           document.body.classList.remove('loaded_hiding');
         }, 300);
       }, 300);
-    }
+    // }
     scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),inertia: 0.8,smooth: true,getDirection: true,mobile: {breakpoint: 0,smooth: true,getDirection: true,},tablet: {breakpoint: 0,smooth: true,getDirection: true,},smartphone: {breakpoint: 0,smooth: true,getDirection: true,}})
     new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
   </script>

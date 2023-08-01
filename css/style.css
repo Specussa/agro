@@ -507,6 +507,14 @@ svg path {
   width: 7px
 }
 
+.has-scroll-scrolling iframe {
+  pointer-events: none;
+}
+
+.has-scroll-scrolling .iframe-parent {
+  cursor: wait;
+}
+
 /* end scroll */
 
 /* start preloader */
@@ -5476,12 +5484,6 @@ svg path {
   gap: 60px;
 }
 
-.videoreview__button {
-  width: 100%;
-  height: 700px;
-  position: relative;
-}
-
 .videoreview__block img {
   width: 100%;
   height: 100%;
@@ -5498,14 +5500,28 @@ svg path {
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 1;
   border: 3px solid var(--bg);
   border-radius: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  z-index: 1;
+  background-color: var(--dblue);
+  -webkit-transform: translate(-50%, -50%), scale(1);
+  -moz-transform: translate(-50%, -50%), scale(1);
+  -ms-transform: translate(-50%, -50%), scale(1);
+  -o-transform: translate(-50%, -50%), scale(1);
+  transform: translate(-50%, -50%), scale(1);
+  -webkit-transition: -webkit-transform 0.2s linear;
+  -moz-transition: -moz-transform 0.2s linear;
+  -ms-transition: -ms-transform 0.2s linear;
+  -o-transition: -o-transform 0.2s linear;
+  transition: transform 0.2s linear;
+}
+
+.videoreview__vid:hover .videoreview__block_icon {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 .videoreview__block_icon svg {
@@ -5524,6 +5540,19 @@ svg path {
   font-weight: 400;
   line-height: 26px;
   color: var(--text);
+}
+
+.videoreview__vid {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  background:#000;
+}
+
+.videoreview__vid, .videoreview__vid iframe {
+  width: 100%;
+  height: 700px;
 }
 
 /* end videoreview */
@@ -6970,7 +6999,7 @@ svg path {
     padding: 40px;
     gap: 40px;
   }
-  .videoreview__button {
+  .videoreview__vid, .videoreview__vid iframe {
     height: 600px;
   }
   .footer__contacts_block span {
@@ -7746,7 +7775,7 @@ svg path {
     padding: 20px;
     gap: 20px;
   }
-  .videoreview__button {
+  .videoreview__vid, .videoreview__vid iframe {
     width: calc(100% + 40px);
     height: 380px;
     margin: 0 -20px;

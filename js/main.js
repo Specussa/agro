@@ -209,8 +209,6 @@ const infobuttons = document.querySelector('.info__button');
 const inforeading = document.querySelector('.info__read');
 const infobutton = document.querySelector('.info__button');
 var iframe = document.querySelector('iframe');
-var video = document.querySelector('video');
-var stopvideo = document.getElementById('stopvideo');
 if(!infobuttons){} else {
   infobutton.addEventListener('click', function() {
     if (infobutton.classList.contains("active")) {
@@ -219,10 +217,6 @@ if(!infobuttons){} else {
       infobutton.classList.remove("active");
       document.body.style.height = null;
       menuindex.style.zIndex = null;
-      if(!stopvideo){} else {
-        if (iframe !== null) {var iframeSrc = iframe.src;iframe.src = iframeSrc;}
-        if (video !== null) {video.pause();}
-      }
     } else {
       bodyoverlaycity.classList.add("active");
       inforeading.classList.add("active");
@@ -240,10 +234,6 @@ if(!inforeadbutton){} else {
     infobutton.classList.remove("active");
     document.body.style.height = null;
     menuindex.style.zIndex = null;
-    if(!stopvideo){} else {
-      if (iframe !== null) {var iframeSrc = iframe.src;iframe.src = iframeSrc;}
-      if (video !== null) {video.pause();}
-    }
   })
 }
 // end info__button
@@ -279,10 +269,6 @@ bodyoverlaycity.addEventListener('click', function() {
   infobutton.classList.remove("active");
   document.body.style.height = null;
   menuindex.style.zIndex = null;
-  if(!stopvideo){} else {
-    if (iframe !== null) {var iframeSrc = iframe.src;iframe.src = iframeSrc;}
-    if (video !== null) {video.pause();}
-  }
 })
 // end overlay
 
@@ -1964,26 +1950,9 @@ if(!spareparts){} else {
 }
 // end search spareparts
 
-// start video overlay
-// function revealVideo(div,video_id) {
-//   var video = document.getElementById(video_id).src;
-//   document.getElementById(video_id).src = video+'&autoplay=1';
-//   document.getElementById(div).style.display = 'block';
-//   bodyoverlaycity.classList.add("active");
-//   inforeading.classList.add("active");
-//   infobutton.classList.add("active");
-//   document.body.style.height = "100vh";
-//   menuindex.style.zIndex = "102";
-// }
-// function hideVideo(div,video_id) {
-//   var video = document.getElementById(video_id).src;
-//   var cleaned = video.replace('&autoplay=1','');
-//   document.getElementById(video_id).src = cleaned;
-//   document.getElementById(div).style.display = 'none';
-//   bodyoverlaycity.classList.remove("active");
-//   inforeading.classList.remove("active");
-//   infobutton.classList.remove("active");
-//   document.body.style.height = null;
-//   menuindex.style.zIndex = null;
-// }
-// end video overlay
+// start video
+function video_load(e){
+  e.onclick=null;
+  e.innerHTML = '<iframe width="100%" height="400" src="https://www.youtube.com/embed/'+e.getAttribute('vid')+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+}
+// end video
