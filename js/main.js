@@ -1953,6 +1953,6 @@ if(!spareparts){} else {
 // start video
 function video_load(e){
   e.onclick=null;
-  e.innerHTML = '<iframe width="100%" height="400" src="https://www.youtube.com/embed/'+e.getAttribute('vid')+'?autoplay=1&controls=0&mute=1&loop=1&playlist='+e.getAttribute('vid')+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+  e.innerHTML = '<iframe width="100%" height="400" src="https://www.youtube.com/embed/'+e.getAttribute('vid')+'?autoplay=1&controls=1&mute=1&loop=1&playlist='+e.getAttribute('vid')+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
 }
 // end video
