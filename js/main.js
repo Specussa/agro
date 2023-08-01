@@ -845,10 +845,22 @@ var offerslider = new Swiper('.info__buttons_slider', {
   speed: 1000,
   slideToClickedSlide: false,
   allowTouchMove: false,
-  pagination: {
-    el: '.offer__pagination',
-    clickable: true,
+  breakpoints: {
+    1200: {
+      allowTouchMove: true,
+    },
   },
+});
+// end info__buttons slider
+
+// start info__buttons slider
+var actionslider = new Swiper('.action__buttons_slider', {
+  loop: false,
+  spaceBetween: 0,
+  slidesPerView: 'auto',
+  speed: 1000,
+  slideToClickedSlide: false,
+  allowTouchMove: false,
   breakpoints: {
     1200: {
       allowTouchMove: true,
@@ -1708,6 +1720,9 @@ for (i = 0; i < headeritemtop.length; i++) {
     this.classList.toggle("selected");
   };
 }
+// end accordion tractor__filter
+
+// start accordion info
 var infodesc = document.getElementsByClassName("info__button_description");
 var infochar = document.getElementsByClassName("info__button_characteristics");
 var infocert = document.getElementsByClassName("info__button_certification");
@@ -1764,7 +1779,66 @@ if(!infoblock){} else {
     }
   };
 }
-// end accordion tractor__filter
+// end accordion info
+
+// start accordion action
+var actionfirst = document.getElementsByClassName("action__button_first");
+var actionsecond = document.getElementsByClassName("action__button_second");
+var actionthird = document.getElementsByClassName("action__button_third");
+const abb = document.querySelectorAll('.action__buttons_block .action__button');
+const ab = document.querySelectorAll('.action__container .action__list');
+const adesc = document.querySelectorAll('.action__container .action__first');
+const achar = document.querySelectorAll('.action__container .action__second');
+const acert = document.querySelectorAll('.action__container .action__third');
+var actionblock = document.querySelector(".action__list");
+if(!actionblock){} else {
+  for (i = 0; i < actionfirst.length; i++) {
+    actionfirst[i].onclick = function(e) {
+      abb.forEach(n => n.classList.remove('active'));
+      ab.forEach(n => n.classList.remove('active'));
+      ab.forEach(n => n.style.maxHeight = null);
+      adesc.forEach(n => n.classList.add('active'));
+      adesc.forEach(n => n.style.maxHeight = (document.querySelector('.action__first').scrollHeight * 1) + "px");
+      this.classList.add("active");
+      scroll.update();
+    };
+  }
+  for (i = 0; i < actionsecond.length; i++) {
+    actionsecond[i].onclick = function(e) {
+      abb.forEach(n => n.classList.remove('active'));
+      ab.forEach(n => n.classList.remove('active'));
+      ab.forEach(n => n.style.maxHeight = null);
+      achar.forEach(n => n.classList.add('active'));
+      achar.forEach(n => n.style.maxHeight = (document.querySelector('.action__second').scrollHeight * 1) + "px");
+      this.classList.add("active");
+      scroll.update();
+    };
+  }
+  for (i = 0; i < actionthird.length; i++) {
+    actionthird[i].onclick = function(e) {
+      abb.forEach(n => n.classList.remove('active'));
+      ab.forEach(n => n.classList.remove('active'));
+      ab.forEach(n => n.style.maxHeight = null);
+      acert.forEach(n => n.classList.add('active'));
+      acert.forEach(n => n.style.maxHeight = (document.querySelector('.action__third').scrollHeight * 1) + "px");
+      this.classList.add("active");
+      scroll.update();
+    };
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.action__container .action__first.active').forEach(n => n.style.maxHeight = (document.querySelector('.action__first').scrollHeight * 1) + "px");
+  });
+  window.onresize = function () {
+    var newWidth = window.innerWidth;
+    if (newWidth != oldWidth) {
+      ib.forEach(n => n.style.maxHeight = null);
+      document.querySelectorAll('.action__container .action__first.active').forEach(n => n.style.maxHeight = (document.querySelector('.action__first').scrollHeight * 1) + "px");
+      document.querySelectorAll('.action__container .action__second.active').forEach(n => n.style.maxHeight = (document.querySelector('.action__second').scrollHeight * 1) + "px");
+      document.querySelectorAll('.action__container .action__third.active').forEach(n => n.style.maxHeight = (document.querySelector('.action__third').scrollHeight * 1) + "px");
+    }
+  };
+}
+// end accordion action
 
 const form = document.getElementById('form');
 const username = document.getElementById('username');
