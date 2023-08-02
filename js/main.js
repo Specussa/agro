@@ -453,7 +453,7 @@ if(!partnerslisttop){} else {
   var partnerstop = new Swiper('.partners__list_top', {
     loop: true,
     speed: 4000,
-    slidesPerView: '5',
+    slidesPerView: 5,
     slideToClickedSlide: false,
     allowTouchMove: false,
     autoplay: {
@@ -463,13 +463,13 @@ if(!partnerslisttop){} else {
     },
     breakpoints: {
       580: {
-        slidesPerView: '2',
+        slidesPerView: 2,
       },
       800: {
-        slidesPerView: '3',
+        slidesPerView: 3,
       },
       1700: {
-        slidesPerView: '4',
+        slidesPerView: 4,
       }
     },
     on: {
@@ -923,14 +923,13 @@ if(!aboutusteamsliders){} else {
 }
 // end aboutus slider
 
-// end aboutus slider
+// end service slider
 const serviceslider = document.querySelector('.service__thumbs');
 if(!serviceslider){} else {
   var serviceThumbs = new Swiper('.service__thumbs', {
-    loop: true,
-    loopedSlides: 5,
+    loop: false,
     spaceBetween: 0,
-    slidesPerView: 'auto',
+    slidesPerView: 5,
     speed: 4000,
     slideToClickedSlide: false,
     allowTouchMove: false,
@@ -939,9 +938,47 @@ if(!serviceslider){} else {
       delay: 1,
       pauseOnMouseEnter: false,
     },
+    breakpoints: {
+      580: {
+        slidesPerView: 3,
+      },
+      800: {
+        slidesPerView: 2.5,
+      },
+      1700: {
+        slidesPerView: 4.5,
+      }
+    },
   });
 }
-// end aboutus slider
+// end service slider
+
+// end service slider
+const financelider = document.querySelector('.finance__thumbs');
+if(!financelider){} else {
+  var serviceThumbs = new Swiper('.finance__thumbs', {
+    loop: false,
+    spaceBetween: 0,
+    slidesPerView: 4,
+    speed: 4000,
+    slideToClickedSlide: false,
+    allowTouchMove: false,
+    autoplay: {
+      enabled: true,
+      delay: 1,
+      pauseOnMouseEnter: false,
+    },
+    breakpoints: {
+      580: {
+        slidesPerView: 1.5,
+      },
+      800: {
+        slidesPerView: 2.5,
+      },
+    },
+  });
+}
+// end service slider
 
 // map
 // start search map
