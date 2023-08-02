@@ -923,6 +923,26 @@ if(!aboutusteamsliders){} else {
 }
 // end aboutus slider
 
+// end aboutus slider
+const serviceslider = document.querySelector('.service__thumbs');
+if(!serviceslider){} else {
+  var serviceThumbs = new Swiper('.service__thumbs', {
+    loop: true,
+    loopedSlides: 5,
+    spaceBetween: 0,
+    slidesPerView: 'auto',
+    speed: 4000,
+    slideToClickedSlide: false,
+    allowTouchMove: false,
+    autoplay: {
+      enabled: true,
+      delay: 1,
+      pauseOnMouseEnter: false,
+    },
+  });
+}
+// end aboutus slider
+
 // map
 // start search map
 const mapcity = document.querySelector('.map__city');
