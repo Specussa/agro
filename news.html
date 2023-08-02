@@ -214,10 +214,10 @@
                 <a href="index.html" class="breadcrumbs__link link">Главная</a>
               </li>
               <li class="breadcrumbs__item">
-                <a href="action.html" class="breadcrumbs__link link">Акции</a>
+                <a href="news.html" class="breadcrumbs__link link">Новости</a>
               </li>
             </ul>
-            <h1 class="breadcrumbs__head">Акции</h1>
+            <h1 class="breadcrumbs__head">Новости</h1>
           </div>
         </div>
       </section>
@@ -226,113 +226,107 @@
           <div class="action__buttons_block">
             <div class="action__buttons_slider swiper-container">
               <div class="action__buttons swiper-wrapper">
-                <button class="action__button action__button_first swiper-slide active">Все акции</button>
-                <button class="action__button action__button_second swiper-slide">Лизинг</button>
-                <button class="action__button action__button_third swiper-slide">Страхование</button>
+                <p class="action__button swiper-slide active">Новости</p>
+                <a href="articles.html" class="action__button swiper-slide link">Статьи</a>
               </div>
             </div>
           </div>
           <div class="action__padding">
-            <ul class="action__list action__first active">
-              <li class="offer__item action__item">
-                <a href="promotion.html" class="offer__link link">
-                  <div class="offer__top">
-                    <p class="offer__name">Лизинг</p>
-                    <h4 class="offer__head">Лизинг от “Агрочемпион”</h4>
+            <div class="tractor__filter">
+              <ul class="tractor__filter_list">
+                <li class="tractor__filter_item">
+                  <button class="tractor__filter_button">Рубрика
+                    <span><svg width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L8.95181 8.5L16 1.5" stroke="black" stroke-width="2"/></svg></span>
+                  </button>
+                  <ul class="tractor__filter_sublist">
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Все<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Рубрика 1<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Рубрика 2<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Рубрика 3<span></span></a></li>
+                  </ul>
+                </li>
+                <li class="tractor__filter_item">
+                  <button class="tractor__filter_button">Год
+                    <span><svg width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L8.95181 8.5L16 1.5" stroke="black" stroke-width="2"/></svg></span>
+                  </button>
+                  <ul class="tractor__filter_sublist">
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">2023<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">2022<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">2021<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">2020<span></span></a></li>
+                  </ul>
+                </li>
+                <li class="tractor__filter_item">
+                  <button class="tractor__filter_button">Месяц
+                    <span><svg width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L8.95181 8.5L16 1.5" stroke="black" stroke-width="2"/></svg></span>
+                  </button>
+                  <ul class="tractor__filter_sublist">
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Январь<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Февраль<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Март<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Апрель<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Май<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Июнь<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Июль<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Август<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Сентябрь<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Октябрь<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Ноябрь<span></span></a></li>
+                    <li class="tractor__filter_subitem"><a href="#" class="tractor__filter_sublink">Декабрь<span></span></a></li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="tractor__filter_info"><span class="tractor__count">6</span><span> из </span><span class="tractor__total">12</span><span class="tractor__mobile"> наименований</span></p>
+            </div>
+            <ul class="news__list">
+              <li class="news__item">
+                <div class="news__image">
+                  <img src="img/news/news_1.webp" alt="">
+                </div>
+                <div class="news__info">
+                  <div class="news__block">
+                    <p class="news__date">06.12.2023</p>
+                    <h3 class="news__head">ПРИГЛАШАЕМ НА «ВСЕРОССИЙСКИЙ ДЕНЬ ПОЛЯ» ДЛЯ ВИНОГРАДАРЕЙ!</h3>
+                    <p class="news__desc">SUNNAV AG 300 — автоматизированная система рулевого управления, которая обеспечивает автоматическое вождение с сантиметровым уровнем точности и существенно повышает производительность при вспашке, посадке и уборке, позволяя работать при любых условиях видимости и снижая усталость оператора.<br>
+                      Эта система универсальна, так как она легко устанавливается на уже эксплуатируемые сельскохозяйственные тракторы новых и старых моделей, а также транспортные средства других типов. К тому же ее можно легко переустановить с одного трактора на другой.</p>
                   </div>
-                  <div class="offer__middle">
-                    <img src="img/offer/offer_1.jpg" alt="">
+                  <div class="news__buttons">
+                    <button class="button__default news__button">Напиши нам<span></span></button>
                   </div>
-                  <div class="offer__bottom">
-                    <p class="offer__desc">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui ut ornare lectus sit amet est placerat in egestas. 
-                    </p>
-                  </div>
-                </a>
+                </div>
               </li>
-              <li class="offer__item action__item">
-                <a href="promotion.html" class="offer__link link">
-                  <div class="offer__top">
-                    <p class="offer__name">Лизинг</p>
-                    <h4 class="offer__head">Лизинг от “Агрочемпион”</h4>
+              <li class="news__item">
+                <div class="news__image">
+                  <img src="img/news/news_2.webp" alt="">
+                </div>
+                <div class="news__info">
+                  <div class="news__block">
+                    <p class="news__date">06.12.2023</p>
+                    <h3 class="news__head">ПРИГЛАШАЕМ НА «ВСЕРОССИЙСКИЙ ДЕНЬ ПОЛЯ» ДЛЯ ВИНОГРАДАРЕЙ!</h3>
+                    <p class="news__desc">SUNNAV AG 300.</p>
                   </div>
-                  <div class="offer__middle">
-                    <img src="img/offer/offer_1.jpg" alt="">
+                  <div class="news__buttons">
+                    <button class="button__default news__button">Напиши нам<span></span></button>
                   </div>
-                  <div class="offer__bottom">
-                    <p class="offer__desc">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui ut ornare lectus sit amet est placerat in egestas. 
-                    </p>
-                  </div>
-                </a>
+                </div>
               </li>
-              <li class="offer__item action__item">
-                <a href="promotion.html" class="offer__link link">
-                  <div class="offer__top">
-                    <p class="offer__name">Лизинг</p>
-                    <h4 class="offer__head">Лизинг от “Агрочемпион”</h4>
+              <li class="news__item">
+                <div class="news__image">
+                  <img src="img/news/news_3.webp" alt="">
+                </div>
+                <div class="news__info">
+                  <div class="news__block">
+                    <p class="news__date">06.12.2023</p>
+                    <h3 class="news__head">ПРИГЛАШАЕМ НА «ВСЕРОССИЙСКИЙ ДЕНЬ ПОЛЯ» ДЛЯ ВИНОГРАДАРЕЙ!</h3>
+                    <p class="news__desc">SUNNAV AG 300 — автоматизированная система рулевого управления, которая обеспечивает автоматическое вождение с сантиметровым уровнем точности и существенно повышает производительность при вспашке, посадке и уборке, позволяя работать при любых условиях видимости и снижая усталость оператора.<br>
+                      Эта система универсальна, так как она легко устанавливается на уже эксплуатируемые сельскохозяйственные тракторы новых и старых моделей, а также транспортные средства других типов. К тому же ее можно легко переустановить с одного трактора на другой. SUNNAV AG 300 — автоматизированная система рулевого управления, которая обеспечивает автоматическое вождение с сантиметровым уровнем точности и существенно повышает производительность при вспашке, посадке и уборке, позволяя работать при любых условиях видимости и снижая усталость оператора.<br>
+                      Эта система универсальна, так как она легко устанавливается на уже эксплуатируемые сельскохозяйственные тракторы новых и старых моделей, а также транспортные средства других типов. К тому же ее можно легко переустановить с одного трактора на другой. SUNNAV AG 300 — автоматизированная система рулевого управления, которая обеспечивает автоматическое вождение с сантиметровым уровнем точности и существенно повышает производительность при вспашке, посадке и уборке, позволяя работать при любых условиях видимости и снижая усталость оператора.<br>
+                      Эта система универсальна, так как она легко устанавливается на уже эксплуатируемые сельскохозяйственные тракторы новых и старых моделей, а также транспортные средства других типов. К тому же ее можно легко переустановить с одного трактора на другой.</p>
                   </div>
-                  <div class="offer__middle">
-                    <img src="img/offer/offer_1.jpg" alt="">
+                  <div class="news__buttons">
+                    <button class="button__default news__button">Напиши нам<span></span></button>
                   </div>
-                  <div class="offer__bottom">
-                    <p class="offer__desc">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui ut ornare lectus sit amet est placerat in egestas. 
-                    </p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-            <ul class="action__list action__second">
-              <li class="offer__item action__item">
-                <a href="promotion.html" class="offer__link link">
-                  <div class="offer__top">
-                    <p class="offer__name">Лизинг</p>
-                    <h4 class="offer__head">Лизинг от “Агрочемпион”</h4>
-                  </div>
-                  <div class="offer__middle">
-                    <img src="img/offer/offer_1.jpg" alt="">
-                  </div>
-                  <div class="offer__bottom">
-                    <p class="offer__desc">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui ut ornare lectus sit amet est placerat in egestas. 
-                    </p>
-                  </div>
-                </a>
-              </li>
-              <li class="offer__item action__item">
-                <a href="promotion.html" class="offer__link link">
-                  <div class="offer__top">
-                    <p class="offer__name">Лизинг</p>
-                    <h4 class="offer__head">Лизинг от “Агрочемпион”</h4>
-                  </div>
-                  <div class="offer__middle">
-                    <img src="img/offer/offer_1.jpg" alt="">
-                  </div>
-                  <div class="offer__bottom">
-                    <p class="offer__desc">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui ut ornare lectus sit amet est placerat in egestas. 
-                    </p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-            <ul class="action__list action__third">
-              <li class="offer__item action__item">
-                <a href="promotion.html" class="offer__link link">
-                  <div class="offer__top">
-                    <p class="offer__name">Лизинг</p>
-                    <h4 class="offer__head">Лизинг от “Агрочемпион”</h4>
-                  </div>
-                  <div class="offer__middle">
-                    <img src="img/offer/offer_1.jpg" alt="">
-                  </div>
-                  <div class="offer__bottom">
-                    <p class="offer__desc">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui ut ornare lectus sit amet est placerat in egestas. 
-                    </p>
-                  </div>
-                </a>
+                </div>
               </li>
             </ul>
           </div>
