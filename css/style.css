@@ -5998,10 +5998,15 @@ svg path {
 }
 
 .news__desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   font-size: 20px;
   font-weight: 400;
   line-height: 26px;
   color: var(--text);
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .news__button, .news__button:focus, .news__button:hover, .news__button:active {
