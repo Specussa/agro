@@ -5956,7 +5956,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: calc(30% - 25px);
-  min-height: 440px;
+  height: 440px;
 }
 
 .news__image img {
@@ -6527,7 +6527,7 @@ svg path {
   }
   .news__image {
     width: calc(40% - 20px);
-    min-height: 370px;
+    height: 370px;
   }
   .news__info {
     width: calc(60% - 20px);
@@ -8517,7 +8517,7 @@ svg path {
   }
   .news__image {
     width: 100%;
-    min-height: 390px;
+    height: 390px;
   }
   .news__info {
     width: 100%;
