@@ -263,7 +263,7 @@ if(formbuttons){
   })
 }
 const formreadbutton = document.querySelector('.form__read_button');
-if(formreadbutton){}{
+if(formreadbutton){
   formreadbutton.addEventListener('click', function() {
     bodyoverlaycity.classList.remove("active");
     formreading.classList.remove("active");
