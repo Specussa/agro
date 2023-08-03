@@ -848,24 +848,6 @@ svg path {
   height: 100%;
   overflow: visible !important;
 }
-@media (min-width: 320px) {
-  head {
-      width: 320px;
-  }
-}
-@media (min-width: 480px) {
-  head {
-      width: 480px;
-  }
-}
-@media (min-width: 700px) {
-  head {
-      width: 700px;
-  }
-}
-.header__list_block {
-  width: 100%;
-}
 
 .header__list {
   display: -webkit-box;
