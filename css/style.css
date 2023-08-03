@@ -293,6 +293,10 @@ body, .has-scroll-smooth body, .has-scroll-smooth body.loaded {
   scroll-behavior: auto;
 }
 
+section {
+  margin: -1px 0 0;
+}
+
 .main {
   display: -webkit-box;
   display: -ms-flexbox;
