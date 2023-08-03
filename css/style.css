@@ -1408,7 +1408,8 @@ svg path {
 /* start header__city */
 
 .header__city,
-.info__read {
+.info__read,
+.form__read {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1428,7 +1429,8 @@ svg path {
 }
 
 .header__city::before,
-.info__read::before {
+.info__read::before,
+.form__read::before {
   content: "";
   width: 10px;
   height: 100%;
@@ -1439,7 +1441,8 @@ svg path {
 }
 
 .header__city.active,
-.info__read.active {
+.info__read.active,
+.form__read.active {
   visibility: visible;
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
@@ -1449,7 +1452,8 @@ svg path {
 }
 
 .header__city_block,
-.info__read_block {
+.info__read_block,
+.form__read_block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1498,7 +1502,8 @@ svg path {
 }
 
 .header__city_button,
-.info__read_button {
+.info__read_button,
+.form__read_button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1514,26 +1519,30 @@ svg path {
 }
 
 .header__city_button:hover,
-.info__read_button:hover {
+.info__read_button:hover,
+.form__read:hover {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .header__city_button svg,
-.info__read_button svg {
+.info__read_button svg,
+.form__read_button svg {
   width: 26px;
   height: 26px;
 }
 
 .header__city_button svg path,
-.info__read_button svg path {
+.info__read_button svg path,
+.form__read_button svg path {
   fill: var(--gray);
   -webkit-transition: fill 0.2s linear;
   transition: fill 0.2s linear;
 }
 
 .header__city_button:hover svg path,
-.info__read_button:hover svg path {
+.info__read_button:hover svg path,
+.form__read_button:hover svg path {
   fill: var(--text);
 }
 
@@ -6003,7 +6012,8 @@ svg path {
     gap: 30px;
   }
   .header__city_block,
-  .info__read_block {
+  .info__read_block,
+  .form__read_block {
     padding: 80px;
   }
   .header__city_button {
@@ -6011,7 +6021,8 @@ svg path {
     right: 20px;
   }
   .header__city_button,
-  .info__read_button {
+  .info__read_button,
+  .form__read_button {
     top: 20px;
     right: 20px;
   }
@@ -6728,11 +6739,13 @@ svg path {
     flex-direction: column;
   }
   .header__city_block,
-  .info__read_block {
+  .info__read_block,
+  .form__read_block {
     padding: 80px 40px;
   }
   .header__city_button,
-  .info__read_button {
+  .info__read_button,
+  .form__read_button {
     top: 20px;
     right: 20px;
   }
@@ -6817,11 +6830,13 @@ svg path {
     line-height: 17px;
   }
   .header__city,
-  .info__read {
+  .info__read,
+  .form__read {
     width: 100%;
   }
   .header__city::before,
-  .info__read::before {
+  .info__read::before,
+  .form__read::before {
     background-color: var(--bg);
   }
   .header__city_head {
@@ -7732,7 +7747,8 @@ svg path {
     line-height: 13px;
   }
   .header__city_block,
-  .info__read_block {
+  .info__read_block,
+  .form__read_block {
     padding: 50px 20px 30px;
   }
   .header__city_button {
@@ -7783,7 +7799,8 @@ svg path {
     margin: 0 0 0 20px;
   }
   .header__city_button,
-  .info__read_button {
+  .info__read_button,
+  .form__read_button {
     top: 0;
     right: 0;
   }

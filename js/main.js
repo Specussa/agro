@@ -13,6 +13,7 @@ const headernav_scroll = document.querySelector('.header__nav_scroll');
 const headercity_scroll = document.querySelector('.header__city_scroll');
 const headerlist_scroll = document.querySelector('.header__list_scroll');
 const inforead_scroll = document.querySelector('.info__read_scroll');
+const formread_scroll = document.querySelector('.form__read_scroll');
 const sparepartslist_scroll = document.querySelector(".spareparts__list");
 const detaillist_scroll = document.querySelector(".detail__list");
 var headersubnav_scroll = document.getElementsByClassName("header__subnav_scroll");
@@ -63,6 +64,7 @@ if(!headernav_scroll){} else {Scrollbar.init(headernav_scroll);}
 if(!headercity_scroll){} else {Scrollbar.init(headercity_scroll);}
 if(!headerlist_scroll){} else {Scrollbar.init(headerlist_scroll);}
 if(!inforead_scroll){} else {Scrollbar.init(inforead_scroll);}
+if(!formread_scroll){} else {Scrollbar.init(formread_scroll);}
 for (i = 0; i < headersubnav_scroll.length; i++) {
   Scrollbar.init(headersubnav_scroll[i]);
 }
@@ -208,7 +210,6 @@ document.querySelector('.header__city_button').addEventListener('click', functio
 const infobuttons = document.querySelector('.info__button');
 const inforeading = document.querySelector('.info__read');
 const infobutton = document.querySelector('.info__button');
-var iframe = document.querySelector('iframe');
 if(!infobuttons){} else {
   infobutton.addEventListener('click', function() {
     if (infobutton.classList.contains("active")) {
@@ -232,6 +233,39 @@ if(!inforeadbutton){} else {
     bodyoverlaycity.classList.remove("active");
     inforeading.classList.remove("active");
     infobutton.classList.remove("active");
+    document.body.style.height = null;
+    menuindex.style.zIndex = null;
+  })
+}
+// end info__button
+
+// кнопка form__button
+const formbuttons = document.querySelector('.button__form');
+const formreading = document.querySelector('.form__read');
+const formbutton = document.querySelector('.form__button');
+if(!formbuttons){} else {
+  formbutton.addEventListener('click', function() {
+    if (formbutton.classList.contains("active")) {
+      bodyoverlaycity.classList.remove("active");
+      formreading.classList.remove("active");
+      formbutton.classList.remove("active");
+      document.body.style.height = null;
+      menuindex.style.zIndex = null;
+    } else {
+      bodyoverlaycity.classList.add("active");
+      formreading.classList.add("active");
+      formbutton.classList.add("active");
+      document.body.style.height = "100vh";
+      menuindex.style.zIndex = "102";
+    }
+  })
+}
+const formreadbutton = document.querySelector('.form__read_button');
+if(!formreadbutton){} else {
+  formreadbutton.addEventListener('click', function() {
+    bodyoverlaycity.classList.remove("active");
+    formreading.classList.remove("active");
+    formbutton.classList.remove("active");
     document.body.style.height = null;
     menuindex.style.zIndex = null;
   })
