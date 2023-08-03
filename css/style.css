@@ -3935,6 +3935,11 @@ svg path {
   background-color: var(--blue);
 }
 
+.form__read_desc .form {
+  padding: 0 !important;
+  background-color: transparent;
+}
+
 .form__width {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4022,6 +4027,53 @@ svg path {
 
 .form__button:hover span {
   background-color: var(--bg);
+}
+
+.form__read_desc .form__button input {
+  color: var(--bg);
+  -webkit-text-fill-color: var(--bg);
+}
+
+.form__read_desc .form__button {
+  color: var(--bg);
+  background-color: var(--dblue);
+}
+
+.form__read_desc .form__button span {
+  background-color: var(--blue);
+}
+
+.form__read_desc .form__button:hover {
+  color: var(--bg);
+  background-color: var(--blue);
+}
+
+.form__read_desc .form__button:hover span {
+  background-color: var(--bg);
+}
+
+.form__read_desc .form__border::before, .form__read_desc .form__border::after {
+  background-color: var(--text);
+}
+
+.form__read_desc .form__bar::before, .form__read_desc .form__bar::after {
+  background-color: var(--blue);
+}
+
+.form__read_desc .form__control small {
+  color: var(--error);
+  -webkit-text-fill-color: var(--error);
+}
+
+.form__read_desc .form__control input:-webkit-autofill,
+.form__read_desc .form__control input:-webkit-autofill:hover,
+.form__read_desc .form__control textarea:-webkit-autofill,
+.form__read_desc .form__control textarea:-webkit-autofill:hover,
+.form__read_desc .form__control select:-webkit-autofill,
+.form__read_desc .form__control select:-webkit-autofill:hover,
+.form__read_desc .form__control input, .form__control {
+  color: var(--text);
+  -webkit-text-fill-color: var(--text);
 }
 
 .form__button input {
@@ -4163,6 +4215,10 @@ svg path {
   font-weight: 400;
   line-height: 31px;
   color: var(--back);
+}
+
+.form__read_desc .form__head, .form__read_desc .form__policy, .form__read_desc .form__policy a {
+  color: var(--text);
 }
 
 /* end section_form */
