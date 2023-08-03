@@ -3935,6 +3935,10 @@ svg path {
   gap: 35px;
 }
 
+.form__read_desc .form__width {
+  margin: auto;
+}
+
 .form__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4034,7 +4038,7 @@ svg path {
 }
 
 .form__read_desc .form__button:hover span {
-  background-color: var(--bg);
+  background-color: var(--dblue);
 }
 
 .form__read_desc .form__border::before, .form__read_desc .form__border::after {
