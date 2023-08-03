@@ -317,7 +317,7 @@
                   <a href="tel://88002002255" class="footer__tel">8 800 200 22 55</a>
                 </div>
                 <div class="footer__buttons">
-                  <button class="button__default footer__button">Напиши нам<span></span></button>
+                  <button class="button__default button__form footer__button">Напиши нам<span></span></button>
                 </div>
               </div>
               <div class="footer__flex">
@@ -455,32 +455,46 @@
       </div>
     </div>
   </div>
-  <div class="info__read">
-    <div class="info__read_scroll" data-scrollbar>
+  <div class="form__read">
+    <div class="form__read_scroll" data-scrollbar>
       <div class="container header__nav_container">
-        <div class="info__read_block">
-          <button class="info__read_button">
+        <div class="form__read_block">
+          <button class="form__read_button">
             <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M0.979649 2.3934L2.39386 0.979184L13.0005 11.5858L23.6071 0.979184L25.0213 2.3934L14.4147 13L25.0213 23.6066L23.6071 25.0208L13.0005 14.4142L2.39386 25.0208L0.979649 23.6066L11.5863 13L0.979649 2.3934Z" fill="currentColor"/>
             </svg>
           </button>
-          <div class="info__read_desc">
-            <b>СИСТЕМА АВТОМАТИЧЕСКОГО ВОЖДЕНИЯ SUNNAV AG 300</b><br><br>
-            SUNNAV AG 300 — автоматизированная система рулевого управления, которая обеспечивает автоматическое вождение с сантиметровым уровнем точности и существенно повышает производительность при вспашке, посадке и уборке, позволяя работать при любых условиях видимости и снижая усталость оператора.
-            Эта система универсальна, так как она легко устанавливается на уже эксплуатируемые сельскохозяйственные тракторы новых и старых моделей, а также транспортные средства других типов. К тому же ее можно легко переустановить с одного трактора на другой.<br><br>
-            <b>Преимущества SUNNAV AG 300</b><br><br>
-            • Уровень точности между проходами 2,5 см даже в непростых условиях и на сложной местности.<br>
-            • Современный удобный в использовании и прочный 10-ти дюймовый дисплей на русском языке.<br>
-            • Интуитивно понятное программное обеспечение для управления всеми рабочими операциями.<br>
-            • Прочная промышлен­ная конструкция, включающая пыле- и влагозащищенные компоненты (уровня IP65) с увеличенным сроком службы в сельском хозяйстве.<br>
-            • Не требует платных лицензий/разблокировок.<br>
-            • Техническая поддержка на русском языке.<br>
-            • Легкость и простота в установке<br>
-            • Установка на транспортное средство любого производителя<br>
-            • Возможна быстрая переустановка между транспортными средствами<br>
-            • Возможна работа на ультранизких скоростях.<br>
-            • Низкая цена (в 2,5-3 раза дешевле гидравлических автопилотов от Trimble, AgLeader, Raven...)<br>
-            • Гарантия 1 год.
+          <div class="form__read_desc">
+            <form id="formpopup" class="form">
+              <div class="form__width">
+                <p class="form__head">Оставьте заявку на покупку и мы сразу подготовим для вас персональное предложение</p>
+                <div class="form__controls">
+                  <div class="form__control">
+                    <input class="form__input" type="text" minlength="4" maxlength="40" placeholder="Ваше имя*" id="usernamepopup" />
+                    <span class="form__border"></span>
+                    <span class="form__bar"></span>
+                    <small>Error message</small>
+                  </div>
+                  <div class="form__control">
+                    <input class="form__input" type="tel" minlength="5" maxlength="20" placeholder="Телефон*" id="phonepopup" />
+                    <span class="form__border"></span>
+                    <span class="form__bar"></span>
+                    <small>Error message</small>
+                  </div>
+                  <div class="form__control">
+                    <input class="form__input" type="tel" minlength="5" maxlength="20" placeholder="Регион*" id="regionpopup" />
+                    <span class="form__border"></span>
+                    <span class="form__bar"></span>
+                    <small>Error message</small>
+                  </div>
+                </div>
+                <div class="button__default form__button">
+                  <input type="submit" name="submit" value="Отправить" class="button__text">
+                  <span></span>
+                </div>
+                <p class="form__policy">Нажимая на кнопку: "Отправить", вы соглашаетесь с условиями <a href="#" class="link">политики конфиденциальности</a>.</p>
+              </div>
+            </form>
           </div>
         </div>
       </div>

@@ -242,24 +242,24 @@ if(inforeadbutton){
 // end info__button
 
 // кнопка form__button
-const formbuttons = document.querySelector('.button__form');
+const buttonform = document.querySelector('.button__form');
 const formreading = document.querySelector('.form__read');
-const formbutton = document.querySelector('.form__button');
-if(formbuttons){
-  formbutton.addEventListener('click', function() {
-    if (formbutton.classList.contains("active")) {
-      bodyoverlaycity.classList.remove("active");
-      formreading.classList.remove("active");
-      formbutton.classList.remove("active");
-      document.body.style.height = null;
-      menuindex.style.zIndex = null;
-    } else {
-      bodyoverlaycity.classList.add("active");
-      formreading.classList.add("active");
-      formbutton.classList.add("active");
-      document.body.style.height = "100vh";
-      menuindex.style.zIndex = "102";
-    }
+const formbuttons = document.querySelectorAll('.button__form');
+if(buttonform){
+  formbuttons.forEach(function(formbutton) {
+    formbutton.addEventListener('click', function(e) {
+      if (formbutton.classList.contains("active")) {
+        bodyoverlaycity.classList.remove("active");
+        formreading.classList.remove("active");
+        document.body.style.height = null;
+        menuindex.style.zIndex = null;
+      } else {
+        bodyoverlaycity.classList.add("active");
+        formreading.classList.add("active");
+        document.body.style.height = "100vh";
+        menuindex.style.zIndex = "102";
+      }
+    })
   })
 }
 const formreadbutton = document.querySelector('.form__read_button');
@@ -267,7 +267,6 @@ if(formreadbutton){
   formreadbutton.addEventListener('click', function() {
     bodyoverlaycity.classList.remove("active");
     formreading.classList.remove("active");
-    formbutton.classList.remove("active");
     document.body.style.height = null;
     menuindex.style.zIndex = null;
   })
@@ -300,9 +299,9 @@ bodyoverlaycity.addEventListener('click', function() {
   bodyoverlaycity.classList.remove("active");
   menucity.classList.remove("active");
   burgercity.classList.remove("active");
-  bodyoverlaycity.classList.remove("active");
-  inforeading.classList.remove("active");
-  infobutton.classList.remove("active");
+  if(inforeading){inforeading.classList.remove("active");}
+  if(infobutton){infobutton.classList.remove("active");}
+  if(formreading){formreading.classList.remove("active");}
   document.body.style.height = null;
   menuindex.style.zIndex = null;
 })
@@ -1933,11 +1932,11 @@ if(actionblock){
 }
 // end accordion action
 
+// start validate section_form
 const form = document.getElementById('form');
 const username = document.getElementById('username');
 const phone = document.getElementById('phone');
 const region = document.getElementById('region');
-// start validate section_form
 if(form){
   form.addEventListener('submit', e => {
   e.preventDefault();
@@ -1971,6 +1970,48 @@ if(form){
   function setSuccessFor(input) {
     const formControl = input.parentElement;
     formControl.className = 'form__control success';
+  }
+  }
+// end validate section_form
+
+// start validate formpopup
+const formpopup = document.getElementById('formpopup');
+const usernamepopup = document.getElementById('usernamepopup');
+const phonepopup = document.getElementById('phonepopup');
+const regionpopup = document.getElementById('regionpopup');
+if(formpopup){
+  formpopup.addEventListener('submit', e => {
+  e.preventDefault();
+  
+  checkInputs();
+  });
+  function checkInputs() {
+  // trim to remove the whitespaces
+  const usernamepopupValue = usernamepopup.value.trim();
+  const phonepopupValue = phonepopup.value.trim();
+  const regionpopupValue = regionpopup.value.trim();
+  
+  if(usernamepopupValue === '') {
+      setErrorFor(usernamepopup, 'Введите Ваше имя'); } else { setSuccessFor(usernamepopup);
+  }
+  if(phonepopupValue === '') {
+      setErrorFor(phonepopup, 'Введите корректный телефон'); } else { setSuccessFor(phonepopup);
+  }
+  if(regionpopupValue === '') {
+      setErrorFor(regionpopup, 'Введите регион'); } else { setSuccessFor(regionpopup);
+    }
+  }
+  
+  function setErrorFor(input, message) {
+    const formpopupControl = input.parentElement;
+    const smallpopup = formpopupControl.querySelector('small');
+    formpopupControl.className = 'form__control error';
+    smallpopup.innerText = message;
+  }
+  
+  function setSuccessFor(input) {
+    const formpopupControl = input.parentElement;
+    formpopupControl.className = 'form__control success';
   }
   }
 // end validate section_form

@@ -1520,7 +1520,7 @@ svg path {
 
 .header__city_button:hover,
 .info__read_button:hover,
-.form__read:hover {
+.form__read_button:hover {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
@@ -5397,7 +5397,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  top: -130px;
+  top: -129px;
   right: 0;
   background-color: var(--blue);
 }
@@ -5484,7 +5484,7 @@ svg path {
   flex-direction: column;
   gap: 10px;
   position: absolute;
-  top: -210px;
+  top: -209px;
   right: 100px;
 }
 
@@ -7556,7 +7556,7 @@ svg path {
     height: 320px;
   }
   .article__flex {
-    top: -160px;
+    top: -159px;
     right: 40px;
   }
   .article__date,
