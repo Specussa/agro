@@ -3661,7 +3661,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   padding: 0 100px;
-  background-color: transparent;
+  background-color: var(--dblue);
 }
 
 .info__buttons_slider,
@@ -5438,9 +5438,9 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  top: -129px;
+  top: -128px;
   right: 0;
-  background-color: var(--blue);
+  background-color: transparent;
 }
 
 .action__button {
