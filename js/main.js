@@ -17,7 +17,7 @@ const formread_scroll = document.querySelector('.form__read_scroll');
 const sparepartslist_scroll = document.querySelector(".spareparts__list");
 const detaillist_scroll = document.querySelector(".detail__list");
 var headersubnav_scroll = document.getElementsByClassName("header__subnav_scroll");
-if(!map_scroll){} else {
+if(map_scroll){
   if (map_scroll.classList.contains("active")) {} else {
     Scrollbar.init(map_scroll);
     map_scroll.addEventListener("touchstart", function (e) {scroll.stop()});
@@ -30,7 +30,7 @@ if(!map_scroll){} else {
     map_scroll.onmouseout = function(e) {scroll.start();};
   }
 }
-if(!sparepartslist_scroll){} else {
+if(sparepartslist_scroll){
   if(window.innerWidth > 800){
     if (sparepartslist_scroll.classList.contains("active")) {} else {
       Scrollbar.init(sparepartslist_scroll);
@@ -45,7 +45,7 @@ if(!sparepartslist_scroll){} else {
     }
   } else {}
 }
-if(!detaillist_scroll){} else {
+if(detaillist_scroll){
   if(window.innerWidth > 800){
     if (detaillist_scroll.classList.contains("active")) {} else {
       Scrollbar.init(detaillist_scroll);
@@ -60,11 +60,11 @@ if(!detaillist_scroll){} else {
     }
   } else {}
 }
-if(!headernav_scroll){} else {Scrollbar.init(headernav_scroll);}
-if(!headercity_scroll){} else {Scrollbar.init(headercity_scroll);}
-if(!headerlist_scroll){} else {Scrollbar.init(headerlist_scroll);}
-if(!inforead_scroll){} else {Scrollbar.init(inforead_scroll);}
-if(!formread_scroll){} else {Scrollbar.init(formread_scroll);}
+if(headernav_scroll){Scrollbar.init(headernav_scroll);}
+if(headercity_scroll){Scrollbar.init(headercity_scroll);}
+if(headerlist_scroll){Scrollbar.init(headerlist_scroll);}
+if(inforead_scroll){Scrollbar.init(inforead_scroll);}
+if(formread_scroll){Scrollbar.init(formread_scroll);}
 for (i = 0; i < headersubnav_scroll.length; i++) {
   Scrollbar.init(headersubnav_scroll[i]);
 }
@@ -73,7 +73,7 @@ for (i = 0; i < headersubnav_scroll.length; i++) {
 // start анимация перехода если есть класс link
 let link = document.querySelectorAll(".link");
 let links = document.querySelector(".link");
-if(!links){} else {
+if(links){
   for (let i = 0; i < link.length; i++) {
     link[i].onclick = function(e) {
       let href = this.href;
@@ -119,6 +119,8 @@ const bodyoverlay = document.querySelector('.overlay');
 const menu = document.querySelector('.header__nav');
 const burger = document.querySelector('.header__burger');
 const menuindex = document.querySelector("header");
+const hhbt = document.querySelectorAll('.header__item .header__button');
+const hhbl = document.querySelectorAll('.header__item .header__block');
 burger.addEventListener('click', function() {
   if (burger.classList.contains("active")) {
     bodyoverlay.classList.remove("active");
@@ -126,18 +128,18 @@ burger.addEventListener('click', function() {
     burger.classList.remove("active");
     document.body.style.height = null;
     menuindex.style.zIndex = null;
-    document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
+    hhbt.forEach(n => n.classList.remove('active'));
+    hhbl.forEach(n => n.classList.remove('active'));
+    hhbl.forEach(n => n.style.maxHeight = null);
   } else {
     bodyoverlay.classList.add("active");
     menu.classList.add("active");
     burger.classList.add("active");
     document.body.style.height = "100vh";
     menuindex.style.zIndex = "102";
-    document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
+    hhbt.forEach(n => n.classList.remove('active'));
+    hhbl.forEach(n => n.classList.remove('active'));
+    hhbl.forEach(n => n.style.maxHeight = null);
   }
 })
 // end navbar
@@ -158,9 +160,9 @@ burgermobile.addEventListener('click', function() {
     headerscroll.classList.remove("active");
     document.body.style.height = null;
     menuindex.style.zIndex = null;
-    document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
+    hhbt.forEach(n => n.classList.remove('active'));
+    hhbl.forEach(n => n.classList.remove('active'));
+    hhbl.forEach(n => n.style.maxHeight = null);
   } else {
     bodyoverlay.classList.add("active");
     burgermobile.classList.add("active");
@@ -170,9 +172,9 @@ burgermobile.addEventListener('click', function() {
     headerscroll.classList.add("active");
     document.body.style.height = "100vh";
     menuindex.style.zIndex = "102";
-    document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
-    document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
+    hhbt.forEach(n => n.classList.remove('active'));
+    hhbl.forEach(n => n.classList.remove('active'));
+    hhbl.forEach(n => n.style.maxHeight = null);
   }
 })
 // end header__burger_mobile
@@ -210,7 +212,7 @@ document.querySelector('.header__city_button').addEventListener('click', functio
 const infobuttons = document.querySelector('.info__button');
 const inforeading = document.querySelector('.info__read');
 const infobutton = document.querySelector('.info__button');
-if(!infobuttons){} else {
+if(infobuttons){
   infobutton.addEventListener('click', function() {
     if (infobutton.classList.contains("active")) {
       bodyoverlaycity.classList.remove("active");
@@ -228,7 +230,7 @@ if(!infobuttons){} else {
   })
 }
 const inforeadbutton = document.querySelector('.info__read_button');
-if(!inforeadbutton){} else {
+if(inforeadbutton){
   inforeadbutton.addEventListener('click', function() {
     bodyoverlaycity.classList.remove("active");
     inforeading.classList.remove("active");
@@ -243,7 +245,7 @@ if(!inforeadbutton){} else {
 const formbuttons = document.querySelector('.button__form');
 const formreading = document.querySelector('.form__read');
 const formbutton = document.querySelector('.form__button');
-if(!formbuttons){} else {
+if(formbuttons){
   formbutton.addEventListener('click', function() {
     if (formbutton.classList.contains("active")) {
       bodyoverlaycity.classList.remove("active");
@@ -261,7 +263,7 @@ if(!formbuttons){} else {
   })
 }
 const formreadbutton = document.querySelector('.form__read_button');
-if(!formreadbutton){} else {
+if(formreadbutton){}{
   formreadbutton.addEventListener('click', function() {
     bodyoverlaycity.classList.remove("active");
     formreading.classList.remove("active");
@@ -283,11 +285,11 @@ bodyoverlay.addEventListener('click', function() {
   headercontacts.classList.remove("active");
   headerscroll.classList.remove("active");
   bodyoverlaycity.classList.remove("active");
-  if(!inforeading){} else {inforeading.classList.remove("active");}
-  if(!infobutton){} else {infobutton.classList.remove("active");}
-  document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
-  document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
-  document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
+  if(inforeading){inforeading.classList.remove("active");}
+  if(infobutton){infobutton.classList.remove("active");}
+  hhbt.forEach(n => n.classList.remove('active'));
+  hhbl.forEach(n => n.classList.remove('active'));
+  hhbl.forEach(n => n.style.maxHeight = null);
   document.body.style.height = null;
   menuindex.style.zIndex = null;
 })
@@ -347,11 +349,11 @@ for (i = 0; i < hblockacc.length; i++) {
         headercontacts.classList.remove("active");
         headerscroll.classList.remove("active");
         bodyoverlaycity.classList.remove("active");
-        if(!inforeading){} else {inforeading.classList.remove("active");}
-        if(!infobutton){} else {infobutton.classList.remove("active");}
-        document.querySelectorAll('.header__item .header__button').forEach(n => n.classList.remove('active'));
-        document.querySelectorAll('.header__item .header__block').forEach(n => n.classList.remove('active'));
-        document.querySelectorAll('.header__item .header__block').forEach(n => n.style.maxHeight = null);
+        if(inforeading){inforeading.classList.remove("active");}
+        if(infobutton){infobutton.classList.remove("active");}
+        hhbt.forEach(n => n.classList.remove('active'));
+        hhbl.forEach(n => n.classList.remove('active'));
+        hhbl.forEach(n => n.style.maxHeight = null);
         document.body.style.height = null;
         menuindex.style.zIndex = null;
       });
@@ -415,7 +417,7 @@ const tractorfl = document.querySelectorAll('.tractor__filter_sublist');
 
 // start year
 const year = document.querySelector('.footer__year');
-if(!year){} else {
+if(year){
 const currentYear = new Date().getFullYear();
 year.insertAdjacentText('beforebegin', currentYear);
 year.remove();
@@ -424,7 +426,7 @@ year.remove();
 
 // start hero slider
 const hero = document.querySelector('.hero');
-if(!hero){} else {
+if(hero){
   var interleaveOffset = 0.5;
   var heroslider = new Swiper('.hero__slider', { 
     loop: false,
@@ -481,7 +483,7 @@ if(!hero){} else {
 
 // start partners slider
 const partnerslisttop = document.querySelector('.partners__list_top');
-if(!partnerslisttop){} else {
+if(partnerslisttop){
   var transformValue;
   var ptl = document.querySelector('.partners__list_top .partners__list');
   var partnerstop = new Swiper('.partners__list_top', {
@@ -532,7 +534,7 @@ if(!partnerslisttop){} else {
 }
 
 const partnerslistbottom = document.querySelector('.partners__list_bottom');
-if(!partnerslistbottom){} else {
+if(partnerslistbottom){
   var transformValue;
   var pbl = document.querySelector('.partners__list_bottom .partners__list');
   var partnersbottom = new Swiper('.partners__list_bottom', {
@@ -588,7 +590,7 @@ if(!partnerslistbottom){} else {
 
 // start company slider
 const companyslider = document.querySelector('.company__slider');
-if(!companyslider){} else {
+if(companyslider){
   var interleaveOffset = 0.5;
   var galleryTop = new Swiper('.company__top', {
     slidesPerView: 1,
@@ -711,7 +713,7 @@ var offerslider = new Swiper('.offer__slider', {
 
 // start product slider
 const productslider = document.querySelector('.product__slider');
-if(!productslider){} else {
+if(productslider){
   var interleaveOffset = 0.5;
   var productsliders = new Swiper('.product__slider', {
     slidesPerView: 1,
@@ -765,7 +767,7 @@ if(!productslider){} else {
 
 // start info slider
 const infosliders = document.querySelector('.info__sliders');
-if(!infosliders){} else {
+if(infosliders){
   var interleaveOffset = 0.5;
   var infoSlider = new Swiper('.info__slider', {
     slidesPerView: 1,
@@ -832,7 +834,7 @@ if(!infosliders){} else {
 
 // start propelled slider
 const propelledblock = document.querySelector('.propelled__flex');
-if(!propelledblock){} else {
+if(propelledblock){
   var propelled = new Swiper('.propelled__flex', {
     loop: false,
     slidesPerView: 5,
@@ -905,7 +907,7 @@ var actionslider = new Swiper('.action__buttons_slider', {
 
 // start aboutus slider
 const aboutussliders = document.querySelector('.aboutus__brand_sliders');
-if(!aboutussliders){} else {
+if(aboutussliders){
   var aboutusThumbs = new Swiper('.aboutus__brand_thumbs', {
     loop: true,
     loopedSlides: 5,
@@ -939,7 +941,7 @@ if(!aboutussliders){} else {
 
 // start aboutus slider
 const aboutusteamsliders = document.querySelector('.aboutus__team');
-if(!aboutusteamsliders){} else {
+if(aboutusteamsliders){
   var aboutusThumbs = new Swiper('.aboutus__team_slider', {
     loop: false,
     slidesPerView: 'auto',
@@ -959,7 +961,7 @@ if(!aboutusteamsliders){} else {
 
 // end service slider
 const serviceslider = document.querySelector('.service__thumbs');
-if(!serviceslider){} else {
+if(serviceslider){
   var serviceThumbs = new Swiper('.service__thumbs', {
     loop: false,
     spaceBetween: 0,
@@ -989,7 +991,7 @@ if(!serviceslider){} else {
 
 // end service slider
 const financelider = document.querySelector('.finance__thumbs');
-if(!financelider){} else {
+if(financelider){
   var serviceThumbs = new Swiper('.finance__thumbs', {
     loop: false,
     spaceBetween: 0,
@@ -1068,7 +1070,7 @@ function delmappoint() {
 // end
 
 // start search back
-if(!mapback){} else {
+if(mapback){
   mapback.addEventListener('click', (event) => {
     maphead.forEach(n => n.classList.remove('active'));
     maphead.forEach(n => n.classList.remove('close'));
@@ -1260,7 +1262,7 @@ for (i = 0; i < mapsh.length; i++) {
 // start yandex map
 const map = document.querySelectorAll('.map');
 const maps = document.querySelectorAll('.map');
-if(!maps){} else {
+if(maps) {
   var myMap,ymaps;
   function init() {
     myMap = document.getElementById("map");
@@ -1823,7 +1825,7 @@ const idesc = document.querySelectorAll('.info__container .info__description');
 const ichar = document.querySelectorAll('.info__container .info__characteristics');
 const icert = document.querySelectorAll('.info__container .info__certification');
 var infoblock = document.querySelector(".info__blocks");
-if(!infoblock){} else {
+if(infoblock){
   for (i = 0; i < infodesc.length; i++) {
     infodesc[i].onclick = function(e) {
       ibb.forEach(n => n.classList.remove('active'));
@@ -1882,7 +1884,7 @@ const adesc = document.querySelectorAll('.action__container .action__first');
 const achar = document.querySelectorAll('.action__container .action__second');
 const acert = document.querySelectorAll('.action__container .action__third');
 var actionblock = document.querySelector(".action__list");
-if(!actionblock){} else {
+if(actionblock){
   for (i = 0; i < actionfirst.length; i++) {
     actionfirst[i].onclick = function(e) {
       abb.forEach(n => n.classList.remove('active'));
@@ -1936,7 +1938,7 @@ const username = document.getElementById('username');
 const phone = document.getElementById('phone');
 const region = document.getElementById('region');
 // start validate section_form
-if(!form){} else {
+if(form){
   form.addEventListener('submit', e => {
   e.preventDefault();
   
@@ -1975,7 +1977,7 @@ if(!form){} else {
 
 // start search spareparts
 const spareparts = document.querySelector('.spareparts');
-if(!spareparts){} else {
+if(spareparts){
   function sparepartsFunction() {
     var sparepartsinput, filter, i;
     sparepartsinput = document.getElementById("spareparts__input");

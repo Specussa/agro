@@ -7490,6 +7490,20 @@ svg path {
     width: 265px;
     height: 90px;
   }
+  .aboutus__requisites::before {
+    content: "";
+    width: 40px;
+    height: 51.11px;
+    background-size: 40px 51.11px;
+  }
+  .aboutus_requisites_info span:first-child {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .aboutus_requisites_info span:last-child {
+    font-size: 12px;
+    line-height: 15px;
+  }
   .videoreview__block {
     padding: 40px;
     gap: 40px;
@@ -8459,6 +8473,12 @@ svg path {
     width: 180px;
     height: 60px;
   }
+  .aboutus__requisites::before {
+    content: "";
+    width: 30px;
+    height: 38.33px;
+    background-size: 30px 38.33px;
+  }
   .videoreview__block {
     padding: 20px;
     gap: 20px;
@@ -8848,6 +8868,10 @@ svg path {
   .aboutus__branches_desc {
     font-size: 12px;
     line-height: 15px;
+  }
+  .aboutus_requisites_info span:first-child {
+    font-size: 14px;
+    line-height: 18px;
   }
   .videoreview__desc {
     font-size: 12px;
