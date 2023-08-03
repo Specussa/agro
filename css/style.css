@@ -5105,7 +5105,7 @@ svg path {
 }
 
 .aboutus__brand_thumbs {
-  background-color: var(--dblue);
+  background-color: var(--bg);
 }
 
 .aboutus__brand_list {
@@ -8742,6 +8742,12 @@ svg path {
   }
   .tractor__mobile {
     display: none;
+  }
+  .tractor__filter_sublist {
+    gap: 5px 10px;
+  }
+  .tractor__filter_subitem {
+    width: calc(50% - 5px);
   }
   .partners__container {
     height: 123px;
