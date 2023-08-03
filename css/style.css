@@ -4671,6 +4671,7 @@ svg path {
 .detail__button {
   width: 100%;
   flex: 0 0 auto;
+  text-align: center;
 }
 
 .detail__button:first-child {
