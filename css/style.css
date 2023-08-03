@@ -327,9 +327,6 @@ input {
 a {
   color: var(--text);
   -webkit-transition: color 0.15s linear;
-  -moz-transition: color 0.15s linear;
-  -ms-transition: color 0.15s linear;
-  -o-transition: color 0.15s linear;
   transition: color 0.15s linear;
   cursor: pointer;
   text-decoration: none;
@@ -385,14 +382,8 @@ svg path {
   background-color: var(--text);
   visibility: hidden;
   -webkit-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear, z-index 0.3s linear;
-  -moz-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear, z-index 0.3s linear;
-  -ms-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear, z-index 0.3s linear;
-  -o-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear, z-index 0.3s linear;
   transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear, z-index 0.3s linear;
   -webkit-transition-delay: 0.3s, 0s, 0.3s, 0.3s;
-  -moz-transition-delay: 0.3s, 0s, 0.3s, 0.3s;
-  -ms-transition-delay: 0.3s, 0s, 0.3s, 0.3s;
-  -o-transition-delay: 0.3s, 0s, 0.3s, 0.3s;
   transition-delay: 0.3s, 0s, 0.3s, 0.3s;
 }
 
@@ -409,9 +400,6 @@ svg path {
   background-color: var(--text);
   visibility: visible;
   -webkit-transition-delay: 0s, 0s, 0s, 0s;
-  -moz-transition-delay: 0s, 0s, 0s, 0s;
-  -ms-transition-delay: 0s, 0s, 0s, 0s;
-  -o-transition-delay: 0s, 0s, 0s, 0s;
   transition-delay: 0s, 0s, 0s, 0s;
 }
 
@@ -432,9 +420,6 @@ svg path {
   border: 1px solid var(--bg);
   position: relative;
   -webkit-transition: background-color 0.2s linear, color 0.2s linear;
-  -moz-transition: background-color 0.2s linear, color 0.2s linear;
-  -ms-transition: background-color 0.2s linear, color 0.2s linear;
-  -o-transition: background-color 0.2s linear, color 0.2s linear;
   transition: background-color 0.2s linear, color 0.2s linear;
 }
 
@@ -444,9 +429,6 @@ svg path {
 
 .button__default span, .button__default:hover span {
   -webkit-transition: background-color 0.2s linear, width 0.2s linear, height 0.2s linear;
-  -moz-transition: background-color 0.2s linear, width 0.2s linear, height 0.2s linear;
-  -ms-transition: background-color 0.2s linear, width 0.2s linear, height 0.2s linear;
-  -o-transition: background-color 0.2s linear, width 0.2s linear, height 0.2s linear;
   transition: background-color 0.2s linear, width 0.2s linear, height 0.2s linear;
 }
 
@@ -484,9 +466,6 @@ svg path {
   top: 0;
   transform-origin: center right;
   -webkit-transition: -webkit-transform 0.3s linear, opacity 0.3s linear;
-  -moz-transition: -moz-transform 0.3s linear, opacity 0.3s linear;
-  -ms-transition: ms-transform 0.3s linear, opacity 0.3s linear;
-  -o-transition: -o-transform 0.3s linear, opacity 0.3s linear;
   transition: transform 0.3s linear, opacity 0.3s linear;
   z-index: 101;
 }
@@ -552,9 +531,6 @@ svg path {
 
 .preloader__top, .preloader__bottom {
   -webkit-transition: top 0.2s linear;
-  -moz-transition: top 0.2s linear;
-  -ms-transition: top 0.2s linear;
-  -o-transition: top 0.2s linear;
   transition: top 0.2s linear;
 }
 
@@ -572,9 +548,6 @@ svg path {
   margin-left: -25px;
   text-align: center;
   -webkit-animation: preloader-rotate 2s infinite linear;
-  -moz-animation: preloader-rotate 2s infinite linear;
-  -ms-animation: preloader-rotate 2s infinite linear;
-  -o-animation: preloader-rotate 2s infinite linear;
   animation: preloader-rotate 2s infinite linear;
   z-index: 1002;
 }
@@ -582,18 +555,12 @@ svg path {
 .loaded_hiding .preloader__image {
   opacity: 0;
   -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
 
 @-webkit-keyframes preloader-rotate {
   100% {
     -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -601,9 +568,6 @@ svg path {
 @keyframes preloader-rotate {
   100% {
     -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -614,14 +578,8 @@ svg path {
 
 .preloader__image circle {
   -webkit-transition: -webkit-transform 0.2s linear, fill 0.2s ease-out;
-  -moz-transition: -moz-transform 0.2s linear, fill 0.2s ease-out;
-  -ms-transition: -ms-transform 0.2s linear, fill 0.2s ease-out;
-  -o-transition: -o-transform 0.2s linear, fill 0.2s ease-out;
   transition: transform 0.2s linear, fill 0.2s ease-out;
   -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
   transform: translate(0, 0);
   fill: var(--text);
 }
@@ -710,9 +668,6 @@ svg path {
   line-height: 21px;
   border-bottom: 1px solid var(--text);
   -webkit-transition: color 0.2s linear, border 0.2s linear;
-  -moz-transition: color 0.2s linear, border 0.2s linear;
-  -ms-transition: color 0.2s linear, border 0.2s linear;
-  -o-transition: color 0.2s linear, border 0.2s linear;
   transition: color 0.2s linear, border 0.2s linear;
 }
 
@@ -730,9 +685,6 @@ svg path {
 .header__region svg path {
   fill: var(--text);
   -webkit-transition: fill 0.2s linear;
-  -moz-transition: fill 0.2s linear;
-  -ms-transition: fill 0.2s linear;
-  -o-transition: fill 0.2s linear;
   transition: fill 0.2s linear;
 }
 
@@ -749,9 +701,6 @@ svg path {
 .header__tel svg path {
   fill: var(--text);
   -webkit-transition: fill 0.2s linear;
-  -moz-transition: fill 0.2s linear;
-  -ms-transition: fill 0.2s linear;
-  -o-transition: fill 0.2s linear;
   transition: fill 0.2s linear;
 }
 
@@ -781,9 +730,6 @@ svg path {
   line-height: 20px;
   color: var(--bg);
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
@@ -842,63 +788,39 @@ svg path {
 
 .header__burger.active svg {
   -webkit-transform: rotate(0);
-  -moz-transform: rotate(0);
-  -ms-transform: rotate(0);
-  -o-transform: rotate(0);
   transform: rotate(0);
 }
 
 .header__burger svg path {
   fill: white;
   -webkit-transform: scaleY(1) translate(0, 0);
-  -moz-transform: scaleY(1) translate(0, 0);
-  -ms-transform: scaleY(1) translate(0, 0);
-  -o-transform: scaleY(1) translate(0, 0);
   transform: scaleY(1) translate(0, 0);
   -webkit-transition: -webkit-transform 0.4s linear;
-  -moz-transition: -moz-transform 0.4s linear;
-  -ms-transition: -ms-transform 0.4s linear;
-  -o-transition: -o-transform 0.4s linear;
   transition: transform 0.4s linear;
 }
 
 .header__burger.active svg path:nth-child(1) {
   -webkit-transform: translate(-2.5px, -2.5px);
-  -moz-transform: translate(-2.5px, -2.5px);
-  -ms-transform: translate(-2.5px, -2.5px);
-  -o-transform: translate(-2.5px, -2.5px);
   transform: translate(-2.5px, -2.5px);
 }
 
 .header__burger.active svg path:nth-child(2) {
   -webkit-transform: translate(2.5px, -2.5px);
-  -moz-transform: translate(2.5px, -2.5px);
-  -ms-transform: translate(2.5px, -2.5px);
-  -o-transform: translate(2.5px, -2.5px);
   transform: translate(2.5px, -2.5px);
 }
 
 .header__burger.active svg path:nth-child(3) {
   -webkit-transform: translate(2.5px, 2.5px);
-  -moz-transform: translate(2.5px, 2.5px);
-  -ms-transform: translate(2.5px, 2.5px);
-  -o-transform: translate(2.5px, 2.5px);
   transform: translate(2.5px, 2.5px);
 }
 
 .header__burger.active svg path:nth-child(4) {
   -webkit-transform: translate(-2.5px, 2.5px);
-  -moz-transform: translate(-2.5px, 2.5px);
-  -ms-transform: translate(-2.5px, 2.5px);
-  -o-transform: translate(-2.5px, 2.5px);
   transform: translate(-2.5px, 2.5px);
 }
 
 .header__burger.active svg path:nth-child(5) {
   -webkit-transform: scaleY(1.5) translate(0px, -3.5px);
-  -moz-transform: scaleY(1.5) translate(0px, -3.5px);
-  -ms-transform: scaleY(1.5) translate(0px, -3.5px);
-  -o-transform: scaleY(1.5) translate(0px, -3.5px);
   transform: scaleY(1.5) translate(0px, -3.5px);
 }
 
@@ -945,9 +867,6 @@ svg path {
   background-color: var(--dblue);
   position: relative;
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
@@ -970,9 +889,6 @@ svg path {
   overflow: hidden;
   background-color: var(--blue);
   -webkit-transition: max-height 0.5s linear, opacity 0.5s linear, background-color 0.5s linear;
-  -moz-transition: max-height 0.5s linear, opacity 0.5s linear, background-color 0.5s linear;
-  -ms-transition: max-height 0.5s linear, opacity 0.5s linear, background-color 0.5s linear;
-  -o-transition: max-height 0.5s linear, opacity 0.5s linear, background-color 0.5s linear;
   transition: max-height 0.5s linear, opacity 0.5s linear, background-color 0.5s linear;
 }
 
@@ -981,9 +897,6 @@ svg path {
   opacity: 1;
   background-color: var(--bg);
   -webkit-transition: max-height 0.5s linear, opacity 0s linear, background-color 0.5s linear;
-  -moz-transition: max-height 0.5s linear, opacity 0s linear, background-color 0.5s linear;
-  -ms-transition: max-height 0.5s linear, opacity 0s linear, background-color 0.5s linear;
-  -o-transition: max-height 0.5s linear, opacity 0s linear, background-color 0.5s linear;
   transition: max-height 0.5s linear, opacity 0s linear, background-color 0.5s linear;
 }
 
@@ -1002,9 +915,6 @@ svg path {
   border-left: 1px solid var(--blue);
   border-right: 1px solid var(--blue);
   -webkit-transition: color 0.2s linear;
-  -moz-transition: color 0.2s linear;
-  -ms-transition: color 0.2s linear;
-  -o-transition: color 0.2s linear;
   transition: color 0.2s linear;
   position: relative;
 }
@@ -1023,22 +933,13 @@ svg path {
   background: url('../img/icon/dot.svg') center center no-repeat;
   background-size: 10px 10px;
   -webkit-transform: scaleY(1);
-  -moz-transform: scaleY(1);
-  -ms-transform: scaleY(1);
-  -o-transform: scaleY(1);
   transform: scaleY(1);
   -webkit-transition: -webkit-transform 0.4s linear;
-  -moz-transition: -moz-transform 0.4s linear;
-  -ms-transition: -ms-transform 0.4s linear;
-  -o-transition: -o-transform 0.4s linear;
   transition: transform 0.4s linear;
 }
 
 .header__button.active::after {
   -webkit-transform: scaleY(1.5);
-  -moz-transform: scaleY(1.5);
-  -ms-transform: scaleY(1.5);
-  -o-transform: scaleY(1.5);
   transform: scaleY(1.5);
 }
 
@@ -1115,9 +1016,6 @@ svg path {
   justify-content: center;
   cursor: pointer;
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
@@ -1131,9 +1029,6 @@ svg path {
   color: var(--bg);
   border-bottom: 1px solid var(--bg);
   -webkit-transition: width 0.2s linear;
-  -moz-transition: width 0.2s linear;
-  -ms-transition: width 0.2s linear;
-  -o-transition: width 0.2s linear;
   transition: width 0.2s linear;
 }
 
@@ -1171,9 +1066,6 @@ svg path {
   background-color: var(--dblue);
   cursor: pointer;
   -webkit-transition: background-color 0.3s linear;
-  -moz-transition: background-color 0.3s linear;
-  -ms-transition: background-color 0.3s linear;
-  -o-transition: background-color 0.3s linear;
   transition: background-color 0.3s linear;
 }
 
@@ -1201,14 +1093,8 @@ svg path {
 .header__burger_mobile_block::after, .header__burger_mobile_block::before {
   content: "";
   -webkit-transition: width 0.3s linear, left 0.25s linear, right 0.25s linear;
-  -moz-transition: width 0.3s linear, left 0.25s linear, right 0.25s linear;
-  -ms-transition: width 0.3s linear, left 0.25s linear, right 0.25s linear;
-  -o-transition: width 0.3s linear, left 0.25s linear, right 0.25s linear;
   transition: width 0.3s linear, left 0.25s linear, right 0.25s linear;
   -webkit-transition-delay: 0.25s;
-  -moz-transition-delay: 0.25s;
-  -ms-transition-delay: 0.25s;
-  -o-transition-delay: 0.25s;
   transition-delay: 0.25s;
 }
 
@@ -1223,9 +1109,6 @@ svg path {
 .header__burger_mobile_block span {
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -1237,9 +1120,6 @@ svg path {
 
 .header__burger_mobile_block span, .header__burger_mobile_block span::before {
   -webkit-transition: -webkit-transform 0.25s linear;
-  -moz-transition: -moz-transform 0.25s linear;
-  -ms-transition: -ms-transform 0.25s linear;
-  -o-transition: -o-transform 0.25s linear;
   transition: transform 0.25s linear;
 }
 
@@ -1254,37 +1134,22 @@ svg path {
 .header__burger_mobile.active .header__burger_mobile_block::after, .header__burger_mobile.active .header__burger_mobile_block::before {
   width: 0%;
   -webkit-transition: width 0.25s linear, left 0.25s linear, right 0.25s linear;
-  -moz-transition: width 0.25s linear, left 0.25s linear, right 0.25s linear;
-  -ms-transition: width 0.25s linear, left 0.25s linear, right 0.25s linear;
-  -o-transition: width 0.25s linear, left 0.25s linear, right 0.25s linear;
   transition: width 0.25s linear, left 0.25s linear, right 0.25s linear;
 }
 
 .header__burger_mobile.active .header__burger_mobile_block span {
   -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .header__burger_mobile.active .header__burger_mobile_block span::before {
   -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 
 .header__burger_mobile.active .header__burger_mobile_block span, .header__burger_mobile.active .header__burger_mobile_block span::before {
   -webkit-transition: -webkit-transform 0.25s linear;
-  -moz-transition: -moz-transform 0.25s linear;
-  -ms-transition: -ms-transform 0.25s linear;
-  -o-transition: -o-transform 0.25s linear;
   transition: transform 0.25s linear;
   -webkit-transition-delay: 0.25s;
-  -moz-transition-delay: 0.25s;
-  -ms-transition-delay: 0.25s;
-  -o-transition-delay: 0.25s;
   transition-delay: 0.25s;
 }
 
@@ -1310,14 +1175,8 @@ svg path {
   z-index: 99;
   background: var(--bg);
   -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  -o-transform: translateY(-100%);
   transform: translateY(-100%);
   -webkit-transition: -webkit-transform 0.5s;
-  -moz-transition: -moz-transform 0.5s;
-  -ms-transition: -ms-transform 0.5s;
-  -o-transition: -o-transform 0.5s;
   transition: transform 0.5s;
   overflow: hidden;
 }
@@ -1325,9 +1184,6 @@ svg path {
 .header__nav.active {
   visibility: visible;
   -webkit-transform: translateY(0%);
-  -moz-transform: translateY(0%);
-  -ms-transform: translateY(0%);
-  -o-transform: translateY(0%);
   transform: translateY(0%);
   -moz-box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
@@ -1370,9 +1226,6 @@ svg path {
   left: 520px;
   opacity: 0;
   -webkit-transition: opacity 0.3s linear, visibility 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s linear, visibility 0.3s ease-in-out;
-  -ms-transition: opacity 0.3s linear, visibility 0.3s ease-in-out;
-  -o-transition: opacity 0.3s linear, visibility 0.3s ease-in-out;
   transition: opacity 0.3s linear, visibility 0.3s ease-in-out;
   visibility: hidden;
   overflow: hidden;
@@ -1409,14 +1262,8 @@ svg path {
   position: relative;
   opacity: 0;
   -webkit-transform: translateX(50px);
-  -moz-transform: translateX(50px);
-  -ms-transform: translateX(50px);
-  -o-transform: translateX(50px);
   transform: translateX(50px);
   -webkit-transition: opacity 0.3s linear, -webkit-transform 0.2s linear;
-  -moz-transition: opacity 0.3s linear, -moz-transform 0.2s linear;
-  -ms-transition: opacity 0.3s linear, -ms-transform 0.2s linear;
-  -o-transition: opacity 0.3s linear, -o-transform 0.2s linear;
   transition: opacity 0.3s linear, transform 0.2s linear;
 }
 
@@ -1424,14 +1271,8 @@ svg path {
   left: 0;
   opacity: 1;
   -webkit-transform: translateX(0%);
-  -moz-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  -o-transform: translateX(0%);
   transform: translateX(0%);
   -webkit-transition-delay: calc(var(--inc-step)*0.07s);
-  -moz-transition-delay: calc(var(--inc-step)*0.07s);
-  -ms-transition-delay: calc(var(--inc-step)*0.07s);
-  -o-transition-delay: calc(var(--inc-step)*0.07s);
   transition-delay: calc(var(--inc-step)*0.07s);
 }
 
@@ -1441,9 +1282,6 @@ svg path {
   line-height: 20px;
   color: var(--gray);
   -webkit-transition: color 0.2s ease-in-out;
-  -moz-transition: color 0.2s ease-in-out;
-  -ms-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
 }
 
@@ -1459,9 +1297,6 @@ svg path {
   bottom: 0;
   background-color: var(--blue);
   -webkit-transition: width 0.2s ease-in-out;
-  -moz-transition: width 0.2s ease-in-out;
-  -ms-transition: width 0.2s ease-in-out;
-  -o-transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out;
 }
 
@@ -1483,9 +1318,6 @@ svg path {
   top: 10%;
   opacity: 0;
   -webkit-transition: opacity 0.3s linear, top 0.2s linear;
-  -moz-transition: opacity 0.3s linear, top 0.2s linear;
-  -ms-transition: opacity 0.3s linear, top 0.2s linear;
-  -o-transition: opacity 0.3s linear, top 0.2s linear;
   transition: opacity 0.3s linear, top 0.2s linear;
 }
 
@@ -1493,9 +1325,6 @@ svg path {
   top: 0;
   opacity: 1;
   -webkit-transition-delay: calc(var(--inc-step)*0.07s);
-  -moz-transition-delay: calc(var(--inc-step)*0.07s);
-  -ms-transition-delay: calc(var(--inc-step)*0.07s);
-  -o-transition-delay: calc(var(--inc-step)*0.07s);
   transition-delay: calc(var(--inc-step)*0.07s);
 }
 
@@ -1519,9 +1348,6 @@ svg path {
   top: 10%;
   opacity: 0;
   -webkit-transition: opacity 0.3s linear, top 0.2s linear;
-  -moz-transition: opacity 0.3s linear, top 0.2s linear;
-  -ms-transition: opacity 0.3s linear, top 0.2s linear;
-  -o-transition: opacity 0.3s linear, top 0.2s linear;
   transition: opacity 0.3s linear, top 0.2s linear;
 }
 
@@ -1529,14 +1355,8 @@ svg path {
   top: 0;
   opacity: 1;
   -webkit-transition: opacity 0.3s linear, top 0.2s linear;
-  -moz-transition: opacity 0.3s linear, top 0.2s linear;
-  -ms-transition: opacity 0.3s linear, top 0.2s linear;
-  -o-transition: opacity 0.3s linear, top 0.2s linear;
   transition: opacity 0.3s linear, top 0.2s linear;
   -webkit-transition-delay: calc(var(--inc-step)*0.1s);
-  -moz-transition-delay: calc(var(--inc-step)*0.1s);
-  -ms-transition-delay: calc(var(--inc-step)*0.1s);
-  -o-transition-delay: calc(var(--inc-step)*0.1s);
   transition-delay: calc(var(--inc-step)*0.1s);
 }
 
@@ -1557,14 +1377,8 @@ svg path {
   z-index: 104;
   background: var(--bg);
   -webkit-transform: translateX(100%);
-  -moz-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -o-transform: translateX(100%);
   transform: translateX(100%);
   -webkit-transition: -webkit-transform 0.5s;
-  -moz-transition: -moz-transform 0.5s;
-  -ms-transition: -ms-transform 0.5s;
-  -o-transition: -o-transform 0.5s;
   transition: transform 0.5s;
   overflow: hidden;
 }
@@ -1582,9 +1396,6 @@ svg path {
 .header__city.active, .info__read.active {
   visibility: visible;
   -webkit-transform: translateX(0%);
-  -moz-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  -o-transform: translateX(0%);
   transform: translateX(0%);
   -moz-box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
@@ -1649,22 +1460,13 @@ svg path {
   right: 60px;
   border-radius: 50%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-transition: -webkit-transform 0.2s linear;
-  -moz-transition: -moz-transform 0.2s linear;
-  -ms-transition: -ms-transform 0.2s linear;
-  -o-transition: -o-transform 0.2s linear;
   transition: transform 0.2s linear;
 }
 
 .header__city_button:hover, .info__read_button:hover {
   -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
@@ -1676,9 +1478,6 @@ svg path {
 .header__city_button svg path, .info__read_button svg path {
   fill: var(--gray);
   -webkit-transition: fill 0.2s linear;
-  -moz-transition: fill 0.2s linear;
-  -ms-transition: fill 0.2s linear;
-  -o-transition: fill 0.2s linear;
   transition: fill 0.2s linear;
 }
 
@@ -1821,9 +1620,6 @@ svg path {
   justify-content: center;
   border: 0.86px solid var(--bg);
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
@@ -1947,9 +1743,6 @@ svg path {
   background: linear-gradient(88.74deg, rgba(0, 0, 0, 0.6) 29.81%, rgba(0, 0, 0, 0) 100.94%);
   opacity: 0;
   -webkit-transition: opacity 0.5s linear;
-  -moz-transition: opacity 0.5s linear;
-  -ms-transition: opacity 0.5s linear;
-  -o-transition: opacity 0.5s linear;
   transition: opacity 0.5s linear;
 }
 
@@ -1972,9 +1765,6 @@ svg path {
   background: transparent;
   background-color: transparent;
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
@@ -2016,9 +1806,6 @@ svg path {
   border-radius: 0;
   background-color: var(--bg);
   -webkit-transition: background-color 0.2s linear, opacity 0.2s ease;
-  -moz-transition: background-color 0.2s linear, opacity 0.2s ease;
-  -ms-transition: background-color 0.2s linear, opacity 0.2s ease;
-  -o-transition: background-color 0.2s linear, opacity 0.2s ease;
   transition: background-color 0.2s linear, opacity 0.2s ease;
 }
 
@@ -2073,17 +1860,11 @@ svg path {
 
 .partners__list_top .swiper-wrapper, .partners__list_bottom .swiper-wrapper, .propelled__flex .swiper-wrapper, .service__thumbs .swiper-wrapper, .finance__thumbs .swiper-wrapper {
   -webkit-transition-timing-function: linear !important;
-  -moz-transition-timing-function: linear !important;
-  -ms-transition-timing-function: linear !important;
-  -o-transition-timing-function: linear !important;
   transition-timing-function: linear !important;
 }
 
 .partners__list_bottom, .partners__list_bottom .partners__item {
   -webkit-transform: rotate(-180deg);
-  -moz-transform: rotate(-180deg);
-  -ms-transform: rotate(-180deg);
-  -o-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
 
@@ -2121,9 +1902,6 @@ svg path {
   align-items: center;
   justify-content: center;
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
@@ -2148,21 +1926,12 @@ svg path {
 
 .partners__item img {
   -webkit-filter: grayscale(0) brightness(1);
-  -moz-filter: grayscale(0) brightness(1);
-  -ms-filter: grayscale(0) brightness(1);
-  -o-filter: grayscale(0) brightness(1);
   filter: grayscale(0) brightness(1);
   -webkit-transition: -webkit-filter 0.1s linear;
-  -moz-transition: -moz-filter 0.1s linear;
-  -ms-transition: -ms-filter 0.1s linear;
-  -o-transition: -o-filter 0.1s linear;
   transition: filter 0.1s linear;
 }
 .partners__item:hover img {
   -webkit-filter: grayscale(1) brightness(100);
-  -moz-filter: grayscale(1) brightness(100);
-  -ms-filter: grayscale(1) brightness(100);
-  -o-filter: grayscale(1) brightness(100);
   filter: grayscale(1) brightness(100);
 }
 
@@ -2218,9 +1987,6 @@ svg path {
   height: 1px;
   background-color: var(--bg);
   -webkit-transition: background-color 0.2s linear, width 0.2s linear;
-  -moz-transition: background-color 0.2s linear, width 0.2s linear;
-  -ms-transition: background-color 0.2s linear, width 0.2s linear;
-  -o-transition: background-color 0.2s linear, width 0.2s linear;
   transition: background-color 0.2s linear, width 0.2s linear;
 }
 
@@ -2257,22 +2023,13 @@ svg path {
   height: 100%;
   object-fit: cover;
   -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
   transform: scale(1);
   -webkit-transition: -webkit-transform 0.2s linear;
-  -moz-transition: -moz-transform 0.2s linear;
-  -ms-transition: -ms-transform 0.2s linear;
-  -o-transition: -o-transform 0.2s linear;
   transition: transform 0.2s linear;
 }
 
 .events__item:hover img {
   -webkit-transform: scale(1.15);
-  -moz-transform: scale(1.15);
-  -ms-transform: scale(1.15);
-  -o-transform: scale(1.15);
   transform: scale(1.15);
 }
 
@@ -2302,27 +2059,15 @@ svg path {
 
 .events__name, .events__date {
   -webkit-transform: translateY(0px);
-  -moz-transform: translateY(0px);
-  -ms-transform: translateY(0px);
-  -o-transform: translateY(0px);
   transform: translateY(0px);
   -webkit-transition: -webkit-transform 0.2s linear;
-  -moz-transition: -moz-transform 0.2s linear;
-  -ms-transition: -ms-transform 0.2s linear;
-  -o-transition: -o-transform 0.2s linear;
   transition: transform 0.2s linear;
 }
 
 .events__item:hover .events__name, .events__item:hover .events__date {
   -webkit-transform: translateY(50px);
-  -moz-transform: translateY(50px);
-  -ms-transform: translateY(50px);
-  -o-transform: translateY(50px);
   transform: translateY(50px);
   -webkit-transition: -webkit-transform 0.2s linear;
-  -moz-transition: -moz-transform 0.2s linear;
-  -ms-transition: -ms-transform 0.2s linear;
-  -o-transition: -o-transform 0.2s linear;
   transition: transform 0.2s linear;
 }
 
@@ -2341,22 +2086,13 @@ svg path {
   border-right: 1px solid var(--border);
   background-color: var(--bg);
   -webkit-transform: translateY(100%);
-  -moz-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  -o-transform: translateY(100%);
   transform: translateY(100%);
   -webkit-transition: -webkit-transform 0.2s linear;
-  -moz-transition: -moz-transform 0.2s linear;
-  -ms-transition: -ms-transform 0.2s linear;
-  -o-transition: -o-transform 0.2s linear;
   transition: transform 0.2s linear;
 }
 
 .events__item:hover .events__buttons {
   -webkit-transform: translateY(0%);
-  -moz-transform: translateY(0%);
-  -ms-transform: translateY(0%);
-  -o-transform: translateY(0%);
   transform: translateY(0%);
 }
 
@@ -2377,9 +2113,6 @@ svg path {
 .events__button svg path {
   fill: var(--text);
   -webkit-transition: fill 0.2s linear;
-  -moz-transition: fill 0.2s linear;
-  -ms-transition: fill 0.2s linear;
-  -o-transition: fill 0.2s linear;
   transition: fill 0.2s linear;
 }
 
@@ -2395,9 +2128,6 @@ svg path {
   height: 9px;
   margin: 0 0 0 6px;
   -webkit-transition: margin 0.2s linear;
-  -moz-transition: margin 0.2s linear;
-  -ms-transition: margin 0.2s linear;
-  -o-transition: margin 0.2s linear;
   transition: margin 0.2s linear;
 }
 
@@ -2523,9 +2253,6 @@ svg path {
   background: transparent;
   background-color: transparent;
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
@@ -2717,9 +2444,6 @@ svg path {
 .offer__top, .offer__bottom {
   background-color: var(--bg);
   -webkit-transition: padding 0.2s linear, background-color 0.2s linear, color 0.2s linear;
-  -moz-transition: padding 0.2s linear, background-color 0.2s linear, color 0.2s linear;
-  -ms-transition: padding 0.2s linear, background-color 0.2s linear, color 0.2s linear;
-  -o-transition: padding 0.2s linear, background-color 0.2s linear, color 0.2s linear;
   transition: padding 0.2s linear, background-color 0.2s linear, color 0.2s linear;
 }
 
@@ -2827,14 +2551,8 @@ svg path {
   -ms-user-select: none;
   user-select: none;
   -webkit-transition: width 0.2s linear;
-  -moz-transition: width 0.2s linear;
-  -ms-transition: width 0.2s linear;
-  -o-transition: width 0.2s linear;
   transition: width 0.2s linear;
   -webkit-transition-delay: 0.2s;
-  -moz-transition-delay: 0.2s;
-  -ms-transition-delay: 0.2s;
-  -o-transition-delay: 0.2s;
   transition-delay: 0.2s;
 }
 
@@ -2857,9 +2575,6 @@ svg path {
   color: var(--text);
   background-color: var(--bg);
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
@@ -2880,9 +2595,6 @@ svg path {
   flex-direction: column;
   justify-content: center;
   -webkit-transition: height 0.3s linear, padding 0.3s linear, background-color 0.2s linear;
-  -moz-transition: height 0.3s linear, padding 0.3s linear, background-color 0.2s linear;
-  -ms-transition: height 0.3s linear, padding 0.3s linear, background-color 0.2s linear;
-  -o-transition: height 0.3s linear, padding 0.3s linear, background-color 0.2s linear;
   transition: height 0.3s linear, padding 0.3s linear, background-color 0.2s linear;
   overflow: hidden;
   position: relative;
@@ -2912,9 +2624,6 @@ svg path {
 
 .map__search_desc, .map__search_back span {
   -webkit-transition: color 0.2s linear;
-  -moz-transition: color 0.2s linear;
-  -ms-transition: color 0.2s linear;
-  -o-transition: color 0.2s linear;
   transition: color 0.2s linear;
 }
 
@@ -2932,9 +2641,6 @@ svg path {
   margin: 0 0 5px;
   align-items: center;
   -webkit-transition: height 0.3s linear, padding 0.3s linear, margin 0.3s linear;
-  -moz-transition: height 0.3s linear, padding 0.3s linear, margin 0.3s linear;
-  -ms-transition: height 0.3s linear, padding 0.3s linear, margin 0.3s linear;
-  -o-transition: height 0.3s linear, padding 0.3s linear, margin 0.3s linear;
   transition: height 0.3s linear, padding 0.3s linear, margin 0.3s linear;
   overflow: hidden;
 }
@@ -2955,9 +2661,6 @@ svg path {
 .map__search_back svg rect {
   fill: var(--gray);
   -webkit-transition: fill 0.2s linear;
-  -moz-transition: fill 0.2s linear;
-  -ms-transition: fill 0.2s linear;
-  -o-transition: fill 0.2s linear;
   transition: fill 0.2s linear;
 }
 
@@ -2975,15 +2678,9 @@ svg path {
   justify-content: center;
   background-color: var(--bg);
   -webkit-transition: max-height 0.4s linear, min-height 0.4s linear;
-  -moz-transition: max-height 0.4s linear, min-height 0.4s linear;
-  -ms-transition: max-height 0.4s linear, min-height 0.4s linear;
-  -o-transition: max-height 0.4s linear, min-height 0.4s linear;
   transition: max-height 0.4s linear, min-height 0.4s linear;
   overflow: hidden;
   -webkit-transition-delay: 0.4s, 0.4s;
-  -moz-transition-delay: 0.4s, 0.4s;
-  -ms-transition-delay: 0.4s, 0.4s;
-  -o-transition-delay: 0.4s, 0.4s;
   transition-delay: 0.4s, 0.4s;
 }
 
@@ -3017,9 +2714,6 @@ svg path {
   background-color: transparent;
   background-size: 22px 22px;
   -webkit-transition: background-color 0.1s linear;
-  -moz-transition: background-color 0.1s linear;
-  -ms-transition: background-color 0.1s linear;
-  -o-transition: background-color 0.1s linear;
   transition: background-color 0.1s linear;
 }
 
@@ -3044,9 +2738,6 @@ svg path {
   cursor: pointer;
   background-color: rgb(255, 255, 255, 0.8);
   -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -3059,9 +2750,6 @@ svg path {
   top: 10px;
   left: 15px;
   -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   z-index: 1;
 }
@@ -3082,9 +2770,6 @@ svg path {
   line-height: 14px;
   background-color: rgb(0, 21, 35, 0.8);
   -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
@@ -3113,9 +2798,6 @@ svg path {
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
   -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -3125,9 +2807,6 @@ svg path {
   right: 100px;
   z-index: 1;
   -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -3142,9 +2821,6 @@ svg path {
   justify-content: center;
   background-color: var(--bg);
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
@@ -3156,9 +2832,6 @@ svg path {
 .map__zoom_plus svg path, .map__zoom_minus svg path {
   fill: var(--blue);
   -webkit-transition: fill 0.2s linear;
-  -moz-transition: fill 0.2s linear;
-  -ms-transition: fill 0.2s linear;
-  -o-transition: fill 0.2s linear;
   transition: fill 0.2s linear;
 }
 
@@ -3267,9 +2940,6 @@ svg path {
   color: var(--text);
   background-color: var(--back);
   -webkit-transition: background-color 0.2s linear, color 0.2s linear;
-  -moz-transition: background-color 0.2s linear, color 0.2s linear;
-  -ms-transition: background-color 0.2s linear, color 0.2s linear;
-  -o-transition: background-color 0.2s linear, color 0.2s linear;
   transition: background-color 0.2s linear, color 0.2s linear;
 }
 
@@ -3346,9 +3016,6 @@ svg path {
   line-height: 46px;
   color: var(--text);
   -webkit-transition: color 0.3s linear;
-  -moz-transition: color 0.3s linear;
-  -ms-transition: color 0.3s linear;
-  -o-transition: color 0.3s linear;
   transition: color 0.3s linear;
 }
 
@@ -3369,9 +3036,6 @@ svg path {
   left: 0;
   z-index: 3;
   -webkit-transition: top 0.3s linear;
-  -moz-transition: top 0.3s linear;
-  -ms-transition: top 0.3s linear;
-  -o-transition: top 0.3s linear;
   transition: top 0.3s linear;
   background: rgba(0, 21, 35, 0.5);
 }
@@ -3412,9 +3076,6 @@ svg path {
   background-color: transparent;
   z-index: 0;
   -webkit-transition: background-color 0.3s linear, bottom 0.3s linear;
-  -moz-transition: background-color 0.3s linear, bottom 0.3s linear;
-  -ms-transition: background-color 0.3s linear, bottom 0.3s linear;
-  -o-transition: background-color 0.3s linear, bottom 0.3s linear;
   transition: background-color 0.3s linear, bottom 0.3s linear;
 }
 
@@ -3454,9 +3115,6 @@ svg path {
   line-height: 26px;
   color: var(--gray);
   -webkit-transition: color 0.3s linear;
-  -moz-transition: color 0.3s linear;
-  -ms-transition: color 0.3s linear;
-  -o-transition: color 0.3s linear;
   transition: color 0.3s linear;
 }
 
@@ -3467,22 +3125,13 @@ svg path {
 .tractor__filter_button span {
   display: inline-flex;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-transition: -webkit-transform 0.3s linear;
-  -moz-transition: -moz-transform 0.3s linear;
-  -ms-transition: ms-transform 0.3s linear;
-  -o-transition: -o-transform 0.3s linear;
   transition: transform 0.3s linear;
 }
 
 .tractor__filter_button.active span {
   -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 
@@ -3494,9 +3143,6 @@ svg path {
 .tractor__filter_button span svg path {
   stroke: var(--gray);
   -webkit-transition: stroke 0.3s linear;
-  -moz-transition: stroke 0.3s linear;
-  -ms-transition: stroke 0.3s linear;
-  -o-transition: stroke 0.3s linear;
   transition: stroke 0.3s linear;
 }
 
@@ -3519,9 +3165,6 @@ svg path {
   top: calc(100% - 40px);
   background-color: var(--bg);
   -webkit-transition: max-height 0.3s linear, padding 0.3s linear, border-bottom 0.3s linear;
-  -moz-transition: max-height 0.3s linear, padding 0.3s linear, border-bottom 0.3s linear;
-  -ms-transition: max-height 0.3s linear, padding 0.3s linear, border-bottom 0.3s linear;
-  -o-transition: max-height 0.3s linear, padding 0.3s linear, border-bottom 0.3s linear;
   transition: max-height 0.3s linear, padding 0.3s linear, border-bottom 0.3s linear;
   border-bottom: 0px solid var(--blue);
   z-index: 10;
@@ -3542,9 +3185,6 @@ svg path {
   left: 50px;
   opacity: 0;
   -webkit-transition: opacity 0.3s linear, left 0.3s linear;
-  -moz-transition: opacity 0.3s linear, left 0.3s linear;
-  -ms-transition: opacity 0.3s linear, left 0.3s linear;
-  -o-transition: opacity 0.3s linear, left 0.3s linear;
   transition: opacity 0.3s linear, left 0.3s linear;
 }
 
@@ -3552,9 +3192,6 @@ svg path {
   left: 0;
   opacity: 1;
   -webkit-transition-delay: calc(var(--inc-step)*0.05s);
-  -moz-transition-delay: calc(var(--inc-step)*0.05s);
-  -ms-transition-delay: calc(var(--inc-step)*0.05s);
-  -o-transition-delay: calc(var(--inc-step)*0.05s);
   transition-delay: calc(var(--inc-step)*0.05s);
 }
 
@@ -3577,9 +3214,6 @@ svg path {
   bottom: 0;
   background-color: var(--blue);
   -webkit-transition: width 0.2s ease-in-out;
-  -moz-transition: width 0.2s ease-in-out;
-  -ms-transition: width 0.2s ease-in-out;
-  -o-transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out;
 }
 
@@ -3728,9 +3362,6 @@ svg path {
   background: transparent;
   background-color: var(--bg);
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
@@ -3765,9 +3396,6 @@ svg path {
 .product__slider_prev svg path, .product__slider_next svg path {
   fill: var(--text);
   -webkit-transition: fill 0.2s linear;
-  -moz-transition: fill 0.2s linear;
-  -ms-transition: fill 0.2s linear;
-  -o-transition: fill 0.2s linear;
   transition: fill 0.2s linear;
 }
 
@@ -3900,9 +3528,6 @@ svg path {
   top: 0;
   left: 0;
   -webkit-box-shadow: 0px -45px 30px -5px rgba(255, 255, 255, 1) inset;
-  -moz-box-shadow: 0px -45px 30px -5px rgba(255, 255, 255, 1) inset;
-  -ms-box-shadow: 0px -45px 30px -5px rgba(255, 255, 255, 1) inset;
-  -o-box-shadow: 0px -45px 30px -5px rgba(255, 255, 255, 1) inset;
   box-shadow: 0px -45px 30px -5px rgba(255, 255, 255, 1) inset;
 }
 
@@ -3965,9 +3590,6 @@ svg path {
   font-weight: 500;
   line-height: 26px;
   -webkit-transition: background-color 0.2s linear, color 0.2s linear;
-  -moz-transition: background-color 0.2s linear, color 0.2s linear;
-  -ms-transition: background-color 0.2s linear, color 0.2s linear;
-  -o-transition: background-color 0.2s linear, color 0.2s linear;
   transition: background-color 0.2s linear, color 0.2s linear;
 }
 
@@ -3989,9 +3611,6 @@ svg path {
   flex-direction: column;
   gap: 50px;
   -webkit-transition: max-height 0.5s linear;
-  -moz-transition: max-height 0.5s linear;
-  -ms-transition: max-height 0.5s linear;
-  -o-transition: max-height 0.5s linear;
   transition: max-height 0.5s linear;
   overflow: hidden;
 }
@@ -3999,9 +3618,6 @@ svg path {
 .info__blocks.active {
   max-height: 2000px;
   -webkit-transition-delay: 0.5s;
-  -moz-transition-delay: 0.5s;
-  -ms-transition-delay: 0.5s;
-  -o-transition-delay: 0.5s;
   transition-delay: 0.5s;
 }
 
@@ -4024,9 +3640,6 @@ svg path {
   color: var(--text);
   background-color: var(--back);
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
@@ -4108,9 +3721,6 @@ svg path {
   justify-content: center;
   background-color: var(--blue);
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
@@ -4131,21 +3741,12 @@ svg path {
 
 .propelled__item img {
   -webkit-filter: grayscale(1) brightness(100);
-  -moz-filter: grayscale(1) brightness(100);
-  -ms-filter: grayscale(1) brightness(100);
-  -o-filter: grayscale(1) brightness(100);
   filter: grayscale(1) brightness(100);
   -webkit-transition: -webkit-filter 0.1s linear;
-  -moz-transition: -moz-filter 0.1s linear;
-  -ms-transition: -ms-filter 0.1s linear;
-  -o-transition: -o-filter 0.1s linear;
   transition: filter 0.1s linear;
 }
 .propelled__item a:hover img, .propelled__item.selected img {
   -webkit-filter: grayscale(0) brightness(1);
-  -moz-filter: grayscale(0) brightness(1);
-  -ms-filter: grayscale(0) brightness(1);
-  -o-filter: grayscale(0) brightness(1);
   filter: grayscale(0) brightness(1);
 }
 
@@ -4160,9 +3761,6 @@ svg path {
   line-height: 22px;
   color: var(--gray);
   -webkit-transition: color 0.2s ease-in-out;
-  -moz-transition: color 0.2s ease-in-out;
-  -ms-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
 }
 
@@ -4178,9 +3776,6 @@ svg path {
   bottom: 0;
   background-color: var(--blue);
   -webkit-transition: width 0.2s ease-in-out;
-  -moz-transition: width 0.2s ease-in-out;
-  -ms-transition: width 0.2s ease-in-out;
-  -o-transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out;
 }
 
@@ -4284,22 +3879,13 @@ svg path {
   line-height: 12px;
 	color: var(--bg);
   -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
   transform: translateX(-100%);
   -webkit-transition: -webkit-transform 0.3s linear;
-  -moz-transition: -moz-transform 0.3s linear;
-  -ms-transition: -ms-transform 0.3s linear;
-  -o-transition: -o-transform 0.3s linear;
   transition: transform 0.3s linear;
 }
 
 .form__control.error small {
   -webkit-transform: translateX(0%);
-  -moz-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  -o-transform: translateX(0%);
   transform: translateX(0%);
 }
 
@@ -4418,9 +4004,6 @@ svg path {
   position: absolute;
   bottom: 0;
   -webkit-transition: width 0.3s ease;
-  -moz-transition: width 0.3s ease;
-  -ms-transition: width 0.3s ease;
-  -o-transition: width 0.3s ease;
   transition: width 0.3s ease;
 }
 
@@ -4433,14 +4016,8 @@ svg path {
   width: 50%;
   background-color: var(--back);
   -webkit-transition: background-color 0.3s ease;
-  -moz-transition: background-color 0.3s ease;
-  -ms-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
   -webkit-transition-delay: 0.3s;
-  -moz-transition-delay: 0.3s;
-  -ms-transition-delay: 0.3s;
-  -o-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
 
@@ -4560,9 +4137,6 @@ svg path {
   line-height: 20px;
   color: var(--text);
   -webkit-transition: background-color 0.2s linear, color 0.2s linear;
-  -moz-transition: background-color 0.2s linear, color 0.2s linear;
-  -ms-transition: background-color 0.2s linear, color 0.2s linear;
-  -o-transition: background-color 0.2s linear, color 0.2s linear;
   transition: background-color 0.2s linear, color 0.2s linear;
 }
 
@@ -4597,9 +4171,6 @@ svg path {
 .spareparts__head span svg path {
   stroke: var(--text);
   -webkit-transition: stroke 0.2s linear;
-  -moz-transition: stroke 0.2s linear;
-  -ms-transition: stroke 0.2s linear;
-  -o-transition: stroke 0.2s linear;
   transition: stroke 0.2s linear;
 }
 
@@ -4615,9 +4186,6 @@ svg path {
   max-height: 0px;
   flex-direction: column;
   -webkit-transition: max-height 0.3s linear;
-  -moz-transition: max-height 0.3s linear;
-  -ms-transition: max-height 0.3s linear;
-  -o-transition: max-height 0.3s linear;
   transition: max-height 0.3s linear;
   overflow: hidden;
 }
@@ -4635,9 +4203,6 @@ svg path {
   color: var(--bg);
   background-color: var(--dblue);
   -webkit-transition: background-color 0.2s linear, color 0.2s linear;
-  -moz-transition: background-color 0.2s linear, color 0.2s linear;
-  -ms-transition: background-color 0.2s linear, color 0.2s linear;
-  -o-transition: background-color 0.2s linear, color 0.2s linear;
   transition: background-color 0.2s linear, color 0.2s linear;
 }
 
@@ -4681,22 +4246,13 @@ svg path {
   position: relative;
   z-index: 0;
   -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
   transform: scale(1);
   -webkit-transition: -webkit-transform 0.2s linear;
-  -moz-transition: -moz-transform 0.2s linear;
-  -ms-transition: -ms-transform 0.2s linear;
-  -o-transition: -o-transform 0.2s linear;
   transition: transform 0.2s linear;
 }
 
 .spareparts__subitem a:hover img {
   -webkit-transform: scale(1.35);
-  -moz-transform: scale(1.35);
-  -ms-transform: scale(1.35);
-  -o-transform: scale(1.35);
   transform: scale(1.35);
 }
 
@@ -4889,9 +4445,6 @@ svg path {
   font-weight: 500;
   line-height: 23px;
   -webkit-transition: background-color 0.2s linear, color 0.2s linear;
-  -moz-transition: background-color 0.2s linear, color 0.2s linear;
-  -ms-transition: background-color 0.2s linear, color 0.2s linear;
-  -o-transition: background-color 0.2s linear, color 0.2s linear;
   transition: background-color 0.2s linear, color 0.2s linear;
   color: var(--gray);
 }
@@ -4904,9 +4457,6 @@ svg path {
 .detail__link svg rect {
   fill: var(--gray);
   -webkit-transition: fill 0.2s linear;
-  -moz-transition: fill 0.2s linear;
-  -ms-transition: fill 0.2s linear;
-  -o-transition: fill 0.2s linear;
   transition: fill 0.2s linear;
 }
 
@@ -5009,9 +4559,6 @@ svg path {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background-color: var(--bg);
 }
@@ -5176,9 +4723,6 @@ svg path {
   bottom: 0;
   background-color: var(--bg);
   -webkit-transition: width 0.2s ease-in-out;
-  -moz-transition: width 0.2s ease-in-out;
-  -ms-transition: width 0.2s ease-in-out;
-  -o-transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out;
 }
 
@@ -5268,6 +4812,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: 80px;
 }
@@ -5294,6 +4839,45 @@ svg path {
   font-weight: 400;
   line-height: 39px;
   color: var(--bg);
+}
+
+.aboutus__requisites {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--gray);
+}
+
+.aboutus__requisites::before {
+  content: "";
+  width: 50px;
+  height: 63.89px;
+  background: url('../img/icon/requisites.svg') center center no-repeat;
+  background-size: 50px 63.89px;
+}
+
+.aboutus_requisites_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aboutus_requisites_info span:first-child {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  color: var(--bg);
+}
+
+.aboutus_requisites_info span:last-child {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--gray);
 }
 
 .aboutus__brand_container {
@@ -5375,9 +4959,6 @@ svg path {
   justify-content: center;
   background-color: var(--dblue);
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
   border: 1px solid var(--gray);
   border-right: none;
@@ -5390,22 +4971,13 @@ svg path {
 
 .aboutus__brand_item img {
   -webkit-filter: grayscale(1) brightness(100);
-  -moz-filter: grayscale(1) brightness(100);
-  -ms-filter: grayscale(1) brightness(100);
-  -o-filter: grayscale(1) brightness(100);
   filter: grayscale(1) brightness(100);
   -webkit-transition: -webkit-filter 0.1s linear;
-  -moz-transition: -moz-filter 0.1s linear;
-  -ms-transition: -ms-filter 0.1s linear;
-  -o-transition: -o-filter 0.1s linear;
   transition: filter 0.1s linear;
 }
 
 .aboutus__brand_item.swiper-slide-active img {
   -webkit-filter: grayscale(0) brightness(1);
-  -moz-filter: grayscale(0) brightness(1);
-  -ms-filter: grayscale(0) brightness(1);
-  -o-filter: grayscale(0) brightness(1);
   filter: grayscale(0) brightness(1);
 }
 
@@ -5424,9 +4996,6 @@ svg path {
   line-height: 21px;
   border-bottom: 1px solid var(--text);
   -webkit-transition: border-bottom 0.2s linear;
-  -moz-transition: border-bottom 0.2s linear;
-  -ms-transition: border-bottom 0.2s linear;
-  -o-transition: border-bottom 0.2s linear;
   transition: border-bottom 0.2s linear;
 }
 
@@ -5447,9 +5016,6 @@ svg path {
 .aboutus__brand_tel svg path, .aboutus__brand_mail svg path {
   fill: var(--text);
   -webkit-transition: fill 0.2s linear;
-  -moz-transition: fill 0.2s linear;
-  -ms-transition: fill 0.2s linear;
-  -o-transition: fill 0.2s linear;
   transition: fill 0.2s linear;
 }
 
@@ -5563,22 +5129,13 @@ svg path {
   border-radius: 50%;
   background-color: var(--dblue);
   -webkit-transform: translate(-50%, -50%) scale(1);
-  -moz-transform: translate(-50%, -50%) scale(1);
-  -ms-transform: translate(-50%, -50%) scale(1);
-  -o-transform: translate(-50%, -50%), scale(1);
   transform: translate(-50%, -50%) scale(1);
   -webkit-transition: -webkit-transform 0.2s linear;
-  -moz-transition: -moz-transform 0.2s linear;
-  -ms-transition: -ms-transform 0.2s linear;
-  -o-transition: -o-transform 0.2s linear;
   transition: transform 0.2s linear;
 }
 
 .videoreview__vid:hover .videoreview__block_icon {
   -webkit-transform: translate(-50%, -50%) scale(1.5);
-  -moz-transform: translate(-50%, -50%) scale(1.5);
-  -ms-transform: translate(-50%, -50%) scale(1.5);
-  -o-transform: translate(-50%, -50%), scale(1.5);
   transform: translate(-50%, -50%) scale(1.5);
 }
 
@@ -5587,9 +5144,6 @@ svg path {
   width: 40px;
   fill: var(--bg);
   -webkit-transform: translateX(3px);
-  -moz-transform: translateX(3px);
-  -ms-transform: translateX(3px);
-  -o-transform: translateX(3px);
   transform: translateX(3px);
 }
 
@@ -5680,9 +5234,6 @@ svg path {
   flex-wrap: wrap;
   gap: 50px;
   -webkit-transition: max-height 0.5s linear;
-  -moz-transition: max-height 0.5s linear;
-  -ms-transition: max-height 0.5s linear;
-  -o-transition: max-height 0.5s linear;
   transition: max-height 0.5s linear;
   overflow: hidden;
 }
@@ -5690,9 +5241,6 @@ svg path {
 .action__list.active {
   max-height: 2000px;
   -webkit-transition-delay: 0.5s;
-  -moz-transition-delay: 0.5s;
-  -ms-transition-delay: 0.5s;
-  -o-transition-delay: 0.5s;
   transition-delay: 0.5s;
 }
 
@@ -5727,9 +5275,6 @@ svg path {
   border-left: none;
   border-bottom: none;
   -webkit-transition: color 0.2s linear, background-color 0.2s linear;
-  -moz-transition: color 0.2s linear, background-color 0.2s linear;
-  -ms-transition: color 0.2s linear, background-color 0.2s linear;
-  -o-transition: color 0.2s linear, background-color 0.2s linear;
   transition: color 0.2s linear, background-color 0.2s linear;
 }
 
@@ -5913,9 +5458,6 @@ svg path {
   justify-content: space-between;
   background-color: var(--back);
   -webkit-transition: background-color 0.2s linear;
-  -moz-transition: background-color 0.2s linear;
-  -ms-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
 
@@ -5975,9 +5517,6 @@ svg path {
 
 .review__name, .review__head, .review__desc {
   -webkit-transition: color 0.2s linear;
-  -moz-transition: color 0.2s linear;
-  -ms-transition: color 0.2s linear;
-  -o-transition: color 0.2s linear;
   transition: color 0.2s linear;
 }
 
@@ -6876,33 +6415,18 @@ svg path {
     z-index: 2;
     background-color: var(--dblue);
     -webkit-transform: translateY(-100%);
-    -moz-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    -o-transform: translateY(-100%);
     transform: translateY(-100%);
     -webkit-transition: -webkit-transform 0.5s linear, height 0s linear;
-    -moz-transition: -moz-transform 0.5s linear, height 0s linear;
-    -ms-transition: -ms-transform 0.5s linear, height 0s linear;
-    -o-transition: -o-transform 0.5s linear, height 0s linear;
     transition: transform 0.5s linear, height 0s linear;
     overflow: hidden;
     -webkit-transition-delay: 0s, 0.5s;
-    -moz-transition-delay: 0s, 0.5s;
-    -ms-transition-delay: 0s, 0.5s;
-    -o-transition-delay: 0s, 0.5s;
     transition-delay: 0s, 0.5s;
   }
   .header__buttons.active {
     height: 80px;
     -webkit-transform: translateY(0%);
-    -moz-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    -o-transform: translateY(0%);
     transform: translateY(0%);
     -webkit-transition-delay: 0s, 0s;
-    -moz-transition-delay: 0s, 0s;
-    -ms-transition-delay: 0s, 0s;
-    -o-transition-delay: 0s, 0s;
     transition-delay: 0s, 0s;
   }
   .header__list {
@@ -6924,20 +6448,11 @@ svg path {
     z-index: 0;
     overflow: hidden !important;
     -webkit-transform: translateY(-100%);
-    -moz-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    -o-transform: translateY(-100%);
     transform: translateY(-100%);
     -webkit-transition: -webkit-transform 0.5s linear, top 0.5s linear, height 0s linear;
-    -moz-transition: -moz-transform 0.5s linear, top 0.5s linear, height 0s linear;
-    -ms-transition: -ms-transform 0.5s linear, top 0.5s linear, height 0s linear;
-    -o-transition: -o-transform 0.5s linear, top 0.5s linear, height 0s linear;
     transition: transform 0.5s linear, top 0.5s linear, height 0s linear;
     background-color: var(--bg);
     -webkit-transition-delay: 0s, 0s, 0.5s;
-    -moz-transition-delay: 0s, 0s, 0.5s;
-    -ms-transition-delay: 0s, 0s, 0.5s;
-    -o-transition-delay: 0s, 0s, 0.5s;
     transition-delay: 0s, 0s, 0.5s;
   }
   .header__list_block.active {
@@ -6945,19 +6460,10 @@ svg path {
     max-height: calc(100% - 160px);
     top: 80px;
     -webkit-transform: translateY(0%);
-    -moz-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    -o-transform: translateY(0%);
     transform: translateY(0%);
     -webkit-transition: -webkit-transform 0.5s linear, top 0.5s linear, height 0s linear;
-    -moz-transition: -moz-transform 0.5s linear, top 0.5s linear, height 0s linear;
-    -ms-transition: -ms-transform 0.5s linear, top 0.5s linear, height 0s linear;
-    -o-transition: -o-transform 0.5s linear, top 0.5s linear, height 0s linear;
     transition: transform 0.5s linear, top 0.5s linear, height 0s linear;
     -webkit-transition-delay: 0s, 0s, 0s;
-    -moz-transition-delay: 0s, 0s, 0s;
-    -ms-transition-delay: 0s, 0s, 0s;
-    -o-transition-delay: 0s, 0s, 0s;
     transition-delay: 0s, 0s, 0s;
   }
   .header__block {
@@ -6968,9 +6474,6 @@ svg path {
   }
   .header__block.active {
     -webkit-transition: max-height 0.5s linear, opacity 0.5s linear;
-    -moz-transition: max-height 0.5s linear, opacity 0.5s linear;
-    -ms-transition: max-height 0.5s linear, opacity 0.5s linear;
-    -o-transition: max-height 0.5s linear, opacity 0.5s linear;
     transition: max-height 0.5s linear, opacity 0.5s linear;
   }
   .header__button::after, .header__button::before {
@@ -6988,33 +6491,18 @@ svg path {
   }
   .header__button::after {
     -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
     transform: translateY(-50%);
     -webkit-transition: background-color 0.2s linear;
-    -moz-transition: background-color 0.2s linear;
-    -ms-transition: background-color 0.2s linear;
-    -o-transition: background-color 0.2s linear;
     transition: background-color 0.2s linear;
   }
   .header__button::before {
     -webkit-transform: rotate(-90deg) translate(0.85px, calc(-50% + 0.425px));
-    -moz-transform: rotate(-90deg) translate(0.85px, calc(-50% + 0.425px));
-    -ms-transform: rotate(-90deg) translate(0.85px, calc(-50% + 0.425px));
-    -o-transform: rotate(-90deg) translate(0.85px, calc(-50% + 0.425px));
     transform: rotate(-90deg) translate(0.85px, calc(-50% + 0.425px));
     -webkit-transition: -webkit-transform 0.5s linear, background-color 0.2s linear;
-    -moz-transition: -moz-transform 0.5s linear, background-color 0.2s linear;
-    -ms-transition: ms-transform 0.5s linear, background-color 0.2s linear;
-    -o-transition: -o-transform 0.5s linear, background-color 0.2s linear;
     transition: transform 0.5s linear, background-color 0.2s linear;
   }
   .header__button.active::before {
     -webkit-transform: rotate(0deg) translate(0.85px, calc(-50% + 0.425px));
-    -moz-transform: rotate(0deg) translate(0.85px, calc(-50% + 0.425px));
-    -ms-transform: rotate(0deg) translate(0.85px, calc(-50% + 0.425px));
-    -o-transform: rotate(0deg) translate(0.85px, calc(-50% + 0.425px));
     transform: rotate(0deg) translate(0.85px, calc(-50% + 0.425px));
   }
   .header__button.active::after, .header__button:hover::after, .header__button:hover::before, .header__button.active::before {
@@ -7090,33 +6578,18 @@ svg path {
     z-index: 100;
     background-color: var(--dblue);
     -webkit-transform: translateY(calc(100%));
-    -moz-transform: translateY(calc(100%));
-    -ms-transform: translateY(calc(100%));
-    -o-transform: translateY(calc(100%));
     transform: translateY(calc(100%));
     -webkit-transition: -webkit-transform 0.5s linear, height 0s linear;
-    -moz-transition: -moz-transform 0.5s linear, height 0s linear;
-    -ms-transition: -ms-transform 0.5s linear, height 0s linear;
-    -o-transition: -o-transform 0.5s linear, height 0s linear;
     transition: transform 0.5s linear, height 0s linear;
     overflow: hidden;
     -webkit-transition-delay: 0s, 0.5s;
-    -moz-transition-delay: 0s, 0.5s;
-    -ms-transition-delay: 0s, 0.5s;
-    -o-transition-delay: 0s, 0.5s;
     transition-delay: 0s, 0.5s;
   }
   .header__contacts.active {
     height: 80px;
     -webkit-transform: translateY(calc(100% - 80px));
-    -moz-transform: translateY(calc(100% - 80px));
-    -ms-transform: translateY(calc(100% - 80px));
-    -o-transform: translateY(calc(100% - 80px));
     transform: translateY(calc(100% - 80px));
     -webkit-transition-delay: 0s, 0s;
-    -moz-transition-delay: 0s, 0s;
-    -ms-transition-delay: 0s, 0s;
-    -o-transition-delay: 0s, 0s;
     transition-delay: 0s, 0s;
   }
   .header__contacts_right {
@@ -7179,14 +6652,8 @@ svg path {
     background-size: 24px 11px;
     opacity: 0;
     -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
     transform: translateY(-50%);
     -webkit-transition: opacity 0.2s linear;
-    -moz-transition: opacity 0.2s linear;
-    -ms-transition: opacity 0.2s linear;
-    -o-transition: opacity 0.2s linear;
     transition: opacity 0.2s linear;
   }
   .map__search_head.active::after {
@@ -7417,9 +6884,6 @@ svg path {
     right: 40px;
     bottom: 40px;
     -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
     transform: translateY(0);
   }
   .map__zoom_plus svg, .map__zoom_minus svg {
@@ -7457,9 +6921,6 @@ svg path {
     top: 50%;
     font-size: 0px;
     -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
     transform: translateY(-50%);
   }
   .map__search_mail::after {
@@ -8005,17 +7466,11 @@ svg path {
     height: 70px;
     padding: 0 0 0 20px;
     -webkit-transform: translateY(100%);
-    -moz-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    -o-transform: translateY(100%);
     transform: translateY(100%);
   }
   .header__contacts.active {
     height: 70px;
     -webkit-transform: translateY(calc(100% - 70px));
-    -moz-transform: translateY(calc(100% - 70px));
-    -ms-transform: translateY(calc(100% - 70px));
-    -o-transform: translateY(calc(100% - 70px));
     transform: translateY(calc(100% - 70px));
   }
   .hero__head {
@@ -8108,9 +7563,6 @@ svg path {
     left: 50%;
     bottom: 70px;
     -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
     transform: translateX(-50%);
   }
   .hero__pagination .swiper-pagination-bullet {
@@ -8248,9 +7700,6 @@ svg path {
     left: 50%;
     right: auto;
     -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
     transform: translateX(-50%);
   }
   .offer__slider_container {
@@ -8267,9 +7716,6 @@ svg path {
     left: 50%;
     bottom: 35px;
     -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
     transform: translateX(-50%);
   }
   .offer__pagination .swiper-pagination-bullet, .product__pagination .swiper-pagination-bullet {
@@ -8281,9 +7727,6 @@ svg path {
     border: 1px solid var(--dblue);
     background-color: var(--bg);
     -webkit-transition: background-color 0.2s linear;
-    -moz-transition: background-color 0.2s linear;
-    -ms-transition: background-color 0.2s linear;
-    -o-transition: background-color 0.2s linear;
     transition: background-color 0.2s linear;
   }
   .offer__pagination .swiper-pagination-bullet-active, .product__pagination .swiper-pagination-bullet-active {
@@ -8361,9 +7804,6 @@ svg path {
     right: 30px;
     bottom: auto;
     -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
     transform: translateY(0);
   }
   .map__search_tel, .map__search_tel:hover {
