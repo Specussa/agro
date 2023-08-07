@@ -346,7 +346,6 @@ for (i = 0; i < hblockacc.length; i++) {
         headerlist.classList.remove("active");
         headerbuttons.classList.remove("active");
         headercontacts.classList.remove("active");
-        headerscroll.classList.remove("active");
         bodyoverlaycity.classList.remove("active");
         if(inforeading){inforeading.classList.remove("active");}
         if(infobutton){infobutton.classList.remove("active");}
@@ -1260,7 +1259,7 @@ for (i = 0; i < mapsh.length; i++) {
 
 // start yandex map
 const map = document.querySelectorAll('.map');
-const maps = document.querySelectorAll('.map');
+const maps = document.querySelector('.map');
 if(maps) {
   var myMap,ymaps;
   function init() {
@@ -1773,44 +1772,41 @@ if(maps) {
 // map
 
 // start accordion tractor__filter
-var tractorfilter = document.getElementsByClassName("tractor__filter_button");
-for (i = 0; i < tractorfilter.length; i++) {
-  tractorfilter[i].onclick = function(e) {
-    var tractorfilterordion = this.nextElementSibling;
-    var coursetractorfilterordion = document.getElementsByClassName("tractor__filter_sublist");
-    var coursetractorfilterordionActive = document.getElementsByClassName("tractor__filter_button active");
+const tractorfilters = document.querySelector('.tractor__filter');
+if(tractorfilters) {
+  var tractorfilter = document.getElementsByClassName("tractor__filter_button");
+  for (i = 0; i < tractorfilter.length; i++) {
+    tractorfilter[i].onclick = function(e) {
+      var tractorfilterordion = this.nextElementSibling;
+      var coursetractorfilterordion = document.getElementsByClassName("tractor__filter_sublist");
+      var coursetractorfilterordionActive = document.getElementsByClassName("tractor__filter_button active");
 
-    if (tractorfilterordion.style.maxHeight) {
-      tractorfilterordion.style.maxHeight = null;
-      this.classList.remove("active");
-      tractorfilterordion.classList.remove("active");
-    } else {
-      for (var q = 0; q < coursetractorfilterordionActive.length; q++) {
-        coursetractorfilterordionActive[q].classList.remove("active");
-        coursetractorfilterordion[q].classList.remove("active");
-      }
-      for (var p = 0; p < coursetractorfilterordion.length; p++) {
+      if (tractorfilterordion.style.maxHeight) {
+        tractorfilterordion.style.maxHeight = null;
         this.classList.remove("active");
-        coursetractorfilterordion[p].classList.remove("active");
-        coursetractorfilterordion[p].style.maxHeight = null;
+        tractorfilterordion.classList.remove("active");
+      } else {
+        for (var q = 0; q < coursetractorfilterordionActive.length; q++) {
+          coursetractorfilterordionActive[q].classList.remove("active");
+          coursetractorfilterordion[q].classList.remove("active");
+        }
+        for (var p = 0; p < coursetractorfilterordion.length; p++) {
+          this.classList.remove("active");
+          coursetractorfilterordion[p].classList.remove("active");
+          coursetractorfilterordion[p].style.maxHeight = null;
+        }
+        tractorfilterordion.style.maxHeight = (tractorfilterordion.scrollHeight * 2) + "px";
+        tractorfilterordion.classList.add("active");
+        this.classList.add("active");
       }
-      tractorfilterordion.style.maxHeight = (tractorfilterordion.scrollHeight * 2) + "px";
-      tractorfilterordion.classList.add("active");
-      this.classList.add("active");
-    }
-  };
-}
-var tractorfi = document.getElementsByClassName("tractor__filter_subitem");
-for (i = 0; i < tractorfi.length; i++) {
-  tractorfi[i].onclick = function(e) {
-    this.classList.toggle("active");
-  };
-}
-var headeritemtop = document.getElementsByClassName("header__item_top");
-for (i = 0; i < headeritemtop.length; i++) {
-  headeritemtop[i].onclick = function(e) {
-    this.classList.toggle("selected");
-  };
+    };
+  }
+  var filtersublink = document.getElementsByClassName("tractor__filter_sublink");
+  for (i = 0; i < filtersublink.length; i++) {
+    filtersublink[i].onclick = function(e) {
+      this.parentNode.classList.toggle('active');
+    };
+  }
 }
 // end accordion tractor__filter
 
@@ -1939,24 +1935,35 @@ const phone = document.getElementById('phone');
 const region = document.getElementById('region');
 if(form){
   form.addEventListener('submit', e => {
-  e.preventDefault();
-  
-  checkInputs();
+    e.preventDefault();
+    checkInputs();
   });
   function checkInputs() {
-  // trim to remove the whitespaces
-  const usernameValue = username.value.trim();
-  const phoneValue = phone.value.trim();
-  const regionValue = region.value.trim();
+    const usernameValue = username.value.trim();
+    const phoneValue = phone.value.trim();
+    const regionValue = region.value.trim();
+    
+    if(usernameValue === '') {setErrorFor(username, 'Введите Ваше имя');} else {setSuccessFor(username);}
+    if(phoneValue === '') {setErrorFor(phone, 'Введите корректный телефон');} else {setSuccessFor(phone);}
+    if(regionValue === '') {setErrorFor(region, 'Введите регион');} else {setSuccessFor(region);}
+    if(usernameValue != '' && phoneValue != '' && regionValue != ''){
+      console.log("Input Data: " + usernameValue + " " + phoneValue + " " + regionValue);
   
-  if(usernameValue === '') {
-      setErrorFor(username, 'Введите Ваше имя'); } else { setSuccessFor(username);
-  }
-  if(phoneValue === '') {
-      setErrorFor(phone, 'Введите корректный телефон'); } else { setSuccessFor(phone);
-  }
-  if(regionValue === '') {
-      setErrorFor(region, 'Введите регион'); } else { setSuccessFor(region);
+      fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+          title: regionValue,
+          body: phoneValue,
+          userId: usernameValue
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      })
+      .then(response => response.json())
+      .then(json => {
+        console.log('response: ' + JSON.stringify(json));
+      })
     }
   }
   
@@ -1971,7 +1978,7 @@ if(form){
     const formControl = input.parentElement;
     formControl.className = 'form__control success';
   }
-  }
+}
 // end validate section_form
 
 // start validate formpopup
@@ -1981,24 +1988,35 @@ const phonepopup = document.getElementById('phonepopup');
 const regionpopup = document.getElementById('regionpopup');
 if(formpopup){
   formpopup.addEventListener('submit', e => {
-  e.preventDefault();
-  
-  checkInputs();
+    e.preventDefault();
+    checkInputs();
   });
   function checkInputs() {
-  // trim to remove the whitespaces
-  const usernamepopupValue = usernamepopup.value.trim();
-  const phonepopupValue = phonepopup.value.trim();
-  const regionpopupValue = regionpopup.value.trim();
+    const usernamepopupValue = usernamepopup.value.trim();
+    const phonepopupValue = phonepopup.value.trim();
+    const regionpopupValue = regionpopup.value.trim();
+    
+    if(usernamepopupValue === '') {setErrorFor(usernamepopup, 'Введите Ваше имя');} else {setSuccessFor(usernamepopup);}
+    if(phonepopupValue === '') {setErrorFor(phonepopup, 'Введите корректный телефон');} else {setSuccessFor(phonepopup);}
+    if(regionpopupValue === '') {setErrorFor(regionpopup, 'Введите регион');} else {setSuccessFor(regionpopup);}
+    if(usernamepopupValue != '' && phonepopupValue != '' && regionpopupValue != ''){
+      console.log("Input Data: " + usernamepopupValue + " " + phonepopupValue + " " + usernamepopupValue);
   
-  if(usernamepopupValue === '') {
-      setErrorFor(usernamepopup, 'Введите Ваше имя'); } else { setSuccessFor(usernamepopup);
-  }
-  if(phonepopupValue === '') {
-      setErrorFor(phonepopup, 'Введите корректный телефон'); } else { setSuccessFor(phonepopup);
-  }
-  if(regionpopupValue === '') {
-      setErrorFor(regionpopup, 'Введите регион'); } else { setSuccessFor(regionpopup);
+      fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+          title: usernamepopupValue,
+          body: phonepopupValue,
+          userId: usernamepopupValue
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      })
+      .then(response => response.json())
+      .then(json => {
+        console.log('response: ' + JSON.stringify(json));
+      })
     }
   }
   
@@ -2013,7 +2031,7 @@ if(formpopup){
     const formpopupControl = input.parentElement;
     formpopupControl.className = 'form__control success';
   }
-  }
+}
 // end validate section_form
 
 // start search spareparts
@@ -2164,3 +2182,32 @@ function video_load(e){
   e.innerHTML = '<iframe width="100%" height="400" src="https://www.youtube.com/embed/'+e.getAttribute('vid')+'?autoplay=1&controls=1&mute=1&loop=1&playlist='+e.getAttribute('vid')+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
 }
 // end video
+
+// start city
+let hslink = document.querySelectorAll(".header__city_link");
+for (let i = 0; i < hslink.length; i++) {
+  hslink[i].onclick = function(e) {
+    document.querySelector(".header__region span").innerText = hslink[i].children[0].innerText;
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      body: JSON.stringify({
+        cityId: hslink[i].children[0].innerText
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    })
+    .then(response => response.json())
+    .then(json => {
+      console.log('response: ' + JSON.stringify(json));
+    })
+
+    bodyoverlaycity.classList.remove("active");
+    menucity.classList.remove("active");
+    burgercity.classList.remove("active");
+    document.body.style.height = null;
+    menuindex.style.zIndex = null;
+  }
+}
+// end city
