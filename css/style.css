@@ -668,6 +668,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   align-items: center;
+  flex: 0 0 auto;
   gap: 12px;
 }
 
@@ -679,6 +680,7 @@ svg path {
 .header__region span,
 .header__tel span {
   padding: 6px 10px;
+  flex: 0 0 auto;
   font-size: 16px;
   font-weight: 500;
   line-height: 21px;
@@ -694,9 +696,10 @@ svg path {
 }
 
 .header__region svg {
-  display: inline-block;
+  display: inline-flex;
   width: 28px;
   height: 28px;
+  flex: 0 0 auto;
 }
 
 .header__region svg path {
@@ -6119,8 +6122,8 @@ font.notetext {
   .header__region span,
   .header__tel span,
   .header__burger span {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 16px;
   }
   .hero__container {
     height: 650px;
@@ -6300,7 +6303,7 @@ font.notetext {
     line-height: 77px;
   }
   .offer__slider_container {
-    padding: 40px 60px;
+    padding: 40px 60px 100px;
   }
   .offer__middle {
     height: 300px;
@@ -6694,7 +6697,7 @@ font.notetext {
   .action__padding,
   .aboutus__brand_block,
   .aboutus__branches_container {
-    padding: 40px 60px;
+    padding: 40px 60px 100px;
   }
   .tractor__filter_info {
     right: 60px;
@@ -6720,9 +6723,6 @@ font.notetext {
   }
   .aboutus__brand_item {
     height: 100px;
-  }
-  .company__thumbs {
-    height: calc(var(--height) - 110px);
   }
   .footer__tel {
     font-size: 60px;
