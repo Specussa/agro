@@ -701,7 +701,8 @@ svg path {
   border-bottom: 1px solid var(--blue);
 }
 
-.header__region svg {
+.header__region svg,
+.header__region_image {
   display: block;
   width: 28px;
   height: 28px;
@@ -718,10 +719,12 @@ svg path {
   fill: var(--blue);
 }
 
-.header__tel svg {
-  display: inline-block;
+.header__tel svg,
+.header__tel_image {
+  display: block;
   width: 20px;
   height: 20px;
+  flex: 0 0 auto;
 }
 
 .header__tel svg path {
@@ -6162,7 +6165,7 @@ font.notetext {
   .header__logo {
     width: 140px;
     height: 41px;
-    margin: 0 100px 0 60px;
+    margin: 0 60px 0 60px;
   }
   .header__right {
     padding-right: 60px;
