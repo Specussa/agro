@@ -502,9 +502,9 @@ if(partnerslisttop){
       800: {
         slidesPerView: 3,
       },
-      1700: {
-        slidesPerView: 4,
-      }
+      // 1700: {
+      //   slidesPerView: 4,
+      // }
     },
     on: {
       slideChangeTransitionStart: function() {
@@ -553,9 +553,9 @@ if(partnerslistbottom){
       800: {
         slidesPerView: 3,
       },
-      1700: {
-        slidesPerView: 4,
-      }
+      // 1700: {
+      //   slidesPerView: 4,
+      // }
     },
     on: {
       slideChangeTransitionStart: function() {
@@ -856,10 +856,6 @@ if(propelledblock){
         },
         autoplay: false,
       },
-      1700: {
-        spaceBetween: 0,
-        slidesPerView: 4,
-      }
     },
   });
   var propelleditem = document.getElementsByClassName("propelled__item");

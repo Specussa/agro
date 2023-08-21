@@ -910,10 +910,13 @@ svg path {
   display: flex;
   width: 100%;
   height: 50px;
-  padding: 0 15px;
+  padding: 0 5px;
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
   text-align: center;
   color: var(--bg);
   border-left: 1px solid var(--blue);
@@ -1210,7 +1213,6 @@ svg path {
   visibility: visible;
   -webkit-transform: translateY(0%);
   transform: translateY(0%);
-  -moz-box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
 }
@@ -1431,7 +1433,6 @@ svg path {
   visibility: visible;
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
-  -moz-box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
 }
@@ -2963,9 +2964,9 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  padding: 80px 100px;
+  padding: 80px 100px 30px;
   flex-direction: column;
-  gap: 80px;
+  gap: 60px;
   background-color: var(--blue);
 }
 
@@ -3009,9 +3010,9 @@ svg path {
 
 .breadcrumbs__head {
   padding-right: 300px;
-  font-size: 80px;
+  font-size: 50px;
   font-weight: 400;
-  line-height: 87px;
+  line-height: 55px;
   color: var(--bg);
 }
 
@@ -3090,18 +3091,22 @@ svg path {
 }
 
 .tractor__link {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   height: 100%;
   padding: 40px 40px 90px;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
   overflow: hidden;
 }
 
 .tractor__link img {
   width: 100%;
-  max-height: 550px;
-  object-fit: contain;
+  height: 365px;
+  object-fit: cover;
   position: relative;
   z-index: 1;
 }
@@ -3140,7 +3145,7 @@ svg path {
   gap: 16px;
   position: absolute;
   width: 100%;
-  top: calc(100% - 90px);
+  top: calc(100% - 80px);
   left: 0;
   z-index: 3;
   -webkit-transition: top 0.3s linear;
@@ -3149,7 +3154,7 @@ svg path {
 }
 
 .tractor__link:hover .tractor__info {
-  top: calc(100% - 255px);
+  top: calc(100% - 220px);
 }
 
 .tractor__info p {
@@ -3168,11 +3173,10 @@ svg path {
   border-bottom: 2px dashed var(--bg);
 }
 
-.tractor__info span {
-  font-size: 30px;
-  font-weight: 450;
-  line-height: 38px;
-  color: var(--bg);
+.tractor__info p, .tractor__info p span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tractor__hover {
@@ -3180,7 +3184,7 @@ svg path {
   width: 100%;
   height: 100%;
   left: 0;
-  bottom: calc(-100% + 90px);
+  bottom: calc(-100% + 80px);
   background-color: transparent;
   z-index: 0;
   -webkit-transition: background-color 0.3s linear, bottom 0.3s linear;
@@ -3351,7 +3355,7 @@ svg path {
 .tractor__filter_info {
   position: absolute;
   right: 100px;
-  top: 70px;
+  top: 50px;
   flex: 0 0 auto;
   font-size: 22px;
   font-weight: 600;
@@ -3936,6 +3940,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -4110,7 +4115,8 @@ svg path {
 .form__read_desc .form__control textarea:-webkit-autofill:hover,
 .form__read_desc .form__control select:-webkit-autofill,
 .form__read_desc .form__control select:-webkit-autofill:hover,
-.form__read_desc .form__control input, .form__control {
+.form__read_desc .form__control input,
+.form__read_desc .form__control {
   color: var(--text);
   -webkit-text-fill-color: var(--text);
   -webkit-box-shadow: 0 0 0 30px var(--bg) inset;
@@ -5488,7 +5494,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  top: -128px;
+  top: -98px;
   right: 0;
   background-color: transparent;
 }
@@ -5498,7 +5504,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: 325px;
-  height: 130px;
+  height: 100px;
   align-items: center;
   justify-content: center;
   font-size: 20px;
@@ -5511,10 +5517,6 @@ svg path {
   border-bottom: none;
   -webkit-transition: color 0.2s linear, background-color 0.2s linear;
   transition: color 0.2s linear, background-color 0.2s linear;
-}
-
-.action__button:first-child {
-  border-left: 1px solid var(--bg);
 }
 
 .action__button:hover,
@@ -6063,6 +6065,7 @@ table.search-filter select.select-field {
   background: transparent !important;
   -webkit-text-fill-color: var(--text) !important;
   border-bottom: 1px solid var(--blue) !important;
+  color: var(--text) !important;
 }
 
 div.search-page input.search-button {
@@ -6082,12 +6085,19 @@ font.notetext {
   align-items: flex-end;
 }
 
+.bx-context-toolbar-empty-area {
+  width: 100%;
+}
+
 /* end bx */
 
 /* start media 1830px */
 @media (max-width: 1830px) {
+  .header__left {
+    gap: 40px;
+  }
   .header__right a {
-    padding: 0 30px;
+    padding: 0 40px;
   }
   .header__search_input.active {
     width: 200px;
@@ -6101,34 +6111,47 @@ font.notetext {
 /* start media 1700px */
 @media (max-width: 1700px) {
   .header {
-    height: 120px;
+    height: 110px;
+  }
+  .header__button,
+  .header__link,
+  .header__right a,
+  .header__region span,
+  .header__tel span,
+  .header__burger span {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .hero__container {
+    height: 650px;
   }
   .header__button.active,
   .header__burger.active,
-  .header__bottom,
-  .header__top {
+  .header__bottom {
     height: 60px;
   }
+  .header__top {
+    height: 50px;
+  }
   .header__nav {
-    height: calc(100% - 120px);
-    top: 120px;
+    height: calc(100% - 110px);
+    top: 110px;
   }
   .header__left {
     width: 100%;
     margin-right: 20px;
-    justify-content: space-between;
-    gap: 20px;
+    gap: 40px;
   }
   .header__bottom {
-    padding: 0 80px;
+    padding: 0 60px;
   }
   .header__logo {
     width: 140px;
     height: 41px;
-    margin: 0 0 0 80px;
+    margin: 0 0 0 60px;
   }
   .header__right {
-    padding-right: 80px;
+    padding-right: 60px;
   }
   .header__item {
     height: 60px;
@@ -6145,17 +6168,18 @@ font.notetext {
     gap: 5px 20px;
   }
   .header__nav_list {
-    padding: 80px 0 80px 80px;
+    padding: 40px 0 40px 60px;
   }
   .header__subnav_scroll .scroll-content {
-    height: calc(var(--height) - 140px);
+    height: calc(var(--height) - 130px);
     margin: 15px 60px;
     gap: 30px;
   }
   .header__city_block,
   .info__read_block,
-  .form__read_block {
-    padding: 80px;
+  .form__read_block,
+  .hero__shadow {
+    padding: 60px;
   }
   .header__city_button {
     top: 20px;
@@ -6168,14 +6192,11 @@ font.notetext {
     right: 20px;
   }
   .main {
-    padding: 120px 0 0;
-  }
-  .hero__shadow {
-    padding: 80px;
+    padding: 110px 0 0;
   }
   .hero__container {
     min-height: 645px;
-    height: calc(var(--height) - 120px);
+    height: calc(var(--height) - 110px);
   }
   .hero__head {
     font-size: 60px;
@@ -6191,40 +6212,57 @@ font.notetext {
     right: 360px;
     bottom: 25px;
   }
-  .events__block {
-    padding: 60px 80px;
+  .events__block,
+  .company__info_list {
+    padding: 40px 60px;
   }
   .events__list {
-    padding: 60px 80px;
+    padding: 40px 60px;
+    gap: 20px;
+  }
+  .events__top,
+  .events__top img {
+    height: 200px;
+  }
+  .events__bottom {
+    height: calc(100% - 200px);
   }
   .events__item {
-    width: calc(33.333% - 26.666px);
+    width: calc(25% - 15px);
   }
-  .events__item:nth-last-child(1),  .events__item:nth-last-child(2) {
-    display: none;
+  .events__head {
+    font-size: 30px;
+    line-height: 39px;
+  }
+  .events__name {
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .events__date {
+    font-size: 14px;
+    line-height: 13px;
+  }
+  .company__flex {
+    padding: 40px 60px 0;
+    gap: 10px;
   }
   .company__slider {
     height: 450px;
-  }
-  .company__info_list {
-    padding: 60px 80px;
-  }
-  .company__flex {
-    padding: 60px 80px 0;
   }
   .company__desc {
     font-size: 30px;
     line-height: 39px;
   }
   .company__name {
-    left: 80px;
+    left: 60px;
     font-size: 24px;
     line-height: 31px;
   }
   .company__texts {
-    width: calc(50% - 90px);
+    width: calc(50% - 70px);
     height: calc(100% - 260px);
-    margin: 0 auto 0 80px;
+    margin: 0 auto 0 60px;
   }
   .company__heading {
     font-size: 60px;
@@ -6235,64 +6273,72 @@ font.notetext {
     line-height: 21px;
   }
   .company__thumbs {
-    width: calc(50% - 90px);
+    width: calc(50% - 70px);
     height: 240px;
-    margin: 0 auto 0 80px;
+    margin: 0 auto 0 60px;
   }
   .company__top {
-    width: calc(50% - 90px);
-    margin: 0 80px 0 auto;
+    width: calc(50% - 70px);
+    margin: 0 60px 0 auto;
   }
   .company__prev {
-    right: 200px;
+    right: 180px;
   }
   .company__next {
-    right: 100px;
+    right: 80px;
+  }
+  .company__info_number {
+    font-size: 60px;
+    line-height: 77px;
+  }
+  .company__info_desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .company__head {
+    font-size: 60px;
+    line-height: 77px;
   }
   .offer__slider_container {
-    padding: 60px 80px 80px;
+    padding: 40px 60px;
   }
   .offer__middle {
     height: 300px;
   }
   .map__search_block {
-    padding: 20px 80px 20px 50px;
+    padding: 20px 60px 20px 50px;
   }
   .map__city {
     max-height: 550px;
-    left: 80px;
+    left: 60px;
   }
   .map__zoom {
-    right: 80px;
+    right: 60px;
   }
   .map__yandex {
     height: 600px;
   }
   .breadcrumbs__head {
-    font-size: 60px;
-    line-height: 65px;
+    font-size: 50px;
+    line-height: 55px;
   }
   .breadcrumbs__flex {
-    padding: 80px;
+    padding: 40px 60px 30px;
   }
   .tractor__name {
     font-size: 16px;
     line-height: 21px;
   }
   .tractor__head {
-    font-size: 30px;
-    line-height: 39px;
+    font-size: 18px;
+    line-height: 24px;
   }
   .tractor__info p {
     font-size: 16px;
     line-height: 21px;
   }
-  .tractor__info span {
-    font-size: 24px;
-    line-height: 31px;
-  }
   .tractor__container {
-    padding: 60px 80px 100px;
+    padding: 40px 60px;
   }
   .tractor__link {
     padding: 30px 30px 90px;
@@ -6304,22 +6350,22 @@ font.notetext {
     top: calc(100% - 220px);
   }
   .technique__container {
-    padding: 70px 80px 80px;
+    padding: 40px 60px;
   }
   .propelled__list {
     height: 90px;
   }
   .propelled__filter_container {
-    padding: 80px;
+    padding: 60px;
   }
   .product__flex {
-    padding: 40px 80px;
+    padding: 40px 60px;
   }
   .product__slider_padding {
     padding: 40px 40px 40px 0;
   }
   .product__slider_info {
-    width: calc(100% - 80px);
+    width: calc(100% - 60px);
     top: 0;
     left: 40px;
   }
@@ -6339,10 +6385,10 @@ font.notetext {
   }
   .info__buttons_block,
   .action__buttons_block {
-    padding: 0 80px;
+    padding: 0 60px;
   }
   .info__padding {
-    padding: 40px 80px;
+    padding: 40px 60px;
   }
   .info__flex {
     gap: 40px;
@@ -6389,10 +6435,10 @@ font.notetext {
     line-height: 15px;
   }
   .spareparts__left {
-    padding: 40px 80px;
+    padding: 40px 60px;
   }
   .spareparts__right {
-    padding: 40px 80px 40px 40px;
+    padding: 40px 60px 40px 40px;
   }
   .spareparts_head {
     font-size: 30px;
@@ -6441,8 +6487,8 @@ font.notetext {
     padding: 25px 0;
   }
   .spareparts__left {
-    height: calc(var(--height) - 120px);
-    padding: 40px 40px 40px 80px;
+    height: calc(var(--height) - 110px);
+    padding: 40px 40px 40px 60px;
     gap: 40px;
   }
   .spareparts__list {
@@ -6464,7 +6510,7 @@ font.notetext {
   }
   .detail__flex,
   .detail__block {
-    padding: 50px 80px;
+    padding: 40px 60px;
   }
   .detail__list,
   .detail__list .scroll-content {
@@ -6486,7 +6532,7 @@ font.notetext {
     line-height: 26px;
   }
   .agriculture__container {
-    padding: 80px;
+    padding: 60px;
   }
   .agriculture__absolute {
     padding: 45px;
@@ -6497,7 +6543,7 @@ font.notetext {
   }
   .agroinfo__block {
     max-width: 580px;
-    padding: 50px 80px;
+    padding: 40px 60px;
   }
   .agroinfo__head {
     font-size: 32px;
@@ -6508,7 +6554,7 @@ font.notetext {
     line-height: 21px;
   }
   .agroinfo__background {
-    min-height: calc(var(--height) - 120px);
+    min-height: calc(var(--height) - 110px);
   }
   .agroinfo__head {
     max-width: 660px;
@@ -6526,10 +6572,10 @@ font.notetext {
   .aboutus__dev_container,
   .aboutus__brand_padding,
   .aboutus__team_padding {
-    padding: 80px;
+    padding: 60px;
   }
   .videoreview__block {
-    padding: 50px 80px;
+    padding: 40px 60px;
     gap: 50px;
   }
   .videoreview__vid,
@@ -6538,7 +6584,7 @@ font.notetext {
     height: 600px;
   }
   .promotion__container {
-    padding: 50px 80px;
+    padding: 40px 60px;
   }
   .promotion__info,
   .promotion__info ul {
@@ -6546,6 +6592,10 @@ font.notetext {
   }
   .action__button {
     width: 280px;
+    height: 80px;
+  }
+  .action__buttons_block {
+    top: -78px;
   }
   .action__list {
     gap: 40px;
@@ -6554,7 +6604,7 @@ font.notetext {
     width: calc(50% - 20px);
   }
   .article__block {
-    padding: 50px 80px;
+    padding: 40px 60px;
     gap: 40px;
   }
   .article__desc {
@@ -6568,13 +6618,13 @@ font.notetext {
     height: 370px;
   }
   .article__flex {
-    right: 80px;
+    right: 60px;
   }
   .breadcrumbs__head {
     padding-right: 280px;
   }
   .review__container {
-    padding: 40px 80px 60px;
+    padding: 40px 60px;
   }
   .review__list {
     gap: 40px;
@@ -6605,7 +6655,7 @@ font.notetext {
   }
   .service__head,
   .service__info {
-    padding: 80px;
+    padding: 60px;
   }
   .service__thumbs .swiper-slide {
     width: 290px;
@@ -6619,11 +6669,11 @@ font.notetext {
     height: 100px;
   }
   .finance__flex {
-    padding: 80px;
+    padding: 60px;
     gap: 40px;
   }
   .finance__table {
-    padding: 40px 80px 60px;
+    padding: 40px 60px;
   }
   .finance__thumbs .swiper-slide {
     padding: 40px 30px;
@@ -6635,22 +6685,44 @@ font.notetext {
     width: calc(50% - 20px);
   }
   .finance__padding {
-    padding: 0 80px;
+    padding: 0 60px;
   }
   .tractor__link img {
-    max-height: 410px;
+    height: 290px;
   }
   .footer__container,
   .action__padding,
   .aboutus__brand_block,
   .aboutus__branches_container {
-    padding: 60px 80px;
+    padding: 40px 60px;
   }
   .tractor__filter_info {
-    right: 80px;
+    right: 60px;
   }
   .policy__container {
-    padding: 60px 80px;
+    padding: 60px 60px;
+  }
+  .partners__container {
+    height: 203px;
+  }
+  .partners__list,
+  .partners__item {
+    height: 100px;
+  }
+  .technique__list {
+    gap: 20px;
+  }
+  .technique__item {
+    width: calc(25% - 15px);
+  }
+  .info__button_block {
+    padding: 40px 60px;
+  }
+  .aboutus__brand_item {
+    height: 100px;
+  }
+  .company__thumbs {
+    height: calc(var(--height) - 110px);
   }
   .footer__tel {
     font-size: 60px;
@@ -6680,14 +6752,9 @@ font.notetext {
 /* end media 1700px */
 
 /* start media 1380px */
-@media (max-width: 1380px) {
+@media (max-width: 1400px) {
   .header__right a {
-    padding: 0px 15px;
-  }
-}
-@media (max-width: 1230px) {
-  .header__right a {
-    padding: 0px 10px;
+    padding: 0px 20px;
   }
 }
 /* start media 1230px */
@@ -6970,6 +7037,20 @@ font.notetext {
     font-size: 16px;
     line-height: 17px;
   }
+  .header__list_scroll {
+    overflow: hidden !important;
+  }
+  .header__buttons form {
+    width: 100%;
+  }
+  .action__button:first-child,
+  .action__button:first-child:hover,
+  .action__button:first-child.active {
+    border-left: none;
+  }
+  .action__button:hover, .action__button.active {
+    border: none;
+  }
   .header__city,
   .info__read,
   .form__read {
@@ -7083,6 +7164,8 @@ font.notetext {
   .events__name {
     margin: 0 0 20px;
   }
+  .events__item:nth-last-child(1),
+  .events__item:nth-last-child(2),
   .events__item:nth-last-child(3),
   .events__item:nth-last-child(4) {
     display: none;
@@ -7349,7 +7432,7 @@ font.notetext {
   }
   .tractor__info {
     padding: 10px 20px;
-    top: calc(100% - 55px);
+    top: calc(100% - 40px);
     gap: 5px;
   }
   .tractor__link:hover .tractor__info {
@@ -7366,10 +7449,6 @@ font.notetext {
     padding: 10px 0 0;
     font-size: 14px;
     line-height: 18px;
-  }
-  .tractor__info span {
-    font-size: 22px;
-    line-height: 28px;
   }
   .tractor__name {
     font-size: 14px;
@@ -7805,7 +7884,7 @@ font.notetext {
     padding: 0 40px;
   }
   .tractor__link img {
-    max-height: 360px;
+    height: 360px;
   }
   .tractor__filter_info {
     right: 40px;
@@ -8284,8 +8363,7 @@ font.notetext {
     font-size: 16px;
     line-height: 21px;
   }
-  .tractor__info p,
-  .tractor__info span {
+  .tractor__info p {
     font-size: 12px;
     line-height: 15px;
   }
@@ -8797,7 +8875,7 @@ font.notetext {
     padding: 30px 20px;
   }
   .tractor__link img {
-    max-height: 220px;
+    height: 220px;
   }
   .tractor__filter_info {
     top: 30px;
@@ -8860,7 +8938,7 @@ font.notetext {
     line-height: 37px;
   }
   .tractor__filter {
-    padding: 0 0 20px;
+    padding: 0 50px 20px 0;
   }
   .tractor__filter_info {
     font-size: 12px;
@@ -9135,7 +9213,7 @@ font.notetext {
     padding: 20px;
   }
   .tractor__link img {
-    max-height: 230px;
+    height: 230px;
   }
   .policy__info {
     font-size: 12px;
