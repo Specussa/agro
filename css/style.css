@@ -1539,6 +1539,10 @@ svg path {
   display: none;
 }
 
+.header__contacts {
+  display: flex;
+}
+
 /* end header__city */
 
 /* start footer */
@@ -6723,6 +6727,30 @@ font.notetext {
   }
   .aboutus__brand_item {
     height: 100px;
+  }
+  .header__nav_link span {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .header__link_top,
+  .header__link_top:hover {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .header__search::before {
+    width: 20px;
+    height: 17px;
+    background-size: 20px 17px;
+  }
+  .header__mail::before,
+  .header__mail_mobile::before {
+    width: 22px;
+    height: 16px;
+    background-size: 22px 16px;
+  }
+  .header__link_bottom {
+    font-size: 12px;
+    line-height: 14px;
   }
   .footer__tel {
     font-size: 60px;
