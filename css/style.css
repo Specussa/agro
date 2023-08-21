@@ -303,9 +303,13 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   padding: 150px 0 0;
   flex-direction: column;
   justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 input:-webkit-autofill,
@@ -609,6 +613,7 @@ svg path {
   height: 150px;
   width: 100%;
   position: fixed;
+  top: 0;
   background: var(--bg);
   z-index: 100;
   -webkit-touch-callout: none;
@@ -667,6 +672,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: max-content;
   align-items: center;
   flex: 0 0 auto;
   gap: 12px;
@@ -696,7 +702,7 @@ svg path {
 }
 
 .header__region svg {
-  display: inline-flex;
+  display: block;
   width: 28px;
   height: 28px;
   flex: 0 0 auto;
@@ -4777,6 +4783,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: calc(50% - 25px);
+  height: 430px;
   position: relative;
   background-color: var(--back);
 }
@@ -6155,7 +6162,7 @@ font.notetext {
   .header__logo {
     width: 140px;
     height: 41px;
-    margin: 0 0 0 60px;
+    margin: 0 100px 0 60px;
   }
   .header__right {
     padding-right: 60px;
@@ -6733,7 +6740,8 @@ font.notetext {
     line-height: 26px;
   }
   .header__link_top,
-  .header__link_top:hover {
+  .header__link_top:hover,
+  .header__link_bottom {
     font-size: 14px;
     line-height: 16px;
   }
@@ -6748,9 +6756,8 @@ font.notetext {
     height: 16px;
     background-size: 22px 16px;
   }
-  .header__link_bottom {
-    font-size: 12px;
-    line-height: 14px;
+  .agriculture__image {
+    height: 330px;
   }
   .footer__tel {
     font-size: 60px;
@@ -7924,6 +7931,9 @@ font.notetext {
     font-size: 18px;
     line-height: 23px;
   }
+  .agriculture__image {
+    height: 280px;
+  }
   .footer__contacts_block span {
     font-size: 14px;
     line-height: 18px;
@@ -8672,6 +8682,9 @@ font.notetext {
   .agriculture__info {
     width: 100%;
   }
+  .agriculture__image {
+    height: 400px;
+  }
   .agriculture__head {
     max-width: 560px;
     font-size: 20px;
@@ -9236,6 +9249,9 @@ font.notetext {
   .info__blocks_item_head span {
     font-size: 14px;
     line-height: 18px;
+  }
+  .agriculture__image {
+    height: 200px;
   }
   .finance__thumbs .swiper-slide {
     padding: 20px;
