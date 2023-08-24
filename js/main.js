@@ -220,12 +220,14 @@ if(infobuttons){
       infobutton.classList.remove("active");
       document.body.style.height = null;
       menuindex.style.zIndex = null;
+      scroll.start();
     } else {
       bodyoverlaycity.classList.add("active");
       inforeading.classList.add("active");
       infobutton.classList.add("active");
       document.body.style.height = "100vh";
       menuindex.style.zIndex = "102";
+      scroll.stop();
     }
   })
 }
@@ -237,6 +239,7 @@ if(inforeadbutton){
     infobutton.classList.remove("active");
     document.body.style.height = null;
     menuindex.style.zIndex = null;
+    scroll.start();
   })
 }
 // end info__button
@@ -284,7 +287,7 @@ bodyoverlay.addEventListener('click', function() {
   headercontacts.classList.remove("active");
   headerscroll.classList.remove("active");
   bodyoverlaycity.classList.remove("active");
-  if(inforeading){inforeading.classList.remove("active");}
+  if(inforeading){inforeading.classList.remove("active");scroll.start();}
   if(infobutton){infobutton.classList.remove("active");}
   hhbt.forEach(n => n.classList.remove('active'));
   hhbl.forEach(n => n.classList.remove('active'));
@@ -299,7 +302,7 @@ bodyoverlaycity.addEventListener('click', function() {
   bodyoverlaycity.classList.remove("active");
   menucity.classList.remove("active");
   burgercity.classList.remove("active");
-  if(inforeading){inforeading.classList.remove("active");}
+  if(inforeading){inforeading.classList.remove("active");scroll.start();}
   if(infobutton){infobutton.classList.remove("active");}
   if(formreading){formreading.classList.remove("active");}
   document.body.style.height = null;
@@ -347,7 +350,7 @@ for (i = 0; i < hblockacc.length; i++) {
         headerbuttons.classList.remove("active");
         headercontacts.classList.remove("active");
         bodyoverlaycity.classList.remove("active");
-        if(inforeading){inforeading.classList.remove("active");}
+        if(inforeading){inforeading.classList.remove("active");scroll.start();}
         if(infobutton){infobutton.classList.remove("active");}
         hhbt.forEach(n => n.classList.remove('active'));
         hhbl.forEach(n => n.classList.remove('active'));
