@@ -77,7 +77,7 @@ if(links){
   for (let i = 0; i < link.length; i++) {
     link[i].onclick = function(e) {
       let href = this.href;
-      document.querySelector('.preloader').style.display = "block";
+      document.querySelector('.preloader').style.visibility = "visible";
       window.setTimeout(function () {
         document.querySelector('.preloader__top').style.top = null;
         document.querySelector('.preloader__bottom').style.top = null;
@@ -897,6 +897,7 @@ var actionslider = new Swiper('.action__buttons_slider', {
   breakpoints: {
     1200: {
       allowTouchMove: true,
+      slidesPerView: 2,
     },
   },
 });
@@ -1048,11 +1049,29 @@ function filterFunction() {
 }
 // end search map
 
+// start map mobile
+
+if(oldWidth <= 800){
+  if(mapcity){
+    if (!mapcity.classList.contains("active")) {
+      mapcity.classList.add('active');
+      mapcity.style.overflow = "visible";
+      maphead.forEach(n => n.classList.add('close'));
+      mapmargin.forEach(n => n.style.margin = '0');
+      document.querySelector('.map__city').classList.add('active');
+      document.querySelector('.map__city .scroll-content').classList.add('active');
+      document.querySelector('.map__search_city:first-of-type .map__search_head').classList.remove('close');
+      document.querySelector('.map__search_city:first-of-type .map__search_head').classList.add('active');
+    }
+  }
+}
+
+// end map mobile
+
 // start del active points
 function delmappoint() {
   document.querySelector('#mapmoscow').classList.remove("map__point_active");
   document.querySelector('#mappeterburg').classList.remove("map__point_active");
-  document.querySelector('#mapvologda').classList.remove("map__point_active");
   document.querySelector('#mapvoronezh').classList.remove("map__point_active");
   document.querySelector('#mapkursk').classList.remove("map__point_active");
   document.querySelector('#maplipetsk').classList.remove("map__point_active");
@@ -1069,17 +1088,17 @@ function delmappoint() {
 // start search back
 if(mapback){
   mapback.addEventListener('click', (event) => {
+    mapback.classList.add('close');
     maphead.forEach(n => n.classList.remove('active'));
     maphead.forEach(n => n.classList.remove('close'));
     mapinfo.forEach(n => n.classList.remove('active'));
     mapinfo.forEach(n => n.style.maxHeight = null);
     mapmargin.forEach(n => n.style.margin = null);
-    mapback.classList.add('close');
     mapcity.style.overflow = "hidden";
     mapscroll.forEach(n => n.classList.remove('active'));
     mapсmapcity.forEach(n => n.classList.remove('active'));
     map_scroll.onmouseover = function(e) {scroll.stop();};
-    myMap.setCenter([55.253215,37.622504],6);
+    myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   });
 }
@@ -1091,7 +1110,7 @@ function moscow() {
     myMap.setCenter([55.88088924541,37.423524915344],12);
     document.querySelector('#mapmoscow').classList.add("map__point_active");
   } else {
-    myMap.setCenter([55.253215,37.622504],6);
+    myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   };
 }
@@ -1100,106 +1119,97 @@ function peterburg() {
     myMap.setCenter([59.618243,30.172631],12);
     document.querySelector('#mappeterburg').classList.add("map__point_active");
   } else {
-    myMap.setCenter([55.253215,37.622504],6);
-    delmappoint();
-  };
-}
-function vologda() {
-  if (maphead[2].classList.contains("active")) {
-    myMap.setCenter([59.199017,39.8100982],12);
-    document.querySelector('#mapvologda').classList.add("map__point_active");
-  } else {
-    myMap.setCenter([55.253215,37.622504],6);
+    myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   };
 }
 function voronezh() {
-  if (maphead[3].classList.contains("active")) {
+  if (maphead[2].classList.contains("active")) {
     myMap.setCenter([51.639685,39.324973],12);
     document.querySelector('#mapvoronezh').classList.add("map__point_active");
   } else {
-    myMap.setCenter([55.253215,37.622504],6);
+    myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   };
 }
 function kursk() {
-  if (maphead[4].classList.contains("active")) {
+  if (maphead[3].classList.contains("active")) {
     myMap.setCenter([51.627834,36.117242],12);
     document.querySelector('#mapkursk').classList.add("map__point_active");
   } else {
-    myMap.setCenter([55.253215,37.622504],6);
+    myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   };
 }
 function lipetsk() {
-  if (maphead[5].classList.contains("active")) {
+  if (maphead[4].classList.contains("active")) {
     myMap.setCenter([52.597220203418,39.458276316873],12);
     document.querySelector('#maplipetsk').classList.add("map__point_active");
   } else {
-    myMap.setCenter([55.253215,37.622504],6);
+    myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   };
 }
 function orel() {
-  if (maphead[6].classList.contains("active")) {
+  if (maphead[5].classList.contains("active")) {
     myMap.setCenter([52.923587,36.078570],12);
     document.querySelector('#maporel').classList.add("map__point_active");
   } else {
-    myMap.setCenter([55.253215,37.622504],6);
+    myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   };
 }
 function pavlovsck() {
-  if (maphead[7].classList.contains("active")) {
+  if (maphead[6].classList.contains("active")) {
     myMap.setCenter([50.452752,40.148549],12);
     document.querySelector('#mappavlovsck').classList.add("map__point_active");
   } else {
-    myMap.setCenter([55.253215,37.622504],6);
+    myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   };
 }
 function penza() {
-  if (maphead[8].classList.contains("active")) {
+  if (maphead[7].classList.contains("active")) {
     myMap.setCenter([53.270195255583,45.024497906746],12);
     document.querySelector('#mappenza').classList.add("map__point_active");
   } else {
-    myMap.setCenter([55.253215,37.622504],6);
+    myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   };
 }
 function pskov() {
-  if (maphead[9].classList.contains("active")) {
+  if (maphead[8].classList.contains("active")) {
     myMap.setCenter([56.9816779,29.9243012],12);
     document.querySelector('#mappskov').classList.add("map__point_active");
   } else {
-    myMap.setCenter([55.253215,37.622504],6);
+    myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   };
 }
 function ryazan() {
-  if (maphead[10].classList.contains("active")) {
+  if (maphead[9].classList.contains("active")) {
     myMap.setCenter([54.647213,39.638701],12);
     document.querySelector('#mapryazan').classList.add("map__point_active");
   } else {
-    myMap.setCenter([55.253215,37.622504],6);
+    myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   };
 }
 function tambov() {
-  if (maphead[11].classList.contains("active")) {
+  if (maphead[10].classList.contains("active")) {
     myMap.setCenter([52.650429,41.407760],12);
     document.querySelector('#maptambov').classList.add("map__point_active");
   } else {
-    myMap.setCenter([55.253215,37.622504],6);
+    myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   };
 }
 function yaroslavl() {
-  if (maphead[12].classList.contains("active")) {
+  if (maphead[11].classList.contains("active")) {
     myMap.setCenter([57.6873825,39.8908799],12);
     document.querySelector('#mapyaroslavl').classList.add("map__point_active");
   } else {
-    myMap.setCenter([55.253215,37.622504],6);
+    myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   };
 }
@@ -1214,7 +1224,7 @@ for (i = 0; i < mapsh.length; i++) {
     var courseAccordionButton = document.getElementsByClassName("map__search_head");
     var courseAccordionActive = document.getElementsByClassName("map__search_head active");
 
-    if (accordion.style.maxHeight) {
+    if (mapcity.classList.contains("active")) {
       accordion.style.maxHeight = null;
       mapmargin.forEach(n => n.style.margin = null);
       mapback.classList.add('close');
@@ -1266,7 +1276,7 @@ if(maps) {
     if (!myMap) return;
     myMap = new ymaps.Map(myMap, {
       center: [55.253215, 37.622504],
-      zoom: 6, 
+      zoom: 5, 
       controls: []
       },{
       zoomControlPosition: { right: 0, top: 0 },
@@ -1498,7 +1508,7 @@ if(maps) {
         mapmargin.forEach(n => n.style.margin = null);
         mapback.classList.add('close');
         mapсmapcity.forEach(n => n.classList.remove('active'));
-        myMap.setCenter([55.253215,37.622504],6);
+        myMap.setCenter([55.253215,37.622504],5);
         if (map_scroll.classList.contains("active")) {} else {
           Scrollbar.init(map_scroll);
           map_scroll.addEventListener("touchstart", function (e) {scroll.stop()});
@@ -1532,27 +1542,6 @@ if(maps) {
           idmapi[1].style.maxHeight = (thismapinfo.scrollHeight * 2) + "px";
         }
       } else {};
-      var mapvologda = document.getElementById('mapvologda');
-      if (mapvologda.classList.contains("map__point_active")) {
-        mapscroll.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.style.overflow = null);
-        maphead.forEach(n => n.classList.remove('active'));
-        maphead.forEach(n => n.classList.remove('close'));
-        maphead.forEach(n => n.classList.add('close'));
-        mapinfo.forEach(n => n.classList.remove('active'));
-        mapinfo.forEach(n => n.style.maxHeight = null);
-        mapmargin.forEach(n => n.style.margin = 0);
-        myMap.setCenter([59.199017,39.8100982],12);
-        mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = null);
-        var idmapi = idmap[2].children;
-        for (var i = 0; i < idmapi.length; i++) {
-          idmapi[i].classList.add('active');
-          idmapi[0].classList.remove('close');
-          idmapi[1].style.maxHeight = (thismapinfo.scrollHeight * 2) + "px";
-        }
-      } else {};
       var mapvoronezh = document.getElementById('mapvoronezh');
       if (mapvoronezh.classList.contains("map__point_active")) {
         mapscroll.forEach(n => n.classList.add('active'));
@@ -1567,7 +1556,7 @@ if(maps) {
         myMap.setCenter([51.639685,39.324973],12);
         mapback.classList.remove('close');
         idmap.forEach(n => n.style.display = null);
-        var idmapi = idmap[3].children;
+        var idmapi = idmap[2].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
           idmapi[0].classList.remove('close');
@@ -1588,7 +1577,7 @@ if(maps) {
         myMap.setCenter([51.627834,36.117242],12);
         mapback.classList.remove('close');
         idmap.forEach(n => n.style.display = null);
-        var idmapi = idmap[4].children;
+        var idmapi = idmap[3].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
           idmapi[0].classList.remove('close');
@@ -1609,7 +1598,7 @@ if(maps) {
         myMap.setCenter([52.597220203418,39.458276316873],12);
         mapback.classList.remove('close');
         idmap.forEach(n => n.style.display = null);
-        var idmapi = idmap[5].children;
+        var idmapi = idmap[4].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
           idmapi[0].classList.remove('close');
@@ -1630,7 +1619,7 @@ if(maps) {
         myMap.setCenter([52.923587,36.078570],12);
         mapback.classList.remove('close');
         idmap.forEach(n => n.style.display = null);
-        var idmapi = idmap[6].children;
+        var idmapi = idmap[5].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
           idmapi[0].classList.remove('close');
@@ -1651,7 +1640,7 @@ if(maps) {
         myMap.setCenter([50.452752,40.148549],12);
         mapback.classList.remove('close');
         idmap.forEach(n => n.style.display = null);
-        var idmapi = idmap[7].children;
+        var idmapi = idmap[6].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
           idmapi[0].classList.remove('close');
@@ -1672,7 +1661,7 @@ if(maps) {
         myMap.setCenter([53.270195255583,45.024497906746],12);
         mapback.classList.remove('close');
         idmap.forEach(n => n.style.display = null);
-        var idmapi = idmap[8].children;
+        var idmapi = idmap[7].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
           idmapi[0].classList.remove('close');
@@ -1693,7 +1682,7 @@ if(maps) {
         myMap.setCenter([56.9816779,29.9243012],12);
         mapback.classList.remove('close');
         idmap.forEach(n => n.style.display = null);
-        var idmapi = idmap[9].children;
+        var idmapi = idmap[8].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
           idmapi[0].classList.remove('close');
@@ -1714,7 +1703,7 @@ if(maps) {
         myMap.setCenter([54.647213,39.638701],12);
         mapback.classList.remove('close');
         idmap.forEach(n => n.style.display = null);
-        var idmapi = idmap[10].children;
+        var idmapi = idmap[9].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
           idmapi[0].classList.remove('close');
@@ -1735,7 +1724,7 @@ if(maps) {
         myMap.setCenter([52.650429,41.407760],12);
         mapback.classList.remove('close');
         idmap.forEach(n => n.style.display = null);
-        var idmapi = idmap[11].children;
+        var idmapi = idmap[10].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
           idmapi[0].classList.remove('close');
@@ -1756,7 +1745,7 @@ if(maps) {
         myMap.setCenter([57.6873825,39.8908799],12);
         mapback.classList.remove('close');
         idmap.forEach(n => n.style.display = null);
-        var idmapi = idmap[12].children;
+        var idmapi = idmap[11].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
           idmapi[0].classList.remove('close');
@@ -1822,35 +1811,41 @@ var infoblock = document.querySelector(".info__blocks");
 if(infoblock){
   for (i = 0; i < infodesc.length; i++) {
     infodesc[i].onclick = function(e) {
-      ibb.forEach(n => n.classList.remove('active'));
-      ib.forEach(n => n.classList.remove('active'));
-      ib.forEach(n => n.style.maxHeight = null);
-      idesc.forEach(n => n.classList.add('active'));
-      idesc.forEach(n => n.style.maxHeight = (document.querySelector('.info__description').scrollHeight * 1) + "px");
-      this.classList.add("active");
-      scroll.update();
+      if (!this.classList.contains("active")) {
+        ibb.forEach(n => n.classList.remove('active'));
+        ib.forEach(n => n.classList.remove('active'));
+        ib.forEach(n => n.style.maxHeight = null);
+        idesc.forEach(n => n.classList.add('active'));
+        idesc.forEach(n => n.style.maxHeight = (document.querySelector('.info__description').scrollHeight * 1) + "px");
+        this.classList.add("active");
+        scroll.update();
+      }
     };
   }
   for (i = 0; i < infochar.length; i++) {
     infochar[i].onclick = function(e) {
-      ibb.forEach(n => n.classList.remove('active'));
-      ib.forEach(n => n.classList.remove('active'));
-      ib.forEach(n => n.style.maxHeight = null);
-      ichar.forEach(n => n.classList.add('active'));
-      ichar.forEach(n => n.style.maxHeight = (document.querySelector('.info__characteristics').scrollHeight * 1) + "px");
-      this.classList.add("active");
-      scroll.update();
+      if (!this.classList.contains("active")) {
+        ibb.forEach(n => n.classList.remove('active'));
+        ib.forEach(n => n.classList.remove('active'));
+        ib.forEach(n => n.style.maxHeight = null);
+        ichar.forEach(n => n.classList.add('active'));
+        ichar.forEach(n => n.style.maxHeight = (document.querySelector('.info__characteristics').scrollHeight * 1) + "px");
+        this.classList.add("active");
+        scroll.update();
+      }
     };
   }
   for (i = 0; i < infocert.length; i++) {
     infocert[i].onclick = function(e) {
-      ibb.forEach(n => n.classList.remove('active'));
-      ib.forEach(n => n.classList.remove('active'));
-      ib.forEach(n => n.style.maxHeight = null);
-      icert.forEach(n => n.classList.add('active'));
-      icert.forEach(n => n.style.maxHeight = (document.querySelector('.info__certification').scrollHeight * 1) + "px");
-      this.classList.add("active");
-      scroll.update();
+      if (!this.classList.contains("active")) {
+        ibb.forEach(n => n.classList.remove('active'));
+        ib.forEach(n => n.classList.remove('active'));
+        ib.forEach(n => n.style.maxHeight = null);
+        icert.forEach(n => n.classList.add('active'));
+        icert.forEach(n => n.style.maxHeight = (document.querySelector('.info__certification').scrollHeight * 1) + "px");
+        this.classList.add("active");
+        scroll.update();
+      }
     };
   }
   document.addEventListener("DOMContentLoaded", function() {
@@ -1881,35 +1876,41 @@ var actionblock = document.querySelector(".action__list");
 if(actionblock){
   for (i = 0; i < actionfirst.length; i++) {
     actionfirst[i].onclick = function(e) {
-      abb.forEach(n => n.classList.remove('active'));
-      ab.forEach(n => n.classList.remove('active'));
-      ab.forEach(n => n.style.maxHeight = null);
-      adesc.forEach(n => n.classList.add('active'));
-      adesc.forEach(n => n.style.maxHeight = (document.querySelector('.action__first').scrollHeight * 1) + "px");
-      this.classList.add("active");
-      scroll.update();
+      if (!this.classList.contains("active")) {
+        abb.forEach(n => n.classList.remove('active'));
+        ab.forEach(n => n.classList.remove('active'));
+        ab.forEach(n => n.style.maxHeight = null);
+        adesc.forEach(n => n.classList.add('active'));
+        adesc.forEach(n => n.style.maxHeight = (document.querySelector('.action__first').scrollHeight * 1) + "px");
+        this.classList.add("active");
+        scroll.update();
+      }
     };
   }
   for (i = 0; i < actionsecond.length; i++) {
     actionsecond[i].onclick = function(e) {
-      abb.forEach(n => n.classList.remove('active'));
-      ab.forEach(n => n.classList.remove('active'));
-      ab.forEach(n => n.style.maxHeight = null);
-      achar.forEach(n => n.classList.add('active'));
-      achar.forEach(n => n.style.maxHeight = (document.querySelector('.action__second').scrollHeight * 1) + "px");
-      this.classList.add("active");
-      scroll.update();
+      if (!this.classList.contains("active")) {
+        abb.forEach(n => n.classList.remove('active'));
+        ab.forEach(n => n.classList.remove('active'));
+        ab.forEach(n => n.style.maxHeight = null);
+        achar.forEach(n => n.classList.add('active'));
+        achar.forEach(n => n.style.maxHeight = (document.querySelector('.action__second').scrollHeight * 1) + "px");
+        this.classList.add("active");
+        scroll.update();
+      }
     };
   }
   for (i = 0; i < actionthird.length; i++) {
     actionthird[i].onclick = function(e) {
-      abb.forEach(n => n.classList.remove('active'));
-      ab.forEach(n => n.classList.remove('active'));
-      ab.forEach(n => n.style.maxHeight = null);
-      acert.forEach(n => n.classList.add('active'));
-      acert.forEach(n => n.style.maxHeight = (document.querySelector('.action__third').scrollHeight * 1) + "px");
-      this.classList.add("active");
-      scroll.update();
+      if (!this.classList.contains("active")) {
+        abb.forEach(n => n.classList.remove('active'));
+        ab.forEach(n => n.classList.remove('active'));
+        ab.forEach(n => n.style.maxHeight = null);
+        acert.forEach(n => n.classList.add('active'));
+        acert.forEach(n => n.style.maxHeight = (document.querySelector('.action__third').scrollHeight * 1) + "px");
+        this.classList.add("active");
+        scroll.update();
+      }
     };
   }
   document.addEventListener("DOMContentLoaded", function() {
@@ -1946,9 +1947,7 @@ if(form){
     if(phoneValue === '') {setErrorFor(phone, 'Введите корректный телефон');} else {setSuccessFor(phone);}
     if(regionValue === '') {setErrorFor(region, 'Введите регион');} else {setSuccessFor(region);}
     if(usernameValue != '' && phoneValue != '' && regionValue != ''){
-      console.log("Input Data: " + usernameValue + " " + phoneValue + " " + regionValue);
-  
-      fetch('https://jsonplaceholder.typicode.com/posts', {
+      fetch('/ajax/sendMail.php', {
         method: 'POST',
         body: JSON.stringify({
           title: regionValue,
@@ -1959,10 +1958,11 @@ if(form){
           "Content-type": "application/json; charset=UTF-8"
         }
       })
-      .then(response => response.json())
-      .then(json => {
-        console.log('response: ' + JSON.stringify(json));
-      })
+      username.value = '';
+      phone.value = '';
+      region.value = '';
+      document.querySelector('#form .button__text').value = '🗹️ Отправлено';
+      document.querySelector('#form .button__text').disabled = true;
     }
   }
   
@@ -1999,9 +1999,7 @@ if(formpopup){
     if(phonepopupValue === '') {setErrorFor(phonepopup, 'Введите корректный телефон');} else {setSuccessFor(phonepopup);}
     if(regionpopupValue === '') {setErrorFor(regionpopup, 'Введите регион');} else {setSuccessFor(regionpopup);}
     if(usernamepopupValue != '' && phonepopupValue != '' && regionpopupValue != ''){
-      console.log("Input Data: " + usernamepopupValue + " " + phonepopupValue + " " + usernamepopupValue);
-  
-      fetch('https://jsonplaceholder.typicode.com/posts', {
+      fetch('/ajax/sendMail.php', {
         method: 'POST',
         body: JSON.stringify({
           title: usernamepopupValue,
@@ -2012,10 +2010,11 @@ if(formpopup){
           "Content-type": "application/json; charset=UTF-8"
         }
       })
-      .then(response => response.json())
-      .then(json => {
-        console.log('response: ' + JSON.stringify(json));
-      })
+      usernamepopup.value = '';
+      phonepopup.value = '';
+      regionpopup.value = '';
+      document.querySelector('#formpopup .button__text').value = '🗹️ Отправлено';
+      document.querySelector('#formpopup .button__text').disabled = true;
     }
   }
   
