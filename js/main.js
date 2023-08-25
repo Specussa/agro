@@ -8,7 +8,7 @@ window.addEventListener("resize", function() {
 // start reload
 
 // start scroll
-const map_scroll = document.querySelector('.map__city');
+const mapcity = document.querySelector('.map__city');
 const headernav_scroll = document.querySelector('.header__nav_scroll');
 const headercity_scroll = document.querySelector('.header__city_scroll');
 const headerlist_scroll = document.querySelector('.header__list_scroll');
@@ -17,17 +17,17 @@ const formread_scroll = document.querySelector('.form__read_scroll');
 const sparepartslist_scroll = document.querySelector(".spareparts__list");
 const detaillist_scroll = document.querySelector(".detail__list");
 var headersubnav_scroll = document.getElementsByClassName("header__subnav_scroll");
-if(map_scroll){
-  if (map_scroll.classList.contains("active")) {} else {
-    Scrollbar.init(map_scroll);
-    map_scroll.addEventListener("touchstart", function (e) {scroll.stop()});
-    map_scroll.addEventListener("touchmove", function (e) {scroll.stop()});
-    map_scroll.addEventListener("touched", function (e) {scroll.stop()});
+if(mapcity){
+  if (mapcity.classList.contains("active")) {} else {
+    Scrollbar.init(mapcity);
+    mapcity.addEventListener("touchstart", function (e) {scroll.stop()});
+    mapcity.addEventListener("touchmove", function (e) {scroll.stop()});
+    mapcity.addEventListener("touched", function (e) {scroll.stop()});
     document.body.addEventListener("touchstart", function (e) {scroll.start()});
     document.body.addEventListener("touchmove", function (e) {scroll.start()});
     document.body.addEventListener("touched", function (e) {scroll.start()});
-    map_scroll.onmouseover = function(e) {scroll.stop();};
-    map_scroll.onmouseout = function(e) {scroll.start();};
+    mapcity.onmouseover = function(e) {scroll.stop();};
+    mapcity.onmouseout = function(e) {scroll.start();};
   }
 }
 if(sparepartslist_scroll){
@@ -1016,13 +1016,13 @@ if(financelider){
 
 // map
 // start search map
-const mapcity = document.querySelector('.map__city');
 const mapсmapcity = document.querySelectorAll('.map__container .map__city');
 const mapscroll = document.querySelectorAll('.map__city .scroll-content');
 const maphead = document.querySelectorAll('.map__search_city .map__search_head');
 const mapinfo = document.querySelectorAll('.map__search_city .map__search_info');
 const mapmargin = document.querySelectorAll('.map__city .map__search_city');
 const mapback = document.querySelector('.map__search_back');
+const mapselect = document.querySelector('.map__search_select');
 function filterFunction() {
   var mapinput, filter, i;
   mapinput = document.getElementById("map__input");
@@ -1037,7 +1037,7 @@ function filterFunction() {
     mapinfo.forEach(n => n.style.maxHeight = null);
     mapscroll.forEach(n => n.classList.remove('active'));
     mapсmapcity.forEach(n => n.classList.remove('active'));
-    map_scroll.onmouseover = function(e) {scroll.stop();};
+    mapcity.onmouseover = function(e) {scroll.stop();};
     mapcity.style.overflow = "hidden";
     mapmargin.forEach(n => n.style.margin = null);
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -1050,7 +1050,6 @@ function filterFunction() {
 // end search map
 
 // start map mobile
-
 if(oldWidth <= 800){
   if(mapcity){
     if (!mapcity.classList.contains("active")) {
@@ -1059,13 +1058,31 @@ if(oldWidth <= 800){
       maphead.forEach(n => n.classList.add('close'));
       mapmargin.forEach(n => n.style.margin = '0');
       document.querySelector('.map__city').classList.add('active');
-      document.querySelector('.map__city .scroll-content').classList.add('active');
-      document.querySelector('.map__search_city:first-of-type .map__search_head').classList.remove('close');
-      document.querySelector('.map__search_city:first-of-type .map__search_head').classList.add('active');
+      mapscroll.forEach(n => n.classList.add('active'));
+      mapselect.classList.add('active');
+      mapcity.addEventListener("touchstart", function (e) {scroll.start()});
+      mapcity.addEventListener("touchmove", function (e) {scroll.start()});
+      mapcity.addEventListener("touched", function (e) {scroll.start()});
     }
   }
 }
-
+if(mapcity){
+  mapselect.addEventListener('click', (event) => {
+    mapcity.classList.remove('active');
+    mapcity.style.overflow = "hidden";
+    maphead.forEach(n => n.classList.remove('close'));
+    mapmargin.forEach(n => n.style.margin = null);
+    document.querySelector('.map__city').classList.remove('active');
+    mapscroll.forEach(n => n.classList.remove('active'));
+    mapselect.classList.remove('active');
+    mapcity.onmouseover = function(e) {scroll.stop();};
+    mapcity.addEventListener("touchstart", function (e) {scroll.stop()});
+    mapcity.addEventListener("touchmove", function (e) {scroll.stop()});
+    mapcity.addEventListener("touched", function (e) {scroll.stop()});
+    myMap.setCenter([55.253215,37.622504],5);
+    delmappoint();
+  });
+}
 // end map mobile
 
 // start del active points
@@ -1097,7 +1114,7 @@ if(mapback){
     mapcity.style.overflow = "hidden";
     mapscroll.forEach(n => n.classList.remove('active'));
     mapсmapcity.forEach(n => n.classList.remove('active'));
-    map_scroll.onmouseover = function(e) {scroll.stop();};
+    mapcity.onmouseover = function(e) {scroll.stop();};
     myMap.setCenter([55.253215,37.622504],5);
     delmappoint();
   });
@@ -1233,7 +1250,10 @@ for (i = 0; i < mapsh.length; i++) {
       mapcity.style.overflow = "hidden";
       mapscroll.forEach(n => n.classList.remove('active'));
       mapсmapcity.forEach(n => n.classList.remove('active'));
-      map_scroll.onmouseover = function(e) {scroll.stop();};
+      mapcity.onmouseover = function(e) {scroll.stop();};
+      mapcity.addEventListener("touchstart", function (e) {scroll.stop()});
+      mapcity.addEventListener("touchmove", function (e) {scroll.stop()});
+      mapcity.addEventListener("touched", function (e) {scroll.stop()});
       for (var b = 0; b < courseAccordionButton.length; b++) {
         courseAccordionButton[b].classList.remove("close");
       }
@@ -1260,7 +1280,10 @@ for (i = 0; i < mapsh.length; i++) {
       mapcity.style.overflow = "visible";
       mapscroll.forEach(n => n.classList.add('active'));
       mapсmapcity.forEach(n => n.classList.add('active'));
-      map_scroll.onmouseover = function(e) {scroll.start();};
+      mapcity.onmouseover = function(e) {scroll.start();};
+      mapcity.addEventListener("touchstart", function (e) {scroll.start()});
+      mapcity.addEventListener("touchmove", function (e) {scroll.start()});
+      mapcity.addEventListener("touched", function (e) {scroll.start()});
     }
   };
 }
@@ -1476,8 +1499,9 @@ if(maps) {
       var mapmoscow = document.getElementById('mapmoscow');
       const maphead = document.querySelectorAll('.map__search_city .map__search_head');
       const mapinfo = document.querySelectorAll('.map__search_city .map__search_info');
-      
-      if (mapmoscow.classList.contains("map__point_active")) {
+
+      // start map__point function
+      function mappoint() {
         document.querySelectorAll('.map .map__city').forEach(n => n.classList.add('active'));
         mapscroll.forEach(n => n.classList.add('active'));
         mapсmapcity.forEach(n => n.classList.add('active'));
@@ -1488,9 +1512,22 @@ if(maps) {
         mapinfo.forEach(n => n.classList.remove('active'));
         mapinfo.forEach(n => n.style.maxHeight = null);
         mapmargin.forEach(n => n.style.margin = 0);
-        myMap.setCenter([55.88088924541,37.423524915344],12);
         mapback.classList.remove('close');
         idmap.forEach(n => n.style.display = null);
+        if (mapcity.classList.contains("active")) {
+          mapselect.classList.remove('active');
+        }
+        mapcity.onmouseover = function(e) {scroll.start();};
+        mapcity.onmouseout = function(e) {scroll.start();};
+        mapcity.addEventListener("touchstart", function (e) {scroll.start()});
+        mapcity.addEventListener("touchmove", function (e) {scroll.start()});
+        mapcity.addEventListener("touched", function (e) {scroll.start()});
+      }
+      // end
+      
+      if (mapmoscow.classList.contains("map__point_active")) {
+        mappoint();
+        myMap.setCenter([55.88088924541,37.423524915344],12);
         var idmapi = idmap[0].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1509,32 +1546,36 @@ if(maps) {
         mapback.classList.add('close');
         mapсmapcity.forEach(n => n.classList.remove('active'));
         myMap.setCenter([55.253215,37.622504],5);
-        if (map_scroll.classList.contains("active")) {} else {
-          Scrollbar.init(map_scroll);
-          map_scroll.addEventListener("touchstart", function (e) {scroll.stop()});
-          map_scroll.addEventListener("touchmove", function (e) {scroll.stop()});
-          map_scroll.addEventListener("touched", function (e) {scroll.stop()});
-          document.body.addEventListener("touchstart", function (e) {scroll.start()});
-          document.body.addEventListener("touchmove", function (e) {scroll.start()});
-          document.body.addEventListener("touched", function (e) {scroll.start()});
-          map_scroll.onmouseover = function(e) {scroll.stop();};
-          map_scroll.onmouseout = function(e) {scroll.start();};
+        if (mapcity.classList.contains("active")) {
+          mapselect.classList.remove('active');
+          scroll.start();
+        }
+        mapcity.onmouseover = function(e) {scroll.stop();};
+        mapcity.addEventListener("touchstart", function (e) {scroll.stop()});
+        mapcity.addEventListener("touchmove", function (e) {scroll.stop()});
+        mapcity.addEventListener("touched", function (e) {scroll.stop()});
+        if(oldWidth <= 800){
+          if(mapcity){
+            if (!mapcity.classList.contains("active")) {
+              mapcity.classList.add('active');
+              mapcity.style.overflow = "visible";
+              maphead.forEach(n => n.classList.add('close'));
+              mapmargin.forEach(n => n.style.margin = '0');
+              document.querySelector('.map__city').classList.add('active');
+              mapscroll.forEach(n => n.classList.add('active'));
+              mapselect.classList.add('active');
+              mapcity.onmouseout = function(e) {scroll.start();};
+              mapcity.addEventListener("touchstart", function (e) {scroll.start()});
+              mapcity.addEventListener("touchmove", function (e) {scroll.start()});
+              mapcity.addEventListener("touched", function (e) {scroll.start()});
+            }
+          }
         }
       };
       var mappeterburg = document.getElementById('mappeterburg');
       if (mappeterburg.classList.contains("map__point_active")) {
-        mapscroll.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.style.overflow = null);
-        maphead.forEach(n => n.classList.remove('active'));
-        maphead.forEach(n => n.classList.remove('close'));
-        maphead.forEach(n => n.classList.add('close'));
-        mapinfo.forEach(n => n.classList.remove('active'));
-        mapinfo.forEach(n => n.style.maxHeight = null);
-        mapmargin.forEach(n => n.style.margin = 0);
+        mappoint();
         myMap.setCenter([59.618243,30.172631],12);
-        mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[1].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1544,18 +1585,8 @@ if(maps) {
       } else {};
       var mapvoronezh = document.getElementById('mapvoronezh');
       if (mapvoronezh.classList.contains("map__point_active")) {
-        mapscroll.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.style.overflow = null);
-        maphead.forEach(n => n.classList.remove('active'));
-        maphead.forEach(n => n.classList.remove('close'));
-        maphead.forEach(n => n.classList.add('close'));
-        mapinfo.forEach(n => n.classList.remove('active'));
-        mapinfo.forEach(n => n.style.maxHeight = null);
-        mapmargin.forEach(n => n.style.margin = 0);
+        mappoint();
         myMap.setCenter([51.639685,39.324973],12);
-        mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[2].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1565,18 +1596,8 @@ if(maps) {
       } else {};
       var mapkursk = document.getElementById('mapkursk');
       if (mapkursk.classList.contains("map__point_active")) {
-        mapscroll.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.style.overflow = null);
-        maphead.forEach(n => n.classList.remove('active'));
-        maphead.forEach(n => n.classList.remove('close'));
-        maphead.forEach(n => n.classList.add('close'));
-        mapinfo.forEach(n => n.classList.remove('active'));
-        mapinfo.forEach(n => n.style.maxHeight = null);
-        mapmargin.forEach(n => n.style.margin = 0);
+        mappoint();
         myMap.setCenter([51.627834,36.117242],12);
-        mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[3].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1586,18 +1607,8 @@ if(maps) {
       } else {};
       var maplipetsk = document.getElementById('maplipetsk');
       if (maplipetsk.classList.contains("map__point_active")) {
-        mapscroll.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.style.overflow = null);
-        maphead.forEach(n => n.classList.remove('active'));
-        maphead.forEach(n => n.classList.remove('close'));
-        maphead.forEach(n => n.classList.add('close'));
-        mapinfo.forEach(n => n.classList.remove('active'));
-        mapinfo.forEach(n => n.style.maxHeight = null);
-        mapmargin.forEach(n => n.style.margin = 0);
+        mappoint();
         myMap.setCenter([52.597220203418,39.458276316873],12);
-        mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[4].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1607,18 +1618,8 @@ if(maps) {
       } else {};
       var maporel = document.getElementById('maporel');
       if (maporel.classList.contains("map__point_active")) {
-        mapscroll.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.style.overflow = null);
-        maphead.forEach(n => n.classList.remove('active'));
-        maphead.forEach(n => n.classList.remove('close'));
-        maphead.forEach(n => n.classList.add('close'));
-        mapinfo.forEach(n => n.classList.remove('active'));
-        mapinfo.forEach(n => n.style.maxHeight = null);
-        mapmargin.forEach(n => n.style.margin = 0);
+        mappoint();
         myMap.setCenter([52.923587,36.078570],12);
-        mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[5].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1628,18 +1629,8 @@ if(maps) {
       } else {};
       var mappavlovsck = document.getElementById('mappavlovsck');
       if (mappavlovsck.classList.contains("map__point_active")) {
-        mapscroll.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.style.overflow = null);
-        maphead.forEach(n => n.classList.remove('active'));
-        maphead.forEach(n => n.classList.remove('close'));
-        maphead.forEach(n => n.classList.add('close'));
-        mapinfo.forEach(n => n.classList.remove('active'));
-        mapinfo.forEach(n => n.style.maxHeight = null);
-        mapmargin.forEach(n => n.style.margin = 0);
+        mappoint();
         myMap.setCenter([50.452752,40.148549],12);
-        mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[6].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1649,18 +1640,8 @@ if(maps) {
       } else {};
       var mappenza = document.getElementById('mappenza');
       if (mappenza.classList.contains("map__point_active")) {
-        mapscroll.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.style.overflow = null);
-        maphead.forEach(n => n.classList.remove('active'));
-        maphead.forEach(n => n.classList.remove('close'));
-        maphead.forEach(n => n.classList.add('close'));
-        mapinfo.forEach(n => n.classList.remove('active'));
-        mapinfo.forEach(n => n.style.maxHeight = null);
-        mapmargin.forEach(n => n.style.margin = 0);
+        mappoint();
         myMap.setCenter([53.270195255583,45.024497906746],12);
-        mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[7].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1670,18 +1651,8 @@ if(maps) {
       } else {};
       var mappskov = document.getElementById('mappskov');
       if (mappskov.classList.contains("map__point_active")) {
-        mapscroll.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.style.overflow = null);
-        maphead.forEach(n => n.classList.remove('active'));
-        maphead.forEach(n => n.classList.remove('close'));
-        maphead.forEach(n => n.classList.add('close'));
-        mapinfo.forEach(n => n.classList.remove('active'));
-        mapinfo.forEach(n => n.style.maxHeight = null);
-        mapmargin.forEach(n => n.style.margin = 0);
+        mappoint();
         myMap.setCenter([56.9816779,29.9243012],12);
-        mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[8].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1691,18 +1662,8 @@ if(maps) {
       } else {};
       var mapryazan = document.getElementById('mapryazan');
       if (mapryazan.classList.contains("map__point_active")) {
-        mapscroll.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.style.overflow = null);
-        maphead.forEach(n => n.classList.remove('active'));
-        maphead.forEach(n => n.classList.remove('close'));
-        maphead.forEach(n => n.classList.add('close'));
-        mapinfo.forEach(n => n.classList.remove('active'));
-        mapinfo.forEach(n => n.style.maxHeight = null);
-        mapmargin.forEach(n => n.style.margin = 0);
+        mappoint();
         myMap.setCenter([54.647213,39.638701],12);
-        mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[9].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1712,18 +1673,8 @@ if(maps) {
       } else {};
       var maptambov = document.getElementById('maptambov');
       if (maptambov.classList.contains("map__point_active")) {
-        mapscroll.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.style.overflow = null);
-        maphead.forEach(n => n.classList.remove('active'));
-        maphead.forEach(n => n.classList.remove('close'));
-        maphead.forEach(n => n.classList.add('close'));
-        mapinfo.forEach(n => n.classList.remove('active'));
-        mapinfo.forEach(n => n.style.maxHeight = null);
-        mapmargin.forEach(n => n.style.margin = 0);
+        mappoint();
         myMap.setCenter([52.650429,41.407760],12);
-        mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[10].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
@@ -1733,18 +1684,8 @@ if(maps) {
       } else {};
       var mapyaroslavl = document.getElementById('mapyaroslavl');
       if (mapyaroslavl.classList.contains("map__point_active")) {
-        mapscroll.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.classList.add('active'));
-        mapсmapcity.forEach(n => n.style.overflow = null);
-        maphead.forEach(n => n.classList.remove('active'));
-        maphead.forEach(n => n.classList.remove('close'));
-        maphead.forEach(n => n.classList.add('close'));
-        mapinfo.forEach(n => n.classList.remove('active'));
-        mapinfo.forEach(n => n.style.maxHeight = null);
-        mapmargin.forEach(n => n.style.margin = 0);
+        mappoint();
         myMap.setCenter([57.6873825,39.8908799],12);
-        mapback.classList.remove('close');
-        idmap.forEach(n => n.style.display = null);
         var idmapi = idmap[11].children;
         for (var i = 0; i < idmapi.length; i++) {
           idmapi[i].classList.add('active');
