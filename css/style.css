@@ -1771,7 +1771,7 @@ svg path {
 /* start hero */
 
 .hero__container {
-  height: 850px;
+  height: 810px;
   position: relative;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -1903,7 +1903,7 @@ svg path {
 }
 
 .hero__head {
-  max-width: 886px;
+  max-width: 1040px;
   font-size: 80px;
   font-weight: 400;
   line-height: 87px;
@@ -4126,6 +4126,7 @@ svg path {
   width: 100%;
   padding: 0 !important;
   justify-content: center;
+  color: var(--text);
   background-color: var(--bg);
   position: relative;
   cursor: pointer;
@@ -6210,8 +6211,8 @@ font.notetext {
     font-size: 12px;
     line-height: 16px;
   }
-  .hero__container {
-    height: 650px;
+  .hero__head {
+    max-width: 775px;
   }
   .header__button.active,
   .header__burger.active,
@@ -6283,7 +6284,7 @@ font.notetext {
     padding: 110px 0 0;
   }
   .hero__container {
-    min-height: 645px;
+    min-height: 610px;
     height: calc(var(--height) - 110px);
   }
   .hero__head {
@@ -9015,6 +9016,72 @@ font.notetext {
   .policy__info {
     font-size: 16px;
     line-height: 21px;
+  }
+  .button__default:hover {
+    color: var(--bg);
+    background-color: transparent;
+    border: 1px solid var(--bg);
+  }
+  .button__default:hover span {
+    width: 10px;
+    height: 10px;
+    background-color: var(--bg);
+  }
+  .info__button:hover {
+    color: var(--text);
+    border: 1px solid var(--blue);
+  }
+  .events__button:hover {
+    color: var(--text);
+  }
+  .events__button:hover svg path {
+    fill: var(--text);
+  }
+  .company__button:hover {
+    border: 1px solid var(--blue);
+    color: var(--dblue);
+    background-color: var(--bg);
+  }
+  .company__button:hover span {
+    background-color: var(--dblue);
+  }
+  .form__button:hover {
+    color: var(--text);
+    background-color: var(--bg);
+  }
+  .form__button:hover span {
+    background-color: var(--dblue);
+  }
+  .form__read_desc .form__button:hover {
+    color: var(--bg);
+    background-color: var(--dblue);
+  }
+  .form__read_desc .form__button:hover span {
+    background-color: var(--blue);
+  }
+  .form__button:hover input {
+    color: var(--text);
+    -webkit-text-fill-color: var(--text);
+  }
+  .agriculture__button:hover {
+    color: var(--dblue);
+    background-color: var(--bg);
+  }
+  .agriculture__button:hover span {
+    background-color: var(--dblue);
+  }
+  .action__button:hover,
+  .action__button.active {
+    color: var(--bg);
+    background-color: var(--blue);
+    border: 1px solid var(--bg);
+  }
+  .news__button {
+    color: var(--dblue);
+    background-color: var(--bg);
+  }
+  .news__button:hover span {
+    background-color: var(--dblue);
   }
   .footer__contacts {
     flex-direction: column;
