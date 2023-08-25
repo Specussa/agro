@@ -2288,6 +2288,9 @@ svg path {
 }
 
 .company__slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: 620px;
   width: 100%;
   margin: 70px auto 90px;
@@ -2311,16 +2314,18 @@ svg path {
 }
 
 .company__thumbs {
-  width: calc(50% - 120px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: 306px;
-  margin: 0 auto 0 100px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  align-items: center;
+  gap: 40px;
 }
 
-.company__thumbs .swiper-slide {
+.company__thumbs img {
+  height: 100%;
   width: calc(50% - 20px);
+  object-fit: cover;
 }
 
 .company__slider .swiper-slide {
@@ -2333,9 +2338,6 @@ svg path {
   width: calc(50% - 120px);
   height: 100%;
   margin: 0 100px 0 auto;
-  position: absolute;
-  right: 0;
-  top: 0;
 }
 
 .company__item {
@@ -2402,11 +2404,8 @@ svg path {
 
 .company__texts {
   width: calc(50% - 120px);
-  height: calc(100% - 326px);
+  height: 100%;
   margin: 0 auto 0 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 
 .company__texts .swiper-slide {
@@ -6354,7 +6353,6 @@ font.notetext {
   }
   .company__texts {
     width: calc(50% - 70px);
-    height: calc(100% - 260px);
     margin: 0 auto 0 60px;
   }
   .company__heading {
@@ -6366,9 +6364,11 @@ font.notetext {
     line-height: 21px;
   }
   .company__thumbs {
-    width: calc(50% - 70px);
     height: 240px;
-    margin: 0 auto 0 60px;
+    gap: 20px;
+  }
+  .company__thumbs img {
+    width: calc(50% - 10px);
   }
   .company__top {
     width: calc(50% - 70px);
@@ -7319,6 +7319,7 @@ font.notetext {
   .company__slider {
     height: 100%;
     padding: 0 40px;
+    flex-direction: column-reverse;
   }
   .company__thumbs {
     display: none;

@@ -642,41 +642,23 @@ if(companyslider){
     }
   });
 
-  var galleryThumbs = new Swiper('.company__thumbs', {
-    loop: true,
-    spaceBetween: 40,
-    slidesPerView: 2,
-    touchRatio: 0.2,
-    loop: true,
-    loopedSlides: 2,
-    speed: 1000,
-    slideToClickedSlide: false,
-    allowTouchMove: false,
-    breakpoints: {
-      1700: {
-        spaceBetween: 20,
-      }
-    }
-  });
-
   var galleryText = new Swiper('.company__texts', {
     loop: true,
     spaceBetween: 40,
     slidesPerView: 1,
     touchRatio: 0.2,
     loopedSlides: 2,
-    slideToClickedSlide: false,
-    allowTouchMove: false,
+    slideToClickedSlide: true,
+    allowTouchMove: true,
     speed: 1000,
     breakpoints: {
-      800: {
+      1700: {
         spaceBetween: 20,
       }
     }
   });
-  galleryTop.controller.control = galleryThumbs && galleryText;
-  galleryThumbs.controller.control = galleryTop && galleryText;
-  galleryText.controller.control = galleryTop && galleryThumbs;
+  galleryTop.controller.control = galleryText;
+  galleryText.controller.control = galleryTop;
 }
 // end company slider
 
