@@ -1794,7 +1794,7 @@ svg path {
 /* start hero */
 
 .hero__container {
-  height: 810px;
+  height: 1100px;
   position: relative;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -1987,6 +1987,12 @@ svg path {
   justify-content: center;
 }
 
+.partners__item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .partners__item img {
   width: 100%;
   height: 100%;
@@ -2110,14 +2116,14 @@ svg path {
 
 .events__top {
   width: 100%;
-  height: 250px;
+  height: 650px;
   padding: 0 0 25px;
   overflow: hidden;
 }
 
 .events__top img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -2134,7 +2140,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: calc(100% - 250px);
+  height: calc(100% - 650px);
   padding: 25px 0 50px;
   flex-direction: column;
   gap: 30px;
@@ -2297,7 +2303,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 620px;
+  height: 900px;
   width: 100%;
   margin: 70px auto 90px;
   position: relative;
@@ -2323,7 +2329,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 306px;
+  height: 450px;
   align-items: center;
   gap: 40px;
 }
@@ -2533,7 +2539,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 400px;
+  height: 650px;
 }
 
 .offer__middle img {
@@ -2579,6 +2585,7 @@ svg path {
 }
 
 .offer__name {
+  min-height: 23px;
   font-size: 18px;
   font-weight: 700;
   line-height: 23px;
@@ -3181,7 +3188,7 @@ svg path {
 
 .tractor__link img {
   width: 100%;
-  height: 365px;
+  height: 650px;
   object-fit: cover;
   position: relative;
   z-index: 1;
@@ -3680,12 +3687,12 @@ svg path {
 
 .info__slider {
   width: 100%;
-  height: 550px;
+  height: 800px;
 }
 
 .info__thumbs {
   width: 100%;
-  height: 150px;
+  height: 300px;
 }
 
 .info__thumbs .swiper-wrapper {
@@ -4847,7 +4854,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: calc(50% - 25px);
-  height: 430px;
+  height: 650px;
   position: relative;
   background-color: var(--back);
 }
@@ -4947,6 +4954,7 @@ svg path {
   width: 100%;
   max-width: 750px;
   height: 100%;
+  min-height: 1100px;
   padding: 50px 100px;
   flex-direction: column;
   justify-content: center;
@@ -5065,8 +5073,8 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   width: calc(40% - 10px);
-  flex-direction: column;
   gap: 40px;
 }
 
@@ -5590,7 +5598,7 @@ svg path {
 
 .promotion__image {
   width: 100%;
-  height: 800px;
+  height: 900px;
 }
 
 .promotion__image img {
@@ -5683,6 +5691,7 @@ svg path {
   border-bottom: none;
   -webkit-transition: color 0.2s linear, background-color 0.2s linear;
   transition: color 0.2s linear, background-color 0.2s linear;
+  overflow: hidden;
 }
 
 .action__button:hover,
@@ -5732,7 +5741,7 @@ svg path {
 
 .article__right img {
   width: 100%;
-  height: 500px;
+  height: 650px;
   object-fit: cover;
 }
 
@@ -5971,7 +5980,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: calc(30% - 25px);
-  height: 440px;
+  height: 650px;
 }
 
 .news__image img {
@@ -6064,7 +6073,7 @@ svg path {
 
 .service__thumbs .swiper-slide {
   width: 385px;
-  height: 300px;
+  height: 400px;
   background-color: var(--dblue);
 }
 
@@ -6119,7 +6128,7 @@ svg path {
 
 .finance__thumbs .swiper-slide {
   padding: 50px;
-  height: 130px;
+  height: 200px;
   border-right: 1px solid var(--blue);
 }
 
@@ -6153,7 +6162,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: 50%;
-  max-width: 570px;
+  max-width: 50%;
   flex-wrap: wrap;
   gap: 50px;
 }
@@ -6162,9 +6171,10 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: calc(50% - 25px);
+  width: auto;
   align-items: center;
   flex-direction: column;
+  color: var(--bg);
   gap: 20px;
 }
 
@@ -6264,6 +6274,68 @@ font.notetext {
 }
 
 /* end bx */
+
+/* start media 1920px */
+@media (max-width: 1920px) {
+  .news__image {
+    height: 440px;
+  }
+  .article__right img {
+    height: 500px;
+  }
+  .events__top {
+    height: 250px;
+  }
+  .events__bottom {
+    height: calc(100% - 250px);
+  }
+  .company__slider {
+    height: 620px;
+  }
+  .company__thumbs {
+    height: 306px;
+  }
+  .offer__middle {
+    height: 400px;
+  }
+  .hero__container {
+    height: 810px;
+  }
+  .agriculture__image {
+    height: 430px;
+  }
+  .agroinfo__block {
+    min-height: 100%;
+  }
+  .info__slider {
+    height: 550px;
+  }
+  .info__thumbs {
+    height: 150px;
+  }
+  .service__thumbs .swiper-slide {
+    height: 300px;
+  }
+  .promotion__image {
+    height: 800px;
+  }
+  .finance__thumbs .swiper-slide {
+    height: 130px;
+  }
+  .finance__list {
+    max-width: 570px;
+  }
+  .finance__item {
+    width: calc(50% - 25px);
+  }
+  .tractor__link img {
+    height: 365px;
+  }
+  .aboutus__dev_list {
+    flex-direction: column;
+  }
+}
+/* start media 1920px */
 
 /* start media 1830px */
 @media (max-width: 1830px) {
@@ -6398,8 +6470,7 @@ font.notetext {
     padding: 40px 60px;
     gap: 20px;
   }
-  .events__top,
-  .events__top img {
+  .events__top {
     height: 200px;
   }
   .events__bottom {
@@ -7344,9 +7415,6 @@ font.notetext {
     height: 270px;
     padding: 0 0 10px;
   }
-  .events__top img {
-    height: 270px;
-  }
   .events__bottom {
     height: calc(100% - 270px);
   }
@@ -7486,6 +7554,7 @@ font.notetext {
     height: 160px;
   }
   .offer__name {
+    min-height: 18px;
     font-size: 14px;
     line-height: 18px;
   }
