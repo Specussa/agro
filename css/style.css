@@ -5667,10 +5667,12 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100px;
   position: absolute;
   top: -98px;
   right: 0;
   background-color: transparent;
+  overflow: hidden;
 }
 
 .action__button {
@@ -6334,6 +6336,9 @@ font.notetext {
   .aboutus__dev_list {
     flex-direction: column;
   }
+  .action__buttons_block {
+    top: -99px;
+  }
 }
 /* start media 1920px */
 
@@ -6845,6 +6850,7 @@ font.notetext {
     height: 80px;
   }
   .action__buttons_block {
+    height: 80px;
     top: -78px;
   }
   .action__list {
@@ -8026,6 +8032,7 @@ font.notetext {
   }
   .action__buttons_block {
     position: relative;
+    height: 100px;
     top: 0;
     background-color: var(--dblue);
   }
@@ -9051,6 +9058,9 @@ font.notetext {
     width: 230px;
     height: 90px;
   }
+  .action__buttons_block {
+    height: 90px;
+  }
   .action__padding {
     padding: 20px;
   }
@@ -9531,6 +9541,9 @@ font.notetext {
   }
   .action__button {
     width: 170px;
+    height: 100px;
+  }
+  .action__buttons_block {
     height: 100px;
   }
   .article__right {
