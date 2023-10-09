@@ -6542,6 +6542,11 @@ font.notetext {
     background-color: var(--dblue);
     z-index: 0;
   }
+  .header__city,
+  .info__read,
+  .form__read {
+    max-width: 960px;
+  }
 }
 
 /* container after */
