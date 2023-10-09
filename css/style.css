@@ -1591,6 +1591,7 @@ svg path {
 /* start footer */
 
 .footer {
+  margin: auto 0 0;
   background-color: var(--dblue)
 }
 
@@ -6566,6 +6567,13 @@ font.notetext {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     z-index: 1;
+  }
+  .main__section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: calc(var(--height) - 150px);
+    flex-direction: column;
   }
 }
 
