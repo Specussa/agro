@@ -6547,6 +6547,26 @@ font.notetext {
   .form__read {
     max-width: 960px;
   }
+  .hero .swiper-container-horizontal > .swiper-pagination-bullets,
+  .hero .swiper-pagination-custom, .hero .swiper-pagination-fraction {
+    width: 100%;
+    max-width: 1920px;
+    right: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  .hero__paginations {
+    width: 100%;
+    max-width: 1920px;
+    position: relative;
+    height: 100%;
+    top: -100%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 1;
+  }
 }
 
 /* container after */
