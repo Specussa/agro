@@ -883,11 +883,8 @@ svg path {
   height: 100%;
   overflow: visible !important;
 }
-
 .header__list_block {
   width: 100%;
-  position: relative;
-  z-index: 1;
 }
 
 .header__list {
@@ -1057,8 +1054,6 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   align-items: center;
-  position: relative;
-  z-index: 1;
 }
 
 .header__search,
@@ -1799,8 +1794,7 @@ svg path {
 /* start hero */
 
 .hero__container {
-  /* height: 1100px; */
-  height: 810px;
+  height: 1100px;
   position: relative;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -2068,8 +2062,6 @@ svg path {
   font-weight: 600;
   line-height: 52px;
   color: var(--bg);
-  position: relative;
-  z-index: 1;
 }
 
 .events__desc {
@@ -2079,8 +2071,6 @@ svg path {
   font-weight: 400;
   line-height: 26px;
   color: var(--bg);
-  position: relative;
-  z-index: 1;
 }
 
 .events__desc:hover {
@@ -2126,8 +2116,7 @@ svg path {
 
 .events__top {
   width: 100%;
-  /* height: 650px; */
-  height: 250px;
+  height: 650px;
   padding: 0 0 25px;
   overflow: hidden;
 }
@@ -2151,8 +2140,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* height: calc(100% - 650px); */
-  height: calc(100% - 250px);
+  height: calc(100% - 650px);
   padding: 25px 0 50px;
   flex-direction: column;
   gap: 30px;
@@ -2294,8 +2282,6 @@ svg path {
   display: flex;
   align-items: center;
   gap: 16px;
-  position: relative;
-  z-index: 1;
 }
 
 .company__info_number {
@@ -2317,8 +2303,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* height: 900px; */
-  height: 620px;
+  height: 900px;
   width: 100%;
   margin: 70px auto 90px;
   position: relative;
@@ -2344,8 +2329,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* height: 450px; */
-  height: 306px;
+  height: 450px;
   align-items: center;
   gap: 40px;
 }
@@ -2555,8 +2539,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* height: 650px; */
-  height: 400px;
+  height: 650px;
 }
 
 .offer__middle img {
@@ -3205,8 +3188,7 @@ svg path {
 
 .tractor__link img {
   width: 100%;
-  /* height: 650px; */
-  height: 365px;
+  height: 650px;
   object-fit: cover;
   position: relative;
   z-index: 1;
@@ -3705,14 +3687,12 @@ svg path {
 
 .info__slider {
   width: 100%;
-  /* height: 800px; */
-  height: 550px;
+  height: 800px;
 }
 
 .info__thumbs {
   width: 100%;
-  /* height: 300px; */
-  height: 150px;
+  height: 300px;
 }
 
 .info__thumbs .swiper-wrapper {
@@ -4874,8 +4854,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: calc(50% - 25px);
-  /* height: 650px; */
-  height: 430px;
+  height: 650px;
   position: relative;
   background-color: var(--back);
 }
@@ -4975,8 +4954,7 @@ svg path {
   width: 100%;
   max-width: 750px;
   height: 100%;
-  /* min-height: 1100px; */
-  min-height: 100%;
+  min-height: 1100px;
   padding: 50px 100px;
   flex-direction: column;
   justify-content: center;
@@ -5097,7 +5075,6 @@ svg path {
   display: flex;
   flex-wrap: wrap;
   width: calc(40% - 10px);
-  flex-direction: column;
   gap: 40px;
 }
 
@@ -5693,8 +5670,7 @@ svg path {
   display: flex;
   height: 100px;
   position: absolute;
-  /* top: -98px; */
-  top: -99px;
+  top: -98px;
   right: 0;
   background-color: transparent;
   overflow: hidden;
@@ -5768,8 +5744,7 @@ svg path {
 
 .article__right img {
   width: 100%;
-  /* height: 650px; */
-  height: 500px;
+  height: 650px;
   object-fit: cover;
 }
 
@@ -6008,8 +5983,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: calc(30% - 25px);
-  /* height: 650px; */
-  height: 440px;
+  height: 650px;
 }
 
 .news__image img {
@@ -6102,8 +6076,7 @@ svg path {
 
 .service__thumbs .swiper-slide {
   width: 385px;
-  /* height: 400px; */
-  height: 300px;
+  height: 400px;
   background-color: var(--dblue);
 }
 
@@ -6158,8 +6131,7 @@ svg path {
 
 .finance__thumbs .swiper-slide {
   padding: 50px;
-  /* height: 200px; */
-  height: 130px;
+  height: 200px;
   border-right: 1px solid var(--blue);
 }
 
@@ -6193,8 +6165,7 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: 50%;
-  /* max-width: 50%; */
-  max-width: 570px;
+  max-width: 50%;
   flex-wrap: wrap;
   gap: 50px;
 }
@@ -6203,8 +6174,7 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* width: auto; */
-  width: calc(50% - 25px);
+  width: auto;
   align-items: center;
   flex-direction: column;
   color: var(--bg);
@@ -6308,243 +6278,70 @@ font.notetext {
 
 /* end bx */
 
-/* container after */
-
-@media (min-width: 1920px) {
-  .header__top,
-  .header__bottom,
-  .header__nav_container,
-  .hero__shadow_container,
-  .events__block,
-  .events__list,
-  .company__info_list,
-  .company__flex,
-  .company__slider,
-  .offer__slider_container,
-  .footer__container,
-  .map__block_container,
-  .map__search_block_comtainer,
-  .aboutus__dev_container,
-  .aboutus__brand_sliders,
-  .aboutus__team_padding,
-  .service__info,
-  .action__container,
-  .breadcrumbs__container,
-  .agriculture__container,
-  .info__padding,
-  .info__buttons_block,
-  .article__container,
-  .detail__flex,
-  .tractor__container,
-  .finance__flex,
-  .finance__table,
-  .policy__container,
-  .product__container,
-  .promotion__container,
-  .propelled__filter_container,
-  .review__container,
-  .service__head,
-  .spareparts__container,
-  .technique__container,
-  .videoreview__block {
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
+/* start media 1920px */
+@media (max-width: 1920px) {
+  .news__image {
+    height: 440px;
   }
-  .aboutus__list,
-  .aboutus__info,
-  .aboutus__branches_block,
-  .form__container,
-  .detail__block {
-    width: 100%;
-    max-width: 1720px;
-    margin: 0 auto;
+  .article__right img {
+    height: 500px;
   }
-  .hero__shadow_container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 64px 100px;
-    flex-direction: column;
-    justify-content: center;
-    gap: 40px;
+  .events__top {
+    height: 250px;
   }
-  .header__top::before {
-    content: "";
-    width: 50%;
-    height: 70px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: var(--blue);
-    z-index: 0;
-  }
-  .header__top::after {
-    content: "";
-    width: 50%;
-    height: 70px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--bg);
-    z-index: 0;
-  }
-  .header__bottom::after {
-    content: "";
-    width: 100%;
-    height: 80px;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    background-color: var(--dblue);
-    z-index: 0;
-  }
-  .header__left {
-    width: 100%;
-    max-width: 1125px;
-    margin: 0 0 0 auto;
-    background-color: var(--bg);
-    position: relative;
-    z-index: 1;
-  }
-  .header__right {
-    position: relative;
-    z-index: 1;
-  }
-  .header__nav_container::after {
-    content: "";
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: -50%;
-    background-color: var(--blue);
-    z-index: 0;
-  }
-  .header__nav_container::before {
-    content: "";
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: -50%;
-    background-color: var(--bg);
-    z-index: 0;
-  }
-  .events__block::before {
-    content: "";
-    width: 100%;
-    height: 180px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--dblue);
-    z-index: 0;
+  .events__bottom {
+    height: calc(100% - 250px);
   }
   .company__slider {
-    margin: 70px auto 90px;
+    height: 620px;
   }
-  .company__info_list::before {
-    content: "";
-    width: 100%;
-    height: 330px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--dblue);
-    z-index: 0;
+  .company__thumbs {
+    height: 306px;
   }
-  .map__block_container {
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    z-index: 1;
+  .offer__middle {
+    height: 400px;
   }
-  .map__search_block_comtainer {
-    position: relative;
+  .hero__container {
+    height: 810px;
   }
-  .map__search_block_comtainer::before {
-    content: "";
-    width: 100%;
-    height: 80px;
-    position: absolute;
-    top: -50px;
-    right: -100%;
-    background-color: var(--dblue);
-    z-index: 1;
-  }
-  .aboutus__brand_sliders::before {
-    content: "";
-    width: 100%;
-    height: 131px;
-    position: absolute;
-    top: 179px;
-    left: 0;
-    background-color: var(--dblue);
-    z-index: 0;
+  .agriculture__image {
+    height: 430px;
   }
   .agroinfo__block {
-    width: 750px;
-    left: calc(50% - 490px);
-    position: relative;
-    transform: translateX(-50%);
+    min-height: 100%;
   }
-  .breadcrumbs,
-  .section_form {
-    background-color: var(--blue);
+  .info__slider {
+    height: 550px;
   }
-  .info__buttons_block {
-    position: relative;
-    z-index: 1;
+  .info__thumbs {
+    height: 150px;
   }
-  .info__container::before {
-    content: "";
-    width: 100%;
-    height: 145px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--dblue);
-    z-index: 0;
+  .service__thumbs .swiper-slide {
+    height: 300px;
   }
-  .detail__block_container,
-  .finance__flex_container,
-  .service__head_container {
-    background-color: var(--dblue);
+  /* .promotion__image {
+    height: 800px;
+  } */
+  .finance__thumbs .swiper-slide {
+    height: 130px;
   }
-  .info__container_photo.info__container::before {
-    content: "";
-    display: none;
+  .finance__list {
+    max-width: 570px;
   }
-  .product__container::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: -100%;
-    background-color: var(--blue);
-    z-index: 0;
+  .finance__item {
+    width: calc(50% - 25px);
   }
-  .spareparts__container {
-    overflow: visible;
+  .tractor__link img {
+    height: 365px;
   }
-  .spareparts__container::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: -100%;
-    background-color: var(--dblue);
-    z-index: 0;
+  .aboutus__dev_list {
+    flex-direction: column;
+  }
+  .action__buttons_block {
+    top: -99px;
   }
 }
-
-/* container after */
+/* start media 1920px */
 
 /* start media 1830px */
 @media (max-width: 1830px) {

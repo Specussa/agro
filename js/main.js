@@ -436,12 +436,12 @@ if(hero){
     parallax: true,
     slideToClickedSlide: false,
     watchSlidesProgress: true,
-    autoplay: {
-      delay: 6500,
-      pauseOnMouseEnter: true,
-      allowTouchMove: true,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 6500,
+    //   pauseOnMouseEnter: true,
+    //   allowTouchMove: true,
+    //   disableOnInteraction: false,
+    // },
     watchSlidesProgress: false,
     pagination: {
       el: '.hero__pagination',
