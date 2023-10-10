@@ -6561,8 +6561,8 @@ font.notetext {
     width: 100%;
     max-width: 1920px;
     position: relative;
-    height: 100%;
-    top: -100%;
+    height: 90px;
+    bottom: 90px;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
